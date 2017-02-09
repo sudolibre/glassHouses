@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Legislation {
+    var title: String
+    var id: String
+    
+    init(json: [String: Any]) {
+        self.title = json["title"] as! String
+        self.id = json["bill_id"] as! String
+    }
+}

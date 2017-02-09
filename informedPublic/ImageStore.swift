@@ -17,11 +17,11 @@ class ImageStore {
         cache.setObject(image, forKey: key as NSString)
     }
     
-    func getImage(forKey key: String) -> UIImage {
+    func getImage(forKey key: String) -> UIImage? {
         return cache.object(forKey: key as NSString)
     }
     
-    func removeImage(forKey key: Stirng) {
+    func removeImage(forKey key: String) {
         cache.removeObject(forKey: key as NSString)
     }
     
