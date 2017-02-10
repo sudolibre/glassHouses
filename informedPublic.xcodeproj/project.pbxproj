@@ -17,6 +17,7 @@
 		E84BE3A91E4A8C23004359DE /* OpenStatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */; };
 		E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3AA1E4B6385004359DE /* Legislator.swift */; };
 		E84BE3AF1E4BCF67004359DE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3AE1E4BCF67004359DE /* ImageStore.swift */; };
+		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */; };
 		E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */; };
 		E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF592A1E4CD98B008365F4 /* Legislation.swift */; };
@@ -56,6 +57,7 @@
 		E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStatesAPI.swift; sourceTree = "<group>"; };
 		E84BE3AA1E4B6385004359DE /* Legislator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legislator.swift; sourceTree = "<group>"; };
 		E84BE3AE1E4BCF67004359DE /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFeedController.swift; sourceTree = "<group>"; };
 		E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		E8BF592A1E4CD98B008365F4 /* Legislation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legislation.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
 				E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */,
+				E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */,
 				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
 				E84BE3AA1E4B6385004359DE /* Legislator.swift */,
 				E8BF592A1E4CD98B008365F4 /* Legislation.swift */,
@@ -284,6 +287,7 @@
 				E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */,
 				E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */,
 				E84BE3AF1E4BCF67004359DE /* ImageStore.swift in Sources */,
+				E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */,
 				E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */,
 				E84BE3A91E4A8C23004359DE /* OpenStatesAPI.swift in Sources */,
 				E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */,

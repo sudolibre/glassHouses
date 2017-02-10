@@ -19,6 +19,41 @@ class ActivityFeedController: UITableViewController {
         super.viewDidLoad()
         dataSource = ActivityFeedDataSource()
         tableView.dataSource = dataSource
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+
+        
+        
+        
+        //TOTO: DELETE MEEEEEEE
+        legislators = [
+        Legislator(jsonArray: [
+            "full_name": "Pat Gardner",
+            "district": "57",
+            "leg_id": "GAL000113",
+            "last_name": "Gardner",
+            "party": "democratic",
+            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
+            "chamber": "lower",
+            "active": true
+            ])!,
+            Legislator(jsonArray: [
+                "full_name": "Nan Orrock",
+                "district": "36",
+                "leg_id": "GAL000038",
+                "last_name": "Orrock",
+                "party": "democratic",
+                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
+                "chamber": "upper",
+                "active": true
+                ])!
+        ]
+        //DELELTELLETLELTELETLELTL
+        
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,14 +85,13 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityCell
         let item = activityItems[indexPath.row]
         
-        cell.textLabel?.text = item.legislator?.fullName
-        cell.detailTextLabel?.text = item.cellDescription
-        cell.imageView?.image = item.legislator?.photo
-        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)! / 2
-        
+        cell.title.text = item.legislator?.fullName
+        cell.activityDescription.text = item.cellDescription
+        cell.avatarImage.image = item.legislator?.photo
+        cell.setTokenFromActivityType(item.activityType)
         return cell
     }
     
