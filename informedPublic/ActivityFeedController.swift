@@ -52,6 +52,7 @@ class ActivityFeedController: UITableViewController {
         ]
         //DELELTELLETLELTELETLELTL
         
+        generateFeed()
         
         
         
@@ -59,7 +60,6 @@ class ActivityFeedController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        generateFeed()
     }
     
     func generateFeed() {
@@ -69,14 +69,14 @@ class ActivityFeedController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
-            for activityItem in activityItems{
-                DispatchQueue.main.async {
-                    self.dataSource.addItem(activityItem)
-                    self.tableView.reloadData()
-                }
-            }
-        }
+//        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
+//            for activityItem in activityItems{
+//                DispatchQueue.main.async {
+//                    self.dataSource.addItem(activityItem)
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -14,42 +14,46 @@ class NewsArticle {
     let date: Date
     let title: String
     let description: String
-    let imageURL: URL
+    var imageURL: URL? = nil
     let link: URL
     
     init?(json: [String: Any]) {
-        guard let title = json["title"] as? String,
-        let description = json["snippet"] as? String,
-        let linkString = json["link"] as? String,
-        let link = URL(string: linkString),
-        let publisher = json["displayLink"] as? String,
-        let pagemap = json["pagemap"] as? [String: Any],
-        let imageArrayOfDictionaries = pagemap["cse_thumbnail"] as? [[String: Any]],
-        let imageDictionary = imageArrayOfDictionaries.first,
-        let imageURLString = imageDictionary["src"] as? String,
-        let imageURL = URL(string: imageURLString),
-        let metaTags = pagemap["metatags"] as? [[String: Any]],
-        let dateString = metaTags.first!["article:published_time"] as? String else {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        
+        guard let title = json["name"] as? String,
+            let description = json["description"] as? String,
+            let linkString = json["url"] as? String,
+            let link = URL(string: linkString),
+            let providerDictionary = json["provider"] as? [[String: Any]],
+            let firtProvider = providerDictionary.first,
+            let publisher = firtProvider["name"] as? String,
+            let dateString = json["datePublished"] as? String else {
                 return nil
         }
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let imageDictionary = json["image"] as? [String: Any],
+            let thumbnailDictionary = imageDictionary["thumbnail"] as? [String: Any],
+            let imageURLString = thumbnailDictionary["contentURL"] as? String,
+            let _imageURL = URL(string: imageURLString) {
+            self.imageURL = _imageURL
+        }
+
         if let date = dateFormatter.date(from: dateString) {
             self.date = date
         } else {
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+             dateFormatter.dateFormat = "yyyy-MM-dd"
             if let date = dateFormatter.date(from: dateString) {
                 self.date = date
             } else {
                 return nil
             }
         }
-        
+
         self.title = title
         self.publisher = publisher
         self.description = description
-        self.imageURL = imageURL
         self.link = link
     }
     

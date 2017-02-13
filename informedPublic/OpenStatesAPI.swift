@@ -36,7 +36,7 @@ class OpenStatesAPI {
     
     enum EndPoint {
         case findDistrict(lat: Double, long: Double)
-        case fetchVotesForLegislators//(voterDescriptions: [String])
+        case fetchVotesForLegislators
         case fetchBillDetail(ID: String)
         
         var urlComponent: String {
@@ -133,7 +133,7 @@ class OpenStatesAPI {
                 for i in votes {
                     let yesVotes = i["yes_votes"] as! [[String:Any]]
                     let noVotes = i["no_votes"] as! [[String:Any]]
-                    let otherVotes = i["no_votes"] as! [[String:Any]]
+                    let otherVotes = i["other_votes"] as! [[String:Any]]
                     let yesNames = yesVotes.map({$0["name"] as! String})
                     let noNames = noVotes.map({$0["name"] as! String})
                     let otherNames = otherVotes.map({$0["name"] as! String})

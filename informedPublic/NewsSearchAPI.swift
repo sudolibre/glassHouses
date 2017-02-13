@@ -10,10 +10,10 @@ import Foundation
 
 class NewsSearchAPI {
     static private func getURLFor(legislator: Legislator) -> URL {
-        let baseURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAH3dq06OZAe5kZjpnJdVCwpfJzcDuNmA0&cx=015255368873498272244:860ceyoviig&daterestrict=w1&sort=date&q="
+        let baseURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?count=10&offset=0&mkt=en-us&safeSearch=Moderate&q="
         let legislatorEncodedName = legislator.fullName.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-        let suffixComponent = "%22\(legislatorEncodedName)%22%20\(legislator.chamber.description))%2Bmore%3Apagemap%3Ametatags-article_published_time"
-        let fullURL = baseURL + suffixComponent
+        let urlComponent = "%22\(legislatorEncodedName)%22%20\(legislator.chamber.description))"
+        let fullURL = baseURL + urlComponent
         return URL(string: fullURL)!
     }
     
@@ -25,7 +25,7 @@ class NewsSearchAPI {
                 switch response {
                 case .success(let data):
                     let dictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-                    let newsResults = dictionary["items"] as! [[String: Any]]
+                    let newsResults = dictionary["value"] as! [[String: Any]]
                     let newsArticles = newsResults.flatMap(NewsArticle.init)
                     let activityItems = newsArticles.map({ActivityItem(legislator: legislator, activityType: .news($0))})
                     completion(activityItems)
@@ -44,6 +44,7 @@ class NewsSearchAPI {
             var req = URLRequest(url: url)
             req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
             req.httpMethod = "GET"
+            req.addValue("4736b3e01ee14403a25247f38ae243bd", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
             return req
         }()
         
