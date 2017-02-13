@@ -9,11 +9,19 @@
 import Foundation
 
 class ActivityItem {
-
-
-    //let date: Date
     let legislator: Legislator
     let activityType: ActivityType
+    var date: Date {
+        switch activityType {
+        case .vote(let legislation, _):
+            return legislation.date
+        case .news(let article):
+            return article.date
+        default:
+            fatalError("unexpected activity type when calculating date")
+        }
+    }
+
 
     var activityCellViewData: ActivityCellViewData {
         let title = legislator.fullName
@@ -31,7 +39,8 @@ class ActivityItem {
                 return ""
             }
         }
-       return ActivityCellViewData(title: title, activityDescription: description, activityType: type, avatarImage: image)
+        
+        return ActivityCellViewData(title: title, activityDescription: description, activityType: type, avatarImage: image, date: date)
     }
 
     init(legislator: Legislator, activityType: ActivityType) {

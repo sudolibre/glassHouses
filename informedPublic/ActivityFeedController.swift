@@ -76,7 +76,6 @@ class ActivityFeedController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("row selected")
         performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
@@ -107,6 +106,7 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
     
     func addItem(_ item: ActivityItem) {
         activityItems.append(item)
+        activityItems.sort(by: {$0.0.date > $0.1.date})
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

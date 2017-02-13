@@ -315,12 +315,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-nM-5QP">
+                                            <rect key="frame" x="301.5" y="19.5" width="65.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="1Ru-nM-5QP" firstAttribute="baseline" secondItem="XwG-A6-ulf" secondAttribute="baseline" id="50d-t7-ffr"/>
                                         <constraint firstItem="vh0-I2-lfX" firstAttribute="baseline" secondItem="XwG-A6-ulf" secondAttribute="baseline" id="KrM-bb-WNj"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Z8D-Ej-A10" secondAttribute="bottom" id="Sje-Dp-qh3"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Z8D-Ej-A10" secondAttribute="trailing" constant="12" id="ZGe-t7-bdQ"/>
                                         <constraint firstItem="Z8D-Ej-A10" firstAttribute="leading" secondItem="XwG-A6-ulf" secondAttribute="leading" id="ZPW-jo-IkM"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1Ru-nM-5QP" secondAttribute="trailing" id="eVC-HV-fMt"/>
                                         <constraint firstItem="Z8D-Ej-A10" firstAttribute="top" secondItem="XwG-A6-ulf" secondAttribute="bottom" constant="5.5" id="lFV-Wi-usD"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="78y-OY-0gr" secondAttribute="leading" id="pHG-BG-B53"/>
                                         <constraint firstItem="vh0-I2-lfX" firstAttribute="leading" secondItem="XwG-A6-ulf" secondAttribute="trailing" constant="10" id="rIe-j3-EzL"/>
@@ -332,6 +340,7 @@
                                 <connections>
                                     <outlet property="activityDescription" destination="Z8D-Ej-A10" id="NXe-bN-vXN"/>
                                     <outlet property="avatarImage" destination="78y-OY-0gr" id="0dn-vN-oQF"/>
+                                    <outlet property="date" destination="1Ru-nM-5QP" id="14q-og-akw"/>
                                     <outlet property="title" destination="XwG-A6-ulf" id="eS8-Ei-G9c"/>
                                     <outlet property="token" destination="vh0-I2-lfX" id="gF1-AS-wQF"/>
                                 </connections>

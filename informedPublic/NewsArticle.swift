@@ -11,7 +11,7 @@ import WebKit
 
 class NewsArticle {
     let publisher: String
-    //let date: Date
+    let date: Date
     let title: String
     let description: String
     let imageURL: URL
@@ -27,8 +27,23 @@ class NewsArticle {
         let imageArrayOfDictionaries = pagemap["cse_thumbnail"] as? [[String: Any]],
         let imageDictionary = imageArrayOfDictionaries.first,
         let imageURLString = imageDictionary["src"] as? String,
-        let imageURL = URL(string: imageURLString) else {
+        let imageURL = URL(string: imageURLString),
+        let metaTags = pagemap["metatags"] as? [[String: Any]],
+        let dateString = metaTags.first!["article:published_time"] as? String else {
                 return nil
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: dateString) {
+            self.date = date
+        } else {
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            if let date = dateFormatter.date(from: dateString) {
+                self.date = date
+            } else {
+                return nil
+            }
         }
         
         self.title = title

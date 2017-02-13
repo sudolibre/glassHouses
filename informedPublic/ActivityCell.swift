@@ -11,6 +11,7 @@ import UIKit
 
 class ActivityCell: UITableViewCell {
  
+    @IBOutlet var date: UILabel!
     @IBOutlet var title: UILabel!
     @IBOutlet var token: UILabel!
     @IBOutlet var avatarImage: UIImageView!
@@ -23,6 +24,10 @@ class ActivityCell: UITableViewCell {
         if let image = viewData.avatarImage {
             avatarImage.image = image
         }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        date.text = dateFormatter.string(from: viewData.date)
     }
     
     private func setTokenFromActivityType(_ activityType: ActivityType) {
@@ -68,4 +73,5 @@ struct ActivityCellViewData {
     let activityDescription: String
     let activityType: ActivityType
     var avatarImage: UIImage?
+    var date: Date
 }

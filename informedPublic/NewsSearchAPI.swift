@@ -9,7 +9,13 @@
 import Foundation
 
 class NewsSearchAPI {
-    private static let baseURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAH3dq06OZAe5kZjpnJdVCwpfJzcDuNmA0&cx=015255368873498272244:860ceyoviig&daterestrict=w1&sort=date&q="
+    static private func getURLFor(legislator: Legislator) -> URL {
+        let baseURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyAH3dq06OZAe5kZjpnJdVCwpfJzcDuNmA0&cx=015255368873498272244:860ceyoviig&daterestrict=w1&sort=date&q="
+        let legislatorEncodedName = legislator.fullName.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
+        let suffixComponent = "%22\(legislatorEncodedName)%22%20\(legislator.chamber.description))%2Bmore%3Apagemap%3Ametatags-article_published_time"
+        let fullURL = baseURL + suffixComponent
+        return URL(string: fullURL)!
+    }
     
     private static let session = URLSession.shared
     
@@ -33,10 +39,9 @@ class NewsSearchAPI {
     }
     
     private static func fetchNewsJSONForLegislator(_ legislator: Legislator, completion: @escaping (APIResponse) -> ()) {
-        let pathComponent = legislator.fullName.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
-        let fullURL = URL(string: baseURL + "%22\(pathComponent)%22%20news")!
+        let url = getURLFor(legislator: legislator)
         let request: URLRequest = {
-            var req = URLRequest(url: fullURL)
+            var req = URLRequest(url: url)
             req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
             req.httpMethod = "GET"
             return req
