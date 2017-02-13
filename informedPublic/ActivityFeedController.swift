@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import QuickLook
 
 
 class ActivityFeedController: UITableViewController {
@@ -66,15 +67,43 @@ class ActivityFeedController: UITableViewController {
             self.dataSource.addItem(activityItem)
             self.tableView.reloadData()
         }
+        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
+            for activityItem in activityItems{
+            self.dataSource.addItem(activityItem)
+            self.tableView.reloadData()
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("row selected")
+        performSegue(withIdentifier: "showDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let item = dataSource[tableView.indexPathForSelectedRow!.row]
+        var url: URL {
+            switch item.activityType {
+            case .vote(let legislation, _), .sponsor(let legislation):
+                return legislation.documentURL
+            case .news(let article):
+                return article.link
+            case .legislationLifecycle:
+                fatalError("not implemented yet")
+            }
+        }
+        let request = URLRequest(url: url)
+        let webView = segue.destination.view as? UIWebView
+        webView?.loadRequest(request)
     }
 }
 
 class ActivityFeedDataSource: NSObject, UITableViewDataSource {
     var activityItems: [ActivityItem] = []
+    
+    subscript(index: Int) -> ActivityItem {
+            return activityItems[index]
+    }
     
     func addItem(_ item: ActivityItem) {
         activityItems.append(item)
@@ -87,11 +116,7 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityCell
         let item = activityItems[indexPath.row]
-        
-        cell.title.text = item.legislator?.fullName
-        cell.activityDescription.text = item.cellDescription
-        cell.avatarImage.image = item.legislator?.photo
-        cell.setTokenFromActivityType(item.activityType)
+        cell.applyViewData(item.activityCellViewData)
         return cell
     }
     

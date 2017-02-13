@@ -9,32 +9,43 @@
 import Foundation
 
 class ActivityItem {
-    let legislation: Legislation
-    let legislator: Legislator?
+
+
     //let date: Date
+    let legislator: Legislator
     let activityType: ActivityType
-    
-    var cellDescription: String {
-        switch activityType {
-        case .vote(let result):
-            return "\(legislator!.fullName) voted \(result) \(legislation.id): \(legislation.title)"
-        default:
-            return "Nope"
+
+    var activityCellViewData: ActivityCellViewData {
+        let title = legislator.fullName
+        let image = legislator.photo
+        let type = activityType
+        var description: String {
+            switch activityType {
+            case .vote(let legislation, let result):
+                return "\(legislator.fullName) voted \(result) \(legislation.id): \(legislation.title)"
+            case .sponsor(let legislation):
+                return "\(legislator.fullName) sponsored \(legislation.id): \(legislation.title)"
+            case .news(let article):
+                return "\(article.publisher) \n\(article.description)"
+            case .legislationLifecycle:
+                return ""
+            }
         }
+       return ActivityCellViewData(title: title, activityDescription: description, activityType: type, avatarImage: image)
     }
-    
-    enum ActivityType {
-        case news
-        case vote(VoteResult)
-        case sponsor
-        case legislationLifecycle
-    }
-    
-    init(legislation: Legislation, legislator: Legislator, activityType: ActivityType) {
-        self.legislation = legislation
+
+    init(legislator: Legislator, activityType: ActivityType) {
         self.legislator = legislator
         //self.date = date
         self.activityType = activityType
     }
-    
+
 }
+
+enum ActivityType {
+    case news(NewsArticle)
+    case vote(Legislation, VoteResult)
+    case sponsor(Legislation)
+    case legislationLifecycle
+}
+

@@ -15,9 +15,9 @@ enum APIResponse {
 }
 
 enum VoteResult: CustomStringConvertible {
-    case yea(voterDescription: String)
-    case nay(voterDescription: String)
-    case other(voterDescription: String)
+    case yea
+    case nay
+    case other
     
     var description: String {
         switch self {
@@ -127,7 +127,7 @@ class OpenStatesAPI {
             switch response {
             case .success(let data):
                 let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let legislation = Legislation(json: legislationJSON)
+                let legislation = Legislation(json: legislationJSON)!
                 let votes = legislationJSON["votes"] as! [[String:Any]]
                 
                 for i in votes {
@@ -148,7 +148,7 @@ class OpenStatesAPI {
                     for yesName in yesNames {
                         for legislator in legislators {
                             if legislator.voterDescription == yesName {
-                                let activityItem = ActivityItem(legislation: legislation, legislator: legislator, activityType: .vote(.yea(voterDescription: yesName)))
+                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .yea))
                                 completion(activityItem)
                                 voteCount += 1
                             }
@@ -158,7 +158,7 @@ class OpenStatesAPI {
                     for noName in noNames {
                         for legislator in legislators {
                             if legislator.voterDescription == noName {
-                                let activityItem = ActivityItem(legislation: legislation, legislator: legislator, activityType: .vote(.nay(voterDescription: noName)))
+                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .nay))
                                 completion(activityItem)
                                 voteCount += 1
                                 
@@ -169,7 +169,7 @@ class OpenStatesAPI {
                     for otherName in otherNames {
                         for legislator in legislators {
                             if legislator.voterDescription == otherName {
-                                let activityItem = ActivityItem(legislation: legislation, legislator: legislator, activityType: .vote(.other(voterDescription: otherName)))
+                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .other))
                                 completion(activityItem)
                                 voteCount += 1
                             }

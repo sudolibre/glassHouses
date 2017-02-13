@@ -31,6 +31,13 @@
 				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
+			<key>legis.ga.gov</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>senate.ga.gov</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
