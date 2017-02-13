@@ -59,7 +59,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         primaryTitle.text! = titles[currentCardIndex]
         
         UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
+            self.view.setNeedsLayout()
         }
     }
     
@@ -80,7 +80,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let activityVC = segue.destination as! ActivityFeedController
+        let navVC = segue.destination as! UINavigationController
+        let activityVC = navVC.topViewController as! ActivityFeedController
         activityVC.legislators = self.legislators
     }
     
@@ -88,6 +89,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
 
     
     //MARK: Welcome Card
+    // no custom properties or methods for the welcome card
     //MARK: Identify Card
     
     let locationManager = CLLocationManager()
@@ -211,16 +213,18 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func updateRepView() {
-        nextButton.isEnabled = true
-        let currentPosition = legislators!.index(where: {$0 === currentLegislator!})! + 1
-        legislatorNumber.text = "\(currentPosition) of \(legislators!.count)"
-        subtitleLabel.text = "\(currentLegislator!.party.description) - \(currentLegislator!.title) - District \(currentLegislator!.district)"
-        nameLabel.text = currentLegislator!.fullName
-        if let image = currentLegislator!.photo {
-            avatarImage.image = image
+        DispatchQueue.main.async {
+            self.nextButton.isEnabled = true
+            let currentPosition = self.legislators!.index(where: {$0 === self.currentLegislator!})! + 1
+            self.legislatorNumber.text = "\(currentPosition) of \(self.legislators!.count)"
+            self.subtitleLabel.text = "\(self.currentLegislator!.party.description) - \(self.currentLegislator!.title) - District \(self.currentLegislator!.district)"
+            self.nameLabel.text = self.currentLegislator!.fullName
+            if let image = self.currentLegislator!.photo {
+                self.avatarImage.image = image
+            }
         }
     }
-
+    
 
     
     func rotateRep(_ direction: Direction) {

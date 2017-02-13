@@ -22,14 +22,14 @@ class ActivityFeedController: UITableViewController {
         tableView.dataSource = dataSource
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 200
 
         
         
         
         //TOTO: DELETE MEEEEEEE
         legislators = [
-        Legislator(jsonArray: [
+        Legislator(json: [
             "full_name": "Pat Gardner",
             "district": "57",
             "leg_id": "GAL000113",
@@ -39,7 +39,7 @@ class ActivityFeedController: UITableViewController {
             "chamber": "lower",
             "active": true
             ])!,
-            Legislator(jsonArray: [
+            Legislator(json: [
                 "full_name": "Nan Orrock",
                 "district": "36",
                 "leg_id": "GAL000038",
@@ -64,13 +64,17 @@ class ActivityFeedController: UITableViewController {
     
     func generateFeed() {
         OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
-            self.dataSource.addItem(activityItem)
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.dataSource.addItem(activityItem)
+                self.tableView.reloadData()
+            }
         }
         NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
             for activityItem in activityItems{
-            self.dataSource.addItem(activityItem)
-            self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.dataSource.addItem(activityItem)
+                    self.tableView.reloadData()
+                }
             }
         }
     }

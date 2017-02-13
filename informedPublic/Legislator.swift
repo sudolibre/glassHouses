@@ -15,7 +15,9 @@ class Legislator {
     var district: Int
     var party: Party
     var chamber: Chamber
-    var title: String
+    var title: String {
+        return chamber.description
+    }
     var photoURL: URL
     var photo: UIImage?
     var photoKey: String?
@@ -56,19 +58,19 @@ class Legislator {
         }
     }
     
-    init?(jsonArray: [String: Any]) {
-        guard let fullName = jsonArray["full_name"] as? String,
-        let districtString = jsonArray["district"] as? String,
+    init?(json: [String: Any]) {
+        guard let fullName = json["full_name"] as? String,
+        let districtString = json["district"] as? String,
         let district = Int(districtString),
-        let ID = jsonArray["leg_id"] as? String,
-        let lastName = jsonArray["last_name"] as? String,
-        let partyRawValue = jsonArray["party"] as? String,
+        let ID = json["leg_id"] as? String,
+        let lastName = json["last_name"] as? String,
+        let partyRawValue = json["party"] as? String,
         let party = Party(rawValue: partyRawValue.lowercased()),
-        let photoURLString = jsonArray["photo_url"] as? String,
+        let photoURLString = json["photo_url"] as? String,
         let photoURL = URL(string: photoURLString),
-        let chamberRawValue = jsonArray["chamber"] as? String,
+        let chamberRawValue = json["chamber"] as? String,
         let chamber = Chamber(rawValue: chamberRawValue),
-        let active = jsonArray["active"] as? Bool,
+        let active = json["active"] as? Bool,
         active == true else {
                 return nil
         }
@@ -80,7 +82,6 @@ class Legislator {
         self.ID = ID
         self.party = party
         self.chamber = chamber
-        title = chamber.description
         self.photoURL = photoURL
         if let photoData = try? Data.init(contentsOf: photoURL) {
         photo = UIImage(data: photoData)

@@ -45,7 +45,6 @@ class ActivityItem {
 
     init(legislator: Legislator, activityType: ActivityType) {
         self.legislator = legislator
-        //self.date = date
         self.activityType = activityType
     }
 

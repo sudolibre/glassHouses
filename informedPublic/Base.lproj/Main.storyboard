@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xA6-Ff-PcV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,9 +27,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-TV-zYb">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BFJ-ZW-502" userLabel="EffectView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -279,11 +279,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="102" id="at4-sf-nb2" customClass="ActivityCell" customModule="informedPublic" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="102" id="at4-sf-nb2" customClass="ActivityCell" customModule="informedPublic" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="at4-sf-nb2" id="9zs-Bz-Pc9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elena Parent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-A6-ulf">
@@ -307,7 +307,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8D-Ej-A10">
-                                            <rect key="frame" x="71" y="43" width="284" height="50.5"/>
+                                            <rect key="frame" x="71" y="43" width="251" height="50.5"/>
                                             <string key="text">Voted for SB69: Packaging, Labeling and Registration of Organic Products and Certifying Entities; registration requirement; eliminate
 
 </string>
@@ -316,7 +316,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-nM-5QP">
-                                            <rect key="frame" x="301.5" y="19.5" width="65.5" height="17"/>
+                                            <rect key="frame" x="268.5" y="19.5" width="65.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
