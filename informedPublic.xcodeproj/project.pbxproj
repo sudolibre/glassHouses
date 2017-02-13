@@ -10,6 +10,7 @@
 		E800AC521E51FA5700187854 /* articleJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC511E51FA5700187854 /* articleJSON */; };
 		E800AC541E52047F00187854 /* legislationJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC531E52047F00187854 /* legislationJSON */; };
 		E800AC561E5206AD00187854 /* legislatorJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC551E5206AD00187854 /* legislatorJSON */; };
+		E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */; };
 		E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */; };
 		E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */; };
 		E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE37E1E4A4BC6004359DE /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		E800AC511E51FA5700187854 /* articleJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = articleJSON; sourceTree = "<group>"; };
 		E800AC531E52047F00187854 /* legislationJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = legislationJSON; sourceTree = "<group>"; };
 		E800AC551E5206AD00187854 /* legislatorJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = legislatorJSON; sourceTree = "<group>"; };
+		E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E84BE3771E4A4BC6004359DE /* informedPublic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = informedPublic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */,
+				E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */,
 				E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */,
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
@@ -303,6 +306,7 @@
 			files = (
 				E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */,
 				E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */,
+				E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */,
 				E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */,
 				E84BE3AF1E4BCF67004359DE /* ImageStore.swift in Sources */,
 				E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */,

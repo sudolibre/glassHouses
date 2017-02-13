@@ -38,6 +38,7 @@ class OpenStatesAPI {
         case findDistrict(lat: Double, long: Double)
         case fetchVotesForLegislators
         case fetchBillDetail(ID: String)
+        case fetchLegislator(ID: String)
         
         var urlComponent: String {
             switch self {
@@ -47,12 +48,14 @@ class OpenStatesAPI {
                 return "bills/?state=ga&search_window=term&updated_since=2017-02-02&fields=votes"
             case .fetchBillDetail(ID: let id):
                 return "bills/\(id)"
+            case .fetchLegislator(ID: let id):
+                return "openstates.org/api/v1/legislators/\(id)"
             }
         }
         
         var httpMethod: String {
             switch self {
-            case .findDistrict, .fetchVotesForLegislators, .fetchBillDetail:
+            case .findDistrict, .fetchVotesForLegislators, .fetchBillDetail, .fetchLegislator:
                 return "GET"
             }
         }
