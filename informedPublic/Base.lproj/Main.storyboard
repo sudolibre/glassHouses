@@ -154,7 +154,7 @@
                                         <rect key="frame" x="151" y="283" width="37" height="30"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <segue destination="xA6-Ff-PcV" kind="show" id="aq5-vR-JOm"/>
+                                            <segue destination="xA6-Ff-PcV" kind="show" identifier="showActivity" id="aq5-vR-JOm"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elena Parent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-Dc-4My">
@@ -377,9 +377,9 @@
         <!--Navigation Controller-->
         <scene sceneID="qMU-pY-UOg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xA6-Ff-PcV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="xA6-Ff-PcV" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FF4-w4-Yjt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF4-w4-Yjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.80380241594310209" blue="0.54570073884333481" alpha="0.74781921012269936" colorSpace="custom" customColorSpace="displayP3"/>

@@ -13,8 +13,25 @@ import QuickLook
 
 class ActivityFeedController: UITableViewController {
     var lastUpdate: Date?
-    var legislators: [Legislator]!
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    var legislators: [Legislator]! {
+        didSet {
+            generateFeed()
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+            }
+        }
+    }
     var dataSource: ActivityFeedDataSource!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        if dataSource.activityItems.isEmpty {
+            spinner.startAnimating()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,51 +41,56 @@ class ActivityFeedController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
 
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+        let centerXConstraint = view.centerXAnchor.constraint(equalTo: spinner.centerXAnchor)
+        let centerYConstraint = view.centerYAnchor.constraint(equalTo: spinner.centerYAnchor)
+        
+        view.addConstraints([centerXConstraint, centerYConstraint])
+        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        spinner.color = UIColor.gray
+
         
         
         
         //TOTO: DELETE MEEEEEEE
-        legislators = [
-        Legislator(json: [
-            "full_name": "Pat Gardner",
-            "district": "57",
-            "leg_id": "GAL000113",
-            "last_name": "Gardner",
-            "party": "democratic",
-            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
-            "chamber": "lower",
-            "active": true
-            ])!,
-            Legislator(json: [
-                "full_name": "Nan Orrock",
-                "district": "36",
-                "leg_id": "GAL000038",
-                "last_name": "Orrock",
-                "party": "democratic",
-                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
-                "chamber": "upper",
-                "active": true
-                ])!
-        ]
+//        legislators = [
+//        Legislator(json: [
+//            "full_name": "Pat Gardner",
+//            "district": "57",
+//            "leg_id": "GAL000113",
+//            "last_name": "Gardner",
+//            "party": "democratic",
+//            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
+//            "chamber": "lower",
+//            "active": true
+//            ])!,
+//            Legislator(json: [
+//                "full_name": "Nan Orrock",
+//                "district": "36",
+//                "leg_id": "GAL000038",
+//                "last_name": "Orrock",
+//                "party": "democratic",
+//                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
+//                "chamber": "upper",
+//                "active": true
+//                ])!
+//        ]
         //DELELTELLETLELTELETLELTL
         
-        generateFeed()
         
         
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
     
     func generateFeed() {
-        OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
-            DispatchQueue.main.async {
-                self.dataSource.addItem(activityItem)
-                self.tableView.reloadData()
-            }
-        }
+//        OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
+//            DispatchQueue.main.async {
+//                self.dataSource.addItem(activityItem)
+//                self.tableView.reloadData()
+//            }
+//        }
 //        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
 //            for activityItem in activityItems{
 //                DispatchQueue.main.async {
@@ -98,6 +120,7 @@ class ActivityFeedController: UITableViewController {
         let request = URLRequest(url: url)
         let webView = segue.destination.view as? UIWebView
         webView?.loadRequest(request)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

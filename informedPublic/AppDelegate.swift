@@ -15,15 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
-//            let legislators  = legislatorIDs.map({ (id) -> Legislator in
-//                OpenStatesAPI.request(.fetchLegislator(ID: id), completion: { (response) in
-//                    switch response {
-//                    case .succ
-//                    }
-//        }
-
+        //Override point for customization after application launch.
+        if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let navController = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
+            window!.rootViewController = navController
+            let activityFeedVC = navController.topViewController as! ActivityFeedController
+            OpenStatesAPI.fetchLegislatorsByID(ids: legislatorIDs, completion: { (legislators) in
+                activityFeedVC.legislators = legislators
+            })
+        }
+        
         return true
     }
 

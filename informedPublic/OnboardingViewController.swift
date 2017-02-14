@@ -177,7 +177,9 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         OpenStatesAPI.request(.findDistrict(lat: coordinates.latitude, long: coordinates.longitude)) { (response) in
             switch response {
             case .success(let data):
-                self.legislators = OpenStatesAPI.parseDistrictResults(data)
+                let legislators = OpenStatesAPI.parseDistrictResults(data)
+                self.legislators = legislators
+                UserDefaultsManager.setLegislatorIDs(legislators.map({$0.ID}))
             case .networkError(let response):
                 let ac = UIAlertController(title: "Search Failed", message: "There seems to have been an error contacting the server. Code: \(response.statusCode)", preferredStyle: .alert)
                 let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel)

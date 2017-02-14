@@ -49,7 +49,7 @@ class OpenStatesAPI {
             case .fetchBillDetail(ID: let id):
                 return "bills/\(id)"
             case .fetchLegislator(ID: let id):
-                return "openstates.org/api/v1/legislators/\(id)"
+                return "legislators/\(id)"
             }
         }
         
@@ -61,10 +61,35 @@ class OpenStatesAPI {
         }
     }
     
+    static internal func fetchLegislatorsByID(ids: [String], completion: @escaping ([Legislator]) -> ()) {
+        
+        var legislators: [Legislator] = []
+                
+        for id in ids {
+            request(.fetchLegislator(ID: id), completion: { (response) in
+                switch response {
+                case .success(let data):
+                    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    if let legislator = Legislator(json: json) {
+                        legislators.append(legislator)
+                        if legislators.count ==  ids.count {
+                            completion(legislators)
+                        }
+                    }
+                case .networkError(let response):
+                    print(response.description)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
+            })
+        }
+    }
+    
     static internal func parseDistrictResults(_ data: Data) -> [Legislator] {
         guard let foundationObject = try? JSONSerialization.jsonObject(with: data, options: []),
-        let topLevelArray = foundationObject as? [[String: Any]] else {
-            fatalError("Unexpected top level item in district search JSON. Expecting Array")
+            let topLevelArray = foundationObject as? [[String: Any]] else {
+                fatalError("Unexpected top level item in district search JSON. Expecting Array")
         }
         
         let legislators = topLevelArray.flatMap(Legislator.init)

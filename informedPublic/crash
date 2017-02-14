@@ -1,0 +1,1268 @@
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: got kIOMessageDeviceWillPowerOff, arg 0x16f8d220c
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: event 2, error 0 (<private>)
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 3. got device event kSuspended
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 5. got device event kSuspended
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 7. got device event kSuspended
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 9. got device event kSuspended
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x80 0x04 0x7f 0x80 0x80 0x7f
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x80, 0x4, 0x7f, 0x80, 0x80, 0x7f}
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Info>: HW kbd: currently (null) ((null) < com.apple.springboard)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Info>: HW kbd: Keyboard set successfully: com.apple.springboard
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Set device motion sensor status <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Info>: [BKEventFocusManager] Setting foreground application to: (none) (-1)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Sent kCLConnectionMessageWatchdog message
+Feb 13 17:45:44 Jonathon-Days-iPhone useractivityd[163] <Info>: IdleTracker: AdvertiserCurrent: mostSignificantLevel=PresentActive  weakSelf=0x100528550
+Feb 13 17:45:44 Jonathon-Days-iPhone useractivityd[163] <Info>: IdleTracker: SuspendAdvertisingIdleTracker: mostSignificantLevel=PresentActive  weakSelf=0x100517750
+Feb 13 17:45:44 Jonathon-Days-iPhone useractivityd[163] <Info>: IdleTracker: SuspendAdvertisingIdleTracker, callingBlock, Active, interval= 0.0 seconds
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard connected
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /System/Library/CoreServices/SpringBoard.app/SpringBoard, com.apple.springboard, , CLClientRegistrationResult, kCLClientRegistrationResultFailedUnavailable, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageGyroBiasEstimation' received from client 'com.apple.springboard'
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLDaemonClient received GyroBiasEstimation request,client,<private>,subscribe,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard (0x1280d5c00) is subscribing to notification kCLConnectionMessageGyroBiasEstimation
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLDaemonClient got gyro bias estimation subscription request,isBuildingGYTT,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator unknown client instance <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator adding client <private>, sending out cached gyro bias,bias.x,<private>,bias.y,<private>,bias.z,<private>,var.x,<private>,var.y,<private>,var.z,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator,SPUEnabled,<private>,BuildingGYTT,<private>,NumClients,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Registering for gyro notifications
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Registering for gyro temperature notifications
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Registering for magnetometer notifications
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client 'com.apple.springboard'
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(CoreUtils)[61] <Notice>: Activity level changed 7 (Screen) -> 11 (User)
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(CoreUtils)[61] <Notice>: BLE NearbyInfo advertiser created
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(CoreUtils)[61] <Notice>: BLE NearbyInfo advertiser start
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(CoreUtils)[61] <Info>: Advertise update: data '0b00', rate 270.00 ms
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(WirelessProximity)[61] <Notice>: NearBy stop advertising of type: 16
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(WirelessProximity)[61] <Notice>: NearBy start advertising with data: Advertising request of type 16, priority 1, UseFG 432 (270.00 ms), data <0b00>, connectable 1 with priority 0 and mode 432
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Stop advertising for process sharingd (61) of type 16
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Nothing left to advertise, stopping
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Error>: CoreBluetooth isn't advertising for this client type
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Start advertising for process sharingd (61) of type 16 with advertising interval 432 (270.00 ms)
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Adding data of type: 16, advData: <0b00> advInterval: 432
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Info>: Setting advertising interval to 432
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Current advertisement packet: <10020b00>
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: AdvertisingRulesiOS: current advertisers: <NSMutableIndexSet: 0x100308cf0>[number of indexes: 1 (in 1 ranges), indexes: (16)]
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: advertisingRulesiOS - advertising packets: (
+        {
+        kCBAdvDataAppleMfgData = <07ff4c00 10020b00>;
+        kCBAdvDataIsConnectable = 1;
+        kCBAdvOptionAdvertisingInterval = 432;
+        kCBMsgArgIsPrivilegedDaemon = 1;
+    }
+)
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Requesting to start advertising for clients 16  with (
+        {
+        kCBAdvDataAppleMfgData = <07ff4c00 10020b00>;
+        kCBAdvDataIsConnectable = 1;
+        kCBAdvOptionAdvertisingInterval = 432;
+        kCBMsgArgIsPrivilegedDaemon = 1;
+    }
+)
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Received XPC message "CBMsgIdStopAdvertising" from session "com.apple.wirelessproxd-peripheral-59-1"
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Sending XPC message "CBMsgIdAdvertisingStopped" to session "com.apple.wirelessproxd-peripheral-59-1"
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Received XPC message "CBMsgIdStartAdvertising" from session "com.apple.wirelessproxd-peripheral-59-1"
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Received 'start advertising' request from session "com.apple.wirelessproxd-peripheral-59-1", with manufacturer data [ 07 FF 4C 00 10 02 0B 00 ], interval 1B0, no name
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Sending XPC message "CBMsgIdAdvertisingStarted" to session "com.apple.wirelessproxd-peripheral-59-1"
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Received XPC message "CBMsgIdStopAdvertising" from session "com.apple.wirelessproxd-peripheral-59-2"
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Sending XPC message "CBMsgIdAdvertisingStopped" to session "com.apple.wirelessproxd-peripheral-59-2"
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Info>: Current advertisers 16
+Feb 13 17:45:44 Jonathon-Days-iPhone wirelessproxd[59] <Notice>: Started to advertise for type 16 with error (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd(CoreUtils)[61] <Info>: Bluetooth advertising started
+Feb 13 17:45:44 Jonathon-Days-iPhone BTServer[64] <Notice>: Sending 'advertising status changed' event to local device listeners
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(Security)[57] <Notice>: could not enable test hierarchy: ApplePinningAllowTestCertsiPhoneApplicationSigning not true
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: SubjectCommonName =(leaf)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: CheckLeafMarkerOid =(leaf)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: IssuerCommonName =(path)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(Security)[57] <Notice>:  [leaf CheckLeafMarkerOid IssuerCommonName SubjectCommonName]
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: open stream failed (may be non-existing)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: creating empty auth list
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: open stream failed (may be non-existing)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: creating empty auth list
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: Blacklist does not exist.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: Using empty blacklist.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(Security)[57] <Notice>: could not enable test hierarchy: ApplePinningAllowTestCertsiPhoneApplicationSigning not true
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: SubjectCommonName =(leaf)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: CheckLeafMarkerOid =(leaf)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone securityd[105] <Notice>: cert[0]: IssuerCommonName =(path)[]> 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(Security)[57] <Notice>:  [leaf CheckLeafMarkerOid IssuerCommonName SubjectCommonName]
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: open stream failed (may be non-existing)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: creating empty auth list
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: open stream failed (may be non-existing)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: CreateMISAuthListWithStream: creating empty auth list
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: Blacklist does not exist.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(libmis.dylib)[57] <Info>: Using empty blacklist.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Running <SBAppToAppWorkspaceTransaction: 0x107c91da0> for transition request:
+<SBMainWorkspaceTransitionRequest: 0x1742e7c00; eventLabel: ActivateApplication = dayj.informedPublic; display: Main; source: HomeScreen> {
+    applicationContext = <SBWorkspaceApplicationTransitionContext: 0x1746de7d0; background: NO> entities = {
+        SBLayoutPrimaryRole = <SBWorkspaceApplication: 0x17468f690; ID: dayj.informedPublic; layoutRole: primary>;
+    };
+}
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Adding child transaction: <SBSceneLayoutWorkspaceTransaction: 0x10b19c410>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: transitioning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Adding child transaction: <FBApplicationProcessLaunchTransaction: 0x1705900c0>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=kSBDefaultPNGExpirationAbsoluteTimeKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultPNGNameKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=kSBDefaultPNGExpirationAbsoluteTimeKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultPNGNameKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found invalidation sentinel for key=SBDefaultStatusBarStyleKey bundleID=<private>, refreshing cache
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found invalidation sentinel for key=SBDefaultStatusBarHiddenKey bundleID=<private>, refreshing cache
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Adding child transaction: <SBApplicationSceneUpdateTransaction: 0x10567b6c0>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Adding child transaction: <FBSynchronizedTransactionGroup: 0x170360d80>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Milestones added: processWillBeginLaunching
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Activating <FBProcessWatchdog: 0x175271e40; name: process-launch>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Now monitoring resource allowance of 20.00s (at refreshInterval -1.00s)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Milestones added: processDidFinishLaunching
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Adding child transaction: <FBUpdateSceneTransaction: 0x1741b3080>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestones added: sceneUpdateWillCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestones added: sceneUpdateDidCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestones added: sceneWasCreated
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestone satisfied: sceneWasCreated
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestone satisfied: sceneUpdateWillCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestone satisfied: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Milestone satisfied: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: waitingForDelegate
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Disabling home screen icon rotation for reason: SBAppToAppWorkspaceTransaction
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Adding child transaction: <BSBlockTransaction: 0x17415a570>: animation
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Adding child transaction: <BSBlockTransaction: 0x17414a030>: notify observers
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Adding child transaction: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Adding child transaction: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Adding child transaction: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPreAnimationTasksMilestone
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Adding child transaction: <SBUIAnimationHomeScreenZoomApp: 0x100df7b80>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Milestones added: awaitingCompletion
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Info>: Setting minimum brightness level: 0.000000 with fade duration 0.400000
+Feb 13 17:45:44 Jonathon-Days-iPhone sharingd[61] <Notice>: SystemUI unknown identifier: 'dayj.informedPublic'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=kSBDefaultPNGExpirationAbsoluteTimeKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultPNGNameKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=kSBDefaultPNGExpirationAbsoluteTimeKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultPNGNameKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=compatibilityInfo bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: bundleid: dayj.informedPublic, enable_level: 0, persist_level: 0, propagate_with_activity: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.siri, category: Intents, enable_level: 1, persist_level: 1, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 0, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard disconnected
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator removing client <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator,SPUEnabled,<private>,BuildingGYTT,<private>,NumClients,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultPNGPreventSplitKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.UIKit, category: HIDEventFiltered, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 1, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.UIKit, category: HIDEventIncoming, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 1, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarStyleKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: checking for prefetched object for key=SBDefaultStatusBarHiddenKey bundleID=<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: found object (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Disabling home screen icon rotation for reason: <SBCrossfadeIconZoomAnimator:0x107c56f30>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Dismissing banner for notification (null)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::removeDeviceMotionDispatcher removing dispatcher with property: <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::minimumUpdateIntervalChanged,notification,<private>,minimumUpdateInterval,<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::numberOfClientsChanged notification:<private>, from:<private>, to:<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: numberOfClients GyroOnly:<private>, 3AxisDynamicGyro:<private>, 6Axis:<private>, 6AxisThrottledGyro:<private>, 9Axis:<private>, 9AxisWithNorthReference:<private>, BuildGYTT:<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Stopping device motion, mode=0x<private>
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.BaseBoard, category: MachPort, enable_level: 1, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 0, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(FrontBoardServices)[575] <Info>: [FBSScene] [dayj.informedPublic] Created client agent: <UIApplicationSceneClientAgent: 0x17401b6c0>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Info>: [BKEventFocusManager] Setting foreground application to: dayj.informedPublic (575)
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: observe: 1. app got notification state: 8 for app: <private>; front app = <private>; calls = 0; inc = 0; active=true
+Feb 13 17:45:44 Jonathon-Days-iPhone mediaserverd(CoreMedia)[30] <Notice>: -CMSessionMgr- cmsmHandleApplicationStateChange: CMSession: Client dayj.informedPublic with pid '575' is now Foreground Running. Background entitlement: NO
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: observe: 2. app got notification state: new counter=35
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: <private> is disabling power conservation for parallax.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.UIKit, category: StatusBar, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 1, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Milestone satisfied: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestone satisfied: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: observe: 4. app got notification state: pid=575 for <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: notifyAboutFrontAppChange: notifyAboutFrontAppChange : app: <private>; pid: 575; net: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Milestone satisfied: processWillBeginLaunching
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> Adding child transaction: <FBUpdateSceneTransaction: 0x1701b7ae0>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Info>: [BKEventFocusManager] Setting foreground application to: dayj.informedPublic (575)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Life assertion taken for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestones added: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestones added: sceneUpdateWillCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestones added: sceneUpdateDidCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestones added: sceneWillUpdate
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestone satisfied: sceneWillUpdate
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestone satisfied: sceneUpdateWillCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestone satisfied: synchronizedCommit
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> Life assertion removed for reason: beginning
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Deactivating <FBProcessWatchdog: 0x175271e40; name: process-launch>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Stopped monitoring.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [<decode failure invalid type 0 for %@>] [realTime] Updated resource consumption: 0.077s (0.39%)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: [dayj.informedPublic] Provision <FBSProcessResourceProvision: 0x174ce4f00; allowance: <FBSProcessResourceAllowance; type: realTime; timeValue: 20.0s>> has remainder <FBSProcessResourceProvision: 0x170afc200; allowance: <FBSProcessResourceAllowance; type: realTime; timeValue: 19.92s>>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: [dayj.informedPublic] Made scene-create policy: <FBSProcessWatchdogPolicy: 0x17082a100; name: "scene create after launch"> {
+    provisions = {
+        <FBSProcessResourceProvision: 0x170af7100; allowance: <FBSProcessResourceAllowance; type: realTime; timeValue: 19.92s>>;
+    }
+}
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Invalidating <FBProcessWatchdog: 0x175271e40; name: process-launch>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Invalidated
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Activating <FBProcessWatchdog: 0x171a7f540; name: scene-create>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Milestone satisfied: processDidFinishLaunching
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Now monitoring resource allowance of 19.92s (at refreshInterval -1.00s)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Child transaction finished work: <FBApplicationProcessLaunchTransaction: 0x1705900c0>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBApplicationProcessLaunchTransaction:0x1705900c0> Completed after 0.10s.
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Child transaction completed: <FBApplicationProcessLaunchTransaction: 0x1705900c0>
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Info>: HW kbd: currently com.apple.springboard ((null) < dayj.informedPublic)
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Info>: HW kbd: Keyboard set successfully: dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Calorimetry, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Swimming, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Activity, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Motion, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Pocket, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: Orientation, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: EarGesture, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: WakeGesture, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Motion, category: DeviceMotion, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: Position, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: Proximity, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: GeneralCLX, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: WifiPosition, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: GeoFencing, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Position, category: Gnss, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Core, category: Client, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Core, category: Core, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Core, category: Routine, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Core, category: Harvester, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Utility, category: Database, enable_level: 2, persist_level: 1, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Utility, category: Network, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Utility, category: Utility, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Legacy, category: Generic, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Legacy, category: Direct, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Legacy, category: Location, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Legacy, category: Sensor, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.locationd.Legacy, category: Fence, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 1, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone SpringBoard[57] <Info>: The top thing is dayj.informedPublic (app) and he wants orientation events: YES _wantsOrientationEvents: NO
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Info>: New client is dayj.informedPublic, events enabled? YES
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: Client dayj.informedPublic connected
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: already authorized WhenInUse executable dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /private/var/containers/Bundle/Application/CE5FFE52-984C-452D-A1DD-48546D977F24/informedPublic.app/informedPublic, dayj.informedPublic, , CLClientRegistrationResult, kCLClientRegistrationResultAllowedWhenInUse, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: already authorized WhenInUse executable dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /private/var/containers/Bundle/Application/CE5FFE52-984C-452D-A1DD-48546D977F24/informedPublic.app/informedPublic, dayj.informedPublic, , CLClientRegistrationResult, kCLClientRegistrationResultAllowedWhenInUse, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Notice>: Turning on orientation events.
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Starting orientation updates
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: fHasSeenACaseLatchCoverOnce, 0
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Starting orientation detection with accelFrequency 10.000000, isIpad, 0, decimationRate, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Received deviceOrientationBlocking
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Waiting for the first orientation to come in
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageRegistration' received from client 'dayj.informedPublic'
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Notify from, Unexpected -> FaceUp
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Sending orientation changed notification
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Received orientation. (Ambiguous to FaceUp) Timestamp 6889.610799
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Updating client handler: Orientation FaceUp, Callback mode: -1
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Got latest sample: 5 @ 6889.610799
+Feb 13 17:45:44 Jonathon-Days-iPhone backboardd[60] <Notice>: Effective device orientation changed to: faceUp
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.libsqlite3, category: logging, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 1, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: Faulting in NSHTTPCookieStorage singleton
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: Faulting in CFHTTPCookieStorage singleton
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: Creating default cookie storage with default identifier
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.network, category: , enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TCP Conn Start [1:0x174199090]
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: already authorized WhenInUse executable dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /private/var/containers/Bundle/Application/CE5FFE52-984C-452D-A1DD-48546D977F24/informedPublic.app/informedPublic, dayj.informedPublic, , CLClientRegistrationResult, kCLClientRegistrationResultAllowedWhenInUse, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: already authorized WhenInUse executable dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /private/var/containers/Bundle/Application/CE5FFE52-984C-452D-A1DD-48546D977F24/informedPublic.app/informedPublic, dayj.informedPublic, , CLClientRegistrationResult, kCLClientRegistrationResultAllowedWhenInUse, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: already authorized WhenInUse executable dayj.informedPublic
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /private/var/containers/Bundle/Application/CE5FFE52-984C-452D-A1DD-48546D977F24/informedPublic.app/informedPublic, dayj.informedPublic, , CLClientRegistrationResult, kCLClientRegistrationResultAllowedWhenInUse, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessagePausesLocationUpdatesAutomatically' received from client 'dayj.informedPublic'
+Feb 13 17:45:44 Jonathon-Days-iPhone locationd[63] <Info>: <private> Last attempted proactive harvesting <private>s ago - waiting until <private>s (<private>s away) before trying again
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_handler_start [1 openstates.org:443 initial path (null)]
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 initial path (null)] reported event path:start
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 waiting path (satisfied)] reported event path:satisfied
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 waiting path (satisfied)] skipping state update
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 in_progress resolver (satisfied)] reported event resolver:start_dns
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: connect_callback: Adding FD for uid 501
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceCreateConnection START PID[575](informedPublic)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Result code socket 16 created 00000000 00000001
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(4000D000, 0, 3, openstates.org.) START PID[575](informedPublic)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00F240 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name openstates.org. (AAAA)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00F240 openstates.org. (AAAA) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query suppressed for openstates.org., qtype AAAA, since DNS Configuration does not allow (req_A is true and req_AAAA is false)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00EEC8 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name openstates.org. (Addr)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00EEC8 openstates.org. (Addr) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query not suppressed for openstates.org., qtype Addr, DNSServer . 192.168.86.1:53 allows A queries
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(CoreUI)[575] <Info>: CoreUI(DEBUG): Current version = 428.6, Linked UIKit version = 3600, Compatibility mode = 9999
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Result code socket 16 closed  00000000 00000001 (0)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GenerateNegativeResponse: Generating negative response for question openstates.org. (AAAA)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>: queryrecord_result_callback: Suppressed question openstates.org. (AAAA)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(openstates.org., AAAA) ADD    0 openstates.org. AAAA
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(openstates.org., Addr) ADD    4 openstates.org. Addr 52.54.244.178
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_resolver_update [1 openstates.org:443 in_progress resolver (satisfied)] Adding endpoint handler for 52.54.244.178:443
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 in_progress resolver (satisfied)] reported event resolver:receive_dns
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_resolver_start_next_child [1 openstates.org:443 in_progress resolver (satisfied)] starting child endpoint 52.54.244.178:443
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceCreateConnection STOP PID[575](informedPublic)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(openstates.org.) STOP PID[575](informedPublic)
+Feb 13 17:45:44 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Removing FD
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_resolver_start_next_child [1 openstates.org:443 in_progress resolver (satisfied)] starting next child endpoint in 100ms
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_handler_start [1.1 52.54.244.178:443 initial path (null)]
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 initial path (null)] reported event path:start
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 waiting path (satisfied)] reported event path:satisfied
+Feb 13 17:45:44 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] reported event flow:start_connect
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:44 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_flow_protocol_connected [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] Output protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_flow_connected_path_change [1.1 52.54.244.178:443 ready socket-flow (satisfied)] Connected path is satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 ready socket-flow (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 ready resolver (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 ready socket-flow (satisfied)] reported event flow:changed_viability
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 ready resolver (satisfied)] reported event flow:changed_viability
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TCP Conn Event [1:0x174199090]: 1 Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TCP Conn Connected [1:0x174199090]: Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: 221.1 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC Enabling TLS [1:0x174199090]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TCP Conn Start [59:0x10073d990]
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_start_tls_while_connected [1.1 52.54.244.178:443 ready socket-flow (satisfied)]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_handler_start [59 configuration.apple.com:443 initial path (null)]
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: connect_callback: Adding FD for uid 501
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceCreateConnection START PID[120](geod)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] reported event flow:start_secondary_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 in_progress resolver (satisfied)] reported event flow:start_secondary_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] reported event flow:start_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 in_progress resolver (satisfied)] reported event flow:start_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_flow_protocol_connected [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] Transport protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] reported event flow:finish_transport
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 in_progress resolver (satisfied)] reported event flow:finish_transport
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 initial path (null)] reported event path:start
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 waiting path (satisfied)] reported event path:satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 waiting path (satisfied)] skipping state update
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 in_progress resolver (satisfied)] reported event resolver:start_dns
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Result code socket 16 created 00000000 00000001
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(4000D000, 0, 3, configuration.apple.com.) START PID[120](geod)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00F240 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name configuration.apple.com. (AAAA)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00F240 configuration.apple.com. (AAAA) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query suppressed for configuration.apple.com., qtype AAAA, since DNS Configuration does not allow (req_A is true and req_AAAA is false)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00EEC8 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name configuration.apple.com. (Addr)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00EEC8 configuration.apple.com. (Addr) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query not suppressed for configuration.apple.com., qtype Addr, DNSServer . 192.168.86.1:53 allows A queries
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Result code socket 16 closed  00000000 00000001 (0)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GenerateNegativeResponse: Generating negative response for question configuration.apple.com. (AAAA)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: queryrecord_result_callback: Suppressed question configuration.apple.com. (AAAA)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(configuration.apple.com., AAAA) ADD    0 configuration.apple.com. AAAA
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(configuration.apple.com., Addr) ADD   37 configuration.apple.com. CNAME configuration.apple.com.edgekey.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: AnswerQuestionByFollowingCNAME: 000000014C00EEC8 configuration.apple.com. (Addr) following CNAME referral 0 for   37 configuration.apple.com. CNAME configuration.apple.com.edgekey.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00EEC8 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name configuration.apple.com.edgekey.net. (Addr)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00EEC8 configuration.apple.com.edgekey.net. (Addr) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query not suppressed for configuration.apple.com.edgekey.net., qtype Addr, DNSServer . 192.168.86.1:53 allows A queries
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: -- Sent UDP DNS Query (flags 0100) RCODE: NoErr (0) RD ID: 50206 41 bytes from port 50569 to 192.168.86.1:53 --
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  1 Questions
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 configuration.apple.com.edgekey.net. Addr
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 Answers
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 Authorities
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 Additionals
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: --------------
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 2, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 11, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 22, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 12, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 14, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I New CTServerConnection from pid 575 (conn=0x153150aa0)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I  -- connection has entitlements: <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CTServerConnection from pid 575[<private>] is named '<private>'.
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventRestrictedForegroundResume(171) (now total 1)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicCallStatus(174) as alternate to kCTEventCallStatus(1) (now total 2)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicCallSubType(175) as alternate to kCTEventCallSubType(3) (now total 3)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicAlternateCallStatus(179) as alternate to kCTEventAlternateCallStatus(116) (now total 4)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicCallIdentification(176) as alternate to kCTEventCallIdentification(4) (now total 5)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #E Client 575 (<private>) not permitted to register for event kCTEventCallForwarded(5); ignored registration
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicCallCauseCode(178) as alternate to kCTEventCallCauseCode(7) (now total 6)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I   ==== client 575 (<private>) registered for event kCTEventPublicCallControlError(177) as alternate to kCTEventCallControlError(6) (now total 7)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #E Client 575 (<private>) not permitted to register for event kCTEventCallInputFrequencyLevel(163); ignored registration
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #E Client 575 (<private>) not permitted to register for event kCTEventCallOutputFrequencyLevel(164); ignored registration
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #E Client 575 (<private>) not permitted to register for event kCTEventPullCallIsPossible(165); ignored registration
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I New CTServerConnection from pid 575 (conn=0x153051f10)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CTServerConnection from pid 575[<private>] is named '<private>'.
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #E Client 575 (<private>) not permitted to register for event kCTEventRegistrationOperatorName(45); ignored registration
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(GeoServices)[575] <Error>: 1.1 Unable to retrieve CarrierName. CTError: domain-2, code-5, errStr:((os/kern) failure)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.SystemConfiguration, category: SCNetworkReachability, enable_level: 0, persist_level: 0, default_ttl: 0, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 0, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(GeoServices)[575] <Info>: 2.1 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(GeoServices)[575] <Info>: 3.1 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_trace.dylib)[575] <Notice>: subsystem: com.apple.UIKit, category: GestureEnvironment, enable_level: 0, persist_level: 0, default_ttl: 1, info_ttl: 0, debug_ttl: 0, generate_symptoms: 0, enable_oversize: 1, privacy_setting: 2, enable_private_data: 0
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I App state[<private>(575)] is moving from kUnknown to kInForegroundUnknownRestriction
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: -- Received UDP DNS Response (flags 8180) RCODE: NoErr (0) RD RA ID: 50206 91 bytes from 192.168.86.1:53 to 192.168.86.114:50569 --
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  1 Questions
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 configuration.apple.com.edgekey.net. Addr
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  2 Answers
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 TTL      37   25 configuration.apple.com.edgekey.net. CNAME e5153.e9.akamaiedge.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  1 TTL      19    4 e5153.e9.akamaiedge.net. Addr 104.113.5.216
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 Authorities
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  0 Additionals
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: --------------
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: IsResponseAcceptable: Found a matching entry for e5153.e9.akamaiedge.net. in the CacheFlushRecords   25 configuration.apple.com.edgekey.net. CNAME e5153.e9.akamaiedge.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(configuration.apple.com.edgekey.net., Addr) ADD   25 configuration.apple.com.edgekey.net. CNAME e5153.e9.akamaiedge.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone securityd[105] <Notice>: ocsp responder: (null) did not include status of requested cert
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: AnswerQuestionByFollowingCNAME: 000000014C00EEC8 configuration.apple.com.edgekey.net. (Addr) following CNAME referral 1 for   25 configuration.apple.com.edgekey.net. CNAME e5153.e9.akamaiedge.net.
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: GetServerForQuestion: 000000014C00EEC8 DNS server (000000014BE13090) 192.168.86.1:53 (Penalty Time Left 0) (Scope None:0000000000000000:-1) found for name e5153.e9.akamaiedge.net. (Addr)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: InitDNSConfig: question 000000014C00EEC8 e5153.e9.akamaiedge.net. (Addr) Timeout 30, DNS Server 192.168.86.1:53
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>: ShouldSuppressUnicastQuery: Query not suppressed for e5153.e9.akamaiedge.net., qtype Addr, DNSServer . 192.168.86.1:53 allows A queries
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(e5153.e9.akamaiedge.net., Addr) ADD    4 e5153.e9.akamaiedge.net. Addr 104.113.5.216
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Trust Result [1:0x174199090]: 0
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I App state[<private>(575)] is moving from kInForegroundUnknownRestriction to kInForegroundRestricted
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_resolver_update [59 configuration.apple.com:443 in_progress resolver (satisfied)] Adding endpoint handler for 104.113.5.216:443
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 in_progress resolver (satisfied)] reported event resolver:receive_dns
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_resolver_start_next_child [59 configuration.apple.com:443 in_progress resolver (satisfied)] starting child endpoint 104.113.5.216:443
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_resolver_start_next_child [59 configuration.apple.com:443 in_progress resolver (satisfied)] starting next child endpoint in 100ms
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_handler_start [59.1 104.113.5.216:443 initial path (null)]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 initial path (null)] reported event path:start
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 waiting path (satisfied)] reported event path:satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] reported event flow:start_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceCreateConnection STOP PID[120](geod)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: DNSServiceGetAddrInfo(e5153.e9.akamaiedge.net.) STOP PID[120](geod)
+Feb 13 17:45:45 Jonathon-Days-iPhone mDNSResponder[97] <Info>:  15: Removing FD
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(UIKit)[575] <Notice>: Warning: Attempt to present <UINavigationController: 0x101816200> on <informedPublic.OnboardingViewController: 0x100b065a0> whose view is not in the window hierarchy!
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_protocol_connected [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] Output protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_connected_path_change [59.1 104.113.5.216:443 ready socket-flow (satisfied)] Connected path is satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 ready socket-flow (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 ready resolver (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 ready socket-flow (satisfied)] reported event flow:changed_viability
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 ready resolver (satisfied)] reported event flow:changed_viability
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TCP Conn Event [59:0x10073d990]: 1 Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TCP Conn Connected [59:0x10073d990]: Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC Enabling TLS [59:0x10073d990]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_start_tls_while_connected [59.1 104.113.5.216:443 ready socket-flow (satisfied)]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] reported event flow:start_secondary_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 in_progress resolver (satisfied)] reported event flow:start_secondary_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] reported event flow:start_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 in_progress resolver (satisfied)] reported event flow:start_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_protocol_connected [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] Transport protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] reported event flow:finish_transport
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 in_progress resolver (satisfied)] reported event flow:finish_transport
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Event [1:0x174199090]: 20, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_flow_protocol_connected [1.1 52.54.244.178:443 in_progress socket-flow (satisfied)] Output protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_endpoint_flow_connected_path_change [1.1 52.54.244.178:443 ready socket-flow (satisfied)] Connected path is satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1.1 52.54.244.178:443 ready socket-flow (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libsystem_network.dylib)[575] <Info>: nw_connection_endpoint_report [1 openstates.org:443 ready resolver (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TCP Conn Event [1:0x174199090]: 8 Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(CFNetwork)[575] <Notice>: TIC TLS Handshake Complete [1:0x174199090]
+Feb 13 17:45:45 Jonathon-Days-iPhone sharingd[61] <Notice>: SystemUI changed: 0x10 -> 0x0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: 575 dayj.informedPublic: ForegroundRunning (most elevated: ForegroundRunning)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Entry, display name dayj.informedPublic uuid 0C46FD63-6045-349B-8C35-B7EC7959DA1D pid 575 isFront 1
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Event [59:0x10073d990]: 2, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Event [59:0x10073d990]: 11, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Event [59:0x10073d990]: 12, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Event [59:0x10073d990]: 14, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Check for bundle name dayj.informedPublic returns 0
+Feb 13 17:45:45 Jonathon-Days-iPhone informedPublic(libswiftCore.dylib)[575] <Notice>: fatal error: 'try!' expression unexpectedly raised an error: Error Domain=NSCocoaErrorDomain Code=3840 "JSON text did not start with array or object and option to allow fragments not set." UserInfo={NSDebugDescription=JSON text did not start with array or object and option to allow fragments not set.}: file /Library/Caches/com.apple.xbs/Sources/swiftlang/swiftlang-800.0.63/src/swift/stdlib/public/core/ErrorType.swift, line 178
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Failing for reason: scene update failed
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> State changed from 'Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Completed after 0.40s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> Child transaction completed: <FBUpdateSceneTransaction: 0x1701b7ae0>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432b2c0> Completed after 0.41s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1701b7ae0> Milestone satisfied: sceneUpdateDidCommit
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Deactivating <FBProcessWatchdog: 0x171a7f540; name: scene-create>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Stopped monitoring.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [<decode failure invalid type 0 for %@>] [realTime] Updated resource consumption: 0.375s (1.88%)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] Invalidating <FBProcessWatchdog: 0x171a7f540; name: scene-create>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoardServices)[57] <Info>: [dayj.informedPublic] [realTime] Invalidated
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Failing for reason: scene update failed
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> State changed from 'Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Completed after 0.45s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Child transaction completed: <FBUpdateSceneTransaction: 0x1741b3080>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Failing for reason: child transaction
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> State changed from 'Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: Client dayj.informedPublic disconnected
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBApplicationSceneUpdateTransaction:0x10567b6c0> Completed after 0.48s.
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CTServerConnection from pid 575 has closed (conn=0x153150aa0)
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator unknown client instance <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CTServerConnection from pid 575 has closed (conn=0x153051f10)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Child transaction completed: <SBApplicationSceneUpdateTransaction: 0x10567b6c0>
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator,SPUEnabled,<private>,BuildingGYTT,<private>,NumClients,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Child transaction finished work: <FBSynchronizedTransactionGroup: 0x170360d80>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBSynchronizedTransactionGroup:0x170360d80> Completed after 0.48s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Child transaction completed: <FBSynchronizedTransactionGroup: 0x170360d80>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <FBUpdateSceneTransaction:0x1741b3080> Milestone satisfied: sceneUpdateDidCommit
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Info>: HW kbd: currently dayj.informedPublic ((null) < (null))
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(KeyboardArbiter)[57] <Error>: HW kbd: Failed to set (null) as keyboard focus
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Trust Result [59:0x10073d990]: 0
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Notice>: Turning off orientation events.
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Stopping orientation updates
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(CoreMotion)[60] <Notice>: Stopping orientation detection.
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Notice>: Effective device orientation changed to: unknown
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: app name dayj.informedPublic isForeground 1  hasForegroundApps 1, current idea of foreground 0 disp (null)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Going to Foreground, new flags 0x18000, initial value 0x18000, enabled 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Continue with bundle name dayj.informedPublic, is front 1
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: dayj.informedPublic: Foreground: true
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I BundleID: <private> is a foreground app
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash(CrashReporterSupport)[576] <Notice>: cr_update: <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash(CrashReporterSupport)[576] <Notice>: cr_update: <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone useractivityd[163] <Info>: IDLE: UserIdleTracker says the user is ACTIVE; shouldSuspendAdvertising=NO.
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash[576] <Notice>: __crash_info: '(null)'
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM2 foreground (current/proposed/state) in = (0/1/2)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM2 foreground (current/state) out = (1/1)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Event [59:0x10073d990]: 20, Pending(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_protocol_connected [59.1 104.113.5.216:443 in_progress socket-flow (satisfied)] Output protocol connected
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_connected_path_change [59.1 104.113.5.216:443 ready socket-flow (satisfied)] Connected path is satisfied
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59.1 104.113.5.216:443 ready socket-flow (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_connection_endpoint_report [59 configuration.apple.com:443 ready resolver (satisfied)] reported event flow:finish_connect
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TCP Conn Event [59:0x10073d990]: 8 Err(0)
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TLS Handshake Complete [59:0x10073d990]
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM Current state: idle, changed: systemForeground to 1 for net type 0, eligible for alerted but constraints unsatisified (1,0,1,0)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM Current state: idle, changed: systemForeground to 1 for net type 0, ineligible for committed as nil pred, wifi (0x0) cell (0x0)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM Relays: cell (active/primary-no/knowngood/rssithresh-ok/txthresh-ok/arp-ok/dns-ok/tcp-ok/lqm:100/advisory:7) wifi (active/primary/knowngood-no/rssithresh-ok/txthresh-ok/arp-ok/dns-ok/tcp-ok/lqm:100/advisory:5)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Set appCompactState object 3589849 for key dayj.informedPublic
+Feb 13 17:45:45 Jonathon-Days-iPhone useractivityd[163] <Info>: ADVERTISING: Changing advertisement to nil because it's been removed, FORCE
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client 'com.apple.HealthKit'
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client 'com.apple.HealthKit'
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client 'com.apple.HealthKit'
+Feb 13 17:45:45 Jonathon-Days-iPhone sharingd[61] <Notice>: Request to advertise GOODBYE with options (null)
+Feb 13 17:45:45 Jonathon-Days-iPhone sharingd[61] <Notice>: Advertisement contents does not differ from current, continuing previous advertising
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: 222.1 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.2 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.3 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.4 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.5 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.6 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.7 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.8 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.9 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.10 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.11 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.12 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.13 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.14 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.15 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.16 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.17 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.18 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.19 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.20 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.21 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.22 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.23 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.24 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.25 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.26 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.27 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.28 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.29 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.30 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.31 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.32 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.33 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.34 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.35 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.36 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.37 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.38 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.39 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.40 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.41 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.42 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.43 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.44 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.45 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.46 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.47 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.48 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.49 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: ^~222.50 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(GeoServices)[120] <Info>: 223.1 <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(CFNetwork)[120] <Notice>: TIC TCP Conn Cancel [59:0x10073d990]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_handler_cancel [59 configuration.apple.com:443 ready resolver (satisfied)]
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash[576] <Notice>: Formulating report for corpse[575] <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_handler_cancel [59.1 104.113.5.216:443 ready socket-flow (satisfied)]
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Notice>: __nw_socket_service_writes_block_invoke sendmsg(fd 16, 31 bytes): socket has been closed
+Feb 13 17:45:45 Jonathon-Days-iPhone geod(libsystem_network.dylib)[120] <Info>: nw_endpoint_flow_protocol_disconnected [59.1 104.113.5.216:443 cancelled socket-flow (null)] Output protocol disconnected
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash(MobileCoreServices)[576] <Notice>: notify_register_check() failed with error 1000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Process exited: <FBApplicationProcess: 0x105629a00; informedPublic; pid: -1> -> <FBApplicationProcessExitContext: 0x175649960; exitReason: crash; terminationReason: (none)>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: setting object for key=SBDefaultStatusBarStyleKey bundleID=<private> object=(null)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: updating cache key=SBDefaultStatusBarStyleKey bundleID=<private> object=(null)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: setting object for key=SBDefaultStatusBarHiddenKey bundleID=<private> object=(null)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: updating cache key=SBDefaultStatusBarHiddenKey bundleID=<private> object=(null)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Info>: The top thing is nil and he wants orientation events: NO _wantsOrientationEvents: NO
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Milestone satisfied: awaitingCompletion
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Child transaction finished work: <BSBlockTransaction: 0x17415a570>: animation
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Milestones added: awaitingCompletion
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPostAnimationTasksMilestone
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestone satisfied: waitingForDelegate
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Undimming for source: programmatic
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace lock time (180.000000) from _nextLockTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace dim time (160.000000) from _nextIdleTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting next idle duration (source:1) to: 160.000000 lockAfterDim: 20.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting _lastBKUserEventTimerMode=2 with duration=160.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BackBoardServices)[57] <Info>: Resetting user event timer to Idle duration 160
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: transitioning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: waitingForDelegate
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Removing child transaction: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPreAnimationTasksMilestone
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPostAnimationTasksMilestone
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestone satisfied: waitingForDelegate
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Undimming for source: programmatic
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace lock time (180.000000) from _nextLockTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace dim time (160.000000) from _nextIdleTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting next idle duration (source:1) to: 160.000000 lockAfterDim: 20.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting _lastBKUserEventTimerMode=2 with duration=160.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BackBoardServices)[57] <Info>: Resetting user event timer to Idle duration 160
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: transitioning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestones added: waitingForDelegate
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPreAnimationTasksMilestone
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: SBWaitingForPostAnimationTasksMilestone
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Info>: New client is (null), events enabled? NO
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Info>: [BKEventFocusManager] Setting foreground application to: (none) (-1)
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Info>: [BKEventFocusManager] Setting foreground application to: (none) (-1)
+Feb 13 17:45:45 Jonathon-Days-iPhone UserEventAgent(AppleAwatchd-plugin)[25] <Notice>: 165361265222: id=dayj.informedPublic pid=575, state=0
+Feb 13 17:45:45 Jonathon-Days-iPhone sharingd[61] <Notice>: SystemUI changed: 0x0 -> 0x10
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestone satisfied: waitingForDelegate
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Undimming for source: programmatic
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace lock time (180.000000) from _nextLockTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: returning the workspace dim time (160.000000) from _nextIdleTimeDuration
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting next idle duration (source:1) to: 160.000000 lockAfterDim: 20.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Setting _lastBKUserEventTimerMode=2 with duration=160.000000
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BackBoardServices)[57] <Info>: Resetting user event timer to Idle duration 160
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Milestone satisfied: transitioning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Child transaction finished work: <SBSceneLayoutWorkspaceTransaction: 0x10b19c410>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBSceneLayoutWorkspaceTransaction:0x10b19c410> Completed after 0.63s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: conditionally invalidating cache key=SBDefaultStatusBarStyleKey bundleID=<private> object=<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: objects don't match, invalidating
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: conditionally invalidating cache key=SBDefaultStatusBarHiddenKey bundleID=<private> object=<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: objects don't match, invalidating
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Child transaction completed: <SBSceneLayoutWorkspaceTransaction: 0x10b19c410>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Removed milestones: synchronizedCommit
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Milestone satisfied: awaitingCompletion
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> Milestones added: awaitingCompletion
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Enabling home screen icon rotation for reason: <SBCrossfadeIconZoomAnimator:0x107c56f30>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> Milestone satisfied: awaitingCompletion
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Child transaction finished work: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Child transaction finished work: <SBUIAnimationHomeScreenZoomApp: 0x100df7b80>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x174153820> Completed after 0.01s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Child transaction completed: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Child transaction completed: <BSBlockTransaction: 0x174153820>: clean up
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::addDeviceMotionDispatcher adding dispatcher with property: <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::minimumUpdateIntervalChanged,notification,<private>,minimumUpdateInterval,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::numberOfClientsChanged notification:<private>, from:<private>, to:<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: numberOfClients GyroOnly:<private>, 3AxisDynamicGyro:<private>, 6Axis:<private>, 6AxisThrottledGyro:<private>, 9Axis:<private>, 9AxisWithNorthReference:<private>, BuildGYTT:<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Notice>: Starting device motion, mode=0x22,useAccelerometer=0,useGyro=1,useCompass=0,fUseNorthRef=0,buildingGYTT=0
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I SIM has not requested to be notified on entering idle screen, not processing
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: <private> is enabling power conservative device motion for parallax.
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(BaseBoard)[60] <Error>: Unable to bootstrap_look_up port with name .gsEvents: unknown error code (1102)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: observe: 1. app got notification state: 0 for app: <private>; front app = <private>; calls = 0; inc = 0; active=true
+Feb 13 17:45:45 Jonathon-Days-iPhone mediaserverd(CoreMedia)[30] <Notice>: -CMSessionMgr- cmsmHandleApplicationStateChange: CMSession: Client dayj.informedPublic with pid '575' is now Terminated. Background entitlement: NO
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Info>: Setting minimum brightness level: 0.000000 with fade duration 0.400000
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: notifyAboutFrontAppChange: notifyAboutFrontAppChange : app: <private>; pid: 0; net: 0
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard connected
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: getClientEffectiveRegistrationResult, /System/Library/CoreServices/SpringBoard.app/SpringBoard, com.apple.springboard, , CLClientRegistrationResult, kCLClientRegistrationResultFailedUnavailable, CLCommonLocationServicesEnabled, 1
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageGyroBiasEstimation' received from client 'com.apple.springboard'
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I CSIAppInfo.AppObserver: observe: 1. app got notification state: 1 for app: <private>; front app = <private>; calls = 0; inc = 0; active=false
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLDaemonClient received GyroBiasEstimation request,client,<private>,subscribe,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(BaseBoard)[60] <Error>: Unable to bootstrap_look_up port with name .gsEvents: unknown error code (1102)
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard (0x1280d5c00) is subscribing to notification kCLConnectionMessageGyroBiasEstimation
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLDaemonClient got gyro bias estimation subscription request,isBuildingGYTT,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator unknown client instance <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator adding client <private>, sending out cached gyro bias,bias.x,<private>,bias.y,<private>,bias.z,<private>,var.x,<private>,var.y,<private>,var.z,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator,SPUEnabled,<private>,BuildingGYTT,<private>,NumClients,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client 'com.apple.springboard'
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd[60] <Info>: Setting minimum brightness level: 0.000000 with fade duration 0.400000
+Feb 13 17:45:45 Jonathon-Days-iPhone backboardd(BaseBoard)[60] <Error>: Unable to bootstrap_look_up port with name .gsEvents: unknown error code (1102)
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17414a030> Completed after 0.03s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Child transaction completed: <BSBlockTransaction: 0x17414a030>: notify observers
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSBlockTransaction:0x17415a570> Completed after 0.60s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Child transaction completed: <BSBlockTransaction: 0x17415a570>: animation
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBUIAnimationHomeScreenZoomApp:0x100df7b80> Completed after 0.60s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Child transaction completed: <SBUIAnimationHomeScreenZoomApp: 0x100df7b80>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <SBAppToAppWorkspaceTransaction:0x107c91da0> Completed after 0.64s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: SB orientation locked: NO; user lock: NO, overrides: NO
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Enabling home screen icon rotation for reason: SBAppToAppWorkspaceTransaction
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Set device motion sensor status <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Root transaction complete: <SBAppToAppWorkspaceTransaction: 0x107c91da0>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x170323ca0> Completed after 0.00s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x174329f60> Completed after 0.00s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432c9e0> Completed after 0.00s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> Life assertion taken for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> State changed from 'Initial' to 'Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> Life assertion removed for reason: beginning
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> State changed from 'Working' to 'Done Working'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> State changed from 'Done Working' to 'Completed'
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(BaseBoard)[57] <Info>: <BSTransaction:0x17432be00> Completed after 0.00s.
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Sent kCLConnectionMessageWatchdog message
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Error>: Can't get most elevated app state from dictionary <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: 575 dayj.informedPublic: Unknown (most elevated: Unknown)
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash(CrashReporterSupport)[576] <Info>: scanned 12 logs with 5 types and 4 unknowns (sentinel is <private>)
+Feb 13 17:45:45 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I BundleID: <private> is no longer a foreground app
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Entry, display name dayj.informedPublic uuid (null) pid 575 isFront 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Check for bundle name dayj.informedPublic returns 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: app name dayj.informedPublic isForeground 0  hasForegroundApps 0, current idea of foreground 1 disp (null)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Going to background, new flags 0x18000 enabled 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Continue with bundle name dayj.informedPublic, is front 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: dayj.informedPublic: Foreground: false
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: call _saveAndUnloadSelectState
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: 575 dayj.informedPublic: Terminated (most elevated: Terminated)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM2 foreground (current/proposed/state) in = (1/0/1)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: CFSM2 foreground (current/state) out = (1/3)
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Remove appCompactState key dayj.informedPublic
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Entry, display name dayj.informedPublic uuid (null) pid 575 isFront 0
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: Duplicate removal of display name dayj.informedPublic
+Feb 13 17:45:45 Jonathon-Days-iPhone ReportCrash(CrashReporterSupport)[576] <Notice>: Saved type '109(<private>)' report (5 of max 25) at <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone symptomsd(SymptomEvaluator)[119] <Notice>: defusing ticker tickerFatal having seen route progress since 2017-02-13 22:45:05 +0000
+Feb 13 17:45:45 Jonathon-Days-iPhone locationd[63] <Info>: Notifying clients on temperature update,temperature,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Set device motion sensor status <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard[57] <Notice>: Destination SBNotificationBannerDestination is now ready to receive notifications
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::setDeviceMotionUpdateInterval changing update interval to: <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: CLDeviceMotion::minimumUpdateIntervalChanged,notification,<private>,minimumUpdateInterval,<private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:45 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Device is stationary and Timeout exceeded, turning off device motion gyro heartbeat and bias estimator.
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone SpringBoard(CoreMotion)[57] <Info>: Set device motion sensor status <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Notice>: Client com.apple.springboard disconnected
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator removing client <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Info>: CLGyroBiasEstimator,SPUEnabled,<private>,BuildingGYTT,<private>,NumClients,<private>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> in call back event handler
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> is invalidated 
+Callstack (
+	0   PersistentConnection                0x000000018b9ec5cc <redacted> + 116
+	1   PersistentConnection                0x000000018b9ebf04 <redacted> + 116
+	2   libdispatch.dylib                   0x0000000187a9e1bc <redacted> + 16
+	3   libdispatch.dylib                   0x0000000187aaaf94 <redacted> + 576
+	4   libdispatch.dylib                   0x0000000187ab7634 <redacted> + 204
+	5   libdispatch.dylib                   0x0000000187aa0160 <redacted> + 820
+	6   libdispatch.dylib                   0x0000000187aac210 <redacted> + 468
+	7   libdispatch.dylib                   0x0000000187aa19a4 <redacted> + 652
+	8   libdispatch.dylib                   0x0000000187aae34c <redacted> + 572
+	9   libdispatch.dylib                   0x0000000187aae0ac <redacted> + 124
+	10  libsystem_pthread.dylib             0x0000000187ca72a0 _pthread_wqthread + 1288
+	11  libsystem_pthread.dylib             0x0000000187ca6d8c start_wqt
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> performing call back
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: SimpleTimer <PCSimpleTimer: 0x1292dfad0> has fired
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Invalidating simple timer <PCSimpleTimer: 0x1292dfad0>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x127d36a20> is invalidated 
+Callstack (
+	0   PersistentConnection                0x000000018b9ec5cc <redacted> + 116
+	1   PersistentConnection                0x000000018b9e9fb8 <redacted> + 292
+	2   PersistentConnection                0x000000018b9eac58 <redacted> + 300
+	3   PersistentConnection                0x000000018b9ec0cc <redacted> + 184
+	4   libdispatch.dylib                   0x0000000187a9e1bc <redacted> + 16
+	5   libdispatch.dylib                   0x0000000187aaaf94 <redacted> + 576
+	6   libdispatch.dylib                   0x0000000187ab7634 <redacted> + 204
+	7   libdispatch.dylib                   0x0000000187aa0160 <redacted> + 820
+	8   libdispatch.dylib                   0x0000000187aac210 <redacted> + 468
+	9   libdispatch.dylib                   0x0000000187aa19a4 <redacted> + 652
+	10  libdispatch.dylib                   0x0000000187aae34c <redacted> + 572
+	11  libdispatch.dylib                   0x0000000187aae0ac <redacted> + 124
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x127d36a20> dealloced
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> is invalidated 
+Callstack (
+	0   PersistentConnection                0x000000018b9ec5cc <redacted> + 116
+	1   PersistentConnection                0x000000018b9e9fd4 <redacted> + 320
+	2   PersistentConnection                0x000000018b9eac58 <redacted> + 300
+	3   PersistentConnection                0x000000018b9ec0cc <redacted> + 184
+	4   libdispatch.dylib                   0x0000000187a9e1bc <redacted> + 16
+	5   libdispatch.dylib                   0x0000000187aaaf94 <redacted> + 576
+	6   libdispatch.dylib                   0x0000000187ab7634 <redacted> + 204
+	7   libdispatch.dylib                   0x0000000187aa0160 <redacted> + 820
+	8   libdispatch.dylib                   0x0000000187aac210 <redacted> + 468
+	9   libdispatch.dylib                   0x0000000187aa19a4 <redacted> + 652
+	10  libdispatch.dylib                   0x0000000187aae34c <redacted> + 572
+	11  libdispatch.dylib                   0x0000000187aae0ac <redacted> + 124
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: Disabling power monitoring for <PCSimpleTimer: 0x1292dfad0> - 8 timers
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> performed call back on target <PCSimpleTimer: 0x1292dfad0> selector _fireTimerFired
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12922de80> dealloced
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: PersistentTimer <PCPersistentTimer: 0x1292df910> has fired
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Invalidating timer <PCPersistentTimer: 0x1292df910>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12908bf90> created <PCSimpleTimer: 0x127d77310>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Started simple timer <PCSimpleTimer: 0x127d77310> with fire date [2017-02-13 17:50:46 -0500]
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12910f8b0> initialized with target <PCSimpleTimer: 0x127d77310> selector _preventSleepFired timerSource <OS_dispatch_source: 0x129194b00>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291bc040> initialized with target <PCSimpleTimer: 0x127d77310> selector _fireTimerFired timerSource <OS_dispatch_source: 0x127f67180>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCSimpleTimer: 0x127d77310> created preventSleepTimer <PCDispatchTimer: 0x12910f8b0> and fireTimer <PCDispatchTimer: 0x1291bc040> on queue <OS_dispatch_queue: PCSimpleTimer-timerQ[0x127e519f0]>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291bc040> start with target <CUTWeakReference: 0x1291bded0> selector _fireTimerFired firetime 18446744073709551615 timerSource <OS_dispatch_source: 0x127f67180>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12910f8b0> start with target <CUTWeakReference: 0x127fd76a0> selector _preventSleepFired firetime 18446744073709551615 timerSource <OS_dispatch_source: 0x129194b00>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12910f8b0> setFireDate 4001-01-01 00:00:00 +0000 and start with target <PCSimpleTimer: 0x127d77310> selector _preventSleepFired fireTime 18446744073709551615 deltaNanosec 2309-05-26 17:33:03 -0500 timerSource <OS_dispatch_source: 0x129194b00>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291bc040> setFireDate 2017-02-13 22:50:46 +0000 and start with target <PCSimpleTimer: 0x127d77310> selector _fireTimerFired fireTime 172586213212 deltaNanosec 2017-02-13 17:50:46 -0500 timerSource <OS_dispatch_source: 0x127f67180>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCInterfaceUsabilityMonitor: 0x1290690c0> [WWAN](pdp_ip0): isInterfaceUsable? YES reachable YES linkQuality 100 isNetworkCaptive? NO
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12908bf90> calculating _earlyFireDate. powerStateDetectionSupported = YES = (detectionSupported(YES) && (wwanIsUp(YES) || ! internetReachable(YES)))
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Last system wake date (2017-02-13 17:33:53 -0500) was longer than half of the timer duration, so setting minimum fire date to fire date.
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12908bf90> Device is plugged in, overriding earlyFireProportion to be 1.0
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12908bf90> Calculated minimum fire date [2017-02-13 17:50:46 -0500] (100%) with fire date [2017-02-13 17:50:46 -0500], start date [2017-02-13 17:45:46 -0500], minimum early fire proportion 0.9, power state detection supported: yes, in high power state: no
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: Enabling power monitoring for <PCSimpleTimer: 0x127d77310> - 9 timers
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I Refreshing cell monitor
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libATCommandStudioDynamic.dylib)[77] <Notice>: QMI: Svc=0x03(NAS) Req MsgId=0x5556 Bin=[<private>]
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: 
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: GENERATE DATA PACKET
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: status 0x20
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: assert mrdy 1
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: start peer power timer 20000000 ns
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: Start timer for 500 ms
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: ext_seq_mode 0, packet_type 1, seq_num 2, ack_num 1, data_integrity 1, reliable 1, payload length 13, ext_seq_num 16426
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: 0: size of data_p 23, reliable_transport 1
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: stop peer power timer
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: WRITE done 1, error 0, data 0x1acdf0140
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: reading up to 8
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: 0: READ done 0, error 0, data_p 0x15309c3d0, c->protocol.raw_read_bytes 0x0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: size of raw read bytes 8
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: seq_num 0, ack_num 3, data_integrity 1, reliable 0, payload length 0, hci_packet_type 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: RECEIVED ACK
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: peer_power_state 0, new 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: Stop timer
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: status 0x40
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: assert mrdy 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: reading up to 119
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: 0: READ done 0, error 0, data_p 0x151d89480, c->protocol.raw_read_bytes 0x0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: size of raw read bytes 119
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: seq_num 1, ack_num 3, data_integrity 1, reliable 1, payload length 110, hci_packet_type 1
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: RECEIVED DATA PACKET
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: peer_power_state 0, new 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: GENERATE AN ACK
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: ext_seq_mode 0, packet_type 0, seq_num 0, ack_num 2, data_integrity 1, reliable 0, payload length 0, ext_seq_num 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: 0: size of data_p 10, reliable_transport 0
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libH5Dynamic.dylib)[77] <Info>: WRITE done 1, error 0, data 0x1acdf0140
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter(libATCommandStudioDynamic.dylib)[77] <Notice>: QMI: Svc=0x03(NAS) Resp MsgId=0x5556 Bin=[<private>]
+Feb 13 17:45:46 Jonathon-Days-iPhone CommCenter[77] <Notice>: #I Did not find a 1X Neighbor Cell. So Serving Cell Ecio will be from Signal Strength.
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7e
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7e}
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Info>: <private> received telephony notification (<private>)
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Info>: invalid/stale location (age <private>s) - ignoring
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Info>: <private>: not harvesting eligible - skipping
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd[63] <Notice>: @ClxCell, Fix, 1, ll, <private>, <private>, acc, 1414.00, course, -1.0
+Feb 13 17:45:46 Jonathon-Days-iPhone timed[62] <Info>: Client 63 issued command: {
+    TMCommand = TMGetReferenceTime;
+}
+Feb 13 17:45:46 Jonathon-Days-iPhone timed[62] <Info>: Returning reference time to client: {
+    TMCurrentTime = "508718746.5335286";
+    TMReliability = 1;
+    TMRtcTime = "56647748.991012";
+    TMScaleFactor = "0.9999901095710153";
+    TMScaleFactorError = "1.041967620279951e-05";
+    TMSource = TMTimeSynthesizer;
+    TMTimeError = "0.02292210129089974";
+}
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Invalidating timer <PCPersistentTimer: 0x12908bf90>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12920df10> created <PCSimpleTimer: 0x12941db40>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Invalidating simple timer <PCSimpleTimer: 0x127d77310>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Started simple timer <PCSimpleTimer: 0x12941db40> with fire date [2017-02-13 17:50:46 -0500]
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x127f6bf30> initialized with target <PCSimpleTimer: 0x12941db40> selector _preventSleepFired timerSource <OS_dispatch_source: 0x127fdbb40>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291795f0> initialized with target <PCSimpleTimer: 0x12941db40> selector _fireTimerFired timerSource <OS_dispatch_source: 0x12916e800>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12910f8b0> is invalidated 
+Callstack (
+	0   PersistentConnection                0x000000018b9ec5cc <redacted> + 116
+	1   PersistentConnection                0x000000018b9e9fb8 <redacted> + 292
+	2   PersistentConnection                0x000000018b9d6170 <redacted> + 188
+	3   locationd                           0x00000001007f3a5c locationd + 8059484
+	4   locationd                           0x0000000100c7a1e4 locationd + 12804580
+	5   libdispatch.dylib                   0x0000000187a9e1bc <redacted> + 16
+	6   libdispatch.dylib                   0x0000000187aa2d68 _dispatch_main_queue_callback_4CF + 1000
+	7   CoreFoundation                      0x0000000188bc2810 <redacted> + 12
+	8   CoreFoundation                      0x0000000188bc03fc <redacted> + 1660
+	9   CoreFoundation                      0x0000000188aee2b8 CFRunLoopRunSpecific + 444
+	10  CoreFoundation                      0x0000000188b3bb44 CFRunLoopRun + 112
+	11  locationd
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x12910f8b0> dealloced
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCSimpleTimer: 0x12941db40> created preventSleepTimer <PCDispatchTimer: 0x127f6bf30> and fireTimer <PCDispatchTimer: 0x1291795f0> on queue <OS_dispatch_queue: PCSimpleTimer-timerQ[0x129158e80]>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291bc040> is invalidated 
+Callstack (
+	0   PersistentConnection                0x000000018b9ec5cc <redacted> + 116
+	1   PersistentConnection                0x000000018b9e9fd4 <redacted> + 320
+	2   PersistentConnection                0x000000018b9d6170 <redacted> + 188
+	3   locationd                           0x00000001007f3a5c locationd + 8059484
+	4   locationd                           0x0000000100c7a1e4 locationd + 12804580
+	5   libdispatch.dylib                   0x0000000187a9e1bc <redacted> + 16
+	6   libdispatch.dylib                   0x0000000187aa2d68 _dispatch_main_queue_callback_4CF + 1000
+	7   CoreFoundation                      0x0000000188bc2810 <redacted> + 12
+	8   CoreFoundation                      0x0000000188bc03fc <redacted> + 1660
+	9   CoreFoundation                      0x0000000188aee2b8 CFRunLoopRunSpecific + 444
+	10  CoreFoundation                      0x0000000188b3bb44 CFRunLoopRun + 112
+	11  locationd
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291bc040> dealloced
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291795f0> start with target <CUTWeakReference: 0x129171fc0> selector _fireTimerFired firetime 18446744073709551615 timerSource <OS_dispatch_source: 0x12916e800>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x127f6bf30> start with target <CUTWeakReference: 0x129188600> selector _preventSleepFired firetime 18446744073709551615 timerSource <OS_dispatch_source: 0x127fdbb40>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: Disabling power monitoring for <PCSimpleTimer: 0x127d77310> - 8 timers
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x127f6bf30> setFireDate 4001-01-01 00:00:00 +0000 and start with target <PCSimpleTimer: 0x12941db40> selector _preventSleepFired fireTime 18446744073709551615 deltaNanosec 2309-05-26 17:33:03 -0500 timerSource <OS_dispatch_source: 0x127fdbb40>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCDispatchTimer: 0x1291795f0> setFireDate 2017-02-13 22:50:46 +0000 and start with target <PCSimpleTimer: 0x12941db40> selector _fireTimerFired fireTime 172588514973 deltaNanosec 2017-02-13 17:50:46 -0500 timerSource <OS_dispatch_source: 0x12916e800>
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: <PCInterfaceUsabilityMonitor: 0x1290690c0> [WWAN](pdp_ip0): isInterfaceUsable? YES reachable YES linkQuality 100 isNetworkCaptive? NO
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12920df10> calculating _earlyFireDate. powerStateDetectionSupported = YES = (detectionSupported(YES) && (wwanIsUp(YES) || ! internetReachable(YES)))
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: Last system wake date (2017-02-13 17:33:53 -0500) was longer than half of the timer duration, so setting minimum fire date to fire date.
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63]: Enabling power monitoring for <PCSimpleTimer: 0x12941db40> - 9 timers
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12920df10> Device is plugged in, overriding earlyFireProportion to be 1.0
+Feb 13 17:45:46 Jonathon-Days-iPhone locationd(PersistentConnection)[63] <Notice>: 2017-02-13 17:45:46 -0500 locationd[63] CellLocDelayedCellLocationPropagationTimer: <PCPersistentTimer: 0x12920df10> Calculated minimum fire date [2017-02-13 17:50:46 -0500] (100%) with fire date [2017-02-13 17:50:46 -0500], start date [2017-02-13 17:45:46 -0500], minimum early fire proportion 0.9, power state detection supported: yes, in high power state: no
+Feb 13 17:45:46 Jonathon-Days-iPhone awdd[84] <Info>: life:#I 2 activities remaining: <private>
+Feb 13 17:45:46 Jonathon-Days-iPhone MobileMail(UIKit)[201] <Notice>: Cannot snapshot view (<MFSwipableTableView: 0x1568c3c00; baseClass = UITableView; frame = (0 0; 375 667); clipsToBounds = YES; autoresize = W+H; gestureRecognizers = <NSArray: 0x1702549a0>; layer = <CALayer: 0x17003c9c0>; contentOffset: {0, -64}; contentSize: {375, 19544}>) with afterScreenUpdates:NO, because the view is not in a window. Use afterScreenUpdates:YES.
+Feb 13 17:45:46 Jonathon-Days-iPhone MobileMail[201] <Info>: Updated default image: updated text changed
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:46 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Unregistering for gyro notifications
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Unregistering for gyro temperature notifications
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Unregistering for magnetometer notifications
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: IOHIDServiceClientSetProperty() successfully set property for event <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone locationd[63] <Info>: Property for usage pair {<private>,<private>}: {<private> = <private>} was set <private>
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:47 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:47 Jonathon-Days-iPhone SpringBoard(FrontBoard)[57] <Info>: setting object for key=XBApplicationSnapshotManifest bundleID=com.apple.mobilemail object=<private>
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7e
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7e}
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:48 Jonathon-Days-iPhone locationd[63] <Notice>: Incrementing METs -- mets:<private> metsFromGrade:<private>
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x81 0x7f 0x7f
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x81, 0x7f, 0x7f}
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:48 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:48 Jonathon-Days-iPhone routined(libcoreroutine.dylib)[33] <Debug>: caching CMMotionActivity, <private>, RTMotionActivity, <private>
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:49 Jonathon-Days-iPhone locationd[63] <Notice>: message 'kCLConnectionMessageWatchdog' received from client '/System/Library/LocationBundles/TimeZone.bundle'
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: got kIOMessageDeviceHasPoweredOn, arg 0x16f8d220c
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: event 3, error 0 (<private>)
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: fDeviceState is 1
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 3. got device event kResumed
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 3. Resume transfer for type 1
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 5. got device event kResumed
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 5. Resume transfer for type 1
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 7. got device event kResumed
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 7. Resume transfer for type 1
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 9. got device event kResumed
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 9. Resume transfer for type 1
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: fDeviceState is 2
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libATCommandStudioDynamic.dylib)[77] <Notice>: QMI: Svc=0x03(NAS) Ind MsgId=0x0051 Bin=['01 2A 00 80 03 03 04 59 0E 51 00 1E 00 11 08 00 83 05 00 00 96 FF FF FF 14 06 00 C2 F1 9E FF 10 00 A2 01 00 64 A4 03 00 01 64 00']
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: got kIOMessageDeviceWillPowerOff, arg 0x16f8d220c
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: event 2, error 0 (<private>)
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 3. got device event kSuspended
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 5. got device event kSuspended
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 7. got device event kSuspended
+Feb 13 17:45:49 Jonathon-Days-iPhone CommCenter(libBasebandUSB.dylib)[77] <Info>: 9. got device event kSuspended
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7e 0x7f
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7e, 0x7f}
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:49 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x7f 0x04 0x7f 0x80 0x7f 0x7f
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x7f, 0x4, 0x7f, 0x80, 0x7f, 0x7f}
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: txBufferLength=7 rxBufferLength=23
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Wrote:     7B | 0x80 0x10 0x00 0x07 0x00 0x00 0x00
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>:  Read:    23B | 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x80 0x20 0x00 0x10 0x00 0x00 0x00 0x11 0x02 0x01 0x80 0x04 0x7f 0x80 0x80 0x80
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: Status={0x80, 0x20, 00, 0x10, 00, 00, 00, 0x11, 0x2, 0x1, 0x80, 0x4, 0x7f, 0x80, 0x80, 0x80}
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit, err=0x0
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: mask=0xFF, bad=false
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: entry
+Feb 13 17:45:50 Jonathon-Days-iPhone kernel(AppleBiometricSensor)[0] <Debug>: exit

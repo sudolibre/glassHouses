@@ -11,6 +11,7 @@
 		E800AC541E52047F00187854 /* legislationJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC531E52047F00187854 /* legislationJSON */; };
 		E800AC561E5206AD00187854 /* legislatorJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC551E5206AD00187854 /* legislatorJSON */; };
 		E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */; };
+		E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */; };
 		E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */; };
 		E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */; };
 		E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE37E1E4A4BC6004359DE /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		E800AC531E52047F00187854 /* legislationJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = legislationJSON; sourceTree = "<group>"; };
 		E800AC551E5206AD00187854 /* legislatorJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = legislatorJSON; sourceTree = "<group>"; };
 		E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItemStore.swift; sourceTree = "<group>"; };
 		E84BE3771E4A4BC6004359DE /* informedPublic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = informedPublic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */,
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
+				E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */,
 				E8F8178C1E4E503F00155A5D /* NewsArticle.swift */,
 				E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */,
 				E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */,
@@ -313,6 +316,7 @@
 				E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */,
 				E84BE3A91E4A8C23004359DE /* OpenStatesAPI.swift in Sources */,
 				E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */,
+				E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */,
 				E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */,
 				E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */,
 				E8F8178B1E4E4EC100155A5D /* NewsSearchAPI.swift in Sources */,
