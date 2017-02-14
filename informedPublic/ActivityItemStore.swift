@@ -22,8 +22,10 @@ class ActivityItemStore {
         return pc
     }()
     
+
     //provide fetch functions for activity items
     func fetchActivityItems(completion: @escaping (ActivityItem) -> Void) {
+        OpenStatesAPI.
     }
 
     

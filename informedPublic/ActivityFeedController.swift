@@ -85,12 +85,12 @@ class ActivityFeedController: UITableViewController {
     
     
     func generateFeed() {
-//        OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
-//            DispatchQueue.main.async {
-//                self.dataSource.addItem(activityItem)
-//                self.tableView.reloadData()
-//            }
-//        }
+        OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
+            DispatchQueue.main.async {
+                self.dataSource.addItem(activityItem)
+                self.tableView.reloadData()
+            }
+        }
 //        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
 //            for activityItem in activityItems{
 //                DispatchQueue.main.async {

@@ -155,54 +155,10 @@ class OpenStatesAPI {
             switch response {
             case .success(let data):
                 let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                let legislation = Legislation(json: legislationJSON)!
-                let votes = legislationJSON["votes"] as! [[String:Any]]
-                
-                for i in votes {
-                    let yesVotes = i["yes_votes"] as! [[String:Any]]
-                    let noVotes = i["no_votes"] as! [[String:Any]]
-                    let otherVotes = i["other_votes"] as! [[String:Any]]
-                    let yesNames = yesVotes.map({$0["name"] as! String})
-                    let noNames = noVotes.map({$0["name"] as! String})
-                    let otherNames = otherVotes.map({$0["name"] as! String})
-                    var voteCount = 0 {
-                        didSet {
-                            if voteCount == legislators.count {
-                                return
-                            }
-                        }
-                    }
-                    
-                    for yesName in yesNames {
-                        for legislator in legislators {
-                            if legislator.voterDescription == yesName {
-                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .yea))
-                                completion(activityItem)
-                                voteCount += 1
-                            }
-                        }
-                    }
-                    
-                    for noName in noNames {
-                        for legislator in legislators {
-                            if legislator.voterDescription == noName {
-                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .nay))
-                                completion(activityItem)
-                                voteCount += 1
-                                
-                            }
-                        }
-                    }
-                    
-                    for otherName in otherNames {
-                        for legislator in legislators {
-                            if legislator.voterDescription == otherName {
-                                let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .other))
-                                completion(activityItem)
-                                voteCount += 1
-                            }
-                        }
-                    }
+                //save id and dictionary to core data here
+                let activity = parseVoteActivityFromJSON(legislators: legislators, json: legislationJSON)
+                for item in activity {
+                    completion(item)
                 }
                 
             case .networkError(let response):
@@ -211,5 +167,60 @@ class OpenStatesAPI {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    static func parseVoteActivityFromJSON(legislators: [Legislator], json: [String: Any]) -> [ActivityItem] {
+        let legislation = Legislation(json: json)!
+        let votes = json["votes"] as! [[String:Any]]
+        var activity: [ActivityItem] = []
+        
+        for i in votes {
+            let yesVotes = i["yes_votes"] as! [[String:Any]]
+            let noVotes = i["no_votes"] as! [[String:Any]]
+            let otherVotes = i["other_votes"] as! [[String:Any]]
+            let yesNames = yesVotes.map({$0["name"] as! String})
+            let noNames = noVotes.map({$0["name"] as! String})
+            let otherNames = otherVotes.map({$0["name"] as! String})
+            var voteCount = 0 {
+                didSet {
+                    if voteCount == legislators.count {
+                        return
+                    }
+                }
+            }
+            
+            for yesName in yesNames {
+                for legislator in legislators {
+                    if legislator.voterDescription == yesName {
+                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .yea))
+                        activity.append(activityItem)
+                        voteCount += 1
+                    }
+                }
+            }
+            
+            for noName in noNames {
+                for legislator in legislators {
+                    if legislator.voterDescription == noName {
+                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .nay))
+                        activity.append(activityItem)
+                        voteCount += 1
+                        
+                    }
+                }
+            }
+            
+            for otherName in otherNames {
+                for legislator in legislators {
+                    if legislator.voterDescription == otherName {
+                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .other))
+                        activity.append(activityItem)
+                        voteCount += 1
+                    }
+                }
+            }
+        }
+        
+        return activity
     }
 }
