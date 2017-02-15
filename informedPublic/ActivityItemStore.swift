@@ -72,10 +72,10 @@ class ActivityItemStore {
             fetchedLegislation = try? fetchRequest.execute()
         }
         
-//        let legislation = fetchedLegislation!.flatMap { (legislationJSON) -> Legislation? in
-//            let json = legislationJSON.json as! [String: Any]
-//            return Legislation(json: json)
-//        }
+        let legislation = fetchedLegislation!.flatMap { (legislationJSON) -> Legislation? in
+            let json = legislationJSON.json as! [String: Any]
+            return Legislation(json: json)
+        }
         
         
         
@@ -110,7 +110,6 @@ class ActivityItemStore {
                     return
             }
             
-            let votes = json["votes"] as! [[String:Any]]
             var activity: [ActivityItem] = []
             
             for i in votes {

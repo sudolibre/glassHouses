@@ -16,9 +16,9 @@ class Legislation {
     var votes: Votes
     
     struct Votes {
-        let yesVotes: [String]
-        let noVotes: [String]
-        let otherVotes: [String]
+        let yesVotes: Set<String>
+        let noVotes: Set<String>
+        let otherVotes: Set<String>
     }
     
     init?(json: [String: Any]) {
@@ -48,7 +48,7 @@ class Legislation {
         self.documentURL = documentURL
         self.title = title
         self.id = id
-        self.votes = Votes(yesVotes: yesNames, noVotes: noNames, otherVotes: otherNames)
+        self.votes = Votes(yesVotes: Set(yesNames), noVotes: Set(noNames), otherVotes: Set(otherNames))
         
     }
 }
