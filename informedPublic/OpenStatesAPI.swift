@@ -166,25 +166,6 @@ class OpenStatesAPI {
         }
     }
     
-    
-//    
-//    static func fetchVotesForLegislators(_ legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
-//        request(.fetchVotesForLegislators) { (response) in
-//            switch response {
-//            case .success(let data):
-//                let recentBillsJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-//                let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
-//                for id in filteredBillIDs {
-//                    getVoteForBill(id: id, legislators: legislators, completion: completion)
-//                }
-//            case .networkError(let response):
-//                print(response)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
-    
     static func getIDsForVotedBills(_ array: [[String: Any]]) -> [String] {
         let filteredArray = array.filter({ (dictionary) -> Bool in
             let votesArray = dictionary["votes"] as! [[String: Any]]
@@ -192,25 +173,5 @@ class OpenStatesAPI {
         })
         return filteredArray.map({ $0["id"] as! String})
     }
-    
-    
-//    static func getVoteForBill(id: String, legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
-//        request(.fetchBillDetail(ID: id)) { (response) in
-//            switch response {
-//            case .success(let data):
-//                let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-//                //save id and dictionary to core data here
-//                let activity = parseVoteActivityFromJSON(legislators: legislators, json: legislationJSON)
-//                for item in activity {
-//                    completion(item)
-//                }
-//                
-//            case .networkError(let response):
-//                print(response)
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
-//    }
     
 }
