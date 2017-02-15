@@ -12,6 +12,23 @@ class UserDefaultsManager {
     static let userDefaults = UserDefaults.standard
     
     static private let userLegislatorsKey = "legislators"
+    static private let lastUpdateKey = "lastUpdate"
+    
+    static var lastUpdate: Date? {
+        get {
+        let timeInterval = userDefaults.double(forKey: lastUpdateKey)
+            if timeInterval == 0 {
+                return nil
+            } else {
+                return Date(timeIntervalSince1970: timeInterval)
+            }
+        }
+        set {
+            let timeInterval = newValue!.timeIntervalSince1970
+            userDefaults.set(timeInterval, forKey: lastUpdateKey)
+        }
+        
+    }
     
     static func getLegislatorIDs() -> [String]? {
         return userDefaults.stringArray(forKey: userLegislatorsKey)

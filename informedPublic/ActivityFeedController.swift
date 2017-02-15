@@ -40,7 +40,7 @@ class ActivityFeedController: UITableViewController {
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
-
+        
         spinner.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(spinner)
         let centerXConstraint = view.centerXAnchor.constraint(equalTo: spinner.centerXAnchor)
@@ -49,33 +49,33 @@ class ActivityFeedController: UITableViewController {
         view.addConstraints([centerXConstraint, centerYConstraint])
         spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         spinner.color = UIColor.gray
-
+        
         
         
         
         //TOTO: DELETE MEEEEEEE
-//        legislators = [
-//        Legislator(json: [
-//            "full_name": "Pat Gardner",
-//            "district": "57",
-//            "leg_id": "GAL000113",
-//            "last_name": "Gardner",
-//            "party": "democratic",
-//            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
-//            "chamber": "lower",
-//            "active": true
-//            ])!,
-//            Legislator(json: [
-//                "full_name": "Nan Orrock",
-//                "district": "36",
-//                "leg_id": "GAL000038",
-//                "last_name": "Orrock",
-//                "party": "democratic",
-//                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
-//                "chamber": "upper",
-//                "active": true
-//                ])!
-//        ]
+        //        legislators = [
+        //        Legislator(json: [
+        //            "full_name": "Pat Gardner",
+        //            "district": "57",
+        //            "leg_id": "GAL000113",
+        //            "last_name": "Gardner",
+        //            "party": "democratic",
+        //            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
+        //            "chamber": "lower",
+        //            "active": true
+        //            ])!,
+        //            Legislator(json: [
+        //                "full_name": "Nan Orrock",
+        //                "district": "36",
+        //                "leg_id": "GAL000038",
+        //                "last_name": "Orrock",
+        //                "party": "democratic",
+        //                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
+        //                "chamber": "upper",
+        //                "active": true
+        //                ])!
+        //        ]
         //DELELTELLETLELTELETLELTL
         
         
@@ -85,20 +85,20 @@ class ActivityFeedController: UITableViewController {
     
     
     func generateFeed() {
-        OpenStatesAPI.fetchVotesForLegislators(legislators) { (activityItem) in
+        ActivityItemStore.fetchActivityItems(legislators: legislators) { (activityItem) in
             DispatchQueue.main.async {
                 self.dataSource.addItem(activityItem)
                 self.tableView.reloadData()
             }
         }
-//        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
-//            for activityItem in activityItems{
-//                DispatchQueue.main.async {
-//                    self.dataSource.addItem(activityItem)
-//                    self.tableView.reloadData()
-//                }
-//            }
-//        }
+        //        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
+        //            for activityItem in activityItems{
+        //                DispatchQueue.main.async {
+        //                    self.dataSource.addItem(activityItem)
+        //                    self.tableView.reloadData()
+        //                }
+        //            }
+        //        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -128,7 +128,7 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
     var activityItems: [ActivityItem] = []
     
     subscript(index: Int) -> ActivityItem {
-            return activityItems[index]
+        return activityItems[index]
     }
     
     func addItem(_ item: ActivityItem) {

@@ -36,16 +36,23 @@ class OpenStatesAPI {
     
     enum EndPoint {
         case findDistrict(lat: Double, long: Double)
-        case fetchVotesForLegislators
+        case fetchNewBills(since: Date)
         case fetchBillDetail(ID: String)
         case fetchLegislator(ID: String)
+        
+        var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }
         
         var urlComponent: String {
             switch self {
             case .findDistrict(lat: let lat, long: let long):
                 return "legislators/geo/?lat=\(lat)&long=\(long)"
-            case .fetchVotesForLegislators:
-                return "bills/?state=ga&search_window=term&updated_since=2017-02-02&fields=votes"
+            case .fetchNewBills(since: let date):
+                let dateString = dateFormatter.string(from: date)
+                return "bills/?state=ga&search_window=term&updated_since=\(dateString)&fields=votes"
             case .fetchBillDetail(ID: let id):
                 return "bills/\(id)"
             case .fetchLegislator(ID: let id):
@@ -55,7 +62,7 @@ class OpenStatesAPI {
         
         var httpMethod: String {
             switch self {
-            case .findDistrict, .fetchVotesForLegislators, .fetchBillDetail, .fetchLegislator:
+            case .findDistrict, .fetchNewBills, .fetchBillDetail, .fetchLegislator:
                 return "GET"
             }
         }
@@ -124,15 +131,18 @@ class OpenStatesAPI {
             }.resume()
     }
     
-    static func fetchVotesForLegislators(_ legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
-        request(.fetchVotesForLegislators) { (response) in
+    static func getNewBills(since date: Date, forEach completion: @escaping (String, [String: Any]) -> (), whenDone done: @escaping () -> ()) {
+        request(.fetchNewBills(since: date)) { (response) in
             switch response {
             case .success(let data):
                 let recentBillsJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
                 let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
                 for id in filteredBillIDs {
-                    getVoteForBill(id: id, legislators: legislators, completion: completion)
+                    getBillDetail(id: id) { (json) in
+                        completion(id, json)
+                    }
                 }
+                done()
             case .networkError(let response):
                 print(response)
             case .failure(let error):
@@ -140,6 +150,40 @@ class OpenStatesAPI {
             }
         }
     }
+    
+    
+    private static func getBillDetail(id: String, completion: @escaping ([String: Any]) -> ()) {
+        request(.fetchBillDetail(ID: id)) { (response) in
+            switch response {
+            case .success(let data):
+                let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                completion(legislationJSON)
+            case .networkError(let response):
+                print(response)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    
+//    
+//    static func fetchVotesForLegislators(_ legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
+//        request(.fetchVotesForLegislators) { (response) in
+//            switch response {
+//            case .success(let data):
+//                let recentBillsJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+//                let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
+//                for id in filteredBillIDs {
+//                    getVoteForBill(id: id, legislators: legislators, completion: completion)
+//                }
+//            case .networkError(let response):
+//                print(response)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
     static func getIDsForVotedBills(_ array: [[String: Any]]) -> [String] {
         let filteredArray = array.filter({ (dictionary) -> Bool in
@@ -150,77 +194,23 @@ class OpenStatesAPI {
     }
     
     
-    static func getVoteForBill(id: String, legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
-        request(.fetchBillDetail(ID: id)) { (response) in
-            switch response {
-            case .success(let data):
-                let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                //save id and dictionary to core data here
-                let activity = parseVoteActivityFromJSON(legislators: legislators, json: legislationJSON)
-                for item in activity {
-                    completion(item)
-                }
-                
-            case .networkError(let response):
-                print(response)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    static func getVoteForBill(id: String, legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
+//        request(.fetchBillDetail(ID: id)) { (response) in
+//            switch response {
+//            case .success(let data):
+//                let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+//                //save id and dictionary to core data here
+//                let activity = parseVoteActivityFromJSON(legislators: legislators, json: legislationJSON)
+//                for item in activity {
+//                    completion(item)
+//                }
+//                
+//            case .networkError(let response):
+//                print(response)
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
     
-    static func parseVoteActivityFromJSON(legislators: [Legislator], json: [String: Any]) -> [ActivityItem] {
-        let legislation = Legislation(json: json)!
-        let votes = json["votes"] as! [[String:Any]]
-        var activity: [ActivityItem] = []
-        
-        for i in votes {
-            let yesVotes = i["yes_votes"] as! [[String:Any]]
-            let noVotes = i["no_votes"] as! [[String:Any]]
-            let otherVotes = i["other_votes"] as! [[String:Any]]
-            let yesNames = yesVotes.map({$0["name"] as! String})
-            let noNames = noVotes.map({$0["name"] as! String})
-            let otherNames = otherVotes.map({$0["name"] as! String})
-            var voteCount = 0 {
-                didSet {
-                    if voteCount == legislators.count {
-                        return
-                    }
-                }
-            }
-            
-            for yesName in yesNames {
-                for legislator in legislators {
-                    if legislator.voterDescription == yesName {
-                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .yea))
-                        activity.append(activityItem)
-                        voteCount += 1
-                    }
-                }
-            }
-            
-            for noName in noNames {
-                for legislator in legislators {
-                    if legislator.voterDescription == noName {
-                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .nay))
-                        activity.append(activityItem)
-                        voteCount += 1
-                        
-                    }
-                }
-            }
-            
-            for otherName in otherNames {
-                for legislator in legislators {
-                    if legislator.voterDescription == otherName {
-                        let activityItem = ActivityItem(legislator: legislator, activityType: .vote(legislation, .other))
-                        activity.append(activityItem)
-                        voteCount += 1
-                    }
-                }
-            }
-        }
-        
-        return activity
-    }
 }

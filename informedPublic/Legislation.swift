@@ -34,9 +34,10 @@ class Legislation {
         let actionDates = json["action_dates"] as? [String: Any],
         let dateString = actionDates["last"] as? String,
         let date = dateFormatter.date(from: dateString),
-        let yesVotesArray = json["yes_votes"] as? [[String:Any]],
-        let noVotesArray = json["no_votes"] as? [[String:Any]],
-        let otherVotesArray = json["other_votes"] as? [[String:Any]] else {
+        let votesArray = json["votes"] as? [[String: Any]],
+        let yesVotesArray = votesArray.first?["yes_votes"] as? [[String:Any]],
+        let noVotesArray = votesArray.first?["no_votes"] as? [[String:Any]],
+        let otherVotesArray = votesArray.first?["other_votes"] as? [[String:Any]] else {
             return nil
         }
         
