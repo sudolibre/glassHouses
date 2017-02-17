@@ -11,5 +11,5 @@ import CoreData
 
 @objc(LegislationJSON)
 public class LegislationJSON: NSManagedObject {
-
+    
 }

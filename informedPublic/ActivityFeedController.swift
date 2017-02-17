@@ -22,7 +22,7 @@ class ActivityFeedController: UITableViewController {
             }
         }
     }
-    var dataSource: ActivityFeedDataSource!
+    var dataSource = ActivityFeedDataSource()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +35,6 @@ class ActivityFeedController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = ActivityFeedDataSource()
         tableView.dataSource = dataSource
         
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -91,14 +90,6 @@ class ActivityFeedController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        //        NewsSearchAPI.fetchNewsForLegislators(legislators) { (activityItems) in
-        //            for activityItem in activityItems{
-        //                DispatchQueue.main.async {
-        //                    self.dataSource.addItem(activityItem)
-        //                    self.tableView.reloadData()
-        //                }
-        //            }
-        //        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -112,7 +103,7 @@ class ActivityFeedController: UITableViewController {
             case .vote(let legislation, _), .sponsor(let legislation):
                 return legislation.documentURL
             case .news(let article):
-                return article.link
+                return article.link as! URL
             case .legislationLifecycle:
                 fatalError("not implemented yet")
             }
@@ -125,6 +116,7 @@ class ActivityFeedController: UITableViewController {
 }
 
 class ActivityFeedDataSource: NSObject, UITableViewDataSource {
+    var imageStore = ImageStore()
     var activityItems: [ActivityItem] = []
     
     subscript(index: Int) -> ActivityItem {
@@ -144,6 +136,17 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityCell
         let item = activityItems[indexPath.row]
         cell.applyViewData(item.activityCellViewData)
+        let legislator = item.legislator
+        if let avatarImage = imageStore.getImage(forKey: legislator.photoKey) {
+            cell.avatarImage.image = avatarImage
+        } else {
+            imageStore.fetchRemoteImage(forURL: legislator.photoURL, completion: { (image) in
+                self.imageStore.setImage(image, forKey: legislator.photoKey)
+                if cell.legislatorID == legislator.ID {
+                    cell.avatarImage.image = image
+                }
+            })
+        }
         return cell
     }
     

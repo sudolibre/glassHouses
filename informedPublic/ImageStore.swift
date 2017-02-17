@@ -38,12 +38,30 @@ class ImageStore {
 
         if let image = cache.object(forKey: key as NSString) {
             return image
-        } else if let imageData = try? Data(contentsOf: imageURL)  {
-            let image = UIImage(data: imageData)
-            return image
         } else {
-            return nil
+            guard let imageData = try? Data(contentsOf: imageURL),
+                let image = UIImage(data: imageData) else {
+                    return nil
+            }
+            return image
         }
+    }
+    
+    func fetchRemoteImage(forURL url: URL, completion: @escaping (UIImage) -> ()) {
+        let session = URLSession.shared
+        session.dataTask(with: url) { (_data, _response, _error) in
+            if let data = _data,
+                let image = UIImage(data: data) {
+                completion(image)
+                return
+            }
+            if let error = _error {
+                print(error.localizedDescription)
+            }
+            if let response = _response {
+                print(response.description)
+            }
+        }.resume()
     }
     
     func removeImage(forKey key: String) {

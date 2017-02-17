@@ -26,13 +26,29 @@ class ActivityItemStore {
         return persistentContainer.viewContext
     }
     
+    static func save() {
+        do {
+            try context.save()
+        } catch {
+            fatalError("failed to save context: \(error)")
+        }
+    }
     
-    
-    
-    //provide fetch functions for activity items
-    static func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> Void) {
+    static func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
         let localLegislation = fetchLocalLegislation()
-        let activityFromLocal = generateActivity(for: legislators, from: localLegislation)
+        let localNews = fetchLocalNewsArticles()
+        let activityFromLegislation = generateActivity(for: legislators, from: localLegislation)
+        let newsActivity = localNews.flatMap({ (article) -> ActivityItem? in
+            var activity: ActivityItem? = nil
+            let legislator = legislators.first(where: {$0.ID == article.legislatorID})
+            if let legislator = legislator {
+                activity = ActivityItem(legislator: legislator, activityType: .news(article))
+            }
+            return activity
+        })
+        
+        let activityFromLocal = activityFromLegislation + newsActivity
+        
         for activity in activityFromLocal {
             completion(activity)
         }
@@ -42,13 +58,105 @@ class ActivityItemStore {
                 completion(activity)
             }
         }
+        //updateLocalArticles(legislators: legislators, completion: completion)
     }
+    
+    private static func fetchLocalNewsArticles() -> [Article] {
+        var fetchedArticles: [Article]?
+        
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        context.performAndWait {
+            fetchedArticles = try? fetchRequest.execute()
+        }
+        
+        if let fetchedArticles = fetchedArticles {
+            print("fetched \(fetchedArticles.count) articles")
+            return fetchedArticles
+        } else {
+            return []
+        }
+    }
+    
+    private static func updateLocalArticles(legislators: [Legislator], completion: ((ActivityItem) -> ())?) {
+        NewsSearchAPI.fetchNewsForLegislators(legislators) { (legislator, dictionaries) in
+            for json in dictionaries {
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                
+                guard let title = json["name"] as? String,
+                    let description = json["description"] as? String,
+                    let linkString = json["url"] as? String,
+                    let link = URL(string: linkString),
+                    let providerDictionary = json["provider"] as? [[String: Any]],
+                    let firtProvider = providerDictionary.first,
+                    let publisher = firtProvider["name"] as? String,
+                    let dateString = json["datePublished"] as? String else {
+                        continue
+                }
+                
+                var date: NSDate?
+                
+                if let _date = dateFormatter.date(from: dateString) {
+                    date = _date as NSDate
+                } else {
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    if let _date = dateFormatter.date(from: dateString) {
+                        date = _date as NSDate
+                    } else {
+                        continue
+                    }
+                }
+                
+                let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+                let predicate = NSPredicate(format: "title == '\(title)'")
+                fetchRequest.predicate = predicate
+                var existingArticle: [Article]!
+                context.performAndWait {
+                    do {
+                        existingArticle = try fetchRequest.execute()
+                    } catch {
+                        print("failed to query core data: \(error)")
+                        existingArticle = []
+                    }
+                }
+                
+                
+                if existingArticle.count > 0 {
+                    print("article already in core data")
+                } else {
+                    var article: Article!
+                    self.context.performAndWait {
+                        article = Article(context: context)
+                        article.title = title
+                        article.publisher = publisher
+                        article.articleDescription = description
+                        article.link = link as NSURL
+                        article.date = date!
+                        article.legislatorID = legislator.ID
+                        if let imageDictionary = json["image"] as? [String: Any],
+                            let thumbnailDictionary = imageDictionary["thumbnail"] as? [String: Any],
+                            let imageURLString = thumbnailDictionary["contentURL"] as? String,
+                            let _imageURL = URL(string: imageURLString) {
+                            article.imageURL = _imageURL as NSURL
+                        }
+                    }
+                    
+                    if let completion = completion {
+                        let activity = ActivityItem(legislator: legislator, activityType: .news(article))
+                        completion(activity)
+                    }
+                }
+            }
+        }
+    }
+    
     
     private static func fetchLocalLegislation() -> [LegislationJSON] {
         var fetchedLegislation: [LegislationJSON]?
         
         let fetchRequest: NSFetchRequest<LegislationJSON> = LegislationJSON.fetchRequest()
-        persistentContainer.viewContext.performAndWait {
+        context.performAndWait {
             fetchedLegislation = try? fetchRequest.execute()
         }
         
@@ -68,7 +176,7 @@ class ActivityItemStore {
             let weekPrior = calendar.date(byAdding: .day, value: -7, to: current)
             return weekPrior!
         }()
-
+        
         if let count = try? context.count(for: fetchRequest),
             let lastUpdate = UserDefaultsManager.lastUpdate,
             count > 0 {
@@ -79,7 +187,7 @@ class ActivityItemStore {
             let predicate = NSPredicate(format: "id == '\(id)'")
             fetchRequest.predicate = predicate
             var existingLegislation: [LegislationJSON]!
-            persistentContainer.viewContext.performAndWait {
+            context.performAndWait {
                 do {
                     existingLegislation = try fetchRequest.execute()
                 } catch {
@@ -92,22 +200,17 @@ class ActivityItemStore {
                 print("legislation already in core data")
             } else {
                 var legislationJSON: LegislationJSON!
-                self.persistentContainer.viewContext.performAndWait {
-                    legislationJSON = LegislationJSON(context: self.persistentContainer.viewContext)
+                self.context.performAndWait {
+                    legislationJSON = LegislationJSON(context: context)
                     legislationJSON.id = id
                     legislationJSON.json = json as NSDictionary
                 }
-                do {
-                    try self.persistentContainer.viewContext.save()
-                    print("added new legislation to core data from API")
-                } catch {
-                    fatalError("failed to save context: \(error)")
-                }
+
                 if let completion = completion {
                     completion(legislationJSON)
                 }
             }
-        }, whenDone: { 
+        }, whenDone: {
             UserDefaultsManager.lastUpdate = Date()
         })
     }
@@ -141,4 +244,7 @@ class ActivityItemStore {
         }
         return activity
     }
+    
+    
+    
 }

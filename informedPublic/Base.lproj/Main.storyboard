@@ -27,15 +27,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-TV-zYb">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="-1" y="-1" width="376" height="668"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BFJ-ZW-502" userLabel="EffectView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="668"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Informed Public!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyr-lc-2bP">
-                                <rect key="frame" x="60" y="79.5" width="256" height="23"/>
+                                <rect key="frame" x="60" y="80" width="256" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -236,7 +236,7 @@
                     </view>
                     <connections>
                         <outlet property="addressTextField" destination="IcI-CM-mtg" id="Fb3-cG-Bck"/>
-                        <outlet property="avatarImage" destination="dlN-4t-tCW" id="orY-hU-g8A"/>
+                        <outlet property="avatarImageView" destination="dlN-4t-tCW" id="fHL-sY-ejr"/>
                         <outlet property="legislatorNumber" destination="Jwl-64-4Vt" id="DhY-hR-zTG"/>
                         <outlet property="mapView" destination="E8O-yc-Vbz" id="Ih9-Co-K2l"/>
                         <outlet property="nameLabel" destination="eFx-Dc-4My" id="htp-cl-qmM"/>

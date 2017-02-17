@@ -10,7 +10,7 @@ import Foundation
 
 class NewsSearchAPI {
     static private func getURLFor(legislator: Legislator) -> URL {
-        let baseURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?count=10&offset=0&mkt=en-us&safeSearch=Moderate&q="
+        let baseURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?count=10&offset=0&mkt=en-us&safeSearch=Moderate&freshness=Month&q="
         let legislatorEncodedName = legislator.fullName.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
         let urlComponent = "%22\(legislatorEncodedName)%22%20\(legislator.chamber.description))"
         let fullURL = baseURL + urlComponent
@@ -19,16 +19,14 @@ class NewsSearchAPI {
     
     private static let session = URLSession.shared
     
-    static func fetchNewsForLegislators(_ legislators: [Legislator], completion: @escaping ([ActivityItem]) -> ()) {
+    static func fetchNewsForLegislators(_ legislators: [Legislator], completion: @escaping ((Legislator,[[String: Any]])) -> ()) {
         for legislator in legislators {
             fetchNewsJSONForLegislator(legislator) { (response) in
                 switch response {
                 case .success(let data):
                     let dictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     let newsResults = dictionary["value"] as! [[String: Any]]
-                    let newsArticles = newsResults.flatMap(NewsArticle.init)
-                    let activityItems = newsArticles.map({ActivityItem(legislator: legislator, activityType: .news($0))})
-                    completion(activityItems)
+                    completion((legislator, newsResults))
                 case .networkError(let response):
                     print(response.debugDescription)
                 case .failure(let error):

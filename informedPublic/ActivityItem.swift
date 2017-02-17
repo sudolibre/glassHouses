@@ -16,7 +16,7 @@ class ActivityItem {
         case .vote(let legislation, _):
             return legislation.date
         case .news(let article):
-            return article.date
+            return article.date as! Date
         default:
             fatalError("unexpected activity type when calculating date")
         }
@@ -25,8 +25,8 @@ class ActivityItem {
 
     var activityCellViewData: ActivityCellViewData {
         let title = legislator.fullName
-        let image = legislator.photo
         let type = activityType
+        let legislatorID = legislator.ID
         var description: String {
             switch activityType {
             case .vote(let legislation, let result):
@@ -34,13 +34,13 @@ class ActivityItem {
             case .sponsor(let legislation):
                 return "\(legislator.fullName) sponsored \(legislation.id): \(legislation.title)"
             case .news(let article):
-                return "\(article.publisher) \n\(article.description)"
+                return "\(article.publisher!) \n\(article.articleDescription!)"
             case .legislationLifecycle:
                 return ""
             }
         }
         
-        return ActivityCellViewData(title: title, activityDescription: description, activityType: type, avatarImage: image, date: date)
+        return ActivityCellViewData(title: title, activityDescription: description, activityType: type, date: date, legislatorID: legislatorID)
     }
 
     init(legislator: Legislator, activityType: ActivityType) {
@@ -51,7 +51,7 @@ class ActivityItem {
 }
 
 enum ActivityType {
-    case news(NewsArticle)
+    case news(Article)
     case vote(Legislation, VoteResult)
     case sponsor(Legislation)
     case legislationLifecycle

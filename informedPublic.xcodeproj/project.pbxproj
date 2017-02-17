@@ -26,6 +26,8 @@
 		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E895A1361E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */; };
 		E895A1371E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */; };
+		E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */; };
+		E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */; };
 		E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */; };
 		E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */; };
 		E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF592A1E4CD98B008365F4 /* Legislation.swift */; };
@@ -76,6 +78,8 @@
 		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LegislationJSON+CoreDataClass.swift"; path = "informedPublic/LegislationJSON+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LegislationJSON+CoreDataProperties.swift"; path = "informedPublic/LegislationJSON+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFeedController.swift; sourceTree = "<group>"; };
 		E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		E8BF592A1E4CD98B008365F4 /* Legislation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legislation.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 		E84BE36E1E4A4BC6004359DE = {
 			isa = PBXGroup;
 			children = (
+				E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */,
+				E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */,
 				E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */,
 				E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */,
 				E84BE3791E4A4BC6004359DE /* informedPublic */,
@@ -139,11 +145,11 @@
 				E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */,
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
+				E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */,
 				E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */,
 				E8F8178C1E4E503F00155A5D /* NewsArticle.swift */,
 				E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */,
 				E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */,
-				E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */,
 				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
 				E84BE3AA1E4B6385004359DE /* Legislator.swift */,
 				E8BF592A1E4CD98B008365F4 /* Legislation.swift */,
@@ -318,6 +324,8 @@
 			files = (
 				E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */,
 				E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */,
+				E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */,
+				E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */,
 				E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */,
 				E895A1371E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift in Sources */,
 				E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */,

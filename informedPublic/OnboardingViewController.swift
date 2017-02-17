@@ -23,9 +23,21 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             switch legislators {
             case .some:
                 currentLegislator = legislators!.first!
+                fetchPhotos()
                 updateRepView()
             case .none:
                 self.nextButton.isEnabled = false
+            }
+        }
+    }
+    
+    func fetchPhotos() {
+        for legislator in legislators! {
+            if imageStore.getImage(forKey: legislator.photoKey) == nil {
+                imageStore.fetchRemoteImage(forURL: legislator.photoURL, completion: { (image) in
+                    self.imageStore.setImage(image, forKey: legislator.photoKey)
+                    self.updateRepView()
+                })
             }
         }
     }
@@ -75,7 +87,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             i.layer.cornerRadius = i.frame.size.width / 8
         }
         
-        avatarImage.layer.cornerRadius = avatarImage.frame.size.width / 2
+        avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
         
     }
     
@@ -83,6 +95,12 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         let navVC = segue.destination as! UINavigationController
         let activityVC = navVC.topViewController as! ActivityFeedController
         activityVC.legislators = self.legislators
+        let dataSource: ActivityFeedDataSource = {
+            let ds = ActivityFeedDataSource()
+            ds.imageStore = imageStore
+            return ds
+        }()
+        activityVC.dataSource = dataSource
     }
     
 
@@ -196,8 +214,9 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
 
 
     //MARK: Overview Card
+    let imageStore = ImageStore()
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var avatarImage: UIImageView!
+    @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var legislatorNumber: UILabel!
 
@@ -221,8 +240,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             self.legislatorNumber.text = "\(currentPosition) of \(self.legislators!.count)"
             self.subtitleLabel.text = "\(self.currentLegislator!.party.description) - \(self.currentLegislator!.title) - District \(self.currentLegislator!.district)"
             self.nameLabel.text = self.currentLegislator!.fullName
-            if let image = self.currentLegislator!.photo {
-                self.avatarImage.image = image
+            if let image = self.imageStore.getImage(forKey: self.currentLegislator!.photoKey) {
+                self.avatarImageView.image = image
             }
         }
     }

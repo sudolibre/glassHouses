@@ -10,21 +10,20 @@ import Foundation
 import UIKit
 
 class ActivityCell: UITableViewCell {
- 
+    
     @IBOutlet var date: UILabel!
     @IBOutlet var title: UILabel!
     @IBOutlet var token: UILabel!
     @IBOutlet var avatarImage: UIImageView!
     @IBOutlet var activityDescription: UILabel!
     
+    var legislatorID: String?
+    
     func applyViewData(_ viewData: ActivityCellViewData) {
+        legislatorID = viewData.legislatorID
         title.text = viewData.title
         activityDescription.text = viewData.activityDescription
         setTokenFromActivityType(viewData.activityType)
-        if let image = viewData.avatarImage {
-            avatarImage.image = image
-        }
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         date.text = dateFormatter.string(from: viewData.date)
@@ -48,12 +47,12 @@ class ActivityCell: UITableViewCell {
                 tokenColor = UIColor(colorLiteralRed: 0.6, green: 0.6, blue: 0.6, alpha: 1)
             }
         case .news:
-            tokenText = " News "
-            tokenColor = UIColor(colorLiteralRed: 0.5, green: 0.0, blue: 1, alpha: 1)
-            
-        default:
-            break
-        }
+                tokenText = " News "
+                tokenColor = UIColor(colorLiteralRed: 0.5, green: 0.0, blue: 1, alpha: 1)
+                
+            default:
+                break
+            }
         
         token.text = tokenText
         token.backgroundColor = tokenColor
@@ -72,6 +71,6 @@ struct ActivityCellViewData {
     let title: String
     let activityDescription: String
     let activityType: ActivityType
-    var avatarImage: UIImage?
-    var date: Date
+    let date: Date
+    let legislatorID: String
 }

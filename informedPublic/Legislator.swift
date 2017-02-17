@@ -19,8 +19,9 @@ class Legislator {
         return chamber.description
     }
     var photoURL: URL
-    var photo: UIImage?
-    var photoKey: String?
+    var photoKey: String {
+        return ID
+    }
     var ID: String
     
     var voterDescription: String {
@@ -83,9 +84,6 @@ class Legislator {
         self.party = party
         self.chamber = chamber
         self.photoURL = photoURL
-        if let photoData = try? Data.init(contentsOf: photoURL) {
-        photo = UIImage(data: photoData)
-        }
     }
 }
 
