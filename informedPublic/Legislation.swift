@@ -14,6 +14,7 @@ class Legislation {
     var documentURL: URL
     var date: Date
     var votes: Votes
+    var sponsorIDs: [String]
     
     struct Votes {
         let yesVotes: Set<String>
@@ -34,6 +35,7 @@ class Legislation {
         let actionDates = json["action_dates"] as? [String: Any],
         let dateString = actionDates["last"] as? String,
         let date = dateFormatter.date(from: dateString),
+        let sponsorArray = json["sponsors"] as? [[String: Any]],
         let votesArray = json["votes"] as? [[String: Any]],
         let yesVotesArray = votesArray.first?["yes_votes"] as? [[String:Any]],
         let noVotesArray = votesArray.first?["no_votes"] as? [[String:Any]],
@@ -44,7 +46,7 @@ class Legislation {
         let yesNames = yesVotesArray.flatMap({$0["name"] as? String})
         let noNames = noVotesArray.flatMap({$0["name"] as? String})
         let otherNames = otherVotesArray.flatMap({$0["name"] as? String})
-
+        self.sponsorIDs = sponsorArray.flatMap({$0["leg_id"] as? String})
         self.date = date
         self.documentURL = documentURL
         self.title = title

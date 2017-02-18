@@ -73,24 +73,30 @@ class OpenStatesAPI {
         var legislators: [Legislator] = []
                 
         for id in ids {
-            request(.fetchLegislator(ID: id), completion: { (response) in
-                switch response {
-                case .success(let data):
-                    let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    if let legislator = Legislator(json: json) {
-                        legislators.append(legislator)
-                        if legislators.count ==  ids.count {
-                            completion(legislators)
-                        }
-                    }
-                case .networkError(let response):
-                    print(response.description)
-                case .failure(let error):
-                    print(error.localizedDescription)
+            fetchLegislatorByID(id: id, completion: { (legislator) in
+                legislators.append(legislator)
+                if legislators.count ==  ids.count {
+                    completion(legislators)
                 }
-                
             })
         }
+    }
+    
+    static internal func fetchLegislatorByID(id: String, completion: @escaping (Legislator) -> ()) {
+        request(.fetchLegislator(ID: id), completion: { (response) in
+            switch response {
+            case .success(let data):
+                let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                if let legislator = Legislator(json: json) {
+                        completion(legislator)
+                }
+            case .networkError(let response):
+                print(response.description)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        })
     }
     
     static internal func parseDistrictResults(_ data: Data) -> [Legislator] {

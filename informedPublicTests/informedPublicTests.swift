@@ -15,7 +15,7 @@ class informedPublicTests: XCTestCase {
         guard let pathString = Bundle(for: type(of: self)).path(forResource: "articleJSON", ofType: nil) else {
             fatalError("articleJSON not found")
         }
-        
+
         let url = URL(fileURLWithPath: pathString)
         let jsonData = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]

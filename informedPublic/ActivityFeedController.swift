@@ -93,24 +93,32 @@ class ActivityFeedController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: nil)
+        let item = dataSource[tableView.indexPathForSelectedRow!.row]
+        switch item.activityType {
+        case .vote(let legislation, _), .sponsor(let legislation):
+            performSegue(withIdentifier: "showLegislation", sender: legislation)
+        case .news(let article):
+            performSegue(withIdentifier: "showNews", sender: article)
+        case .legislationLifecycle:
+            fatalError("not implemented yet")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let item = dataSource[tableView.indexPathForSelectedRow!.row]
-        var url: URL {
-            switch item.activityType {
-            case .vote(let legislation, _), .sponsor(let legislation):
-                return legislation.documentURL
-            case .news(let article):
-                return article.link as! URL
-            case .legislationLifecycle:
-                fatalError("not implemented yet")
-            }
+        switch segue.identifier! {
+        case "showLegislation":
+            let legislationVC = segue.destination as! LegislationDetailViewController
+            legislationVC.legislation = sender as! Legislation!
+            legislationVC.dataSource = SponsorCollectionDataSource(imageStore: dataSource.imageStore)
+        case "showNews":
+            let article = sender as! Article
+            let url = article.link as! URL
+            let request = URLRequest(url: url)
+            let webView = segue.destination.view as! UIWebView
+            webView.loadRequest(request)
+        default:
+            fatalError("unexpected segue identifier")
         }
-        let request = URLRequest(url: url)
-        let webView = segue.destination.view as? UIWebView
-        webView?.loadRequest(request)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }

@@ -31,7 +31,7 @@ class Legislator {
         return "\(lastName), \(districtDescription)".uppercased()
     }
     
-    enum Party: String {
+    enum Party: String, CustomStringConvertible {
         case republican
         case democratic
         
@@ -67,7 +67,7 @@ class Legislator {
         let lastName = json["last_name"] as? String,
         let partyRawValue = json["party"] as? String,
         let party = Party(rawValue: partyRawValue.lowercased()),
-        let photoURLString = json["photo_url"] as? String,
+        let photoURLString = (json["photo_url"] as? String)?.replacingOccurrences(of: " ", with: "%20", options: [], range: nil),
         let photoURL = URL(string: photoURLString),
         let chamberRawValue = json["chamber"] as? String,
         let chamber = Chamber(rawValue: chamberRawValue),
