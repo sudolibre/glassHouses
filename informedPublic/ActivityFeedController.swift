@@ -109,7 +109,7 @@ class ActivityFeedController: UITableViewController {
         case "showLegislation":
             let legislationVC = segue.destination as! LegislationDetailViewController
             legislationVC.legislation = sender as! Legislation!
-            legislationVC.dataSource = SponsorCollectionDataSource(imageStore: dataSource.imageStore)
+            legislationVC.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: sender as! Legislation)
         case "showNews":
             let article = sender as! Article
             let url = article.link as! URL

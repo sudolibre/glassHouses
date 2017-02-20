@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate {
+class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     @IBOutlet var viewsToRoundCorners: [UIView]!
     @IBOutlet var primaryTitle: UILabel!
     @IBOutlet var centerXConstraints: [NSLayoutConstraint]!

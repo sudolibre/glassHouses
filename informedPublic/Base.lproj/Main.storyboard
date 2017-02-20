@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lyc-ju-lK1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G8o-Wp-CzB">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -389,32 +389,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HB 253" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sp-oQ-Vpe">
-                                <rect key="frame" x="155" y="44" width="65" height="22"/>
+                                <rect key="frame" x="155" y="88" width="65" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Georgia House Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3f-7H-AQJ">
-                                <rect key="frame" x="121" y="66" width="134" height="20"/>
+                                <rect key="frame" x="121" y="110" width="134" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-Iq-Ovo">
-                                <rect key="frame" x="16" y="94" width="343" height="50.5"/>
+                                <rect key="frame" x="16" y="138" width="343" height="50.5"/>
                                 <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-FZ-8XJ" userLabel="Bill Status" customClass="LegislationStatusView" customModule="informedPublic" customModuleProvider="target">
-                                <rect key="frame" x="16" y="152.5" width="343" height="80"/>
+                                <rect key="frame" x="16" y="196.5" width="343" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="B8c-30-vgR"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLT-u2-Kww" userLabel="Sponsor View">
-                                <rect key="frame" x="16" y="265.5" width="343" height="100"/>
+                                <rect key="frame" x="16" y="309.5" width="343" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="jYp-lY-kQ2"/>
@@ -465,23 +465,28 @@ District 51</string>
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-aO-y0g" userLabel="Sponsor Count">
-                                <rect key="frame" x="16" y="240.5" width="83.5" height="17"/>
+                                <rect key="frame" x="16" y="284.5" width="83.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdB-fd-f2U">
+                                <rect key="frame" x="16" y="426" width="343" height="500"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pvT-FZ-8XJ" firstAttribute="top" secondItem="ViW-Iq-Ovo" secondAttribute="bottom" constant="8" id="2lR-Q1-Fal"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ViW-Iq-Ovo" secondAttribute="trailing" id="4FO-yG-6ok"/>
-                            <constraint firstItem="0Sp-oQ-Vpe" firstAttribute="top" secondItem="zcW-4J-iph" secondAttribute="bottom" constant="24" id="4lj-BI-5t1"/>
                             <constraint firstItem="pvT-FZ-8XJ" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="5J1-x0-o21"/>
                             <constraint firstItem="0Sp-oQ-Vpe" firstAttribute="centerX" secondItem="rXU-ze-P7w" secondAttribute="centerX" id="G4y-n2-Icy"/>
                             <constraint firstItem="kLT-u2-Kww" firstAttribute="trailing" secondItem="rXU-ze-P7w" secondAttribute="trailingMargin" id="IjF-c1-FwW"/>
                             <constraint firstItem="ViW-Iq-Ovo" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="Izf-a6-mdr"/>
                             <constraint firstItem="5uf-aO-y0g" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="Kh1-23-tjd"/>
                             <constraint firstItem="pvT-FZ-8XJ" firstAttribute="trailing" secondItem="rXU-ze-P7w" secondAttribute="trailingMargin" id="LQo-fB-HDg"/>
+                            <constraint firstItem="0Sp-oQ-Vpe" firstAttribute="top" secondItem="zcW-4J-iph" secondAttribute="bottom" constant="24" id="Ld7-hZ-5wL"/>
                             <constraint firstItem="Z3f-7H-AQJ" firstAttribute="centerX" secondItem="rXU-ze-P7w" secondAttribute="centerX" id="NAw-lw-QUu"/>
                             <constraint firstItem="kLT-u2-Kww" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="QHW-sf-Zg1"/>
                             <constraint firstItem="ViW-Iq-Ovo" firstAttribute="top" secondItem="Z3f-7H-AQJ" secondAttribute="bottom" constant="8" id="Xc9-J4-MBM"/>
@@ -501,7 +506,147 @@ District 51</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC5-6X-ao0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3030" y="466"/>
+            <point key="canvasLocation" x="3029.5999999999999" y="465.51724137931041"/>
+        </scene>
+        <!--Legislation Detail View Controller-->
+        <scene sceneID="iTH-j6-jHC">
+            <objects>
+                <viewController id="G8o-Wp-CzB" customClass="LegislationDetailViewController" customModule="informedPublic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nkN-YD-C8K"/>
+                        <viewControllerLayoutGuide type="bottom" id="scq-pl-oEs"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" id="DdH-nH-Ct1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TPh-WT-9Qp" userLabel="Outter View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HB 253" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enH-M2-LpB">
+                                        <rect key="frame" x="155" y="88" width="65" height="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Georgia House Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqH-EM-eaU">
+                                        <rect key="frame" x="121" y="110" width="134" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-it-ATq">
+                                        <rect key="frame" x="8" y="138" width="359" height="50.5"/>
+                                        <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="informedPublic" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="196.5" width="359" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="wne-R0-Lwc"/>
+                                        </constraints>
+                                    </view>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYh-CI-sCO" userLabel="Sponsor View">
+                                        <rect key="frame" x="8" y="309.5" width="359" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="0Fu-69-lt7"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p4R-kH-HjX">
+                                            <size key="itemSize" width="174" height="80"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sponsorCell" id="2wd-0u-9wr" customClass="SponserCollectionCell" customModule="informedPublic" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="10" width="174" height="80"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="174" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvS-c8-34k">
+                                                            <rect key="frame" x="67" y="8" width="90" height="64"/>
+                                                            <string key="text">Wendell Willard
+Republican
+District 51</string>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="UHL-Ya-v9l">
+                                                            <rect key="frame" x="0.0" y="0.0" width="59" height="80"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="UHL-Ya-v9l" firstAttribute="leading" secondItem="2wd-0u-9wr" secondAttribute="leading" id="6hn-ha-RN5"/>
+                                                    <constraint firstItem="UHL-Ya-v9l" firstAttribute="centerY" secondItem="2wd-0u-9wr" secondAttribute="centerY" id="Qmb-YM-HNd"/>
+                                                    <constraint firstItem="UHL-Ya-v9l" firstAttribute="width" secondItem="2wd-0u-9wr" secondAttribute="height" multiplier="59:80" id="V7I-QL-2am"/>
+                                                    <constraint firstItem="UHL-Ya-v9l" firstAttribute="height" secondItem="2wd-0u-9wr" secondAttribute="height" id="VhX-53-axC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lvS-c8-34k" secondAttribute="bottom" constant="8" id="gfL-e5-aeI"/>
+                                                    <constraint firstItem="lvS-c8-34k" firstAttribute="leading" secondItem="UHL-Ya-v9l" secondAttribute="trailing" constant="8" symbolic="YES" id="omR-kp-rx9"/>
+                                                    <constraint firstItem="lvS-c8-34k" firstAttribute="top" secondItem="2wd-0u-9wr" secondAttribute="top" constant="8" id="ynx-nA-URd"/>
+                                                </constraints>
+                                                <size key="customSize" width="174" height="80"/>
+                                                <connections>
+                                                    <outlet property="avatarImageView" destination="UHL-Ya-v9l" id="ESU-Dg-Hgd"/>
+                                                    <outlet property="descriptionLabel" destination="lvS-c8-34k" id="Gac-1L-SXw"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-MT-tpy" userLabel="Sponsor Count">
+                                        <rect key="frame" x="8" y="284.5" width="83.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="fYh-CI-sCO" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="B0T-De-4S4"/>
+                                    <constraint firstItem="kj6-MT-tpy" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="El9-wO-gxR"/>
+                                    <constraint firstItem="HqH-EM-eaU" firstAttribute="centerX" secondItem="TPh-WT-9Qp" secondAttribute="centerX" id="HgO-yi-nsJ"/>
+                                    <constraint firstItem="fYh-CI-sCO" firstAttribute="trailing" secondItem="TPh-WT-9Qp" secondAttribute="trailingMargin" id="NLt-fe-RCR"/>
+                                    <constraint firstItem="kj6-MT-tpy" firstAttribute="top" secondItem="e9l-Wl-Mmv" secondAttribute="bottom" constant="8" symbolic="YES" id="Oph-wQ-xWC"/>
+                                    <constraint firstItem="enH-M2-LpB" firstAttribute="centerX" secondItem="TPh-WT-9Qp" secondAttribute="centerX" id="ZBf-Tc-nZG"/>
+                                    <constraint firstItem="fnn-it-ATq" firstAttribute="top" secondItem="HqH-EM-eaU" secondAttribute="bottom" constant="8" id="co1-VI-iQq"/>
+                                    <constraint firstItem="enH-M2-LpB" firstAttribute="top" secondItem="TPh-WT-9Qp" secondAttribute="top" constant="88" id="f3D-QL-yj9"/>
+                                    <constraint firstItem="e9l-Wl-Mmv" firstAttribute="trailing" secondItem="TPh-WT-9Qp" secondAttribute="trailingMargin" id="i4h-MQ-5PL"/>
+                                    <constraint firstItem="fYh-CI-sCO" firstAttribute="top" secondItem="kj6-MT-tpy" secondAttribute="bottom" constant="8" symbolic="YES" id="jbf-Ao-vOR"/>
+                                    <constraint firstItem="fnn-it-ATq" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="nHb-LB-Thk"/>
+                                    <constraint firstItem="HqH-EM-eaU" firstAttribute="top" secondItem="enH-M2-LpB" secondAttribute="bottom" id="oKL-Ra-MF0"/>
+                                    <constraint firstItem="e9l-Wl-Mmv" firstAttribute="top" secondItem="fnn-it-ATq" secondAttribute="bottom" constant="8" id="yMF-qz-JbA"/>
+                                    <constraint firstItem="e9l-Wl-Mmv" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="yTS-ST-X08"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="fnn-it-ATq" secondAttribute="trailing" id="zIa-uY-gGV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="TPh-WT-9Qp" firstAttribute="height" secondItem="DdH-nH-Ct1" secondAttribute="height" multiplier="1.5" id="1SL-O4-Nz2"/>
+                            <constraint firstItem="TPh-WT-9Qp" firstAttribute="width" secondItem="DdH-nH-Ct1" secondAttribute="width" id="6sL-0K-NVP"/>
+                            <constraint firstItem="TPh-WT-9Qp" firstAttribute="centerX" secondItem="DdH-nH-Ct1" secondAttribute="centerX" id="Cgx-46-gVY"/>
+                            <constraint firstItem="TPh-WT-9Qp" firstAttribute="top" secondItem="DdH-nH-Ct1" secondAttribute="top" id="zjb-md-gKG"/>
+                        </constraints>
+                    </scrollView>
+                    <connections>
+                        <outlet property="billChamberLabel" destination="HqH-EM-eaU" id="DiJ-s5-2hj"/>
+                        <outlet property="billDescriptionLabel" destination="fnn-it-ATq" id="iiP-2q-y7E"/>
+                        <outlet property="billNameLabel" destination="enH-M2-LpB" id="Z0E-wA-6fZ"/>
+                        <outlet property="billStatusView" destination="e9l-Wl-Mmv" id="NES-C9-7MY"/>
+                        <outlet property="outterView" destination="TPh-WT-9Qp" id="BzY-Rz-nPP"/>
+                        <outlet property="scrollView" destination="DdH-nH-Ct1" id="7ii-IM-sEb"/>
+                        <outlet property="sponsorCollectionView" destination="fYh-CI-sCO" id="UEC-HQ-Mx6"/>
+                        <outlet property="sponsorCountLabel" destination="kj6-MT-tpy" id="8Ps-Ei-4MB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eob-09-O1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3698.4000000000001" y="465.51724137931041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qMU-pY-UOg">

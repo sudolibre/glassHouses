@@ -128,7 +128,6 @@
 				E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */,
 				E84BE3791E4A4BC6004359DE /* informedPublic */,
 				E84BE38E1E4A4BC6004359DE /* informedPublicTests */,
-				E84BE3991E4A4BC6004359DE /* informedPublicUITests */,
 				E84BE3781E4A4BC6004359DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 				E800AC531E52047F00187854 /* legislationJSON */,
 				E800AC551E5206AD00187854 /* legislatorJSON */,
 				E800AC511E51FA5700187854 /* articleJSON */,
+				E84BE3991E4A4BC6004359DE /* informedPublicUITests */,
 				E84BE3911E4A4BC6004359DE /* Info.plist */,
 			);
 			path = informedPublicTests;
@@ -176,7 +176,8 @@
 				E84BE39A1E4A4BC6004359DE /* informedPublicUITests.swift */,
 				E84BE39C1E4A4BC6004359DE /* Info.plist */,
 			);
-			path = informedPublicUITests;
+			name = informedPublicUITests;
+			path = ../informedPublicUITests;
 			sourceTree = "<group>";
 		};
 		E8DEEF0A1E577360004AF755 /* View */ = {
