@@ -15,6 +15,7 @@ class Legislation {
     var date: Date
     var votes: Votes
     var sponsorIDs: [String]
+    var status: Status
     
     struct Votes {
         let yesVotes: Set<String>
@@ -53,5 +54,30 @@ class Legislation {
         self.id = id
         self.votes = Votes(yesVotes: Set(yesNames), noVotes: Set(noNames), otherVotes: Set(otherNames))
         
+        if actionDates["signed"] != nil {
+            status = .law
+        } else if actionDates["passed_upper"] != nil {
+            status = .senate
+        } else if actionDates["passed_lower"] != nil {
+            status = .house
+        } else {
+            status = .introduced
+        }
+    }
+}
+
+
+enum Status: Int {
+    case introduced = 1
+    case house = 2
+    case senate = 3
+    case law = 4
+    
+    static var count: Int {
+        return 4
+    }
+    
+    static var descriptions: [String] {
+        return ["Introduced", "House", "Senate", "Law"]
     }
 }

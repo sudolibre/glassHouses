@@ -17,27 +17,8 @@ class LegislationStatusView: UIView {
             let circlePairs = zip(statusCircles, statusCircles.dropFirst())
             for (index, (circle, nextCircle)) in circlePairs.enumerated() {
                 let count = index + 1
-                if count <= status.rawValue {
-                    animateStatusCircleForStatus(count: Double(count), circle: circle, nextCircle: nextCircle)
-                } else {
-                    break
-                }
+                animateStatusCircleForStatus(count: Double(count), circle: circle, nextCircle: nextCircle)
             }
-        }
-    }
-    
-    enum Status: Int {
-        case introduced = 1
-        case house = 2
-        case senate = 3
-        case law = 4
-        
-        static var count: Int {
-            return 4
-        }
-        
-        static var descriptions: [String] {
-            return ["Introduced", "House", "Senate", "Law"]
         }
     }
     
@@ -82,7 +63,7 @@ class LegislationStatusView: UIView {
     }
     
     
-    func animateStatusCircleForStatus(count: Double, circle: CAShapeLayer, nextCircle: CAShapeLayer) {
+    func animateStatusCircleForStatus(count: Double, circle: CAShapeLayer, nextCircle: CAShapeLayer?) {
         let fillAnimation: CABasicAnimation = {
             let animation = CABasicAnimation(keyPath: "fillColor")
             animation.fromValue = UIColor.gray.cgColor
@@ -131,40 +112,46 @@ class LegislationStatusView: UIView {
             return layer
         }()
         
-        //Line layer to connect active circles
-        let lineLayer: CAShapeLayer = {
-            let nextCircleCenterPoint = CGPoint(x: (nextCircle.path?.boundingBoxOfPath.midX)!, y: (nextCircle.path?.boundingBoxOfPath.midY)!)
-            let circleRightEdge = centerPoint.applying(CGAffineTransform(translationX: radius, y: 0))
-            let nextCircleLeftEdge = nextCircleCenterPoint.applying(CGAffineTransform(translationX: -radius, y: 0))
-            let path = UIBezierPath()
-            path.move(to: circleRightEdge)
-            path.addLine(to: nextCircleLeftEdge)
-            let layer = CAShapeLayer()
-            layer.path = path.cgPath
-            layer.lineWidth = 2
-            if Int(count) == Status.count - 1 {
-                layer.lineDashPattern = [5, 5]
-            }
-            layer.strokeEnd = CGFloat(0)
-            layer.strokeColor = UIColor.lightGray.cgColor
-            return layer
-        }()
         
-        
-        checkStrokeAnimation.beginTime = CACurrentMediaTime() + checkStrokeAnimation.duration * count
         strokeAnimation.beginTime = CACurrentMediaTime() + strokeAnimation.duration * count
-        fillAnimation.beginTime = CACurrentMediaTime() + fillAnimation.duration * count
         
-        layer.addSublayer(lineLayer)
-        lineLayer.add(strokeAnimation, forKey: "strokeEnd")
-        circle.addSublayer(checkLayer)
-        checkLayer.add(checkStrokeAnimation, forKey: "strokeEnd")
-        circle.add(strokeAnimation, forKey: "strokeEnd")
-        circle.add(fillAnimation, forKey: "fillColor")
+        if Int(count) <= status.rawValue {
+            checkStrokeAnimation.beginTime = CACurrentMediaTime() + checkStrokeAnimation.duration * count
+            fillAnimation.beginTime = CACurrentMediaTime() + fillAnimation.duration * count
+            circle.addSublayer(checkLayer)
+            checkLayer.add(checkStrokeAnimation, forKey: "strokeEnd")
+            circle.add(strokeAnimation, forKey: "strokeEnd")
+            circle.add(fillAnimation, forKey: "fillColor")
+        }
         
-
+        //Line layer to connect active circles
+        if let nextCircle = nextCircle {
+            let lineLayer: CAShapeLayer = {
+                let nextCircleCenterPoint = CGPoint(x: (nextCircle.path?.boundingBoxOfPath.midX)!, y: (nextCircle.path?.boundingBoxOfPath.midY)!)
+                let circleRightEdge = centerPoint.applying(CGAffineTransform(translationX: radius, y: 0))
+                let nextCircleLeftEdge = nextCircleCenterPoint.applying(CGAffineTransform(translationX: -radius, y: 0))
+                let path = UIBezierPath()
+                path.move(to: circleRightEdge)
+                path.addLine(to: nextCircleLeftEdge)
+                let layer = CAShapeLayer()
+                layer.path = path.cgPath
+                layer.lineWidth = 2
+                layer.strokeEnd = CGFloat(0)
+                layer.strokeColor = UIColor.lightGray.cgColor
+                if Int(count) >= status.rawValue {
+                    layer.lineDashPattern = [5, 5]
+                }
+                return layer
+            }()
+            
+            layer.addSublayer(lineLayer)
+            lineLayer.add(strokeAnimation, forKey: "strokeEnd")
+            
+            if Int(count) == (Status.count - 1) && status.rawValue == Status.count {
+                animateStatusCircleForStatus(count: count + 1, circle: nextCircle, nextCircle: nil)
+            }
+        }
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -35,22 +35,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         scrollView.contentSize = outterView.bounds.size
-        //billStatusView.status = legislation.status
-        billStatusView.status = .senate
-        
-        
-        //DELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETE
-        guard let pathString = Bundle(for: type(of: self)).path(forResource: "legislationJSON", ofType: nil) else {
-            fatalError("articleJSON not found")
-        }
-        let url = URL(fileURLWithPath: pathString)
-        let jsonData = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
-        let optionalResult = Legislation(json: json)
-        legislation = optionalResult!
-        dataSource = LegislationDetailDataSource(imageStore: ImageStore(), legislation: legislation)
-        //DELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETEDELEEEEEEEEEETE
-        
+        billStatusView.status = legislation!.status
         sponsorCollectionView.dataSource = dataSource
         
         for id in legislation.sponsorIDs {
@@ -59,6 +44,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
                 self.sponsorCollectionView.reloadData()
             }
         }
+        
         legislationWebView = {
             let webView = WKWebView(frame: .zero)
             self.outterView.addSubview(webView)
