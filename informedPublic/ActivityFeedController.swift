@@ -17,9 +17,6 @@ class ActivityFeedController: UITableViewController {
     var legislators: [Legislator]! {
         didSet {
             generateFeed()
-            DispatchQueue.main.async {
-                self.spinner.stopAnimating()
-            }
         }
     }
     var dataSource = ActivityFeedDataSource()
@@ -48,38 +45,6 @@ class ActivityFeedController: UITableViewController {
         view.addConstraints([centerXConstraint, centerYConstraint])
         spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         spinner.color = UIColor.gray
-        
-        
-        
-        
-        //TOTO: DELETE MEEEEEEE
-        //        legislators = [
-        //        Legislator(json: [
-        //            "full_name": "Pat Gardner",
-        //            "district": "57",
-        //            "leg_id": "GAL000113",
-        //            "last_name": "Gardner",
-        //            "party": "democratic",
-        //            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
-        //            "chamber": "lower",
-        //            "active": true
-        //            ])!,
-        //            Legislator(json: [
-        //                "full_name": "Nan Orrock",
-        //                "district": "36",
-        //                "leg_id": "GAL000038",
-        //                "last_name": "Orrock",
-        //                "party": "democratic",
-        //                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
-        //                "chamber": "upper",
-        //                "active": true
-        //                ])!
-        //        ]
-        //DELELTELLETLELTELETLELTL
-        
-        
-        
-        
     }
     
     
@@ -87,6 +52,7 @@ class ActivityFeedController: UITableViewController {
         ActivityItemStore.fetchActivityItems(legislators: legislators) { (activityItem) in
             DispatchQueue.main.async {
                 self.dataSource.addItem(activityItem)
+                self.spinner.stopAnimating()
                 self.tableView.reloadData()
             }
         }

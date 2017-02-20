@@ -75,3 +75,28 @@ class informedPublicTests: XCTestCase {
     }
 
 }
+
+//TOTO: DELETE MEEEEEEE
+//        legislators = [
+//        Legislator(json: [
+//            "full_name": "Pat Gardner",
+//            "district": "57",
+//            "leg_id": "GAL000113",
+//            "last_name": "Gardner",
+//            "party": "democratic",
+//            "photo_url": "http://www.house.ga.gov/SiteCollectionImages/GardnerPat109.jpg",
+//            "chamber": "lower",
+//            "active": true
+//            ])!,
+//            Legislator(json: [
+//                "full_name": "Nan Orrock",
+//                "district": "36",
+//                "leg_id": "GAL000038",
+//                "last_name": "Orrock",
+//                "party": "democratic",
+//                "photo_url": "http://www.senate.ga.gov/SiteCollectionImages/OrrockNan33.jpg",
+//                "chamber": "upper",
+//                "active": true
+//                ])!
+//        ]
+//DELELTELLETLELTELETLELTL

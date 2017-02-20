@@ -107,7 +107,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
 
     
     //MARK: Welcome Card
-    // no custom properties or methods for the welcome card
+    // there are no custom properties or methods for the welcome card
+    
     //MARK: Identify Card
     
     let locationManager = CLLocationManager()

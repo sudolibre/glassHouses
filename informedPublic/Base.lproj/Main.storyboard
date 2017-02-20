@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G8o-Wp-CzB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -355,7 +355,7 @@
                     <navigationItem key="navigationItem" id="wxo-5J-Ea2"/>
                     <connections>
                         <segue destination="XOv-oI-mcf" kind="show" identifier="showNews" id="pL1-HM-tJY"/>
-                        <segue destination="Lyc-ju-lK1" kind="show" identifier="showLegislation" id="Cmk-qj-GAl"/>
+                        <segue destination="G8o-Wp-CzB" kind="show" identifier="showLegislation" id="j0U-Pe-tck"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ltb-RL-Gpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,138 +375,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwC-3a-2gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3030" y="-232"/>
-        </scene>
-        <!--Legislation Detail View Controller-->
-        <scene sceneID="qsT-sD-09n">
-            <objects>
-                <viewController id="Lyc-ju-lK1" customClass="LegislationDetailViewController" customModule="informedPublic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zcW-4J-iph"/>
-                        <viewControllerLayoutGuide type="bottom" id="NaS-hB-AXd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rXU-ze-P7w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HB 253" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sp-oQ-Vpe">
-                                <rect key="frame" x="155" y="88" width="65" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Georgia House Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3f-7H-AQJ">
-                                <rect key="frame" x="121" y="110" width="134" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViW-Iq-Ovo">
-                                <rect key="frame" x="16" y="138" width="343" height="50.5"/>
-                                <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvT-FZ-8XJ" userLabel="Bill Status" customClass="LegislationStatusView" customModule="informedPublic" customModuleProvider="target">
-                                <rect key="frame" x="16" y="196.5" width="343" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="B8c-30-vgR"/>
-                                </constraints>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLT-u2-Kww" userLabel="Sponsor View">
-                                <rect key="frame" x="16" y="309.5" width="343" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="jYp-lY-kQ2"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IZd-np-n7q">
-                                    <size key="itemSize" width="174" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sponsorCell" id="WxV-ib-5xg" customClass="SponserCollectionCell" customModule="informedPublic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="10" width="174" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="174" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IX1-FE-i2A">
-                                                    <rect key="frame" x="67" y="8" width="90" height="64"/>
-                                                    <string key="text">Wendell Willard
-Republican
-District 51</string>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="LVk-oL-Fvl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="80"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="IX1-FE-i2A" secondAttribute="bottom" constant="8" id="XEV-dm-Hj6"/>
-                                            <constraint firstItem="LVk-oL-Fvl" firstAttribute="width" secondItem="WxV-ib-5xg" secondAttribute="height" multiplier="59:80" id="aQ5-C7-c43"/>
-                                            <constraint firstItem="LVk-oL-Fvl" firstAttribute="height" secondItem="WxV-ib-5xg" secondAttribute="height" id="bhm-Nt-3d4"/>
-                                            <constraint firstItem="LVk-oL-Fvl" firstAttribute="leading" secondItem="WxV-ib-5xg" secondAttribute="leading" id="cjd-q2-0V9"/>
-                                            <constraint firstItem="LVk-oL-Fvl" firstAttribute="centerY" secondItem="WxV-ib-5xg" secondAttribute="centerY" id="e5U-Cp-xAf"/>
-                                            <constraint firstItem="IX1-FE-i2A" firstAttribute="top" secondItem="WxV-ib-5xg" secondAttribute="top" constant="8" id="jRS-Ih-Jgl"/>
-                                            <constraint firstItem="IX1-FE-i2A" firstAttribute="leading" secondItem="LVk-oL-Fvl" secondAttribute="trailing" constant="8" symbolic="YES" id="yd4-pX-4mU"/>
-                                        </constraints>
-                                        <size key="customSize" width="174" height="80"/>
-                                        <connections>
-                                            <outlet property="avatarImageView" destination="LVk-oL-Fvl" id="Xrz-75-hmq"/>
-                                            <outlet property="descriptionLabel" destination="IX1-FE-i2A" id="frx-40-d5T"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uf-aO-y0g" userLabel="Sponsor Count">
-                                <rect key="frame" x="16" y="284.5" width="83.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdB-fd-f2U">
-                                <rect key="frame" x="16" y="426" width="343" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="pvT-FZ-8XJ" firstAttribute="top" secondItem="ViW-Iq-Ovo" secondAttribute="bottom" constant="8" id="2lR-Q1-Fal"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ViW-Iq-Ovo" secondAttribute="trailing" id="4FO-yG-6ok"/>
-                            <constraint firstItem="pvT-FZ-8XJ" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="5J1-x0-o21"/>
-                            <constraint firstItem="0Sp-oQ-Vpe" firstAttribute="centerX" secondItem="rXU-ze-P7w" secondAttribute="centerX" id="G4y-n2-Icy"/>
-                            <constraint firstItem="kLT-u2-Kww" firstAttribute="trailing" secondItem="rXU-ze-P7w" secondAttribute="trailingMargin" id="IjF-c1-FwW"/>
-                            <constraint firstItem="ViW-Iq-Ovo" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="Izf-a6-mdr"/>
-                            <constraint firstItem="5uf-aO-y0g" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="Kh1-23-tjd"/>
-                            <constraint firstItem="pvT-FZ-8XJ" firstAttribute="trailing" secondItem="rXU-ze-P7w" secondAttribute="trailingMargin" id="LQo-fB-HDg"/>
-                            <constraint firstItem="0Sp-oQ-Vpe" firstAttribute="top" secondItem="zcW-4J-iph" secondAttribute="bottom" constant="24" id="Ld7-hZ-5wL"/>
-                            <constraint firstItem="Z3f-7H-AQJ" firstAttribute="centerX" secondItem="rXU-ze-P7w" secondAttribute="centerX" id="NAw-lw-QUu"/>
-                            <constraint firstItem="kLT-u2-Kww" firstAttribute="leading" secondItem="rXU-ze-P7w" secondAttribute="leadingMargin" id="QHW-sf-Zg1"/>
-                            <constraint firstItem="ViW-Iq-Ovo" firstAttribute="top" secondItem="Z3f-7H-AQJ" secondAttribute="bottom" constant="8" id="Xc9-J4-MBM"/>
-                            <constraint firstItem="kLT-u2-Kww" firstAttribute="top" secondItem="5uf-aO-y0g" secondAttribute="bottom" constant="8" symbolic="YES" id="iRm-qP-4TW"/>
-                            <constraint firstItem="5uf-aO-y0g" firstAttribute="top" secondItem="pvT-FZ-8XJ" secondAttribute="bottom" constant="8" symbolic="YES" id="vBo-Zx-eHa"/>
-                            <constraint firstItem="Z3f-7H-AQJ" firstAttribute="top" secondItem="0Sp-oQ-Vpe" secondAttribute="bottom" id="wYJ-Xd-Vli"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="billChamberLabel" destination="Z3f-7H-AQJ" id="EA1-cX-KMt"/>
-                        <outlet property="billDescriptionLabel" destination="ViW-Iq-Ovo" id="sXe-ZQ-kE0"/>
-                        <outlet property="billNameLabel" destination="0Sp-oQ-Vpe" id="ZZH-tC-Ydm"/>
-                        <outlet property="billStatusView" destination="pvT-FZ-8XJ" id="cCu-G9-0ab"/>
-                        <outlet property="sponsorCollectionView" destination="kLT-u2-Kww" id="efW-VY-Hy5"/>
-                        <outlet property="sponsorCountLabel" destination="5uf-aO-y0g" id="Ng9-TA-BtR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JC5-6X-ao0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3029.5999999999999" y="465.51724137931041"/>
         </scene>
         <!--Legislation Detail View Controller-->
         <scene sceneID="iTH-j6-jHC">
@@ -530,26 +398,26 @@ District 51</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Georgia House Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqH-EM-eaU">
-                                        <rect key="frame" x="121" y="110" width="134" height="20"/>
+                                        <rect key="frame" x="121" y="120" width="134" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-it-ATq">
-                                        <rect key="frame" x="8" y="138" width="359" height="50.5"/>
+                                        <rect key="frame" x="8" y="148" width="359" height="50.5"/>
                                         <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="informedPublic" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="196.5" width="359" height="80"/>
+                                        <rect key="frame" x="8" y="206.5" width="359" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="wne-R0-Lwc"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYh-CI-sCO" userLabel="Sponsor View">
-                                        <rect key="frame" x="8" y="309.5" width="359" height="100"/>
+                                        <rect key="frame" x="8" y="319.5" width="359" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0Fu-69-lt7"/>
@@ -600,7 +468,7 @@ District 51</string>
                                         </cells>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-MT-tpy" userLabel="Sponsor Count">
-                                        <rect key="frame" x="8" y="284.5" width="83.5" height="17"/>
+                                        <rect key="frame" x="8" y="294.5" width="83.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -619,7 +487,7 @@ District 51</string>
                                     <constraint firstItem="e9l-Wl-Mmv" firstAttribute="trailing" secondItem="TPh-WT-9Qp" secondAttribute="trailingMargin" id="i4h-MQ-5PL"/>
                                     <constraint firstItem="fYh-CI-sCO" firstAttribute="top" secondItem="kj6-MT-tpy" secondAttribute="bottom" constant="8" symbolic="YES" id="jbf-Ao-vOR"/>
                                     <constraint firstItem="fnn-it-ATq" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="nHb-LB-Thk"/>
-                                    <constraint firstItem="HqH-EM-eaU" firstAttribute="top" secondItem="enH-M2-LpB" secondAttribute="bottom" id="oKL-Ra-MF0"/>
+                                    <constraint firstItem="HqH-EM-eaU" firstAttribute="top" secondItem="enH-M2-LpB" secondAttribute="bottom" constant="10" id="oKL-Ra-MF0"/>
                                     <constraint firstItem="e9l-Wl-Mmv" firstAttribute="top" secondItem="fnn-it-ATq" secondAttribute="bottom" constant="8" id="yMF-qz-JbA"/>
                                     <constraint firstItem="e9l-Wl-Mmv" firstAttribute="leading" secondItem="TPh-WT-9Qp" secondAttribute="leadingMargin" id="yTS-ST-X08"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="fnn-it-ATq" secondAttribute="trailing" id="zIa-uY-gGV"/>
@@ -646,7 +514,7 @@ District 51</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eob-09-O1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3698.4000000000001" y="465.51724137931041"/>
+            <point key="canvasLocation" x="3030" y="537"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qMU-pY-UOg">
