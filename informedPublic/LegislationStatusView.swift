@@ -11,14 +11,16 @@ import UIKit
 
 class LegislationStatusView: UIView {
     var statusCircles: [CAShapeLayer] = []
+    
     var status: Status = .introduced {
         didSet {
             let circlePairs = zip(statusCircles, statusCircles.dropFirst())
             for (index, (circle, nextCircle)) in circlePairs.enumerated() {
-                if index + 1 < status.rawValue {
-                animateStatusCircleForStatus(circle: circle, nextCircle: nextCircle)
-                } else if index + 1 == status.rawValue {
-                    animateStatusCircleForStatus(circle: circle, nextCircle: nil)
+                let count = index + 1
+                if count < status.rawValue {
+                    animateStatusCircleForStatus(count: Double(count), circle: circle, nextCircle: nextCircle)
+                } else if count == status.rawValue {
+                    animateStatusCircleForStatus(count: Double(count), circle: circle, nextCircle: nil)
                 } else {
                     break
                 }
@@ -81,7 +83,38 @@ class LegislationStatusView: UIView {
         
     }
     
-    func animateStatusCircleForStatus(circle: CAShapeLayer, nextCircle: CAShapeLayer?) {
+    
+    func animateStatusCircleForStatus(count: Double, circle: CAShapeLayer, nextCircle: CAShapeLayer?) {
+        let fillAnimation: CABasicAnimation = {
+            let animation = CABasicAnimation(keyPath: "fillColor")
+            animation.fromValue = UIColor.gray.cgColor
+            animation.toValue = UIColor.green.cgColor
+            animation.duration = 0.5
+            animation.fillMode = kCAFillModeForwards
+            animation.isRemovedOnCompletion = false
+            return animation
+        }()
+        
+        let strokeAnimation: CABasicAnimation = {
+            let animation = CABasicAnimation(keyPath: "strokeEnd")
+            animation.fromValue = CGFloat(0)
+            animation.toValue = CGFloat(1)
+            animation.duration = 0.5
+            animation.fillMode = kCAFillModeForwards
+            animation.isRemovedOnCompletion = false
+            return animation
+        }()
+        
+        var checkStrokeAnimation: CABasicAnimation = {
+            let checkAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            checkAnimation.fromValue = CGFloat(0.1)
+            checkAnimation.toValue = CGFloat(0.9)
+            checkAnimation.duration = 0.70
+            checkAnimation.fillMode = kCAFillModeForwards
+            checkAnimation.isRemovedOnCompletion = false
+            return checkAnimation
+        }()
+        
         let radius = circle.path!.boundingBoxOfPath.width / 2
         let centerPoint = CGPoint(x: (circle.path?.boundingBoxOfPath.midX)!, y: (circle.path?.boundingBoxOfPath.midY)!)
         print(centerPoint)
@@ -94,32 +127,23 @@ class LegislationStatusView: UIView {
             path.addLine(to: CGPoint(x: centerPoint.x + halfRadius, y: centerPoint.y - halfRadius))
             let layer = CAShapeLayer()
             layer.path = path.cgPath
-            layer.lineWidth = 2
             layer.strokeStart = 0.1
-            layer.strokeEnd = 0.9
+            layer.strokeEnd = CGFloat(0)
+            layer.lineWidth = 2
             layer.strokeColor = UIColor.white.cgColor
             return layer
         }()
         
-        let fillAnimation: CABasicAnimation = {
-            let animation = CABasicAnimation(keyPath: "fillColor")
-            animation.fromValue = UIColor.gray.cgColor
-            animation.toValue = UIColor.green.cgColor
-            animation.duration = 1.0
-            animation.fillMode = kCAFillModeForwards
-            animation.isRemovedOnCompletion = false
-            return animation
-        }()
-        let strokeAnimation: CABasicAnimation = {
-            let animation = CABasicAnimation(keyPath: "strokeEnd")
-            animation.fromValue = CGFloat(0)
-            animation.toValue = CGFloat(1)
-            animation.duration = 1
-            animation.fillMode = kCAFillModeForwards
-            animation.isRemovedOnCompletion = false
-            return animation
-        }()
         
+        
+        checkStrokeAnimation.beginTime = CACurrentMediaTime() + checkStrokeAnimation.duration * count
+        strokeAnimation.beginTime = CACurrentMediaTime() + strokeAnimation.duration * count
+        fillAnimation.beginTime = CACurrentMediaTime() + fillAnimation.duration * count
+        
+        circle.addSublayer(checkLayer)
+        checkLayer.add(checkStrokeAnimation, forKey: "strokeEnd")
+        circle.add(strokeAnimation, forKey: "strokeEnd")
+        circle.add(fillAnimation, forKey: "fillColor")
         
         //Line layer to connect active circles
         if let nextCircle = nextCircle {
@@ -133,6 +157,7 @@ class LegislationStatusView: UIView {
                 let layer = CAShapeLayer()
                 layer.path = path.cgPath
                 layer.lineWidth = 2
+                layer.strokeEnd = CGFloat(0)
                 layer.strokeColor = UIColor.lightGray.cgColor
                 return layer
             }()
@@ -141,12 +166,6 @@ class LegislationStatusView: UIView {
             lineLayer.add(strokeAnimation, forKey: "strokeEnd")
             layer.addSublayer(lineLayer)
         }
-        
-        circle.add(strokeAnimation, forKey: "strokeEnd")
-        circle.add(fillAnimation, forKey: "fillColor")
-        strokeAnimation.toValue = 0.9
-        checkLayer.add(strokeAnimation, forKey: "strokeEnd")
-        circle.addSublayer(checkLayer)
     }
     
     
