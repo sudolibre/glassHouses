@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 import QuickLook
 import WebKit
+import Social
 
 class LegislationDetailViewController: UIViewController, UICollectionViewDelegate, UIGestureRecognizerDelegate {
     var legislation: Legislation!
     var dataSource: LegislationDetailDataSource!
     var legislationWebView: WKWebView!
 
-    //var dataSource: SponsorCollectionDataSource
     @IBOutlet var scrollView: UIScrollView!
-    
     @IBOutlet var outterView: UIView!
     @IBOutlet var billStatusView: LegislationStatusView!
     @IBOutlet var billNameLabel: UILabel!
@@ -27,10 +26,63 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     @IBOutlet var sponsorCollectionView: UICollectionView!
     @IBOutlet var sponsorCountLabel: UILabel!
     
+    @IBAction func shareTapped(_ sender: UIBarButtonItem) {
+        var initialText = "\(legislation.id) "
+        switch legislation.status {
+        case .introduced:
+            initialText += "introduced"
+        case .house:
+            initialText += "passed house"
+        case .senate:
+            initialText += "passed senate"
+        case .law:
+            initialText += "signed into law"
+        }
+        let shareSheet = UIAlertController(title: "Share", message: nil, preferredStyle: .actionSheet)
+        let tweetAction = UIAlertAction(title: "Share on Twitter", style: .default) { (action) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                if let composeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
+                composeVC.setInitialText(initialText)
+                composeVC.add(self.legislation.documentURL)
+                self.present(composeVC, animated: true, completion: nil)
+                }
+            } else {
+                self.showLoginMessage(forServiceName: "Twitter")
+            }
+        }
+        let facebookAction = UIAlertAction(title: "Share on Facebook", style: .default) { (action) in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                if let composeVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+                    composeVC.setInitialText(initialText)
+                    composeVC.add(self.legislation.documentURL)
+                    self.present(composeVC, animated: true, completion: nil)
+                }
+            } else {
+                self.showLoginMessage(forServiceName: "Facebook")
+            }
+        }
+        shareSheet.addAction(tweetAction)
+        shareSheet.addAction(facebookAction)
+        present(shareSheet, animated: true, completion: nil)
+    }
+    
+    func showLoginMessage(forServiceName name: String) {
+        let ac = UIAlertController(title: "Share Unavailable", message: "You mused be logged in to your \(name) account", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        ac.addAction(dismiss)
+        present(ac, animated: true, completion: nil)
+    }
+    
     func tapOnWebView(_ sender: UITapGestureRecognizer) {
         let quickLookController = QLPreviewController()
         quickLookController.dataSource = dataSource
         show(quickLookController, sender: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        billNameLabel.text = legislation.id
+        billDescriptionLabel.text = legislation.description
+        sponsorCountLabel.text = "Sponors (\(legislation.sponsorIDs.count))"
     }
     
     override func viewDidLoad() {
