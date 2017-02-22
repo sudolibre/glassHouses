@@ -1,6 +1,6 @@
 //
 //  Article+CoreDataClass.swift
-//  informedPublic
+//  glassHouses
 //
 //  Created by Jonathon Day on 2/16/17.
 //  Copyright © 2017 dayj. All rights reserved.
