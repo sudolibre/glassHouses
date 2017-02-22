@@ -12,7 +12,11 @@ import MapKit
 class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     @IBOutlet var viewsToRoundCorners: [UIView]!
     @IBOutlet var primaryTitle: UILabel!
-    @IBOutlet var centerXConstraints: [NSLayoutConstraint]!
+    @IBOutlet var welcomeX: NSLayoutConstraint!
+    @IBOutlet var identifyX: NSLayoutConstraint!
+    @IBOutlet var overviewX: NSLayoutConstraint!
+    var centerXConstraints: [NSLayoutConstraint]!
+    
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
 
@@ -77,6 +81,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        centerXConstraints = [welcomeX, identifyX, overviewX]
         
         for i in horizontalSpacingConstraints {
             let windowWidth = UIScreen.main.bounds.width

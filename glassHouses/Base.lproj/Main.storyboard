@@ -15,7 +15,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="informedPublic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OnboardingViewController" customModule="glassHouses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,11 +36,49 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Glass Houses!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyr-lc-2bP">
-                                <rect key="frame" x="69.5" y="80" width="236" height="23"/>
+                                <rect key="frame" x="70" y="80" width="236" height="23"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moC-JA-itC" userLabel="Welcome">
+                                <rect key="frame" x="19" y="167" width="338" height="334"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for installing Glass Houses. Enjoy updates on your representatives with no login required!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCz-U4-PkB" userLabel="Thanks for installing Glass Houses. Enjoy updates on your representatives with no login required!">
+                                        <rect key="frame" x="5" y="5" width="328" height="324"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-Z7-fOC">
+                                        <rect key="frame" x="134" y="265" width="71" height="32"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSs-wn-cwX">
+                                        <rect key="frame" x="146" y="265" width="47" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Got It!">
+                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J2B-AI-Viq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="height" secondItem="moC-JA-itC" secondAttribute="height" constant="-10" id="1Zx-Xs-lV2"/>
+                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="width" secondItem="lSs-wn-cwX" secondAttribute="width" multiplier="1.5" id="5R9-VC-uGE"/>
+                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="centerX" secondItem="moC-JA-itC" secondAttribute="centerX" id="C7o-Y2-whm"/>
+                                    <constraint firstItem="lSs-wn-cwX" firstAttribute="centerX" secondItem="qCz-U4-PkB" secondAttribute="centerX" id="EoD-w5-gnB"/>
+                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="centerY" secondItem="lSs-wn-cwX" secondAttribute="centerY" id="Nuv-k8-k5q"/>
+                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="width" secondItem="moC-JA-itC" secondAttribute="width" constant="-10" id="OQF-Yv-7Xw"/>
+                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="centerX" secondItem="lSs-wn-cwX" secondAttribute="centerX" id="geR-Ko-XZn"/>
+                                    <constraint firstItem="lSs-wn-cwX" firstAttribute="top" secondItem="qCz-U4-PkB" secondAttribute="bottom" constant="-64" id="h4h-AX-uaD"/>
+                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="centerY" secondItem="moC-JA-itC" secondAttribute="centerY" id="wjh-be-IUc"/>
+                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="height" secondItem="lSs-wn-cwX" secondAttribute="height" id="zOI-DI-M93"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zab-RX-Y0O" userLabel="Identify">
                                 <rect key="frame" x="0.0" y="167" width="338" height="334"/>
                                 <subviews>
@@ -159,44 +197,6 @@
                                     <outletCollection property="gestureRecognizers" destination="dQP-gj-fLN" appends="YES" id="pRN-Dg-k3v"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moC-JA-itC" userLabel="Welcome">
-                                <rect key="frame" x="19" y="167" width="338" height="334"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for installing Glass Houses. Enjoy updates on your representatives with no login required!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCz-U4-PkB" userLabel="Thanks for installing Glass Houses. Enjoy updates on your representatives with no login required!">
-                                        <rect key="frame" x="5" y="5" width="328" height="324"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2X5-Z7-fOC">
-                                        <rect key="frame" x="134" y="265" width="71" height="32"/>
-                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSs-wn-cwX">
-                                        <rect key="frame" x="146" y="265" width="47" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <state key="normal" title="Got It!">
-                                            <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="doneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J2B-AI-Viq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="height" secondItem="moC-JA-itC" secondAttribute="height" constant="-10" id="1Zx-Xs-lV2"/>
-                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="width" secondItem="lSs-wn-cwX" secondAttribute="width" multiplier="1.5" id="5R9-VC-uGE"/>
-                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="centerX" secondItem="moC-JA-itC" secondAttribute="centerX" id="C7o-Y2-whm"/>
-                                    <constraint firstItem="lSs-wn-cwX" firstAttribute="centerX" secondItem="qCz-U4-PkB" secondAttribute="centerX" id="EoD-w5-gnB"/>
-                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="centerY" secondItem="lSs-wn-cwX" secondAttribute="centerY" id="Nuv-k8-k5q"/>
-                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="width" secondItem="moC-JA-itC" secondAttribute="width" constant="-10" id="OQF-Yv-7Xw"/>
-                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="centerX" secondItem="lSs-wn-cwX" secondAttribute="centerX" id="geR-Ko-XZn"/>
-                                    <constraint firstItem="lSs-wn-cwX" firstAttribute="top" secondItem="qCz-U4-PkB" secondAttribute="bottom" constant="-64" id="h4h-AX-uaD"/>
-                                    <constraint firstItem="qCz-U4-PkB" firstAttribute="centerY" secondItem="moC-JA-itC" secondAttribute="centerY" id="wjh-be-IUc"/>
-                                    <constraint firstItem="2X5-Z7-fOC" firstAttribute="height" secondItem="lSs-wn-cwX" secondAttribute="height" id="zOI-DI-M93"/>
-                                </constraints>
-                            </view>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-F5-uJD">
                                 <rect key="frame" x="168" y="520" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,18 +235,18 @@
                     <connections>
                         <outlet property="addressTextField" destination="IcI-CM-mtg" id="Fb3-cG-Bck"/>
                         <outlet property="avatarImageView" destination="dlN-4t-tCW" id="fHL-sY-ejr"/>
+                        <outlet property="identifyX" destination="LQB-8L-fMg" id="fgg-Q5-Rb7"/>
                         <outlet property="legislatorNumber" destination="Jwl-64-4Vt" id="DhY-hR-zTG"/>
                         <outlet property="mapView" destination="E8O-yc-Vbz" id="Ih9-Co-K2l"/>
                         <outlet property="nameLabel" destination="eFx-Dc-4My" id="htp-cl-qmM"/>
                         <outlet property="nextButton" destination="vpH-Fw-yz1" id="UJb-wm-BLQ"/>
+                        <outlet property="overviewX" destination="rMa-HA-ogu" id="4oF-qk-FxX"/>
                         <outlet property="pageControl" destination="Wx3-F5-uJD" id="C56-Zo-ADM"/>
                         <outlet property="primaryTitle" destination="pyr-lc-2bP" id="PLp-Kz-iHy"/>
                         <outlet property="subtitleLabel" destination="bbj-P0-C81" id="ibB-Ky-DyE"/>
+                        <outlet property="welcomeX" destination="JIf-wr-JAU" id="cWP-mJ-KCV"/>
                         <outletCollection property="horizontalSpacingConstraints" destination="ejs-o7-quD" collectionClass="NSMutableArray" id="c4a-rH-wff"/>
                         <outletCollection property="horizontalSpacingConstraints" destination="NVq-AJ-4uv" collectionClass="NSMutableArray" id="coP-LI-wio"/>
-                        <outletCollection property="centerXConstraints" destination="JIf-wr-JAU" collectionClass="NSMutableArray" id="a8r-gD-qs0"/>
-                        <outletCollection property="centerXConstraints" destination="LQB-8L-fMg" collectionClass="NSMutableArray" id="8Xi-k0-LJ4"/>
-                        <outletCollection property="centerXConstraints" destination="rMa-HA-ogu" collectionClass="NSMutableArray" id="9md-Tc-www"/>
                         <outletCollection property="viewsToRoundCorners" destination="moC-JA-itC" collectionClass="NSMutableArray" id="AGj-yj-v3q"/>
                         <outletCollection property="viewsToRoundCorners" destination="zab-RX-Y0O" collectionClass="NSMutableArray" id="n2X-v2-85q"/>
                         <outletCollection property="viewsToRoundCorners" destination="Dg5-O3-RNm" collectionClass="NSMutableArray" id="BYQ-Dc-Ptg"/>
@@ -271,13 +271,13 @@
         <!--Activity Feed Controller-->
         <scene sceneID="uM2-vh-8PZ">
             <objects>
-                <tableViewController id="O9q-C5-sXB" customClass="ActivityFeedController" customModule="informedPublic" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O9q-C5-sXB" customClass="ActivityFeedController" customModule="glassHouses" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="syg-EJ-z6S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="102" id="at4-sf-nb2" customClass="ActivityCell" customModule="informedPublic" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="102" id="at4-sf-nb2" customClass="ActivityCell" customModule="glassHouses" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="at4-sf-nb2" id="9zs-Bz-Pc9">
@@ -375,7 +375,7 @@
         <!--Legislation Detail View Controller-->
         <scene sceneID="iTH-j6-jHC">
             <objects>
-                <viewController id="G8o-Wp-CzB" customClass="LegislationDetailViewController" customModule="informedPublic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="G8o-Wp-CzB" customClass="LegislationDetailViewController" customModule="glassHouses" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nkN-YD-C8K"/>
                         <viewControllerLayoutGuide type="bottom" id="scq-pl-oEs"/>
@@ -406,7 +406,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="informedPublic" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="glassHouses" customModuleProvider="target">
                                         <rect key="frame" x="8" y="168.5" width="359" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="wne-R0-Lwc"/>
@@ -425,7 +425,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sponsorCell" id="2wd-0u-9wr" customClass="SponserCollectionCell" customModule="informedPublic" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sponsorCell" id="2wd-0u-9wr" customClass="SponserCollectionCell" customModule="glassHouses" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="10" width="174" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -530,7 +530,7 @@ District 51</string>
                 <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="xA6-Ff-PcV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FF4-w4-Yjt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF4-w4-Yjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
