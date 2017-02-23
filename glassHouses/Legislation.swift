@@ -28,12 +28,12 @@ class Legislation {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
         
-        guard let documentVersions = json["versions"] as? [[String: Any]],
+        guard let id = json["bill_id"] as? String,
+            let documentVersions = json["versions"] as? [[String: Any]],
             let recentVersion = documentVersions.last,
             let documentURLString = recentVersion["url"] as? String,
             let documentURL = URL(string: documentURLString),
             let title = json["title"] as? String,
-            let id = json["bill_id"] as? String,
             let description = json["+description"] as? String,
             let actionDates = json["action_dates"] as? [String: Any],
             let dateString = actionDates["last"] as? String,

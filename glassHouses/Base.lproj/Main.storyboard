@@ -79,59 +79,6 @@
                                     <constraint firstItem="2X5-Z7-fOC" firstAttribute="height" secondItem="lSs-wn-cwX" secondAttribute="height" id="zOI-DI-M93"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zab-RX-Y0O" userLabel="Identify">
-                                <rect key="frame" x="0.0" y="167" width="338" height="334"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-yc-Vbz">
-                                        <rect key="frame" x="32" y="17" width="274" height="132"/>
-                                    </mapView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-CM-mtg">
-                                        <rect key="frame" x="94" y="185" width="201" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="tS1-6A-eWQ"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-hd-Zmk">
-                                        <rect key="frame" x="8" y="188" width="63" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcy-b9-Yb4">
-                                        <rect key="frame" x="121" y="223" width="146" height="30"/>
-                                        <state key="normal" title="Use Current Location"/>
-                                        <connections>
-                                            <action selector="locationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPK-Po-w7X"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpH-Fw-yz1">
-                                        <rect key="frame" x="153" y="284" width="32" height="30"/>
-                                        <state key="normal" title="Next"/>
-                                        <connections>
-                                            <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cd5-WW-xKX"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="vpH-Fw-yz1" secondAttribute="bottom" constant="20" id="5jk-CL-Bfq"/>
-                                    <constraint firstItem="IcI-CM-mtg" firstAttribute="top" secondItem="E8O-yc-Vbz" secondAttribute="bottom" constant="36" id="8Jh-pE-Z0o"/>
-                                    <constraint firstItem="vpH-Fw-yz1" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="EQ6-fi-ojB"/>
-                                    <constraint firstItem="ScL-hd-Zmk" firstAttribute="baseline" secondItem="IcI-CM-mtg" secondAttribute="baseline" id="Eks-vi-9kn"/>
-                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="top" secondItem="zab-RX-Y0O" secondAttribute="top" constant="17" id="P1X-QV-gSx"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rcy-b9-Yb4" secondAttribute="bottom" constant="52" id="WEk-rH-Bq2"/>
-                                    <constraint firstItem="Rcy-b9-Yb4" firstAttribute="top" secondItem="IcI-CM-mtg" secondAttribute="bottom" constant="37" id="YW0-5s-nV1"/>
-                                    <constraint firstAttribute="trailing" secondItem="E8O-yc-Vbz" secondAttribute="trailing" constant="32" id="c2a-3L-sXo"/>
-                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="fcr-Cx-r4e"/>
-                                    <constraint firstItem="IcI-CM-mtg" firstAttribute="leading" secondItem="ScL-hd-Zmk" secondAttribute="trailing" constant="23" id="kek-2X-mQe"/>
-                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="leading" secondItem="zab-RX-Y0O" secondAttribute="leading" constant="32" id="njh-IR-YW4"/>
-                                    <constraint firstItem="Rcy-b9-Yb4" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="oHn-7M-LVv"/>
-                                    <constraint firstItem="ScL-hd-Zmk" firstAttribute="leading" secondItem="zab-RX-Y0O" secondAttribute="leading" constant="8" id="oi1-G2-yI0"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dg5-O3-RNm" userLabel="Overview">
                                 <rect key="frame" x="0.0" y="166" width="338" height="334"/>
                                 <subviews>
@@ -174,7 +121,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="eFx-Dc-4My" firstAttribute="centerX" secondItem="dlN-4t-tCW" secondAttribute="centerX" id="8TD-bF-aPf"/>
@@ -196,6 +143,59 @@
                                     <outletCollection property="gestureRecognizers" destination="bX1-De-mUF" appends="YES" id="dAe-Jh-k08"/>
                                     <outletCollection property="gestureRecognizers" destination="dQP-gj-fLN" appends="YES" id="pRN-Dg-k3v"/>
                                 </connections>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zab-RX-Y0O" userLabel="Identify">
+                                <rect key="frame" x="0.0" y="167" width="338" height="334"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E8O-yc-Vbz">
+                                        <rect key="frame" x="32" y="17" width="274" height="132"/>
+                                    </mapView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your address..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IcI-CM-mtg">
+                                        <rect key="frame" x="94" y="185" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="tS1-6A-eWQ"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-hd-Zmk">
+                                        <rect key="frame" x="8" y="188" width="63" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rcy-b9-Yb4">
+                                        <rect key="frame" x="121" y="223" width="146" height="30"/>
+                                        <state key="normal" title="Use Current Location"/>
+                                        <connections>
+                                            <action selector="locationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hPK-Po-w7X"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpH-Fw-yz1">
+                                        <rect key="frame" x="153" y="284" width="32" height="30"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cd5-WW-xKX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vpH-Fw-yz1" secondAttribute="bottom" constant="20" id="5jk-CL-Bfq"/>
+                                    <constraint firstItem="IcI-CM-mtg" firstAttribute="top" secondItem="E8O-yc-Vbz" secondAttribute="bottom" constant="36" id="8Jh-pE-Z0o"/>
+                                    <constraint firstItem="vpH-Fw-yz1" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="EQ6-fi-ojB"/>
+                                    <constraint firstItem="ScL-hd-Zmk" firstAttribute="baseline" secondItem="IcI-CM-mtg" secondAttribute="baseline" id="Eks-vi-9kn"/>
+                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="top" secondItem="zab-RX-Y0O" secondAttribute="top" constant="17" id="P1X-QV-gSx"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rcy-b9-Yb4" secondAttribute="bottom" constant="52" id="WEk-rH-Bq2"/>
+                                    <constraint firstItem="Rcy-b9-Yb4" firstAttribute="top" secondItem="IcI-CM-mtg" secondAttribute="bottom" constant="37" id="YW0-5s-nV1"/>
+                                    <constraint firstAttribute="trailing" secondItem="E8O-yc-Vbz" secondAttribute="trailing" constant="32" id="c2a-3L-sXo"/>
+                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="fcr-Cx-r4e"/>
+                                    <constraint firstItem="IcI-CM-mtg" firstAttribute="leading" secondItem="ScL-hd-Zmk" secondAttribute="trailing" constant="23" id="kek-2X-mQe"/>
+                                    <constraint firstItem="E8O-yc-Vbz" firstAttribute="leading" secondItem="zab-RX-Y0O" secondAttribute="leading" constant="32" id="njh-IR-YW4"/>
+                                    <constraint firstItem="Rcy-b9-Yb4" firstAttribute="centerX" secondItem="zab-RX-Y0O" secondAttribute="centerX" id="oHn-7M-LVv"/>
+                                    <constraint firstItem="ScL-hd-Zmk" firstAttribute="leading" secondItem="zab-RX-Y0O" secondAttribute="leading" constant="8" id="oi1-G2-yI0"/>
+                                </constraints>
                             </view>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-F5-uJD">
                                 <rect key="frame" x="168" y="520" width="39" height="37"/>
@@ -285,13 +285,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elena Parent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwG-A6-ulf">
-                                            <rect key="frame" x="71" y="8" width="90.5" height="29.5"/>
+                                            <rect key="frame" x="71" y="8" width="91" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Yea " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vh0-I2-lfX">
-                                            <rect key="frame" x="171.5" y="18" width="35" height="19.5"/>
+                                            <rect key="frame" x="172" y="8" width="35" height="20"/>
                                             <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -305,7 +305,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8D-Ej-A10">
-                                            <rect key="frame" x="71" y="43" width="251" height="50.5"/>
+                                            <rect key="frame" x="71" y="34" width="251" height="60"/>
                                             <string key="text">Voted for SB69: Packaging, Labeling and Registration of Organic Products and Certifying Entities; registration requirement; eliminate
 
 </string>
@@ -314,7 +314,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-nM-5QP">
-                                            <rect key="frame" x="268.5" y="19.5" width="65.5" height="17"/>
+                                            <rect key="frame" x="268" y="10" width="66" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -400,20 +400,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-it-ATq">
-                                        <rect key="frame" x="8" y="110" width="359" height="50.5"/>
+                                        <rect key="frame" x="8" y="110" width="359" height="51"/>
                                         <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="glassHouses" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="168.5" width="359" height="80"/>
+                                        <rect key="frame" x="8" y="169" width="359" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="wne-R0-Lwc"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYh-CI-sCO" userLabel="Sponsor View">
-                                        <rect key="frame" x="8" y="283.5" width="359" height="100"/>
+                                        <rect key="frame" x="8" y="284" width="359" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0Fu-69-lt7"/>
@@ -464,7 +464,7 @@ District 51</string>
                                         </cells>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-MT-tpy" userLabel="Sponsor Count">
-                                        <rect key="frame" x="8" y="258.5" width="84" height="17"/>
+                                        <rect key="frame" x="8" y="259" width="84" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -530,7 +530,7 @@ District 51</string>
                 <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="xA6-Ff-PcV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF4-w4-Yjt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="FF4-w4-Yjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

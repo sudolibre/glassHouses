@@ -11,67 +11,57 @@ import XCTest
 
 class glassHousesTests: XCTestCase {
     
-    func testArticleParsing() {
-        guard let pathString = Bundle(for: type(of: self)).path(forResource: "articleJSON", ofType: nil) else {
+    func testNewsArticleParsing() {
+        //tests 50 articles
+        guard let url = Bundle(for: type(of: self)).url(forResource: "articlesJSON", withExtension: nil, subdirectory: "JSON") else {
             fatalError("articleJSON not found")
         }
 
-        let url = URL(fileURLWithPath: pathString)
-        let jsonData = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
-        let optionalResult = NewsArticle(json: json)
-        XCTAssertNotNil(optionalResult)
-        let result = optionalResult!
-        XCTAssertTrue(
-        result.title == "Sen. Parent gives insight on Healthcare, Casinos, Campus Carry ..." &&
-        result.link == URL(string: "https://brookhavenpost.co/2017/02/10/sen-parent-gives-insight-on-healthcare-casinos-campus-carry-independent-redistricting-commission-during-town-hall/") &&
-        result.publisher == "brookhavenpost.co" &&
-        result.description == "2 days ago ... Senator Elena Parent fields questions from the audience at a February 9th Town \nHall Meeting in Decatur. TREY BENTON/THE POST. Decatur ..." &&
-        result.imageURL == URL(string: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRED-0pTvU9N9HwhuH3CScrj6xLZeiHjPwfZ02EyzwTwHifQ_xAOrBItV0")
-        )
+        let jsonData = try? Data(contentsOf: url)
+        XCTAssertNotNil(jsonData, "failed to create Data from json file")
+        let jsonObject = try? JSONSerialization.jsonObject(with: jsonData!, options: [])
+        XCTAssertNotNil(jsonObject, "failed to create a foundation object from json data")
+        let topLevelDictionary = jsonObject as? [String: Any]
+        XCTAssertNotNil(topLevelDictionary, "failed to cast the top level json object from Any to a to dictionary")
+        let jsonDictionaries = topLevelDictionary!["value"] as? [[String: Any]]
+        XCTAssertNotNil(jsonDictionaries, "failed to cast the json object from Any to an array of dictionaries")
+        let allNewsArticles = jsonDictionaries!.flatMap({NewsArticle.init(json: $0)})
+        XCTAssertTrue(allNewsArticles.count == allNewsArticles.count, "failed to create all News Articles from all json dictionaries")
     }
+    
     
     func testLegislationParsing() {
-        guard let pathString = Bundle(for: type(of: self)).path(forResource: "legislationJSON", ofType: nil) else {
-            fatalError("articleJSON not found")
+        // test 900+ bills
+        guard let urls = Bundle(for: type(of: self)).urls(forResourcesWithExtension: nil, subdirectory: "JSON/legislation") else {
+            XCTFail("urls for test legislation could not be found")
+            return
         }
         
-        let url = URL(fileURLWithPath: pathString)
-        let jsonData = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
-        let optionalResult = Legislation(json: json)
-        XCTAssertNotNil(optionalResult)
-        let result = optionalResult!
-        XCTAssertTrue(
-            result.title == "Family and Consumer Sciences; recognize" &&
-            result.id == "SR 161" &&
-            result.documentURL == URL(string: "http://www.legis.ga.gov/Legislation/20172018/164395.pdf") &&
-            result.date == Date(timeIntervalSince1970: 1486482990.0)
-        )
+        let allJSONData = urls.flatMap({try? Data(contentsOf: $0)})
+        XCTAssertTrue(urls.count == allJSONData.count, "failed to create Data from all json files")
+        let allJSONAny = allJSONData.flatMap({try? JSONSerialization.jsonObject(with: $0, options: [])})
+        XCTAssertTrue(urls.count == allJSONAny.count, "failed to create foundation objects from all json data")
+        let allJSONDict = allJSONAny.flatMap({$0 as? [String: Any]})
+        XCTAssertTrue(urls.count == allJSONDict.count, "failed to cast all json objects from any to dictionary")
+        let allLegislation = allJSONDict.flatMap({Legislation.init(json: $0)})
+        XCTAssertTrue(urls.count == allLegislation.count, "failed to create Legislation from all json dictionaries")
     }
     
-    
     func testLegislatorParsing() {
-        guard let pathString = Bundle(for: type(of: self)).path(forResource: "legislatorJSON", ofType: nil) else {
-            fatalError("articleJSON not found")
+        // tests 200+ legislators
+        guard let urls = Bundle(for: type(of: self)).urls(forResourcesWithExtension: nil, subdirectory: "JSON/legislators") else {
+            XCTFail("urls for test legislators could not be found")
+            return
         }
         
-        let url = URL(fileURLWithPath: pathString)
-        let jsonData = try! Data(contentsOf: url)
-        let json = try! JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
-        let optionalResult = Legislator(json: json)
-        XCTAssertNotNil(optionalResult)
-        let result = optionalResult!
-        XCTAssertTrue(
-            result.fullName == "Elena Parent" &&
-            result.lastName == "Parent" &&
-            result.district == 42 &&
-            result.party == Legislator.Party.democratic &&
-            result.chamber == Legislator.Chamber.upper &&
-            result.photoURL == URL(string: "http://www.senate.ga.gov/SiteCollectionImages/ParentElena768.jpg") &&
-            result.ID == "GAL000179"
-            
-        )
+        let allJSONData = urls.flatMap({try? Data(contentsOf: $0)})
+        XCTAssertTrue(urls.count == allJSONData.count, "failed to create Data from all json files")
+        let allJSONAny = allJSONData.flatMap({try? JSONSerialization.jsonObject(with: $0, options: [])})
+        XCTAssertTrue(urls.count == allJSONAny.count, "failed to create foundation objects from all json data")
+        let allJSONDict = allJSONAny.flatMap({$0 as? [String: Any]})
+        XCTAssertTrue(urls.count == allJSONDict.count, "failed to cast all json objects from any to dictionary")
+        let allLegislators = allJSONDict.flatMap({Legislator.init(json: $0)})
+        XCTAssertTrue(urls.count == allLegislators.count, "failed to create legislators from all json dictionaries")
     }
 
 }

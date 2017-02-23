@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E800AC521E51FA5700187854 /* articleJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC511E51FA5700187854 /* articleJSON */; };
-		E800AC541E52047F00187854 /* legislationJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC531E52047F00187854 /* legislationJSON */; };
-		E800AC561E5206AD00187854 /* legislatorJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC551E5206AD00187854 /* legislatorJSON */; };
 		E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */; };
 		E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */; };
 		E813C3821E53A75100F93F95 /* glassHouses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E813C3801E53A75100F93F95 /* glassHouses.xcdatamodeld */; };
+		E8185C491E5F52A000462C8F /* JSON in Resources */ = {isa = PBXBuildFile; fileRef = E8185C481E5F52A000462C8F /* JSON */; };
+		E8185C851E5F6AEF00462C8F /* allUpper in Resources */ = {isa = PBXBuildFile; fileRef = E8185C841E5F6AEE00462C8F /* allUpper */; };
 		E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */; };
 		E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */; };
 		E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE37E1E4A4BC6004359DE /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 		E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF592A1E4CD98B008365F4 /* Legislation.swift */; };
 		E8DEEF091E57732D004AF755 /* LegislationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */; };
 		E8DEEF0E1E5774C6004AF755 /* LegislationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF0D1E5774C6004AF755 /* LegislationStatusView.swift */; };
-		E8DEEF0F1E5789FB004AF755 /* legislationJSON in Resources */ = {isa = PBXBuildFile; fileRef = E800AC531E52047F00187854 /* legislationJSON */; };
 		E8DEEF111E58D9FE004AF755 /* SponserCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */; };
 		E8F8178B1E4E4EC100155A5D /* NewsSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */; };
 		E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178C1E4E503F00155A5D /* NewsArticle.swift */; };
@@ -57,12 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E800AC511E51FA5700187854 /* articleJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = articleJSON; sourceTree = "<group>"; };
-		E800AC531E52047F00187854 /* legislationJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = legislationJSON; path = glassHousesTests/legislationJSON; sourceTree = SOURCE_ROOT; };
-		E800AC551E5206AD00187854 /* legislatorJSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = legislatorJSON; sourceTree = "<group>"; };
 		E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItemStore.swift; sourceTree = "<group>"; };
 		E813C3811E53A75100F93F95 /* glassHouses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = glassHouses.xcdatamodel; sourceTree = "<group>"; };
+		E8185C481E5F52A000462C8F /* JSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSON; sourceTree = "<group>"; };
+		E8185C841E5F6AEE00462C8F /* allUpper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allUpper; sourceTree = "<group>"; };
 		E84BE3771E4A4BC6004359DE /* glassHouses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glassHouses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -161,11 +158,10 @@
 			isa = PBXGroup;
 			children = (
 				E84BE38F1E4A4BC6004359DE /* glassHousesTests.swift */,
-				E800AC531E52047F00187854 /* legislationJSON */,
-				E800AC551E5206AD00187854 /* legislatorJSON */,
-				E800AC511E51FA5700187854 /* articleJSON */,
+				E8185C481E5F52A000462C8F /* JSON */,
 				E84BE3991E4A4BC6004359DE /* glassHousesUITests */,
 				E84BE3911E4A4BC6004359DE /* Info.plist */,
+				E8185C841E5F6AEE00462C8F /* allUpper */,
 			);
 			path = glassHousesTests;
 			sourceTree = "<group>";
@@ -285,7 +281,7 @@
 				TargetAttributes = {
 					E84BE3761E4A4BC6004359DE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CS59J7397A;
+						DevelopmentTeam = L72L2B36E9;
 						ProvisioningStyle = Automatic;
 					};
 					E84BE38A1E4A4BC6004359DE = {
@@ -327,7 +323,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8DEEF0F1E5789FB004AF755 /* legislationJSON in Resources */,
 				E84BE3851E4A4BC6004359DE /* LaunchScreen.storyboard in Resources */,
 				E84BE3821E4A4BC6004359DE /* Assets.xcassets in Resources */,
 				E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */,
@@ -338,9 +333,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E800AC561E5206AD00187854 /* legislatorJSON in Resources */,
-				E800AC541E52047F00187854 /* legislationJSON in Resources */,
-				E800AC521E51FA5700187854 /* articleJSON in Resources */,
+				E8185C491E5F52A000462C8F /* JSON in Resources */,
+				E8185C851E5F6AEF00462C8F /* allUpper in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,10 +522,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CS59J7397A;
+				DEVELOPMENT_TEAM = L72L2B36E9;
 				INFOPLIST_FILE = glassHouses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dayj.glassHouses;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonday.glasshouses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -541,10 +535,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CS59J7397A;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = L72L2B36E9;
 				INFOPLIST_FILE = glassHouses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = dayj.glassHouses;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonday.glasshouses;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
