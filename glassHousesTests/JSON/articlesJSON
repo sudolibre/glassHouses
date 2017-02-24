@@ -1,0 +1,513 @@
+{
+"_type": "News",
+"readLink": "https://api.cognitive.microsoft.com/api/v5/news/search?q=Nan+Orrock",
+"totalEstimatedMatches": 3690,
+"value": [
+{
+"name": "Georgia bill would require new ADHD prescriptions every 5 days",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=4jO9uPMsy8io7mb9ArfzpU-oM0V4BHvZoBIbT516ZZY&v=1&r=http%3a%2f%2fwww.cnn.com%2f2017%2f02%2f08%2fhealth%2fadhd-opioid-prescription-bill-georgia%2findex.html&p=DevEx,5025.1",
+"image": {
+"thumbnail": {
+"contentUrl": "https://www.bing.com/th?id=ON.420C886F04940B4A57CC25A1A037DB33&pid=News",
+"width": 640,
+"height": 360
+}
+},
+"description": "\"It's clearly a cause for concern,\" said state Sen. Nan Orrock, an Atlanta Democrat who wants the provision struck from the bill. \"The argument is pretty hard to debunk: that families coming in every five days for ADHD prescriptions is impossible.",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/351034a7-a606-d032-94cf-a63e5b920c05",
+"name": "Bill Cowsert"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/c4c637e5-f9cc-a3ed-3380-7152515e062e",
+"name": "CNN"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "CNN"
+}
+],
+"datePublished": "2017-02-09T17:55:00",
+"category": "Health"
+},
+{
+"name": "Georgia lawmakers file a protest bill against travel ban",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=V3sg5cOkusa1kONzg6Iz4p3SnTZn_C_zezzcoWZMpfo&v=1&r=http%3a%2f%2faccesswdun.com%2farticle%2f2017%2f1%2f496384&p=DevEx,5027.1",
+"description": "It was sponsored by Sen. Vincent Fort, D-Atlanta, and cosigned by Sen. Nan Orrock, D-Atlanta, who both spoke out against the executive order the previous day and attended a protest at Hartsfield-Jackson Airport over the weekend. Sen. Greg Kirk, R-Americus ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/9cddaa17-c01e-fb68-57af-598a10e9ac22",
+"name": "Bill"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "accesswdun.com"
+}
+],
+"datePublished": "2017-01-31T17:52:16"
+},
+{
+"name": "“Corporate bill mill” ALEC’s corrupt activities exposed in investigative segment",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=MoW4yT0Jl79sZAO2vA89IxNi95g2DlA1B6j0iDPlwQo&v=1&r=http%3a%2f%2fwww.salon.com%2f2015%2f05%2f26%2fcorporate_bill_mill_alecs_corrupt_activities_exposed_in_investigative_segment%2f&p=DevEx,5029.1",
+"description": "“It’s really a corporate bill mill,” said state Sen. Nan Orrock (D) of the organization of which she was once a member. “They’re cranking out legislation, putting them in the hands of legislators who go back and file it.” In back ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "Salon"
+}
+],
+"datePublished": "2015-05-26T01:05:00"
+},
+{
+"name": "Georgia Democrat Calls Campus Carry an ‘Abomination’",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=ofqtzTcBSIL6fY3eTYC_uXyi-UDXQLETXQUHM_UddSE&v=1&r=http%3a%2f%2fwww.ammoland.com%2f2016%2f02%2fdemocrat-calls-campus-carry-an-abomination%2f&p=DevEx,5031.1",
+"description": "Washington DC –-(Ammoland.com)- With campus carry under consideration in the Georgia House, state Senator Nan Orrock (D-Atlanta) is making clear her belief that allowing concealed carry on campus for self-defense is an “abomination.” The AJC reports ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "Ammo Land"
+}
+],
+"datePublished": "2016-02-10T00:46:45"
+},
+{
+"name": "Georgia lawmaker quits ALEC, calls it ‘radical’ group with ‘dangerous agenda’",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=Etjm1K4eMFVVPV9TiPpIMR7yBDOT-dNcSOublKMXM8M&v=1&r=http%3a%2f%2fwww.rawstory.com%2f2012%2f04%2fgeorgia-lawmaker-quits-alec-calls-it-radical-group-with-dangerous-agenda%2f&p=DevEx,5033.1",
+"description": "A state senator from Georgia, Nan Orrock (D-Atlanta) has left the American Legislative Exchange Council, the controversial legislative organization better known as ALEC. In a statement to the citizens’ action group Better Georgia, Orrock denounced the ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "Raw Story"
+}
+],
+"datePublished": "2012-04-17T11:17:00"
+},
+{
+"name": "Georgia lawmakers file protest bill against Trump’s immigration order",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=7Le8CNF0wAB2R7wONiujRqbGMGJt1TXnWd948WrpVXo&v=1&r=http%3a%2f%2fajc.com%2fnews%2fstate--regional-govt--politics%2fgeorgia-lawmakers-file-protest-bill-against-trump-immigration-order%2fTiVd20u7KIIo1hfDxYJTBK%2f&p=DevEx,5035.1",
+"description": "Vincent Fort, D-Atlanta, who attended that protest, as did other signers of the bill, including state Sen. Nan Orrock, D-Atlanta. Both took to the floor of the Senate on Monday to decry the “chaos” the order created over the weekend and said they ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/1a466af2-ed23-25bd-794d-1ca925e4681b",
+"name": "Donald Trump"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Atlanta Journal Constitution"
+}
+],
+"datePublished": "2017-01-31T15:54:03"
+},
+{
+"name": "NBC Atlanta reporter crashed ALEC meeting",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=4nI1BVQ-k_bk4klFpi_yVRsh4w-4E_RfRSIfOjzk-EM&v=1&r=http%3a%2f%2flegalinsurrection.com%2f2015%2f06%2fnbc-atlanta-reporter-crashed-alec-meeting%2f&p=DevEx,5037.1",
+"description": "What is ALEC? “It’s really a corporate bill mill,” said Sen. Nan Orrock, an Atlanta Democrat who has served in both houses of the Georgia General Assembly for years. “They’re cranking out legislation, putting it into the hands of legislators who ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/ae1ade0a-51a9-4b64-af8d-1df3ffe5459f",
+"name": "WXIA-TV"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Legal Insurrection"
+}
+],
+"datePublished": "2015-06-05T07:30:00"
+},
+{
+"name": "Clergy come out against ‘religious freedom’ bill",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=mlT5P2noNAkjBD47XI1CWr_2S6ACZJLiP7OFeUFW6yM&v=1&r=http%3a%2f%2fwww.projectq.us%2fatlanta%2fclergy_come_out_against_religious_freedom_bill%3fgid%3d16454&p=DevEx,5039.1",
+"description": "The Marietta Republican wants to protect religious expression from what he's called government intrusion. State Sen. Nan Orrock, a staunch LGBT ally, called the bill \"unnecessary, unneeded and polarizing.\" \"It doesn't reflect an agenda that serves Georgia ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "projectq.us"
+}
+],
+"datePublished": "2015-01-13T11:58:00"
+},
+{
+"name": "A ‘victims rights’ measure makes a comeback in Georgia",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=-fkL0VZJJrjPbf5S6O_qBOV9u2BP2pxabR9qZAM_hJM&v=1&r=http%3a%2f%2fpolitics.blog.myajc.com%2f2017%2f02%2f02%2fa-victims-rights-measure-makes-a-comeback-in-georgia%2f&p=DevEx,5041.1",
+"description": "Jeff Mullis, who heads the chamber’s Rules Committee, as well as Democratic state Sens. Nan Orrock and Elena Parent. Georgia already has protections for victims in statutes, but this effort seeks to enshrine it in the state Constitution. That means that ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/b8f26db0-d3b7-4fb5-fbb0-9ea469754434",
+"name": "Politics"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/42787161-7b0b-af6c-27bc-33fa47ea2e6d",
+"name": "Insider"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/508ca506-9d21-faa1-e3dd-f1c7b6939146",
+"name": "Victims' rights"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "politics.blog.myajc.com"
+}
+],
+"datePublished": "2017-02-02T15:42:05"
+},
+{
+"name": "Religious leaders come together to denounce ‘religious freedom’ bills",
+"url": "https://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=NJ-geXwXASmtd25U8bO-7chO3-3MhXuExm-h84m-dsE&v=1&r=https%3a%2f%2fthegavoice.com%2freligious-leaders-come-together-denounce-religious-freedom-bills%2f&p=DevEx,5043.1",
+"description": "State Sen. Nan Orrock believes a national group is behind the proposal of such bills in Georgia and across the country, but did not specify one in particular. “Whenever you see legislation cropping up like this in state after state, it’s an effort to ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/9e5bd076-189c-39fa-5e5a-b69ecb74e7e5",
+"name": "Religion"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/797911d5-72cc-1917-c633-65a9cc37973b",
+"name": "LGBT"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/3de37ed4-017f-4aa0-9e77-581da02aff66",
+"name": "The Georgia Voice"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "The GA Voice"
+}
+],
+"datePublished": "2015-01-13T06:12:00"
+},
+{
+"name": "Pay unemployment to Ga. seasonal workers, advocates say",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=PMesqgRrwJ_7225m2A3SLgZgiKJF8uXX3NhkOTfuVyQ&v=1&r=http%3a%2f%2fchronicle.augusta.com%2flatest-news%2f2012-09-17%2fpay-unemployment-ga-seasonal-workers-advocates-say&p=DevEx,5045.1",
+"description": "“It’s concerting very much on a human level but also on a state-leadership level,” said Sen. Nan Orrock, an Atlanta Democrat who co-chairs the Working Families group. “Is this the way we treat hard-working Georgians?” The workers are bus ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "The Augusta Chronicle"
+}
+],
+"datePublished": "2012-09-17T23:24:31"
+},
+{
+"name": "Georgia Female Legislators Stage Walk Out To Protest Anti-Abortion And Contraception Bills",
+"url": "https://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=iiNU6oiwPmvLLwc8_yTdu18SOS9PA762HmrLSPxWELo&v=1&r=https%3a%2f%2fthinkprogress.org%2fgeorgia-female-legislators-stage-walk-out-to-protest-anti-abortion-and-contraception-bills-19d57672f72&p=DevEx,5047.1",
+"description": "“What we’re seeing here,” Sen. Nan Orrock said, “is an ideological battle that’s being waged to make women a target, to take our access to our Constitutional right of privacy and also our ability to make our health decisions with our doctor and ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/23e9096c-b560-ce3f-c9e1-846b117f0c87",
+"name": "Protest"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/f3e94a1b-2e02-2bb6-438b-ed2cda0a3c99",
+"name": "Legislator"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Think Progress"
+}
+],
+"datePublished": "2012-03-08T13:29:50"
+},
+{
+"name": "Legislators Announce Changes to Scrap Tire Laws",
+"url": "https://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=qN90zOJH7ca6rOBIBAdnyBnOenlpvc9ra_iGiR71AcQ&v=1&r=https%3a%2f%2fatlantadailyworld.com%2f2014%2f07%2f08%2flegislators-announce-changes-to-scrap-tire-laws%2f&p=DevEx,5049.1",
+"description": "ATLANTA – Today, Sen. Nan Orrock (D-Atlanta), State Rep. Pat Gardner (D-Atlanta) and Atlanta City Councilmembers Joyce Sheperd and Felicia Moore held a press conference at the Capitol to educate Georgians on updated regulations of Georgia’s scrap tire law.",
+"provider": [
+{
+"_type": "Organization",
+"name": "Atlanta Daily World"
+}
+],
+"datePublished": "2014-07-08T18:25:34"
+},
+{
+"name": "Orrock, Drenner Introduce Citizens United Resolution, Call for U.S. Constitutional Amendment",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=PRn0YIoWmLa1xS4EE_H0DHjqK6vI2BkqsrCPA9lE7WY&v=1&r=http%3a%2f%2fatlantaprogressivenews.com%2f2015%2f01%2f31%2forrock-drenner-introduce-citizens-united-resolution-call-for-u-s-constitutional-amendment%2f&p=DevEx,5051.1",
+"description": "Federal Election Commission decision of the Supreme Court of the U.S., State Sen. Nan Orrock (D-Atlanta) and Rep. Karla Drenner (D-Avondale Estates) announced the introduction of resolutions calling for a U.S. Constitutional Amendment to allow U.S ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/2f619480-1071-4292-2f91-30d59a562747",
+"name": "Karla Drenner"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/5f0a938d-2994-ab81-7fc1-bde70ba2430d",
+"name": "Resolution"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/1a92f3fa-61f9-4e89-b606-40c945cf18d1",
+"name": "Atlanta"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Atlanta Progressive News"
+}
+],
+"datePublished": "2015-01-31T19:14:27"
+},
+{
+"name": "State senators propose requiring doctors to report number of abortions they perform",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=3d59fN0I49deKkpylGxM0H8i433JTpdSIx618IKvV_M&v=1&r=http%3a%2f%2fwww.gainesvilletimes.com%2fsection%2f158%2farticle%2f115692%2f&p=DevEx,5053.1",
+"description": "The measure now returns to the House. Sen. Nan Orrock, D-Atlanta, said the proposal will have a “chilling effect” on judges who hear the petitions and could harm young women requesting an exemption because of abuse by a parent or legal guardian.",
+"provider": [
+{
+"_type": "Organization",
+"name": "Gainesville Times"
+}
+],
+"datePublished": "2016-03-15T07:59:00"
+},
+{
+"name": "Georgians split on gun control debate",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=VckjTp2Fk65zMon8z45TzCdcv_1dCuLjiQPxoOlAjE4&v=1&r=http%3a%2f%2fwww.wsbtv.com%2fnews%2fnews%2flocal%2fgeorgians-split-gun-control-debate%2fnTYj6%2f&p=DevEx,5055.1",
+"description": "The mass shooting at a Newtown, Conn. school has renewed national and statewide debate over gun laws. State Sen. Nan Orrock is one lawmaker in favor of stricter gun laws in Georgia. Orrock believes that it is too easy to buy handguns and rifles.",
+"provider": [
+{
+"_type": "Organization",
+"name": "WSB-TV Atlanta"
+}
+],
+"datePublished": "2012-12-18T08:42:40"
+},
+{
+"name": "Georgia is on the verge of approving a bill that could protect the right to discriminate against gays",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=kPgJfAySwS2vFhnGbElvkAUrt1Ya7578FGtTDn1GpPQ&v=1&r=http%3a%2f%2fwww.businessinsider.com%2fgeorgia-senate-passes-anti-gay-bill-2016-2&p=DevEx,5057.1",
+"description": "The combined bill will now go the House of Representatives for approval. On the Senate floor, Democratic state Sen. Nan Orrock urged her colleagues to consider the impact the legislation would have on their constituents. “Untold numbers of gay ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "The Business Insider"
+}
+],
+"datePublished": "2016-02-19T22:09:00"
+},
+{
+"name": "Immigration Reform 2015: Georgia Lawmakers Defeat Driver's License Ban For Undocumented Immigrants Under Obama Relief",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=8Eem-l16qlNzKDnP_PThbNE6XcQ-F40jKcIzAU2eZuo&v=1&r=http%3a%2f%2fwww.ibtimes.com%2fimmigration-reform-2015-georgia-lawmakers-defeat-drivers-license-ban-undocumented-1865552&p=DevEx,5059.1",
+"description": "Nan Orrock, a Democrat. Driver’s licenses and municipal ID cards are available to undocumented immigrants in more than a dozen states and cities in the U.S. In January, California, which has the country's largest undocumented immigrant population ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/b7bf1617-98d3-e217-952e-28bc7d3a9209",
+"name": "RELIEF"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/2a63d0c4-b384-07c9-737d-fb520a50f8f6",
+"name": "Immigration"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "International Business Times"
+}
+],
+"datePublished": "2015-03-31T16:38:00"
+},
+{
+"name": "Controversial insurance bill returns, minus high-profile name",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=8ehWIH_6NzOpECMIjefH5pLwH_aEHFR6sp2DYZhO2fE&v=1&r=http%3a%2f%2fwww.myajc.com%2fnews%2fstate--regional-govt--politics%2fcontroversial-insurance-bill-returns-minus-high-profile-name%2fSZztQJZ0vgP8Ee4fhbtPOM%2f&p=DevEx,5061.1",
+"description": "“But I still have some reservations about it until I see the language.” State Sen. Nan Orrock, D-Atlanta, said Blackmon’s bill still goes against the free-market principles Republicans regularly espouse. “You hear a constant refrain from ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "myajc.com"
+}
+],
+"datePublished": "2017-02-02T22:48:44"
+},
+{
+"name": "Georgia bill would require new ADHD prescriptions every 5 days: “Clearly a cause for concern”",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=94sNql31lPfo865u1V314cpqSxr1oJpdqif5JUmQTlc&v=1&r=http%3a%2f%2ffox6now.com%2f2017%2f02%2f08%2fgeorgia-bill-would-require-new-adhd-prescriptions-every-5-days-clearly-a-cause-for-concern%2f&p=DevEx,5063.1",
+"image": {
+"thumbnail": {
+"contentUrl": "https://www.bing.com/th?id=ON.68DC98298AC69EBFE895DE276D9D469F&pid=News",
+"width": 700,
+"height": 365
+}
+},
+"description": "“It’s clearly a cause for concern,” said state Sen. Nan Orrock, an Atlanta Democrat who wants the provision struck from the bill. “The argument is pretty hard to debunk: that families coming in every five days for ADHD prescriptions is impossibl",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+},
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/9b1ef2a6-eb27-6e95-2e05-29ba641f9c0d",
+"name": "Attention deficit hyperactivity disorder"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "FOX 6 Now"
+}
+],
+"datePublished": "2017-02-09T00:13:00",
+"category": "Health"
+},
+{
+"name": "Faith leaders oppose calls for religious freedom bill in Georgia",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=GQLpKcbw3IeAGZTwl0cUFZ2KdUPltZmbTYpJ9YHrEMc&v=1&r=http%3a%2f%2fwww.christiantoday.com%2farticle%2ffaith.leaders.oppose.calls.for.religious.freedom.bill.in.georgia%2f45986.htm&p=DevEx,5065.1",
+"description": "They were hosted at the Capitol by Senator Nan Orrock. \"As faith leaders from diverse traditions, we believe freedom of religion is one of our most fundamental rights as Americans, but religious freedom does not give any of us the right to harm or exclude ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "Christian Today"
+}
+],
+"datePublished": "2015-01-14T18:10:55"
+},
+{
+"name": "Report urges in-state tuition for immigrants",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=xRU4BphySWys5k2V3EKcvMY3ZgsWox9Iv9ClMqdO6BU&v=1&r=http%3a%2f%2fwww.tiftongazette.com%2fnews%2freport-urges-in-state-tuition-for-immigrants%2farticle_6bebac08-66c9-11e5-a967-af58e0d84568.html&p=DevEx,5067.1",
+"description": "State Sen. Nan Orrock, D-Atlanta, said that amounts to “having the door of higher education slammed in their face in Georgia.\" The state, she added, is “essentially standing in the schoolhouse door and turning away qualified students.” The report by ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "The Tifton Gazette"
+}
+],
+"datePublished": "2015-09-30T12:48:20"
+},
+{
+"name": "Ga. Democrats: \"Trump is a monster the Republican Party created.\"",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=fVc-HTMgwe6kszrUZxk2f1qxPBNVUhEOy9zN0AloxAI&v=1&r=http%3a%2f%2fwww.11alive.com%2fnews%2flocal%2fatl-democrats-trump-is-a-monster-the-republican-party-created%2f244939003&p=DevEx,5069.1",
+"description": "Senator Nan Orrock and Representative LaDawn Jones also addressed the crowd. Senator Orrock described Trump as a \"walking publicity stunt\" saying he is downright dangerous. \"He is spreading hate and division in our population. He's attacking whole segments ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "11 Alive"
+}
+],
+"datePublished": "2016-06-15T15:23:58"
+},
+{
+"name": "Who knew? A round up of fact-checks that proved true",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=K_Zg4XgAZidtN17avhHDcrNMPQaby5Cm24Ks3Eq4WdY&v=1&r=http%3a%2f%2fwww.politifact.com%2fgeorgia%2farticle%2f2013%2fdec%2f25%2fwho-knew-round-fact-checks-proved-true%2f&p=DevEx,5071.1",
+"description": "PolitiFact Georgia published more than 240 fact checks in 2013 ... jul/08/lynn-westmoreland/phone-call-surveillance-policy-no-mystery-congress/ State Sen. Nan Orrock: \"More than 80 percent of Americans believe we need to have universal background checks.\"",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Politi Fact"
+}
+],
+"datePublished": "2013-12-25T10:36:21"
+},
+{
+"name": "The Reason Behind these 4 Cops Kicking Reporters Out of a Hotel Will Infuriate You",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=3svkOC16D3mo1PHnImXcOPG0cqCN4AU4y70F12yrke4&v=1&r=http%3a%2f%2fthefreethoughtproject.com%2freason-4-cops-kicking-reporters-hotel-infuriate%2f&p=DevEx,5073.1",
+"description": "Keefe interviewed Georgia State Senator Nan Orrock, a former ALEC member, who exposed the secretive activities taking place. “(ALEC) is really a corporate ‘bill mill.’ I mean, they’re cranking out legislation and put it in the hands of legislators ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "thefreethoughtproject.com"
+}
+],
+"datePublished": "2015-05-25T16:11:23"
+},
+{
+"name": "This will make you FURIOUS: ALEC Caught on Camera writing Bills for Legislators",
+"url": "https://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=xYXVyrC-d1pxQH8n9zO7NCUx_TKWCHtHbomV55lNkoU&v=1&r=https%3a%2f%2ftrofire.com%2f2015%2f05%2f23%2fthis-will-make-you-furious-alec-caught-on-camera-writing-bills-for-legislators%2f&p=DevEx,5075.1",
+"description": "11 Alive‘s Brendan Keefe spoke with Georgia senator and former ALEC member Nan Orrock (D), who called the group a “corporate bill mill.” “There are votes taken that have the corporate folks at the same table, voting with the legislators on what ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "trofire.com"
+}
+],
+"datePublished": "2015-05-23T13:26:35"
+},
+{
+"name": "It’s Worse Than You Think: How the Party of Lincoln Suppresses Black Votes",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=5hGsJNSsmy-D2MjADRe21F5PiseEIQs6RJW9N3U4vX8&v=1&r=http%3a%2f%2fbillmoyers.com%2f2014%2f09%2f03%2fits-worse-than-you-think-how-the-party-of-lincoln-supresses-black-votes%2f&p=DevEx,5077.1",
+"description": "“The voter-ID bill is big,” Atlanta Democratic Sen. Nan Orrock told me. “But it is one part of a much larger whole.” Orrock, a white liberal who found her way into politics through the civil rights movement in the 1960s, has represented ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/ba542069-a20a-498e-6321-06fed8bbf2ee",
+"name": "Abraham Lincoln"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "Moyers & Company"
+}
+],
+"datePublished": "2014-09-03"
+},
+{
+"name": "Georgia senators defeat measure targeting children of illegal immigrants",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=I5hyX7WAeKMSTosJwllGmeYAH0MJPMHdcN6Mi1DuJ2I&v=1&r=http%3a%2f%2fwww.bizjournals.com%2fatlanta%2fblog%2fcapitol_vision%2f2015%2f03%2fgeorgia-senators-defeat-measure-targeting-children.html&p=DevEx,5079.1",
+"description": "Curt Thompson, D-Norcross. Sen. Nan Orrock, D-Atlanta, said business leaders in Georgia oppose denying driver’s licenses to the children of illegal immigrants. “International corporations who have their North American headquarters here feel this is ...",
+"about": [
+{
+"readLink": "https://api.cognitive.microsoft.com/api/v5/entities/84604bc7-2c47-4f8d-8ea5-b6ac8c018a20",
+"name": "Georgia"
+}
+],
+"provider": [
+{
+"_type": "Organization",
+"name": "The Business Journal"
+}
+],
+"datePublished": "2015-03-31T12:44:00"
+},
+{
+"name": "Surprise anti-abortion measure passes Senate",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=PY1Ii7soImKirnPFhErLGU8_vDjn5A9BlhFpekWO3o8&v=1&r=http%3a%2f%2fwww.atlantamagazine.com%2farticle%2fsurprise-anti-abortion-measure-passes-senate%2f&p=DevEx,5081.1",
+"description": "Sen. Nan Orrock, D-Atlanta, immediately took the well to remind her fellow senators that the last lawmaker to propose an anti-abortion bill—Rep. Doug McKillip, R-Athens, although his name went unspoken—lost re-election in 2012…to a woman. Orrock also ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "Atlanta Magazine"
+}
+],
+"datePublished": "2013-03-26T11:40:59"
+},
+{
+"name": "Red Reps 13: Georgia’s Socialist State Senator, Nan Orrock",
+"url": "http://www.bing.com/cr?IG=18E9E6F68A9446FFB084D62F6891F8AD&CID=3DBAFA60172E66E13E65F052161F67CF&rd=1&h=v-tqK_IwLkwWn4cjU8sPrYJQkiqwRTR9yXkQ-HnasqQ&v=1&r=http%3a%2f%2fwww.trevorloudon.com%2f2011%2f08%2fred-reps-13-georgias-socialist-state-senator-nan-orrock%2f&p=DevEx,5083.1",
+"description": "Orrock has been a State Representative in the Georgia House of Representatives since 1987 and a State Senator since 2006, representing inner-city Atlanta neighborhoods. She worked for ten years for passage of the Georgia Hate Crimes Act and continues to ...",
+"provider": [
+{
+"_type": "Organization",
+"name": "trevorloudon.com"
+}
+],
+"datePublished": "2011-08-03"
+}
+]
+}

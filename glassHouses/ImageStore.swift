@@ -16,7 +16,7 @@ class ImageStore {
     private func getImageURL(forKey key: String) -> URL {
         let imageDirectory: URL = {
             let directories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let directory = directories.first! //on iOS there will always be a value and only one
+            let directory = directories.first! //on iOS there will always one and only one value
             return directory
         }()
         return imageDirectory.appendingPathComponent(key)
