@@ -31,7 +31,7 @@ class glassHousesTests: XCTestCase {
     
     
     func testLegislationParsing() {
-        // test 834+ bills
+        // test 834 bills
         guard let urls = Bundle(for: type(of: self)).urls(forResourcesWithExtension: nil, subdirectory: "JSON/legislation") else {
             XCTFail("urls for test legislation could not be found")
             return
@@ -62,28 +62,6 @@ class glassHousesTests: XCTestCase {
         XCTAssertTrue(urls.count == allJSONDict.count, "failed to cast all json objects from any to dictionary")
         let allLegislators = allJSONDict.flatMap({Legislator.init(json: $0)})
         XCTAssertTrue(urls.count == allLegislators.count, "failed to create legislators from all json dictionaries")
-    }
-    
-    func testLegislator() {
-        // tests 237 legislators
-        guard let urls = Bundle(for: type(of: self)).urls(forResourcesWithExtension: nil, subdirectory: "JSON/legislators") else {
-            XCTFail("urls for test legislators could not be found")
-            return
-        }
-        
-        let fileManager = FileManager.default
-        var count = 0
-
-        for url in urls {
-            let data = try! Data(contentsOf: url)
-            let dict = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            if dict!["active"] as! Bool == false {
-                count += 1
-                try! fileManager.removeItem(at: url)
-            }
-        }
-        print(urls.count)
-        print(count)
     }
 
 }

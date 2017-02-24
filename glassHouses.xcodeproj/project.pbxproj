@@ -190,12 +190,12 @@
 			isa = PBXGroup;
 			children = (
 				E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */,
-				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
 				E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */,
-				E8F8178C1E4E503F00155A5D /* NewsArticle.swift */,
+				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
 				E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */,
 				E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */,
-				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
+				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
+				E8F8178C1E4E503F00155A5D /* NewsArticle.swift */,
 				E84BE3AA1E4B6385004359DE /* Legislator.swift */,
 				E8BF592A1E4CD98B008365F4 /* Legislation.swift */,
 			);
