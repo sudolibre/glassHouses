@@ -1,4 +1,4 @@
-# Glass Houses - making local politics transparent
+# Glass Houses - making local politics more transparent
 
 Glass Houses helps you be involved with local politics by identifying your legislators, providing a feed informing you of your legislators votes, and notifying you if they are mentioned in the news.
 
