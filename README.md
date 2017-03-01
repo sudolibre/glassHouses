@@ -12,12 +12,12 @@ Features
 <h3 align="center">
   <img src="../screenShots/screenshots/onboarding.gif" alt="Onboarding Gif" />
 </h3>
-* Know when your legislators have been mentioned in the news
+* Know when your legislators have been mentioned in the news and view the article in-app.
 * See how your legislators are voting
 <h3 align="center">
   <img src="../screenShots/screenshots/feed_small.jpg" alt="Feed Image" />
 </h3>
-* Learn more about the bills your legislator is voting on
+* Learn more about the bills your legislator is voting on including: a description of the bill, the sponsors of the bill, the current point in the bill's lifecycle, and the source document for the bill.
 <h3 align="center">
   <img src="../screenShots/screenshots/detail.gif" alt="Bill Detail Gif" />
 </h3>
