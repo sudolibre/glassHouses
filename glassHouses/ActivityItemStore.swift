@@ -109,7 +109,7 @@ class ActivityItemStore {
                 }
                 
                 let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
-                let predicate = NSPredicate(format: "title == '\(title)'")
+                let predicate = NSPredicate(format: "title == %@", title)
                 fetchRequest.predicate = predicate
                 var existingArticle: [Article]!
                 context.performAndWait {

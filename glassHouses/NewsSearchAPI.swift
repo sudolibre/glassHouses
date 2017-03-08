@@ -24,9 +24,13 @@ class NewsSearchAPI {
             fetchNewsJSONForLegislator(legislator) { (response) in
                 switch response {
                 case .success(let data):
-                    let dictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    do {
+                    let dictionary = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
                     let newsResults = dictionary["value"] as! [[String: Any]]
                     completion((legislator, newsResults))
+                    } catch {
+                        fatalError("Failed to turn JSON into object while fetching news: \(error)")
+                    }
                 case .networkError(let response):
                     print(response.debugDescription)
                 case .failure(let error):

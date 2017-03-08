@@ -86,9 +86,13 @@ class OpenStatesAPI {
         request(.fetchLegislator(ID: id), completion: { (response) in
             switch response {
             case .success(let data):
-                let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                do {
+                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 if let legislator = Legislator(json: json) {
                         completion(legislator)
+                }
+                } catch {
+                    fatalError("Failed to turn JSON into object while getting legislator with ID \(id): \(error)")
                 }
             case .networkError(let response):
                 print(response.description)
@@ -122,6 +126,7 @@ class OpenStatesAPI {
         
         session.dataTask(with: request) { (_data, _response, _error) in
             if let data = _data {
+                print(_response!.debugDescription)
                 completion(.success(data))
                 return
             }
@@ -141,12 +146,16 @@ class OpenStatesAPI {
         request(.fetchNewBills(since: date)) { (response) in
             switch response {
             case .success(let data):
-                let recentBillsJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                do {
+                let recentBillsJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
                 let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
                 for id in filteredBillIDs {
                     getBillDetail(id: id) { (json) in
                         completion(id, json)
                     }
+                }
+                } catch {
+                    fatalError("Failed to turn JSON into object while getting new bills: \(error)")
                 }
                 done()
             case .networkError(let response):
@@ -162,8 +171,12 @@ class OpenStatesAPI {
         request(.fetchBillDetail(ID: id)) { (response) in
             switch response {
             case .success(let data):
-                let legislationJSON = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                do {
+                let legislationJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 completion(legislationJSON)
+                } catch {
+                    fatalError("Failed to turn JSON into object while getting bill detail for bill \(id): \(error)")
+                }
             case .networkError(let response):
                 print(response)
             case .failure(let error):
