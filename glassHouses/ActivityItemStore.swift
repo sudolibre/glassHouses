@@ -58,7 +58,7 @@ class ActivityItemStore {
                 completion(activity)
             }
         }
-        updateLocalArticles(legislators: legislators, completion: completion)
+        //updateLocalArticles(legislators: legislators, completion: completion)
     }
     
     private static func fetchLocalNewsArticles() -> [Article] {

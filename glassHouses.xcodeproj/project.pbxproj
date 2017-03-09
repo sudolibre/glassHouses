@@ -22,6 +22,8 @@
 		E84BE3A91E4A8C23004359DE /* OpenStatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */; };
 		E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3AA1E4B6385004359DE /* Legislator.swift */; };
 		E84BE3AF1E4BCF67004359DE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE3AE1E4BCF67004359DE /* ImageStore.swift */; };
+		E8686CA91E70AA3300A13449 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8686CA71E70AA3300A13449 /* Fabric.framework */; };
+		E8686CAA1E70AA3300A13449 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8686CA81E70AA3300A13449 /* Crashlytics.framework */; };
 		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E895A1361E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */; };
 		E895A1371E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */; };
@@ -76,6 +78,8 @@
 		E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenStatesAPI.swift; sourceTree = "<group>"; };
 		E84BE3AA1E4B6385004359DE /* Legislator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legislator.swift; sourceTree = "<group>"; };
 		E84BE3AE1E4BCF67004359DE /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		E8686CA71E70AA3300A13449 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		E8686CA81E70AA3300A13449 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LegislationJSON+CoreDataClass.swift"; path = "glassHouses/LegislationJSON+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E895A1351E54A4A90035AF48 /* LegislationJSON+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "LegislationJSON+CoreDataProperties.swift"; path = "glassHouses/LegislationJSON+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8686CAA1E70AA3300A13449 /* Crashlytics.framework in Frameworks */,
+				E8686CA91E70AA3300A13449 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,8 @@
 				E8DEEF0B1E57736F004AF755 /* Model */,
 				E8DEEF0A1E577360004AF755 /* View */,
 				E84BE37E1E4A4BC6004359DE /* Main.storyboard */,
+				E8686CA71E70AA3300A13449 /* Fabric.framework */,
+				E8686CA81E70AA3300A13449 /* Crashlytics.framework */,
 				E84BE3811E4A4BC6004359DE /* Assets.xcassets */,
 				E84BE3831E4A4BC6004359DE /* LaunchScreen.storyboard */,
 				E84BE3861E4A4BC6004359DE /* Info.plist */,
@@ -223,6 +231,7 @@
 				E84BE3731E4A4BC6004359DE /* Sources */,
 				E84BE3741E4A4BC6004359DE /* Frameworks */,
 				E84BE3751E4A4BC6004359DE /* Resources */,
+				E8686CA61E70AA1100A13449 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,6 +355,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E8686CA61E70AA1100A13449 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run bac35ed5a9a5fed69d5e734a105a7f2fb758e2d4 70fb4108dda7b677acbf6742a386219869d61025bf6b8318b1e14d552bfe78b7";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E84BE3731E4A4BC6004359DE /* Sources */ = {
@@ -522,7 +547,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = L72L2B36E9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/glassHouses",
+				);
 				INFOPLIST_FILE = glassHouses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonday.glasshouses;
@@ -538,6 +569,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = L72L2B36E9;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/glassHouses",
+				);
 				INFOPLIST_FILE = glassHouses/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jonday.glasshouses;

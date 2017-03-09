@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Crashlytics
 
 enum APIResponse {
     case success(Data)
@@ -92,6 +93,7 @@ class OpenStatesAPI {
                         completion(legislator)
                 }
                 } catch {
+                    CLSLogv("%@", getVaList(["this is working!!!"]))
                     fatalError("Failed to turn JSON into object while getting legislator with ID \(id): \(error)")
                 }
             case .networkError(let response):
@@ -175,6 +177,7 @@ class OpenStatesAPI {
                 let legislationJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 completion(legislationJSON)
                 } catch {
+                    CLSLogv("%@", getVaList(["this is working!!!"]))
                     fatalError("Failed to turn JSON into object while getting bill detail for bill \(id): \(error)")
                 }
             case .networkError(let response):

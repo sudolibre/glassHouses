@@ -28,13 +28,14 @@ class Legislation {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
         
+        
         guard let id = json["bill_id"] as? String,
             let documentVersions = json["versions"] as? [[String: Any]],
             let recentVersion = documentVersions.last,
             let documentURLString = recentVersion["url"] as? String,
             let documentURL = URL(string: documentURLString),
             let title = json["title"] as? String,
-            let description = json["+description"] as? String,
+            let description = json["+description"] as? String, //TODO: this is likely specific to GA
             let actionDates = json["action_dates"] as? [String: Any],
             let dateString = actionDates["last"] as? String,
             let date = dateFormatter.date(from: dateString),
