@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Crashlytics
 
 class Legislator {
     var fullName: String
@@ -106,7 +107,7 @@ class Legislator {
                 return nil
         }
         
-        
+
         self.fullName = fullName
         self.district = district
         self.lastName = lastName

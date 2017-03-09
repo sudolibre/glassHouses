@@ -56,10 +56,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func rotateOnboardingCards(_ direction: Direction) {
-        CLSLogv("Custom??? %@", getVaList([" Customthis is working!!!"]))
-        let error = NSError(domain: "HTTP Error", code: 502, userInfo: nil)
-        Crashlytics.sharedInstance().recordError(error)
-        
         let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
             let offsetConstraints = Array(centerXConstraints.dropFirst())
 

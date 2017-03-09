@@ -22,14 +22,14 @@ class NewsArticle {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
-        guard let title = json["name"] as? String,
-            let description = json["description"] as? String,
-            let linkString = json["url"] as? String,
+        guard let title = json.getStringForKey("name"),
+            let description = json.getStringForKey("description"),
+            let linkString = json.getStringForKey("url"),
             let link = URL(string: linkString),
-            let providerDictionary = json["provider"] as? [[String: Any]],
+            let providerDictionary = json.getArrayOfDictForKey("provider"),
             let firtProvider = providerDictionary.first,
-            let publisher = firtProvider["name"] as? String,
-            let dateString = json["datePublished"] as? String else {
+            let publisher = firtProvider.getStringForKey("name"),
+            let dateString = json.getStringForKey("datePublished") else {
                 return nil
         }
         

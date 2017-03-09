@@ -13,53 +13,67 @@ import Crashlytics
 
 extension Dictionary {
     func getDoubleForKey(_ key: String) -> Double? {
-        guard let aKey = key as? Key,
-            let double = self[aKey] as? Double else {
-                let error = NSError(domain: "JSON Mapping: Could not cast value for key \(key) as Double", code: 0, userInfo: nil)
-                Crashlytics.sharedInstance().recordError(error)
-                return nil
+        guard let aKey = key as? Key else {
+            return nil
+        }
+        guard let double = self[aKey] as? Double else {
+            reportFailure(key: key, type: "Double", raw: self[aKey])
+            return nil
         }
         return double
     }
     
     func getStringForKey(_ key: String) -> String? {
-        guard let aKey = key as? Key,
-            let string = self[aKey] as? String else {
-                let error = NSError(domain: "JSON Mapping: Could not cast value for key \(key) as String", code: 0, userInfo: nil)
-                Crashlytics.sharedInstance().recordError(error)
-                return nil
+        guard let aKey = key as? Key else {
+            return nil
         }
-        return string
+        guard let String = self[aKey] as? String else {
+            reportFailure(key: key, type: "String", raw: self[aKey])
+            return nil
+        }
+        return String
     }
     
     func getArrayOfDictForKey(_ key: String) -> [[String: Any]]? {
-        guard let aKey = key as? Key,
-            let array = self[aKey] as? Array<Dictionary<String, Any>> else {
-                let error = NSError(domain: "JSON Mapping: Could not cast value for key \(key) as Array", code: 0, userInfo: nil)
-                Crashlytics.sharedInstance().recordError(error)
-                return nil
+        guard let aKey = key as? Key else {
+            return nil
+        }
+        guard let array = self[aKey] as? Array<Dictionary<String, Any>> else {
+            reportFailure(key: key, type: "ArrayOfDict", raw: self[aKey])
+            return nil
         }
         return array
     }
     
-    func getfDictForKey(_ key: String) -> [String: Any]? {
-        guard let aKey = key as? Key,
-            let dict = self[aKey] as? Dictionary<String, Any> else {
-                let error = NSError(domain: "JSON Mapping: Could not cast value for key \(key) as Dict", code: 0, userInfo: nil)
-                Crashlytics.sharedInstance().recordError(error)
-                return nil
+    func getDictForKey(_ key: String) -> [String: Any]? {
+        guard let aKey = key as? Key else {
+            return nil
+        }
+        guard let dict = self[aKey] as? Dictionary<String, Any> else {
+            reportFailure(key: key, type: "Dictionary", raw: self[aKey])
+            return nil
         }
         return dict
     }
     
     func getBoolForKey(_ key: String) -> Bool? {
-        guard let aKey = key as? Key,
-            let Bool = self[aKey] as? Bool else {
-                let error = NSError(domain: "JSON Mapping: Could not cast value for key \(key) as Bool", code: 0, userInfo: nil)
-                Crashlytics.sharedInstance().recordError(error)
-                return nil
+        guard let aKey = key as? Key else {
+            return nil
+        }
+        guard let Bool = self[aKey] as? Bool else {
+            reportFailure(key: key, type: "Bool", raw: self[aKey])
+            return nil
         }
         return Bool
+    }
+    
+    func reportFailure(key: String, type: String, raw: Any?) {
+        Answers.logCustomEvent(withName: "JSON Mapping Failure",
+                               customAttributes: [
+                                "Key": key,
+                                "Target Type": type,
+                                "Data Preview": raw.debugDescription
+            ])
     }
     
 }

@@ -29,21 +29,21 @@ class Legislation {
         dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
         
         
-        guard let id = json["bill_id"] as? String,
-            let documentVersions = json["versions"] as? [[String: Any]],
+        guard let id = json.getStringForKey("bill_id"),
+            let documentVersions = json.getArrayOfDictForKey("versions"),
             let recentVersion = documentVersions.last,
-            let documentURLString = recentVersion["url"] as? String,
+            let documentURLString = recentVersion.getStringForKey("url"),
             let documentURL = URL(string: documentURLString),
-            let title = json["title"] as? String,
-            let description = json["+description"] as? String, //TODO: this is likely specific to GA
-            let actionDates = json["action_dates"] as? [String: Any],
-            let dateString = actionDates["last"] as? String,
+            let title = json.getStringForKey("title"),
+            let description = json.getStringForKey("+description"), //TODO: this is likely specific to GA
+            let actionDates = json.getDictForKey("action_dates"),
+            let dateString = actionDates.getStringForKey("last"),
             let date = dateFormatter.date(from: dateString),
-            let sponsorArray = json["sponsors"] as? [[String: Any]],
-            let votesArray = json["votes"] as? [[String: Any]],
-            let yesVotesArray = votesArray.first?["yes_votes"] as? [[String:Any]],
-            let noVotesArray = votesArray.first?["no_votes"] as? [[String:Any]],
-            let otherVotesArray = votesArray.first?["other_votes"] as? [[String:Any]] else {
+            let sponsorArray = json.getArrayOfDictForKey("sponsors"),
+            let votesArray = json.getArrayOfDictForKey("votes"),
+            let yesVotesArray = votesArray.first?.getArrayOfDictForKey("yes_votes"),
+            let noVotesArray = votesArray.first?.getArrayOfDictForKey("no_votes"),
+            let otherVotesArray = votesArray.first?.getArrayOfDictForKey("other_votes") else {
                 return nil
         }
         
