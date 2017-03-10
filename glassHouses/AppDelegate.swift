@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        Fabric.sharedSDK().debug = true
         if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navController = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
