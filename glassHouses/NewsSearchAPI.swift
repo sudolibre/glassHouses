@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Crashlytics
 
 class NewsSearchAPI {
     static private func getURLFor(legislator: Legislator) -> URL {
@@ -49,23 +50,25 @@ class NewsSearchAPI {
             req.addValue("4736b3e01ee14403a25247f38ae243bd", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
             return req
         }()
-        
-        session.dataTask(with: request) { (_data, _response, _error) in
-            if let data = _data {
-                completion(.success(data))
-                return
-            }
-            
-            if let response = _response as? HTTPURLResponse {
-                completion(.networkError(response))
-                print(response.statusCode)
-            }
-            
-            if let error = _error {
-                completion(.failure(error))
-                print(error.localizedDescription)
-            }
-            
+
+            session.dataTask(with: request) { (_data, _response, _error) in
+                switch (_data, _response as! HTTPURLResponse?, _error) {
+                case (.some(let data), .some(let response), _) where 200..<300 ~= response.statusCode:
+                    completion(.success(data))
+                case (_, .some(let response), _):
+                    Answers.logCustomEvent(withName: "HTTP Error", customAttributes: [
+                        "Code": response.statusCode
+                        ])
+                    completion(.networkError(response))
+                case (_,_, .some(let error)):
+                    Answers.logCustomEvent(withName: "System Error", customAttributes: [
+                        "Description": error.localizedDescription
+                        ])
+                    completion(.failure(error))
+                default:
+                    Answers.logCustomEvent(withName: "Network Reponse Unexpectedly Reached Default Case", customAttributes: nil)
+                }
+                
             }.resume()
     }
 }

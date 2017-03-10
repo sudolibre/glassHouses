@@ -56,6 +56,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func rotateOnboardingCards(_ direction: Direction) {
+        let dictionary = ["Something": "nothing"]
+        dictionary.getBoolForKey("Something")
         let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
             let offsetConstraints = Array(centerXConstraints.dropFirst())
 

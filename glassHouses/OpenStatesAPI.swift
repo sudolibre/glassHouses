@@ -69,10 +69,42 @@ class OpenStatesAPI {
         }
     }
     
+    private static let session = URLSession.shared
+    
+    static func request(_ endpoint: EndPoint, completion: @escaping (APIResponse) -> ()) {
+        let fullURL = URL(string: baseUrl + endpoint.urlComponent)!
+        let request: URLRequest = {
+            var req = URLRequest(url: fullURL)
+            req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+            req.httpMethod = endpoint.httpMethod
+            return req
+        }()
+        
+        session.dataTask(with: request) { (_data, _response, _error) in
+            switch (_data, _response as! HTTPURLResponse?, _error) {
+            case (.some(let data), .some(let response), _) where 200..<300 ~= response.statusCode:
+                completion(.success(data))
+            case (_, .some(let response), _):
+                Answers.logCustomEvent(withName: "HTTP Error", customAttributes: [
+                    "Code": response.statusCode
+                    ])
+                completion(.networkError(response))
+            case (_,_, .some(let error)):
+                Answers.logCustomEvent(withName: "System Error", customAttributes: [
+                    "Description": error.localizedDescription
+                    ])
+                completion(.failure(error))
+            default:
+                Answers.logCustomEvent(withName: "Network Reponse Unexpectedly Reached Default Case", customAttributes: nil)
+            }
+            
+            }.resume()
+    }
+    
     static internal func fetchLegislatorsByID(ids: [String], completion: @escaping ([Legislator]) -> ()) {
         
         var legislators: [Legislator] = []
-                
+        
         for id in ids {
             fetchLegislatorByID(id: id, completion: { (legislator) in
                 legislators.append(legislator)
@@ -88,13 +120,12 @@ class OpenStatesAPI {
             switch response {
             case .success(let data):
                 do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                if let legislator = Legislator(json: json) {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    if let legislator = Legislator(json: json) {
                         completion(legislator)
-                }
+                    }
                 } catch {
-                    CLSLogv("%@", getVaList(["this is working!!!"]))
-                    fatalError("Failed to turn JSON into object while getting legislator with ID \(id): \(error)")
+                    Crashlytics.sharedInstance().recordCustomExceptionName("JSON Serialization Failure while fetching legislator", reason: "Legislator ID \(id), Preview: \(data.debugDescription)", frameArray: [])
                 }
             case .networkError(let response):
                 print(response.description)
@@ -108,40 +139,12 @@ class OpenStatesAPI {
     static internal func parseDistrictResults(_ data: Data) -> [Legislator] {
         guard let foundationObject = try? JSONSerialization.jsonObject(with: data, options: []),
             let topLevelArray = foundationObject as? [[String: Any]] else {
-                fatalError("Unexpected top level item in district search JSON. Expecting Array")
+                Crashlytics.sharedInstance().recordCustomExceptionName("JSON Mapping Failure: District Results", reason: "Preview: \(data.debugDescription)", frameArray: [])
+                return []
         }
         
         let legislators = topLevelArray.flatMap(Legislator.init)
         return legislators
-    }
-    
-    private static let session = URLSession.shared
-    
-    static func request(_ endpoint: EndPoint, completion: @escaping (APIResponse) -> ()) {
-        let fullURL = URL(string: baseUrl + endpoint.urlComponent)!
-        let request: URLRequest = {
-            var req = URLRequest(url: fullURL)
-            req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-            req.httpMethod = endpoint.httpMethod
-            return req
-        }()
-        
-        session.dataTask(with: request) { (_data, _response, _error) in
-            if let data = _data {
-                print(_response!.debugDescription)
-                completion(.success(data))
-                return
-            }
-            
-            if let response = _response as? HTTPURLResponse {
-                completion(.networkError(response))
-            }
-            
-            if let error = _error {
-                completion(.failure(error))
-            }
-            
-            }.resume()
     }
     
     static func getNewBills(since date: Date, forEach completion: @escaping (String, [String: Any]) -> (), whenDone done: @escaping () -> ()) {
@@ -149,19 +152,19 @@ class OpenStatesAPI {
             switch response {
             case .success(let data):
                 do {
-                let recentBillsJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-                let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
-                for id in filteredBillIDs {
-                    getBillDetail(id: id) { (json) in
-                        completion(id, json)
+                    let recentBillsJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
+                    let filteredBillIDs = getIDsForVotedBills(recentBillsJSON)
+                    for id in filteredBillIDs {
+                        getBillDetail(id: id) { (json) in
+                            completion(id, json)
+                        }
                     }
-                }
                 } catch {
-                    fatalError("Failed to turn JSON into object while getting new bills: \(error)")
+                    Crashlytics.sharedInstance().recordCustomExceptionName("JSON Serialization Failure while getting bills", reason: "Preview: \(data.debugDescription)", frameArray: [])
                 }
                 done()
             case .networkError(let response):
-                print(response)
+                print(response.debugDescription)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -174,14 +177,13 @@ class OpenStatesAPI {
             switch response {
             case .success(let data):
                 do {
-                let legislationJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                completion(legislationJSON)
+                    let legislationJSON = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    completion(legislationJSON)
                 } catch {
-                    CLSLogv("%@", getVaList(["this is working!!!"]))
-                    fatalError("Failed to turn JSON into object while getting bill detail for bill \(id): \(error)")
+                    Crashlytics.sharedInstance().recordCustomExceptionName("JSON Serialization Failure while getting bill detail", reason: "Bill ID \(id), Preview: \(data.debugDescription)", frameArray: [])
                 }
             case .networkError(let response):
-                print(response)
+                print(response.debugDescription)
             case .failure(let error):
                 print(error.localizedDescription)
             }

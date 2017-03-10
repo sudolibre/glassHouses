@@ -11,7 +11,6 @@ import CoreData
 
 class ActivityItemStore {
     
-    //owns core data
     private static let persistentContainer: NSPersistentContainer = {
         let pc = NSPersistentContainer(name: "glassHouses")
         pc.loadPersistentStores(completionHandler: { (description, error) in
@@ -58,7 +57,7 @@ class ActivityItemStore {
                 completion(activity)
             }
         }
-        //updateLocalArticles(legislators: legislators, completion: completion)
+        updateLocalArticles(legislators: legislators, completion: completion)
     }
     
     private static func fetchLocalNewsArticles() -> [Article] {

@@ -66,7 +66,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>"We will only use your current location to find your legislators and only when requested by you."</string>
+	<string>"We will only use your current location to find your legislators and only at your request."</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
