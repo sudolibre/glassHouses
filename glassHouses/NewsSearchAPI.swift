@@ -10,6 +10,13 @@ import Foundation
 import Crashlytics
 
 class NewsSearchAPI {
+    private static let session = URLSession.shared
+    private static let key: String = {
+        let path = Bundle.main.path(forResource: "API", ofType: "plist")!
+        let plist = FileManager.default.contents(atPath: path)!
+        let dictionary = try! PropertyListSerialization.propertyList(from: plist, options: .mutableContainers, format: nil) as! [String: String]
+        return dictionary["BingKey"]!
+    }()
     static private func getURLFor(legislator: Legislator) -> URL {
         let baseURL = "https://api.cognitive.microsoft.com/bing/v5.0/news/search?count=10&offset=0&mkt=en-us&safeSearch=Moderate&freshness=Month&q="
         let legislatorEncodedName = legislator.fullName.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!
@@ -18,7 +25,6 @@ class NewsSearchAPI {
         return URL(string: fullURL)!
     }
     
-    private static let session = URLSession.shared
     
     static func fetchNewsForLegislators(_ legislators: [Legislator], completion: @escaping ((Legislator,[[String: Any]])) -> ()) {
         for legislator in legislators {
@@ -47,7 +53,7 @@ class NewsSearchAPI {
             var req = URLRequest(url: url)
             req.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
             req.httpMethod = "GET"
-            req.addValue("4736b3e01ee14403a25247f38ae243bd", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+            req.addValue(key, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
             return req
         }()
 
