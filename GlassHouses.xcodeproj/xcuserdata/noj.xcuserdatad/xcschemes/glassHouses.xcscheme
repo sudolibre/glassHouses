@@ -17,7 +17,7 @@
                BlueprintIdentifier = "E84BE3761E4A4BC6004359DE"
                BuildableName = "glassHouses.app"
                BlueprintName = "glassHouses"
-               ReferencedContainer = "container:glassHouses.xcodeproj">
+               ReferencedContainer = "container:GlassHouses.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "E84BE38A1E4A4BC6004359DE"
                BuildableName = "glassHousesTests.xctest"
                BlueprintName = "glassHousesTests"
-               ReferencedContainer = "container:glassHouses.xcodeproj">
+               ReferencedContainer = "container:GlassHouses.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "E84BE3951E4A4BC6004359DE"
                BuildableName = "glassHousesUITests.xctest"
                BlueprintName = "glassHousesUITests"
-               ReferencedContainer = "container:glassHouses.xcodeproj">
+               ReferencedContainer = "container:GlassHouses.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,7 +56,7 @@
             BlueprintIdentifier = "E84BE3761E4A4BC6004359DE"
             BuildableName = "glassHouses.app"
             BlueprintName = "glassHouses"
-            ReferencedContainer = "container:glassHouses.xcodeproj">
+            ReferencedContainer = "container:GlassHouses.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,7 +79,7 @@
             BlueprintIdentifier = "E84BE3761E4A4BC6004359DE"
             BuildableName = "glassHouses.app"
             BlueprintName = "glassHouses"
-            ReferencedContainer = "container:glassHouses.xcodeproj">
+            ReferencedContainer = "container:GlassHouses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,7 +98,7 @@
             BlueprintIdentifier = "E84BE3761E4A4BC6004359DE"
             BuildableName = "glassHouses.app"
             BlueprintName = "glassHouses"
-            ReferencedContainer = "container:glassHouses.xcodeproj">
+            ReferencedContainer = "container:GlassHouses.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
