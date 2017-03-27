@@ -197,9 +197,8 @@
                                     <constraint firstItem="ScL-hd-Zmk" firstAttribute="leading" secondItem="zab-RX-Y0O" secondAttribute="leading" constant="8" id="oi1-G2-yI0"/>
                                 </constraints>
                             </view>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-F5-uJD">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wx3-F5-uJD">
                                 <rect key="frame" x="168" y="520" width="39" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
@@ -209,11 +208,13 @@
                             <constraint firstItem="zab-RX-Y0O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="015-X9-K4P"/>
                             <constraint firstItem="zab-RX-Y0O" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="9:10" id="7Je-an-dpB"/>
                             <constraint firstItem="sMH-wj-HnT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Pz-P7-sFB"/>
+                            <constraint firstItem="Wx3-F5-uJD" firstAttribute="top" secondItem="zab-RX-Y0O" secondAttribute="bottom" constant="19" id="IRJ-ap-jj5"/>
                             <constraint firstItem="moC-JA-itC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" priority="999" id="JIf-wr-JAU"/>
                             <constraint firstItem="zab-RX-Y0O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" priority="700" id="LQB-8L-fMg"/>
                             <constraint firstItem="zab-RX-Y0O" firstAttribute="leading" secondItem="moC-JA-itC" secondAttribute="trailing" constant="200" id="NVq-AJ-4uv"/>
                             <constraint firstItem="pyr-lc-2bP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="79.5" id="Ou4-3c-mrg"/>
                             <constraint firstItem="uRA-TV-zYb" firstAttribute="width" secondItem="sMH-wj-HnT" secondAttribute="width" id="PSx-XR-aaC"/>
+                            <constraint firstItem="Wx3-F5-uJD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qad-ZC-okC"/>
                             <constraint firstItem="uRA-TV-zYb" firstAttribute="centerY" secondItem="sMH-wj-HnT" secondAttribute="centerY" id="T2p-zU-fky"/>
                             <constraint firstItem="moC-JA-itC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XHD-jb-lcD"/>
                             <constraint firstItem="sMH-wj-HnT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xa2-Tx-oLT"/>
@@ -271,9 +272,9 @@
         <!--Activity Feed Controller-->
         <scene sceneID="uM2-vh-8PZ">
             <objects>
-                <tableViewController id="O9q-C5-sXB" customClass="ActivityFeedController" customModule="glassHouses" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="syg-EJ-z6S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="O9q-C5-sXB" customClass="ActivityFeedController" customModule="glassHouses" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" id="syg-EJ-z6S">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -348,6 +349,7 @@
                             <outlet property="delegate" destination="O9q-C5-sXB" id="su7-lT-M0F"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="wxo-5J-Ea2"/>
                     <connections>
                         <segue destination="XOv-oI-mcf" kind="show" identifier="showNews" id="pL1-HM-tJY"/>
@@ -400,20 +402,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnn-it-ATq">
-                                        <rect key="frame" x="8" y="110" width="359" height="50.5"/>
+                                        <rect key="frame" x="8" y="110" width="359" height="51"/>
                                         <string key="text">Special license plates; dog and cat reproductive sterilization support program; increase the proportion of moneys derived from the sale</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-Wl-Mmv" userLabel="Bill Status" customClass="LegislationStatusView" customModule="glassHouses" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="168.5" width="359" height="80"/>
+                                        <rect key="frame" x="8" y="169.5" width="359" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="wne-R0-Lwc"/>
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYh-CI-sCO" userLabel="Sponsor View">
-                                        <rect key="frame" x="8" y="283.5" width="359" height="100"/>
+                                        <rect key="frame" x="8" y="284" width="359" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="0Fu-69-lt7"/>
@@ -464,7 +466,7 @@ District 51</string>
                                         </cells>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sponsors (6)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kj6-MT-tpy" userLabel="Sponsor Count">
-                                        <rect key="frame" x="8" y="258.5" width="84" height="17"/>
+                                        <rect key="frame" x="8" y="259" width="84" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -527,7 +529,8 @@ District 51</string>
         <!--Navigation Controller-->
         <scene sceneID="qMU-pY-UOg">
             <objects>
-                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="xA6-Ff-PcV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" id="xA6-Ff-PcV" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF4-w4-Yjt">

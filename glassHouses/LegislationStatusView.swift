@@ -25,7 +25,13 @@ class LegislationStatusView: UIView {
     func drawStatusCircles() {
         func centerPointForIndex(_ index: Int) -> CGPoint {
             let centerY = bounds.midY
-            let centerX = CGFloat(index) * (bounds.width / CGFloat(Status.count)) - bounds.width / CGFloat(Status.count * 2)
+//            let centerX = CGFloat(index) * (bounds.width / CGFloat(Status.count)) - bounds.width / CGFloat(Status.count * 2)
+            let centerX: CGFloat = {
+                let sectionWidth = bounds.width / CGFloat(Status.count)
+                let halfWidth = bounds.width / CGFloat(Status.count * 2)
+                let midXForSection = sectionWidth * CGFloat(index) - halfWidth
+                return midXForSection
+            }()
             return CGPoint(x: centerX , y: centerY)
         }
         
@@ -153,6 +159,7 @@ class LegislationStatusView: UIView {
         }
     }
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         drawStatusCircles()

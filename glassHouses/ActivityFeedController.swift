@@ -13,7 +13,12 @@ import QuickLook
 
 class ActivityFeedController: UITableViewController {
     var lastUpdate: Date?
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.color = UIColor.gray
+        return spinner
+    }()
     var legislators: [Legislator]! {
         didSet {
             generateFeed()
@@ -30,22 +35,21 @@ class ActivityFeedController: UITableViewController {
         }
     }
     
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         tableView.dataSource = dataSource
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
-        
-        spinner.translatesAutoresizingMaskIntoConstraints = false
+        tableView.estimatedRowHeight = 100
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        tableView.contentInset.top = statusBarHeight
+        tableView.scrollIndicatorInsets.top = statusBarHeight
+
         view.addSubview(spinner)
         let centerXConstraint = view.centerXAnchor.constraint(equalTo: spinner.centerXAnchor)
         let centerYConstraint = view.centerYAnchor.constraint(equalTo: spinner.centerYAnchor)
-        
         view.addConstraints([centerXConstraint, centerYConstraint])
-        spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        spinner.color = UIColor.gray
     }
     
     

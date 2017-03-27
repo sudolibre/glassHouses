@@ -27,8 +27,8 @@ class NewsArticle {
             let linkString = json.getStringForKey("url"),
             let link = URL(string: linkString),
             let providerDictionary = json.getArrayOfDictForKey("provider"),
-            let firtProvider = providerDictionary.first,
-            let publisher = firtProvider.getStringForKey("name"),
+            let firstProvider = providerDictionary.first,
+            let publisher = firstProvider.getStringForKey("name"),
             let dateString = json.getStringForKey("datePublished") else {
                 return nil
         }
