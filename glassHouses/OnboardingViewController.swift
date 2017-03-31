@@ -55,6 +55,18 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         case backward, forward
     }
     
+    @IBAction func swipeToRotate(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case UISwipeGestureRecognizerDirection.left:
+            rotateOnboardingCards(.forward)
+        case UISwipeGestureRecognizerDirection.right:
+            rotateOnboardingCards(.backward)
+        default:
+            fatalError("Unexpected swipe gesture recognizer direction")
+        }
+    }
+    
+    
     func rotateOnboardingCards(_ direction: Direction) {
         let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
             let offsetConstraints = Array(centerXConstraints.dropFirst())
@@ -152,7 +164,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         let coordinates = locations.last!.coordinate
         updateMap(coordinates: coordinates)
         setLegislatorsWithCoordinates(coordinates)
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

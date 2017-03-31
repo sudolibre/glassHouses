@@ -47,9 +47,23 @@ class Legislation {
                 return nil
         }
         
-        let yesNames = yesVotesArray.flatMap({$0["name"] as? String})
-        let noNames = noVotesArray.flatMap({$0["name"] as? String})
-        let otherNames = otherVotesArray.flatMap({$0["name"] as? String})
+//        let yesIDs = yesVotesArray.flatMap({$0["leg_id"] as? String})
+//        let noIDs = noVotesArray.flatMap({$0["leg_id"] as? String})
+//        let otherIDs = otherVotesArray.flatMap({$0["leg_id"] as? String})
+        let voterDescriptionParser = { (dictionary: [String: Any]) -> String? in
+            if let legID = dictionary["leg_id"] as? String {
+                return legID
+            } else {
+                return dictionary["name"] as? String
+            }
+        }
+        let yesNames = yesVotesArray.flatMap(voterDescriptionParser)
+        let noNames = noVotesArray.flatMap(voterDescriptionParser)
+        let otherNames = otherVotesArray.flatMap(voterDescriptionParser)
+
+        //let yesNames = yesVotesArray.flatMap({$0["name"] as? String})
+//        let noNames = noVotesArray.flatMap({$0["name"] as? String})
+//        let otherNames = otherVotesArray.flatMap({$0["name"] as? String})
         self.sponsorIDs = sponsorArray.flatMap({$0["leg_id"] as? String})
         self.date = date
         self.description = description

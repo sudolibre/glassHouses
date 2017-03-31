@@ -16,7 +16,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     var legislation: Legislation!
     var dataSource: LegislationDetailDataSource!
     var legislationWebView: WKWebView!
-
+    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var outterView: UIView!
     @IBOutlet var billStatusView: LegislationStatusView!
@@ -61,6 +61,8 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
                 self.showLoginMessage(forServiceName: "Facebook")
             }
         }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        shareSheet.addAction(cancelAction)
         shareSheet.addAction(tweetAction)
         shareSheet.addAction(facebookAction)
         present(shareSheet, animated: true, completion: nil)

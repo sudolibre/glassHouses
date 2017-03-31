@@ -227,11 +227,11 @@ class ActivityItemStore {
             
             for legislator in legislators {
                 var vote: VoteResult? = nil
-                if votes.yesVotes.contains(legislator.voterDescription) {
+                if !votes.yesVotes.isDisjoint(with: legislator.voterDescriptions) {
                     vote = .yea
-                } else if votes.noVotes.contains(legislator.voterDescription) {
+                } else if !votes.noVotes.isDisjoint(with: legislator.voterDescriptions) {
                     vote = .nay
-                } else if votes.otherVotes.contains(legislator.voterDescription) {
+                } else if !votes.otherVotes.isDisjoint(with: legislator.voterDescriptions) {
                     vote = .other
                 }
                 

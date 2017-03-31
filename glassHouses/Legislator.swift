@@ -25,11 +25,15 @@ class Legislator {
     }
     var ID: String
     
-    var voterDescription: String {
+    var voterDescriptions: Set<String> {
+        var descriptions: Set<String> = []
+        descriptions.insert(ID)
+        //for GA format
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
         let districtDescription = formatter.string(from: district as NSNumber)!
-        return "\(lastName), \(districtDescription)".uppercased()
+        descriptions.insert("\(lastName), \(districtDescription)".uppercased())
+        return descriptions
     }
     
     enum Party: String, CustomStringConvertible {
