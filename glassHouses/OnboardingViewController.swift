@@ -20,7 +20,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
-
+    
     let titles = ["Welcome to Informed Public!", "Let's find your district.", "Meet your legislators!"]
     var currentLegislator: Legislator?
     var legislators: [Legislator]? {
@@ -28,11 +28,28 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             switch legislators {
             case .some:
                 currentLegislator = legislators!.first!
+                registerForNews()
                 fetchPhotos()
                 updateRepView()
             case .none:
                 self.nextButton.isEnabled = false
             }
+        }
+    }
+    
+    func registerForNews() {
+        guard let legislators = legislators else { return }
+        if let token = UserDefaultsManager.getAPNSToken() {
+            GlassHousesAPI.hitEndpoint(.register(token: token, legislators: legislators), completion: { (APIResponse) in
+                switch APIResponse {
+                case .success(let data):
+                    print(data)
+                case .failure(let error):
+                    print(error)
+                case .networkError(let response):
+                    print(response)
+                }
+            })
         }
     }
     
@@ -70,7 +87,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     func rotateOnboardingCards(_ direction: Direction) {
         let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
             let offsetConstraints = Array(centerXConstraints.dropFirst())
-
+            
             switch direction {
             case .forward:
                 return zip(centerXConstraints, offsetConstraints).reversed()
@@ -121,8 +138,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         activityVC.dataSource = dataSource
     }
     
-
-
+    
+    
     
     //MARK: Welcome Card
     // there are no custom properties or methods for the welcome card
@@ -229,15 +246,15 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             }
         }
     }
-
-
+    
+    
     //MARK: Overview Card
     let imageStore = ImageStore()
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var legislatorNumber: UILabel!
-
+    
     
     @IBAction func swipeDetected(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
@@ -264,7 +281,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         }
     }
     
-
+    
     
     func rotateRep(_ direction: Direction) {
         let currentIndex = legislators!.index(where: {$0 === currentLegislator!})
@@ -275,7 +292,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             if currentIndex == legislators!.endIndex - 1 {
                 newIndex = 0
             } else {
-            newIndex = currentIndex! + 1
+                newIndex = currentIndex! + 1
             }
         case .backward:
             if currentIndex == legislators!.startIndex {
@@ -288,6 +305,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         currentLegislator = legislators![newIndex]
         updateRepView()
     }
-
+    
 }
 

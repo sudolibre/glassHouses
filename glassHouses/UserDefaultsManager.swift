@@ -11,8 +11,10 @@ import Foundation
 class UserDefaultsManager {
     static let userDefaults = UserDefaults.standard
     
+    //KEYS
     static private let userLegislatorsKey = "legislators"
     static private let lastUpdateKey = "lastUpdate"
+    static private let APNSTokenKey = "APNSToken"
     
     static var lastUpdate: Date? {
         get {
@@ -48,5 +50,13 @@ class UserDefaultsManager {
     
     static func setLegislatorIDs(_ ids: [String]) {
         userDefaults.set(ids, forKey: userLegislatorsKey)
+    }
+    
+    static func setAPNSToken(_ token: String) {
+        userDefaults.set("token", forKey: APNSTokenKey)
+    }
+    
+    static func getAPNSToken() -> String? {
+        return userDefaults.string(forKey: APNSTokenKey)
     }
 }

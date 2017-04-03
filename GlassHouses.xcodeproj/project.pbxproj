@@ -12,6 +12,7 @@
 		E813C3821E53A75100F93F95 /* glassHouses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E813C3801E53A75100F93F95 /* glassHouses.xcdatamodeld */; };
 		E8185C491E5F52A000462C8F /* JSON in Resources */ = {isa = PBXBuildFile; fileRef = E8185C481E5F52A000462C8F /* JSON */; };
 		E8185C851E5F6AEF00462C8F /* allUpper in Resources */ = {isa = PBXBuildFile; fileRef = E8185C841E5F6AEE00462C8F /* allUpper */; };
+		E83A86B81E92CCB800C04E1E /* GlassHousesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A86B71E92CCB800C04E1E /* GlassHousesAPI.swift */; };
 		E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */; };
 		E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */; };
 		E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE37E1E4A4BC6004359DE /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		E813C3811E53A75100F93F95 /* glassHouses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = glassHouses.xcdatamodel; sourceTree = "<group>"; };
 		E8185C481E5F52A000462C8F /* JSON */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JSON; sourceTree = "<group>"; };
 		E8185C841E5F6AEE00462C8F /* allUpper */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = allUpper; sourceTree = "<group>"; };
+		E83A86B71E92CCB800C04E1E /* GlassHousesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlassHousesAPI.swift; sourceTree = "<group>"; };
 		E84BE3771E4A4BC6004359DE /* glassHouses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glassHouses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
 				E8686CB31E71F9F100A13449 /* JSONHelper.swift */,
 				E84BE3A81E4A8C23004359DE /* OpenStatesAPI.swift */,
+				E83A86B71E92CCB800C04E1E /* GlassHousesAPI.swift */,
 				E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */,
 				E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */,
 				E8F8178C1E4E503F00155A5D /* NewsArticle.swift */,
@@ -406,6 +409,7 @@
 				E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */,
 				E8DEEF111E58D9FE004AF755 /* SponserCollectionCell.swift in Sources */,
 				E8DEEF091E57732D004AF755 /* LegislationDetailViewController.swift in Sources */,
+				E83A86B81E92CCB800C04E1E /* GlassHousesAPI.swift in Sources */,
 				E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */,
 				E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */,
 				E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */,

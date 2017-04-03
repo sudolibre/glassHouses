@@ -67,33 +67,6 @@ class Legislator {
         }
     }
     
-//    init?(json: [String: Any]) {
-//        guard let active = json["active"] as? Bool,
-//        active == true,
-//        let ID = json["leg_id"] as? String,
-//        let fullName = json["full_name"] as? String,
-//        let districtString = json["district"] as? String,
-//        let district = Int(districtString),
-//        let lastName = json["last_name"] as? String,
-//        let partyRawValue = json["party"] as? String,
-//        let party = Party(rawValue: partyRawValue.lowercased()),
-//        let photoURLString = (json["photo_url"] as? String)?.replacingOccurrences(of: " ", with: "%20", options: [], range: nil),
-//        let photoURL = URL(string: photoURLString),
-//        let chamberRawValue = json["chamber"] as? String,
-//        let chamber = Chamber(rawValue: chamberRawValue) else {
-//                return nil
-//        }
-//        
-//        
-//        self.fullName = fullName
-//        self.district = district
-//        self.lastName = lastName
-//        self.ID = ID
-//        self.party = party
-//        self.chamber = chamber
-//        self.photoURL = photoURL
-//    }
-    
     init?(json: [String: Any]) {
         guard let active = json.getBoolForKey("active"),
             active == true,
