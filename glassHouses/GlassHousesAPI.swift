@@ -11,7 +11,7 @@ import Crashlytics
 
 
 struct GlassHousesAPI {
-    private static let baseURL = "http://192.168.1.239:8080/"
+    private static let baseURL = "http://104.131.31.61:80/"
     
     private static let session = URLSession.shared
     
@@ -35,7 +35,7 @@ struct GlassHousesAPI {
         var headers: [String: String] {
             switch self {
             case .register:
-                return ["application/json" : "Content-Type"]
+                return ["Content-Type": "application/json"]
             }
         }
         
@@ -43,7 +43,7 @@ struct GlassHousesAPI {
             switch self {
             case .register(let token, let legislators):
                 let arrayOfLegislatorInfo: [[String: String]] = legislators.map({ (legislator) -> [String: String] in
-                    return [
+                    [
                         "fullname": legislator.fullName,
                         "chamber": legislator.chamber.rawValue
                     ]

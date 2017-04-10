@@ -53,7 +53,7 @@ class UserDefaultsManager {
     }
     
     static func setAPNSToken(_ token: String) {
-        userDefaults.set("token", forKey: APNSTokenKey)
+        userDefaults.set(token, forKey: APNSTokenKey)
     }
     
     static func getAPNSToken() -> String? {
