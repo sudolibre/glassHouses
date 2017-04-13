@@ -16,6 +16,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     var legislation: Legislation!
     var dataSource: LegislationDetailDataSource!
     var legislationWebView: WKWebView!
+    var webservice: Webservice!
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var outterView: UIView!
@@ -42,9 +43,9 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
         let tweetAction = UIAlertAction(title: "Share on Twitter", style: .default) { (action) in
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
                 if let composeVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter) {
-                composeVC.setInitialText(initialText)
-                composeVC.add(self.legislation.documentURL)
-                self.present(composeVC, animated: true, completion: nil)
+                    composeVC.setInitialText(initialText)
+                    composeVC.add(self.legislation.documentURL)
+                    self.present(composeVC, animated: true, completion: nil)
                 }
             } else {
                 self.showLoginMessage(forServiceName: "Twitter")
@@ -91,12 +92,14 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
         scrollView.contentSize = outterView.bounds.size
         billStatusView.status = legislation!.status
         sponsorCollectionView.dataSource = dataSource
-        
-        for id in legislation.sponsorIDs {
-            OpenStatesAPI.fetchLegislatorByID(id: id) { (legislator) in
-                self.dataSource.addLegislator(legislator)
-                self.sponsorCollectionView.reloadData()
-            }
+        let sponsorResources = legislation.sponsorIDs.map(Legislator.legislatorResource)
+        sponsorResources.forEach { (sponsorResource) in
+            webservice.load(resource: sponsorResource, completion: { (sponsor) in
+                if let sponsor = sponsor {
+                    self.dataSource.addLegislator(sponsor)
+                    self.sponsorCollectionView.reloadData()
+                }
+            })
         }
         
         legislationWebView = {
@@ -134,11 +137,11 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
             if let error = error {
                 print(error.localizedDescription)
             }
-        }.resume()
+            }.resume()
         
     }
     
-
+    
     
 }
 

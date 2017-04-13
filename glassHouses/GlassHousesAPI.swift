@@ -56,7 +56,6 @@ struct GlassHousesAPI {
                 return bodyData
             }
         }
-        
     }
     
     static func hitEndpoint(_ endpoint: Endpoint, completion: @escaping (APIResponse) -> ()) {

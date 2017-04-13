@@ -13,13 +13,15 @@ import QuickLook
 
 class ActivityFeedController: UITableViewController {
     var lastUpdate: Date?
+    var webservice: Webservice!
+    
     let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.color = UIColor.gray
         return spinner
     }()
-    var legislators: [Legislator]! {
+    var legislators: [Legislator] = [] {
         didSet {
             generateFeed()
         }
@@ -80,6 +82,7 @@ class ActivityFeedController: UITableViewController {
         case "showLegislation":
             let legislationVC = segue.destination as! LegislationDetailViewController
             legislationVC.legislation = sender as! Legislation!
+            legislationVC.webservice = webservice
             legislationVC.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: sender as! Legislation)
         case "showNews":
             let article = sender as! Article

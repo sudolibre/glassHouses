@@ -21,24 +21,24 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
     
+    var webservice: Webservice!
     let titles = ["Welcome to Informed Public!", "Let's find your district.", "Meet your legislators!"]
     var currentLegislator: Legislator?
-    var legislators: [Legislator]? {
+    var legislators: [Legislator] = [] {
         didSet {
-            switch legislators {
-            case .some:
-                currentLegislator = legislators!.first!
-                registerForNews()
-                fetchPhotos()
-                updateRepView()
-            case .none:
+            guard !legislators.isEmpty else {
                 self.nextButton.isEnabled = false
+                return
             }
+            currentLegislator = legislators.first!
+            registerForNews()
+            fetchPhotos()
+            updateRepView()
         }
     }
     
     func registerForNews() {
-        guard let legislators = legislators else { return }
+        guard !legislators.isEmpty else { return }
         if let token = UserDefaultsManager.getAPNSToken() {
             GlassHousesAPI.hitEndpoint(.register(token: token, legislators: legislators), completion: { (APIResponse) in
                 switch APIResponse {
@@ -54,7 +54,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func fetchPhotos() {
-        for legislator in legislators! {
+        for legislator in legislators {
             if imageStore.getImage(forKey: legislator.photoKey) == nil {
                 imageStore.fetchRemoteImage(forURL: legislator.photoURL, completion: { (image) in
                     self.imageStore.setImage(image, forKey: legislator.photoKey)
@@ -227,22 +227,13 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func setLegislatorsWithCoordinates(_ coordinates: CLLocationCoordinate2D) {
-        OpenStatesAPI.request(.findDistrict(lat: coordinates.latitude, long: coordinates.longitude)) { (response) in
-            switch response {
-            case .success(let data):
-                let legislators = OpenStatesAPI.parseDistrictResults(data)
-                self.legislators = legislators
-                UserDefaultsManager.setLegislatorIDs(legislators.map({$0.ID}))
-            case .networkError(let response):
-                let ac = UIAlertController(title: "Search Failed", message: "There seems to have been an error contacting the server. Code: \(response.statusCode)", preferredStyle: .alert)
-                let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel)
-                ac.addAction(dismissAction)
-                self.present(ac, animated: true)
-            case .failure(let error):
-                let ac = UIAlertController(title: "Search Failed", message: "There seems to have been a system error. Error: \(error.localizedDescription)", preferredStyle: .alert)
-                let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel)
-                ac.addAction(dismissAction)
-                self.present(ac, animated: true)
+        //Extracting coordinates from the Core Location struct to avoid importing CL in Legislator file
+        let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude))
+        webservice.load(resource: legislatorsResource) { (legislators) in
+            if let legislators  = legislators {
+                self.legislators.append(contentsOf: legislators)
+                let legislatorIDs = legislators.map({$0.ID})
+                UserDefaultsManager.setLegislatorIDs(legislatorIDs)
             }
         }
     }
@@ -271,8 +262,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     func updateRepView() {
         DispatchQueue.main.async {
             self.nextButton.isEnabled = true
-            let currentPosition = self.legislators!.index(where: {$0 === self.currentLegislator!})! + 1
-            self.legislatorNumber.text = "\(currentPosition) of \(self.legislators!.count)"
+            let currentPosition = self.legislators.index(where: {$0 === self.currentLegislator!})! + 1
+            self.legislatorNumber.text = "\(currentPosition) of \(self.legislators.count)"
             self.subtitleLabel.text = "\(self.currentLegislator!.party.description) - \(self.currentLegislator!.title) - District \(self.currentLegislator!.district)"
             self.nameLabel.text = self.currentLegislator!.fullName
             if let image = self.imageStore.getImage(forKey: self.currentLegislator!.photoKey) {
@@ -284,25 +275,25 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     
     func rotateRep(_ direction: Direction) {
-        let currentIndex = legislators!.index(where: {$0 === currentLegislator!})
+        let currentIndex = legislators.index(where: {$0 === currentLegislator!})
         let newIndex: Int!
         
         switch direction {
         case .forward:
-            if currentIndex == legislators!.endIndex - 1 {
+            if currentIndex == legislators.endIndex - 1 {
                 newIndex = 0
             } else {
                 newIndex = currentIndex! + 1
             }
         case .backward:
-            if currentIndex == legislators!.startIndex {
-                newIndex = legislators!.endIndex - 1
+            if currentIndex == legislators.startIndex {
+                newIndex = legislators.endIndex - 1
             } else {
                 newIndex = currentIndex! - 1
             }
         }
         
-        currentLegislator = legislators![newIndex]
+        currentLegislator = legislators[newIndex]
         updateRepView()
     }
     

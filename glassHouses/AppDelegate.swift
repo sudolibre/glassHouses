@@ -22,15 +22,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
-
+        
+        let webservice = Webservice()
+        
         if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navController = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
             window!.rootViewController = navController
             let activityFeedVC = navController.topViewController as! ActivityFeedController
-            OpenStatesAPI.fetchLegislatorsByID(ids: legislatorIDs, completion: { (legislators) in
-                activityFeedVC.legislators = legislators
+            activityFeedVC.webservice = webservice
+            let legislatorResources = legislatorIDs.map({Legislator.legislatorResource(withID: $0)})
+            legislatorResources.forEach({ (resource) in
+                webservice.load(resource: resource, completion: { (legislator) in
+                    if let legislator = legislator {
+                        activityFeedVC.legislators.append(legislator)         
+                    }
+                })
             })
+        } else {
+            let onboardingVC = window!.rootViewController as! OnboardingViewController
+            onboardingVC.webservice = webservice
         }
         
         return true

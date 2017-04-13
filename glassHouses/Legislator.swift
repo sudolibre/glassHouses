@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Crashlytics
 
+typealias Coordinates = (lat: Double,long: Double)
+
 class Legislator {
     var fullName: String
     var lastName: String
@@ -66,6 +68,7 @@ class Legislator {
             }
         }
     }
+
     
     init?(json: [String: Any]) {
         guard let active = json.getBoolForKey("active"),

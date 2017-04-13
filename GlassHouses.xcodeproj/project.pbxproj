@@ -41,7 +41,7 @@
 		E8DEEF111E58D9FE004AF755 /* SponserCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */; };
 		E8F8178B1E4E4EC100155A5D /* NewsSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */; };
 		E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178C1E4E503F00155A5D /* NewsArticle.swift */; };
-		E8FFE5581E9FCC8800C187CD /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5571E9FCC8800C187CD /* WebService.swift */; };
+		E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5571E9FCC8800C187CD /* Webservice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +103,7 @@
 		E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponserCollectionCell.swift; sourceTree = "<group>"; };
 		E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSearchAPI.swift; sourceTree = "<group>"; };
 		E8F8178C1E4E503F00155A5D /* NewsArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
-		E8FFE5571E9FCC8800C187CD /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebService.swift; path = ../WebService.swift; sourceTree = "<group>"; };
+		E8FFE5571E9FCC8800C187CD /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservice.swift; path = ../Webservice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +216,7 @@
 		E8DEEF0B1E57736F004AF755 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E8FFE5571E9FCC8800C187CD /* WebService.swift */,
+				E8FFE5571E9FCC8800C187CD /* Webservice.swift */,
 				E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */,
 				E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */,
 				E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */,
@@ -427,7 +427,7 @@
 				E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */,
 				E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */,
 				E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */,
-				E8FFE5581E9FCC8800C187CD /* WebService.swift in Sources */,
+				E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */,
 				E8DEEF0E1E5774C6004AF755 /* LegislationStatusView.swift in Sources */,
 				E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */,
 				E8686CB41E71F9F100A13449 /* JSONHelper.swift in Sources */,
