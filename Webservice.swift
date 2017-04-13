@@ -1,5 +1,5 @@
 //
-//  Webservice.swift
+//  WebService.swift
 //  GlassHouses
 //
 //  Created by Jonathon Day on 4/13/17.
@@ -23,42 +23,25 @@ extension Resource {
     }
 }
 
-final class Webservice {
+final class WebService {
     func load<A>(resource: Resource<A>, completion: @escaping (A?) -> ()) {
-        URLSession.shared.dataTask(with: resource.url) { (data, response, error) in
+        URLSession.shared.dataTask(with: resource.url) { (data, _, _) in
             guard let data = data else {
                 completion(nil)
                 return
             }
-            let something = resource.parse(data)
-            completion(something)
+            completion(resource.parse(data))
         }.resume()
     }
 }
 
 
 extension Legislator {
-    static func allLegislatorsResource(at coordinates: Coordinates) -> Resource<[Legislator]> {
-        let baseUrl = "https://openstates.org/api/v1/"
-        let url = URL(string: baseUrl.appending("legislators/geo/?lat=\(coordinates.lat)&long=\(coordinates.long)"))!
-        let resource = Resource<[Legislator]>(url: url) { (json) -> [Legislator]? in
-            guard let dictionaries = json as? [[String: Any]] else { return nil }
-            return dictionaries.flatMap(Legislator.init)
-        }
-        return resource
-    }
-    
-    static func legislatorResource(withID id: String) -> Resource<Legislator> {
-        let baseUrl = URL(string: "https://openstates.org/api/v1/")!
-        let url = baseUrl.appendingPathComponent("legislators/\(id)")
-        let resource = Resource<Legislator>(url: url) { (json) -> Legislator? in
-            guard let dictionary = json as? [String: Any] else { return nil }
-            return Legislator(json: dictionary)
-        }
-        return resource
+    static let allLegislatorsResource = Resource<[Legislator]>(url: URL(string: "https://openstates.org/api/v1/")!) { (json) -> [Legislator]? in
+        guard let dictionaries = json as? [[String: Any]] else { return nil }
+        return dictionaries.flatMap(Legislator.init)
     }
 }
-
 
 extension Legislation {
     static let allLegislationsResource = Resource<[Legislation]>(url: URL(string: "https://openstates.org/api/v1/")!) { (json) -> [Legislation]? in
