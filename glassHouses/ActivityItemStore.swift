@@ -172,7 +172,7 @@ class ActivityItemStore {
         var date: Date = {
             let calendar = Calendar.current
             let current = Date()
-            let weekPrior = calendar.date(byAdding: .day, value: -1 , to: current)
+            let weekPrior = calendar.date(byAdding: .day, value: -7 , to: current)
             return weekPrior!
         }()
         
