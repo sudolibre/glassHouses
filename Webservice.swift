@@ -1,5 +1,5 @@
 //
-//  WebService.swift
+//  Webservice.swift
 //  GlassHouses
 //
 //  Created by Jonathon Day on 4/13/17.
