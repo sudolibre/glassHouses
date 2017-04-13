@@ -36,7 +36,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-        // Print notification payload data
+        // this only gets hit when the app is open or the user opened the notification from the app
+        let aps = data["aps"] as? [String: Any]
+        let alert = aps?["alert"] as? [String: Any]
+        let title = alert?["title"] as? String
+        let body = alert?["body"] as? String
         print("Push notification received: \(data)")
     }
     // Called when APNs has assigned the device a unique token
@@ -44,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Convert token to string
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-        
+        print(deviceTokenString)
         // Save to user defaults
         UserDefaultsManager.setAPNSToken(deviceTokenString)
     }

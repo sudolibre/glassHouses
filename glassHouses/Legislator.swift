@@ -84,7 +84,6 @@ class Legislator {
                 return nil
         }
         
-
         self.fullName = fullName
         self.district = district
         self.lastName = lastName
