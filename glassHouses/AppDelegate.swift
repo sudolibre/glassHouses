@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 import Fabric
 import Crashlytics
-
+import CoreData
 
 
 @UIApplicationMain
@@ -27,29 +27,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let webservice = Webservice()
         activityItemStore = ActivityItemStore(webservice: webservice)
         
-        if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
+        let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
+        var fetchedLegislators: [Legislator]?
+        ActivityItemStore.context.performAndWait {
+            fetchedLegislators = try? fetchRequest.execute()
+        }
+        if let fetchedLegislators = fetchedLegislators,
+            !fetchedLegislators.isEmpty {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navController = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
             window!.rootViewController = navController
             let activityFeedVC = navController.topViewController as! ActivityFeedController
             activityFeedVC.webservice = webservice
             activityFeedVC.activityItemStore = activityItemStore
-            let legislatorResources = legislatorIDs.map({Legislator.legislatorResource(withID: $0)})
-            legislatorResources.forEach({ (resource) in
-                webservice.load(resource: resource, completion: { (legislator) in
-                    if let legislator = legislator {
-                        activityFeedVC.legislators.append(legislator)         
-                    }
-                })
-            })
+            activityFeedVC.legislators.append(contentsOf: fetchedLegislators)
         } else {
-            let onboardingVC = window!.rootViewController as! OnboardingViewController
-            onboardingVC.webservice = webservice
-            onboardingVC.activityItemStore = activityItemStore
+        let onboardingVC = window!.rootViewController as! OnboardingViewController
+        onboardingVC.webservice = webservice
+        onboardingVC.activityItemStore = activityItemStore
         }
-        
-        
-        
         return true
     }
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {

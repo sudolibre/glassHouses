@@ -32,26 +32,6 @@ class UserDefaultsManager {
         
     }
     
-    static func getLegislatorIDs() -> [String]? {
-        return userDefaults.stringArray(forKey: userLegislatorsKey)
-    }
-    
-    static func addLegislatorID(_ id: String) {
-        if let existingArray = getLegislatorIDs() {
-            var updatedArray = existingArray
-            updatedArray.append(id)
-            userDefaults.set(updatedArray, forKey: userLegislatorsKey)
-        } else {
-            let newArray = [id]
-            userDefaults.set(newArray, forKey: userLegislatorsKey)
-        }
-        
-    }
-    
-    static func setLegislatorIDs(_ ids: [String]) {
-        userDefaults.set(ids, forKey: userLegislatorsKey)
-    }
-    
     static func setAPNSToken(_ token: String) {
         userDefaults.set(token, forKey: APNSTokenKey)
     }

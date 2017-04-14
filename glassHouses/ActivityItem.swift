@@ -26,7 +26,7 @@ class ActivityItem {
     var activityCellViewData: ActivityCellViewData {
         let title = legislator.fullName
         let type = activityType
-        let legislatorID = legislator.ID
+        let legislatorID = legislator.id
         var description: String {
             switch activityType {
             case .vote(let legislation, let result):

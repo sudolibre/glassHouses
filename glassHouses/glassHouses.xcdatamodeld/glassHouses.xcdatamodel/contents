@@ -21,13 +21,19 @@
         <attribute name="title" attributeType="String" syncable="YES"/>
         <attribute name="yesVotes" attributeType="Transformable" customClassName="NSSet" syncable="YES"/>
     </entity>
-    <entity name="LegislationJSON" representedClassName="LegislationJSON" syncable="YES">
+    <entity name="Legislator" representedClassName="Legislator" syncable="YES">
+        <attribute name="chamberCD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="district" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="json" optional="YES" attributeType="Transformable" customClassName="NSDictionary" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partyCD" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoURLCD" optional="YES" attributeType="Transformable" customClassName="NSURL" syncable="YES"/>
+        <attribute name="stateCD" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Article" positionX="-27" positionY="36" width="128" height="150"/>
-        <element name="LegislationJSON" positionX="-27" positionY="18" width="128" height="75"/>
+        <element name="Article" positionX="-27" positionY="36" width="128" height="148"/>
         <element name="Legislation" positionX="-243" positionY="18" width="128" height="193"/>
+        <element name="Legislator" positionX="-108" positionY="117" width="128" height="165"/>
     </elements>
 </model>

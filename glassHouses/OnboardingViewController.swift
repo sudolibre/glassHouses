@@ -130,8 +130,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC = segue.destination as! UINavigationController
         let activityVC = navVC.topViewController as! ActivityFeedController
-        activityVC.legislators = self.legislators
         activityVC.activityItemStore = activityItemStore
+        activityVC.legislators = self.legislators
         let dataSource: ActivityFeedDataSource = {
             let ds = ActivityFeedDataSource()
             ds.imageStore = imageStore
@@ -139,10 +139,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         }()
         activityVC.dataSource = dataSource
     }
-    
-    
-    
-    
+
     //MARK: Welcome Card
     // there are no custom properties or methods for the welcome card
     
@@ -180,9 +177,9 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let coordinates = locations.last!.coordinate
-        updateMap(coordinates: coordinates)
-        setLegislatorsWithCoordinates(coordinates)
+            let coordinates = locations.last!.coordinate
+            self.updateMap(coordinates: coordinates)
+            self.setLegislatorsWithCoordinates(coordinates)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -207,7 +204,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
                 }
                 return
             }
-            
             let firstResult = response.mapItems.first!
             print(firstResult.placemark.debugDescription)
             let coordinates = firstResult.placemark.location!.coordinate
@@ -230,13 +226,15 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     func setLegislatorsWithCoordinates(_ coordinates: CLLocationCoordinate2D) {
         //Extracting coordinates from the Core Location struct to avoid importing CL in Legislator file
-        let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude))
+        //TODO: Move this call into ActivityItemStore and no longer access the context via a static property
+        let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude), into: ActivityItemStore.context)
         webservice.load(resource: legislatorsResource) { (legislators) in
-            if let legislators  = legislators {
-                Environment.current.state = legislators.first!.state
-                self.legislators.append(contentsOf: legislators)
-                let legislatorIDs = legislators.map({$0.ID})
-                UserDefaultsManager.setLegislatorIDs(legislatorIDs)
+            if let legislators = legislators,
+                !legislators.isEmpty {
+                DispatchQueue.main.async {
+                    Environment.current.state = legislators.first!.state
+                    self.legislators.append(contentsOf: legislators)
+                }
             }
         }
     }

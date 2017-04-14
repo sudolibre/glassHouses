@@ -49,7 +49,7 @@ class ActivityItemStore {
         return pc
     }()
     
-    private static var context: NSManagedObjectContext {
+    static var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
@@ -68,7 +68,7 @@ class ActivityItemStore {
         let activityFromLegislation = ActivityItemStore.generateActivity(for: legislators, from: localLegislation)
         let newsActivity = localNews.flatMap({ (article) -> ActivityItem? in
             var activity: ActivityItem? = nil
-            let legislator = legislators.first(where: {$0.ID == article.legislatorID})
+            let legislator = legislators.first(where: {$0.id == article.legislatorID})
             if let legislator = legislator {
                 activity = ActivityItem(legislator: legislator, activityType: .news(article))
             }
@@ -84,8 +84,10 @@ class ActivityItemStore {
         updateLegislation { (legislation) in
             if let legislation = legislation {
                 //TODO: change generate activity to take a single piece of legislation
-                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
-                activity.forEach(completion)
+                DispatchQueue.main.async {
+                    let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
+                    activity.forEach(completion)
+                }
             }
         }
         //updateArticles(legislators: legislators, completion: completion)
@@ -164,7 +166,7 @@ class ActivityItemStore {
                         article.articleDescription = description
                         article.link = link as NSURL
                         article.date = date!
-                        article.legislatorID = legislator.ID
+                        article.legislatorID = legislator.id
                         if let imageDictionary = json["image"] as? [String: Any],
                             let thumbnailDictionary = imageDictionary["thumbnail"] as? [String: Any],
                             let imageURLString = thumbnailDictionary["contentURL"] as? String,

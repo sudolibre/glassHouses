@@ -92,7 +92,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
         scrollView.contentSize = outterView.bounds.size
         billStatusView.status = legislation!.status
         sponsorCollectionView.dataSource = dataSource
-        let sponsorResources = legislation.sponsorIDs.map(Legislator.legislatorResource)
+        let sponsorResources = legislation.sponsorIDs.map({Legislator.legislatorResource(withID: $0, into: ActivityItemStore.context)})
         sponsorResources.forEach { (sponsorResource) in
             webservice.load(resource: sponsorResource, completion: { (sponsor) in
                 if let sponsor = sponsor {

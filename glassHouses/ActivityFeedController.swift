@@ -125,7 +125,7 @@ class ActivityFeedDataSource: NSObject, UITableViewDataSource {
         } else {
             imageStore.fetchRemoteImage(forURL: legislator.photoURL, completion: { (image) in
                 self.imageStore.setImage(image, forKey: legislator.photoKey)
-                if cell.legislatorID == legislator.ID {
+                if cell.legislatorID == legislator.id {
                     cell.avatarImage.image = image
                 }
             })
