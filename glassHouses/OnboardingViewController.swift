@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet var identifyX: NSLayoutConstraint!
     @IBOutlet var overviewX: NSLayoutConstraint!
     var centerXConstraints: [NSLayoutConstraint]!
+    var activityItemStore: ActivityItemStore!
     
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
@@ -130,6 +131,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         let navVC = segue.destination as! UINavigationController
         let activityVC = navVC.topViewController as! ActivityFeedController
         activityVC.legislators = self.legislators
+        activityVC.activityItemStore = activityItemStore
         let dataSource: ActivityFeedDataSource = {
             let ds = ActivityFeedDataSource()
             ds.imageStore = imageStore

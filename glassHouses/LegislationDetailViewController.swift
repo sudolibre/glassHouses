@@ -84,7 +84,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         billNameLabel.text = legislation.id
-        billDescriptionLabel.text = legislation.description
+        billDescriptionLabel.text = legislation.billDescription
         sponsorCountLabel.text = "Sponors (\(legislation.sponsorIDs.count))"
     }
     

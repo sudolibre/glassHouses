@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct Resource<A> {
     let url: URL
@@ -62,18 +63,90 @@ extension Legislator {
 
 
 extension Legislation {
-    static func legislationResource(withID id: String) -> Resource<Legislation> {
+    static func fromJSON(_ json: [String: Any], into context: NSManagedObjectContext) -> Legislation? {
+        guard let id = json.getStringForKey("bill_id"),
+            let documentVersions = json.getArrayOfDictForKey("versions"),
+            let recentVersion = documentVersions.last,
+            let documentURLString = recentVersion.getStringForKey("url"),
+            let documentURL = URL(string: documentURLString),
+            let title = json.getStringForKey("title"),
+            let description = json.getStringForKey("+description"), //TODO: this is likely specific to GA
+            let actionDates = json.getDictForKey("action_dates"),
+            let dateString = actionDates.getStringForKey("last"),
+            let date = Legislation.dateFormatter.date(from: dateString),
+            let sponsorArray = json.getArrayOfDictForKey("sponsors"),
+            let votesArray = json.getArrayOfDictForKey("votes"),
+            let yesVotesArray = votesArray.first?.getArrayOfDictForKey("yes_votes"),
+            let noVotesArray = votesArray.first?.getArrayOfDictForKey("no_votes"),
+            let otherVotesArray = votesArray.first?.getArrayOfDictForKey("other_votes") else {
+                return nil
+        }
+        
+        let fetchRequest: NSFetchRequest<Legislation> = Legislation.fetchRequest()
+        let predicate = NSPredicate(format: "\(#keyPath(Legislation.id)) == '\(id)'")
+        fetchRequest.predicate = predicate
+        
+        var fetchedLegislation: [Legislation]?
+        context.performAndWait {
+            fetchedLegislation = try? fetchRequest.execute()
+        }
+        if let existingLegislation = fetchedLegislation?.first {
+            return existingLegislation
+        }
+        
+        let voterDescriptionParser = { (dictionary: [String: Any]) -> String? in
+            if let legID = dictionary["leg_id"] as? String {
+                return legID
+            } else {
+                return dictionary["name"] as? String
+            }
+        }
+        let yesNames = yesVotesArray.flatMap(voterDescriptionParser)
+        let noNames = noVotesArray.flatMap(voterDescriptionParser)
+        let otherNames = otherVotesArray.flatMap(voterDescriptionParser)
+        var status: Status!
+        if actionDates["signed"] as? String != nil {
+            status = .law
+        } else if actionDates["passed_upper"] as? String != nil {
+            status = .senate
+        } else if actionDates["passed_lower"] as? String != nil {
+            status = .house
+        } else {
+            status = .introduced
+        }
+        let sponsorIDArray = sponsorArray.flatMap({$0["leg_id"] as? String})
+        let sponsorIDSet = NSSet(array: sponsorIDArray)
+        
+        var legislation: Legislation!
+        context.performAndWait {
+            let legislation = Legislation(context: context)
+            legislation.sponsorIDsCD = sponsorIDSet
+            legislation.dateCD = date as NSDate
+            legislation.billDescription = description
+            legislation.documentURLCD = documentURL as NSURL
+            legislation.title = title
+            legislation.id = id
+            legislation.yesVotes = NSSet(array: yesNames)
+            legislation.noVotes = NSSet(array: noNames)
+            legislation.otherVotes = NSSet(array: otherNames)
+            legislation.statusCD = Int32(status.rawValue)
+
+        }
+        return legislation
+    }
+    
+    static func legislationResource(withID id: String, into context: NSManagedObjectContext) -> Resource<Legislation> {
         let baseUrl = "https://openstates.org/api/v1/"
         let url = URL(string: baseUrl.appending("bills/\(id)"))!
         let resource = Resource<Legislation>(url: url) { (json) -> Legislation? in
             guard let dictionary = json as? [String: Any] else { return nil }
-            return Legislation(json: dictionary)
+            return Legislation.fromJSON(dictionary, into: context)
         }
         return resource
 
     }
     static func recentLegislationIDsResource() -> Resource<[String]> {
-        func getIDsForVotedBills(_ array: [[String: Any]]) -> [String] {
+        let getIDsForVotedBills = { (array: [[String: Any]]) -> [String] in
             let filteredArray = array.filter({ (dictionary) -> Bool in
                 let votesArray = dictionary["votes"] as! [[String: Any]]
                 return !votesArray.isEmpty
@@ -121,9 +194,9 @@ extension Legislation {
     }
 }
 
-extension NewsArticle {
-    static let allNewsArticlesResource = Resource<[NewsArticle]>(url: URL(string: "https://openstates.org/api/v1/")!) { (json) -> [NewsArticle]? in
-        guard let dictionaries = json as? [[String: Any]] else { return nil }
-        return dictionaries.flatMap(NewsArticle.init)
-    }
-}
+//extension Article {
+//    static let allNewsArticlesResource = Resource<[NewsArticle]>(url: URL(string: "https://openstates.org/api/v1/")!) { (json) -> [NewsArticle]? in
+//        guard let dictionaries = json as? [[String: Any]] else { return nil }
+//        return dictionaries.flatMap(Article.init)
+//    }
+//}

@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let onboardingVC = window!.rootViewController as! OnboardingViewController
             onboardingVC.webservice = webservice
+            onboardingVC.activityItemStore = activityItemStore
         }
         
         

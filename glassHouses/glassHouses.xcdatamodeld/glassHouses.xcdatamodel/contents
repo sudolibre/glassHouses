@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Article" representedClassName="Article" syncable="YES">
         <attribute name="articleDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Transformable" customClassName="NSDate" syncable="YES"/>
@@ -9,12 +9,25 @@
         <attribute name="publisher" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Legislation" representedClassName="Legislation" syncable="YES">
+        <attribute name="billDescription" attributeType="String" syncable="YES"/>
+        <attribute name="dateCD" attributeType="Transformable" customClassName="NSDate" syncable="YES"/>
+        <attribute name="documentURLCD" attributeType="Transformable" customClassName="NSURL" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="noVotes" attributeType="Transformable" customClassName="NSSet" syncable="YES"/>
+        <attribute name="otherVotes" attributeType="Transformable" customClassName="NSSet" syncable="YES"/>
+        <attribute name="sponsorIDsCD" attributeType="Transformable" customClassName="NSSet" syncable="YES"/>
+        <attribute name="statusCD" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="yesVotes" attributeType="Transformable" customClassName="NSSet" syncable="YES"/>
+    </entity>
     <entity name="LegislationJSON" representedClassName="LegislationJSON" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="json" optional="YES" attributeType="Transformable" customClassName="NSDictionary" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LegislationJSON" positionX="-27" positionY="18" width="128" height="75"/>
         <element name="Article" positionX="-27" positionY="36" width="128" height="150"/>
+        <element name="LegislationJSON" positionX="-27" positionY="18" width="128" height="75"/>
+        <element name="Legislation" positionX="-243" positionY="18" width="128" height="193"/>
     </elements>
 </model>

@@ -9,6 +9,29 @@
 import Foundation
 import CoreData
 
+enum APIResponse {
+    case success(Data)
+    case networkError(HTTPURLResponse)
+    case failure(Error)
+}
+
+enum VoteResult: CustomStringConvertible {
+    case yea
+    case nay
+    case other
+    
+    var description: String {
+        switch self {
+        case .yea:
+            return "FOR"
+        case .nay:
+            return "AGAINST"
+        case .other:
+            return "OTHER for"
+        }
+    }
+}
+
 class ActivityItemStore {
     let webservice: Webservice!
     
@@ -40,8 +63,7 @@ class ActivityItemStore {
     
     func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
         //Get Local Items
-        let localLegislationJSON = ActivityItemStore.fetchLocalLegislation()
-        let localLegislation = localLegislationJSON.flatMap({Legislation(json: $0.json as! [String: Any])})
+        let localLegislation = ActivityItemStore.fetchLocalLegislation()
         let localNews = ActivityItemStore.fetchLocalNewsArticles()
         let activityFromLegislation = ActivityItemStore.generateActivity(for: legislators, from: localLegislation)
         let newsActivity = localNews.flatMap({ (article) -> ActivityItem? in
@@ -161,10 +183,10 @@ class ActivityItemStore {
     }
     
     
-    private static func fetchLocalLegislation() -> [LegislationJSON] {
-        var fetchedLegislation: [LegislationJSON]?
+    private static func fetchLocalLegislation() -> [Legislation] {
+        var fetchedLegislation: [Legislation]?
         
-        let fetchRequest: NSFetchRequest<LegislationJSON> = LegislationJSON.fetchRequest()
+        let fetchRequest: NSFetchRequest<Legislation> = Legislation.fetchRequest()
         context.performAndWait {
             fetchedLegislation = try? fetchRequest.execute()
         }
@@ -183,7 +205,9 @@ class ActivityItemStore {
         
         webservice.load(resource: resource) { (legislationIDs) in
             if let legislationIDs = legislationIDs {
-                let legislationResourceCollection = legislationIDs.map(Legislation.legislationResource)
+                let legislationResourceCollection = legislationIDs.map({ (id) -> Resource<Legislation> in
+                    return Legislation.legislationResource(withID: id, into: ActivityItemStore.context)
+                })
                 legislationResourceCollection.forEach({ (resource) in
                     self.webservice.load(resource: resource, completion: completion)
                 })
