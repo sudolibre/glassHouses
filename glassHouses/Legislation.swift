@@ -24,11 +24,13 @@ class Legislation {
         let otherVotes: Set<String>
     }
     
-    init?(json: [String: Any]) {
+    static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
-        
-        
+        return dateFormatter
+    }()
+    
+    init?(json: [String: Any]) {
         guard let id = json.getStringForKey("bill_id"),
             let documentVersions = json.getArrayOfDictForKey("versions"),
             let recentVersion = documentVersions.last,
@@ -38,7 +40,7 @@ class Legislation {
             let description = json.getStringForKey("+description"), //TODO: this is likely specific to GA
             let actionDates = json.getDictForKey("action_dates"),
             let dateString = actionDates.getStringForKey("last"),
-            let date = dateFormatter.date(from: dateString),
+            let date = Legislation.dateFormatter.date(from: dateString),
             let sponsorArray = json.getArrayOfDictForKey("sponsors"),
             let votesArray = json.getArrayOfDictForKey("votes"),
             let yesVotesArray = votesArray.first?.getArrayOfDictForKey("yes_votes"),
@@ -46,10 +48,7 @@ class Legislation {
             let otherVotesArray = votesArray.first?.getArrayOfDictForKey("other_votes") else {
                 return nil
         }
-        
-//        let yesIDs = yesVotesArray.flatMap({$0["leg_id"] as? String})
-//        let noIDs = noVotesArray.flatMap({$0["leg_id"] as? String})
-//        let otherIDs = otherVotesArray.flatMap({$0["leg_id"] as? String})
+    
         let voterDescriptionParser = { (dictionary: [String: Any]) -> String? in
             if let legID = dictionary["leg_id"] as? String {
                 return legID
@@ -60,10 +59,6 @@ class Legislation {
         let yesNames = yesVotesArray.flatMap(voterDescriptionParser)
         let noNames = noVotesArray.flatMap(voterDescriptionParser)
         let otherNames = otherVotesArray.flatMap(voterDescriptionParser)
-
-        //let yesNames = yesVotesArray.flatMap({$0["name"] as? String})
-//        let noNames = noVotesArray.flatMap({$0["name"] as? String})
-//        let otherNames = otherVotesArray.flatMap({$0["name"] as? String})
         self.sponsorIDs = sponsorArray.flatMap({$0["leg_id"] as? String})
         self.date = date
         self.description = description

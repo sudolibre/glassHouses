@@ -231,6 +231,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude))
         webservice.load(resource: legislatorsResource) { (legislators) in
             if let legislators  = legislators {
+                Environment.current.state = legislators.first!.state
                 self.legislators.append(contentsOf: legislators)
                 let legislatorIDs = legislators.map({$0.ID})
                 UserDefaultsManager.setLegislatorIDs(legislatorIDs)

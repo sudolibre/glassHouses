@@ -17,13 +17,15 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var activityItemStore: ActivityItemStore!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         
         let webservice = Webservice()
+        activityItemStore = ActivityItemStore(webservice: webservice)
         
         if let legislatorIDs = UserDefaultsManager.getLegislatorIDs() {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -31,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window!.rootViewController = navController
             let activityFeedVC = navController.topViewController as! ActivityFeedController
             activityFeedVC.webservice = webservice
+            activityFeedVC.activityItemStore = activityItemStore
             let legislatorResources = legislatorIDs.map({Legislator.legislatorResource(withID: $0)})
             legislatorResources.forEach({ (resource) in
                 webservice.load(resource: resource, completion: { (legislator) in
@@ -43,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let onboardingVC = window!.rootViewController as! OnboardingViewController
             onboardingVC.webservice = webservice
         }
+        
+        
         
         return true
     }

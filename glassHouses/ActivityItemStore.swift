@@ -10,6 +10,11 @@ import Foundation
 import CoreData
 
 class ActivityItemStore {
+    let webservice: Webservice!
+    
+    init(webservice: Webservice) {
+        self.webservice = webservice
+    }
     
     private static let persistentContainer: NSPersistentContainer = {
         let pc = NSPersistentContainer(name: "glassHouses")
@@ -33,10 +38,12 @@ class ActivityItemStore {
         }
     }
     
-    static func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
-        let localLegislation = fetchLocalLegislation()
-        let localNews = fetchLocalNewsArticles()
-        let activityFromLegislation = generateActivity(for: legislators, from: localLegislation)
+    func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
+        //Get Local Items
+        let localLegislationJSON = ActivityItemStore.fetchLocalLegislation()
+        let localLegislation = localLegislationJSON.flatMap({Legislation(json: $0.json as! [String: Any])})
+        let localNews = ActivityItemStore.fetchLocalNewsArticles()
+        let activityFromLegislation = ActivityItemStore.generateActivity(for: legislators, from: localLegislation)
         let newsActivity = localNews.flatMap({ (article) -> ActivityItem? in
             var activity: ActivityItem? = nil
             let legislator = legislators.first(where: {$0.ID == article.legislatorID})
@@ -51,16 +58,18 @@ class ActivityItemStore {
         for activity in activityFromLocal {
             completion(activity)
         }
-        updateLocalLegislation { (legislationJSON) in
-            let activityFromNetwork = generateActivity(for: legislators, from: [legislationJSON])
-            if let activity = activityFromNetwork.first {
-                completion(activity)
+        //Update local from network
+        updateLegislation { (legislation) in
+            if let legislation = legislation {
+                //TODO: change generate activity to take a single piece of legislation
+                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
+                activity.forEach(completion)
             }
         }
-        //updateLocalArticles(legislators: legislators, completion: completion)
+        //updateArticles(legislators: legislators, completion: completion)
     }
     
-    private static func fetchLocalNewsArticles() -> [Article] {
+    static func fetchLocalNewsArticles() -> [Article] {
         var fetchedArticles: [Article]?
         
         let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
@@ -76,7 +85,8 @@ class ActivityItemStore {
         }
     }
     
-    private static func updateLocalArticles(legislators: [Legislator], completion: ((ActivityItem) -> ())?) {
+    private func updateArticles(legislators: [Legislator], completion: ((ActivityItem) -> ())?) {
+        //TODO: Move this to GlassHouses server
         NewsSearchAPI.fetchNewsForLegislators(legislators) { (legislator, dictionaries) in
             for json in dictionaries {
                 
@@ -111,7 +121,7 @@ class ActivityItemStore {
                 let predicate = NSPredicate(format: "title == %@", title)
                 fetchRequest.predicate = predicate
                 var existingArticle: [Article]!
-                context.performAndWait {
+                ActivityItemStore.context.performAndWait {
                     do {
                         existingArticle = try fetchRequest.execute()
                     } catch {
@@ -125,8 +135,8 @@ class ActivityItemStore {
                     print("article already in core data")
                 } else {
                     var article: Article!
-                    self.context.performAndWait {
-                        article = Article(context: context)
+                    ActivityItemStore.context.performAndWait {
+                        article = Article(context: ActivityItemStore.context)
                         article.title = title
                         article.publisher = publisher
                         article.articleDescription = description
@@ -167,61 +177,69 @@ class ActivityItemStore {
         }
     }
     
-    private static func updateLocalLegislation(completion: ((LegislationJSON) -> ())?) {
-        let fetchRequest: NSFetchRequest<LegislationJSON> = LegislationJSON.fetchRequest()
-        var date: Date = {
-            let calendar = Calendar.current
-            let current = Date()
-            let weekPrior = calendar.date(byAdding: .day, value: -7 , to: current)
-            return weekPrior!
-        }()
+    private func updateLegislation(completion: @escaping ((Legislation?) -> ())) {
         
-        if let count = try? context.count(for: fetchRequest),
-            let lastUpdate = UserDefaultsManager.lastUpdate,
-            count > 0 {
-            date = lastUpdate
+        let resource = Legislation.recentLegislationIDsResource()
+        
+        webservice.load(resource: resource) { (legislationIDs) in
+            if let legislationIDs = legislationIDs {
+                let legislationResourceCollection = legislationIDs.map(Legislation.legislationResource)
+                legislationResourceCollection.forEach({ (resource) in
+                    self.webservice.load(resource: resource, completion: completion)
+                })
+            }
         }
         
-        OpenStatesAPI.getNewBills(since: date, forEach: { (id, json) in
-            let predicate = NSPredicate(format: "id == '\(id)'")
-            fetchRequest.predicate = predicate
-            var existingLegislation: [LegislationJSON]!
-            context.performAndWait {
-                do {
-                    existingLegislation = try fetchRequest.execute()
-                } catch {
-                    print("failed to query core data: \(error)")
-                    existingLegislation = []
-                }
-            }
-            
-            if existingLegislation.count > 0 {
-                print("legislation already in core data")
-            } else {
-                var legislationJSON: LegislationJSON!
-                self.context.performAndWait {
-                    legislationJSON = LegislationJSON(context: context)
-                    legislationJSON.id = id
-                    legislationJSON.json = json as NSDictionary
-                }
-
-                if let completion = completion {
-                    completion(legislationJSON)
-                }
-            }
-        }, whenDone: {
-            UserDefaultsManager.lastUpdate = Date()
-        })
+        //        let fetchRequest: NSFetchRequest<LegislationJSON> = LegislationJSON.fetchRequest()
+        //        var date: Date = {
+        //            let calendar = Calendar.current
+        //            let current = Date()
+        //            let weekPrior = calendar.date(byAdding: .day, value: -7 , to: current)
+        //            return weekPrior!
+        //        }()
+        //
+        //        if let count = try? ActivityItemStore.context.count(for: fetchRequest),
+        //            let lastUpdate = UserDefaultsManager.lastUpdate,
+        //            count > 0 {
+        //            date = lastUpdate
+        //        }
+        
+        //        OpenStatesAPI.getNewBills(since: date, forEach: { (id, json) in
+        //            let predicate = NSPredicate(format: "id == '\(id)'")
+        //            fetchRequest.predicate = predicate
+        //            var existingLegislation: [LegislationJSON]!
+        //            ActivityItemStore.context.performAndWait {
+        //                do {
+        //                    existingLegislation = try fetchRequest.execute()
+        //                } catch {
+        //                    print("failed to query core data: \(error)")
+        //                    existingLegislation = []
+        //                }
+        //            }
+        //
+        //            if existingLegislation.count > 0 {
+        //                print("legislation already in core data")
+        //            } else {
+        //                var legislationJSON: LegislationJSON!
+        //                ActivityItemStore.context.performAndWait {
+        //                    legislationJSON = LegislationJSON(context: ActivityItemStore.context)
+        //                    legislationJSON.id = id
+        //                    legislationJSON.json = json as NSDictionary
+        //                }
+        //
+        //                if let completion = completion {
+        //                    completion(legislationJSON)
+        //                }
+        //            }
+        //        }, whenDone: {
+        //            UserDefaultsManager.lastUpdate = Date()
+        //        })
     }
     
-    private static func generateActivity(for legislators: [Legislator], from _legislationJSON: [LegislationJSON]) -> [ActivityItem] {
+    private static func generateActivity(for legislators: [Legislator], from legislationCollection: [Legislation]) -> [ActivityItem] {
         var activity = [ActivityItem]()
         
-        for legislationJSON in _legislationJSON {
-            guard let json = legislationJSON.json as? [String: Any],
-                let legislation = Legislation(json: json) else {
-                    return activity
-            }
+        for legislation in legislationCollection {
             
             let votes = legislation.votes
             
@@ -243,7 +261,4 @@ class ActivityItemStore {
         }
         return activity
     }
-    
-    
-    
 }

@@ -14,6 +14,7 @@ import QuickLook
 class ActivityFeedController: UITableViewController {
     var lastUpdate: Date?
     var webservice: Webservice!
+    var activityItemStore: ActivityItemStore!
     
     let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -56,7 +57,7 @@ class ActivityFeedController: UITableViewController {
     
     
     func generateFeed() {
-        ActivityItemStore.fetchActivityItems(legislators: legislators) { (activityItem) in
+        activityItemStore.fetchActivityItems(legislators: legislators) { (activityItem) in
             DispatchQueue.main.async {
                 self.dataSource.addItem(activityItem)
                 self.spinner.stopAnimating()

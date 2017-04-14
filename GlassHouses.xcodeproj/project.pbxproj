@@ -42,6 +42,7 @@
 		E8F8178B1E4E4EC100155A5D /* NewsSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */; };
 		E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8178C1E4E503F00155A5D /* NewsArticle.swift */; };
 		E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5571E9FCC8800C187CD /* Webservice.swift */; };
+		E8FFE55A1EA039B100C187CD /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5591EA039B100C187CD /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		E8F8178A1E4E4EC100155A5D /* NewsSearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSearchAPI.swift; sourceTree = "<group>"; };
 		E8F8178C1E4E503F00155A5D /* NewsArticle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsArticle.swift; sourceTree = "<group>"; };
 		E8FFE5571E9FCC8800C187CD /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservice.swift; path = ../Webservice.swift; sourceTree = "<group>"; };
+		E8FFE5591EA039B100C187CD /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = "../../../../Downloads/S01E43-view-controller-refactoring-master/SwiftTalk/Environment.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				E8FFE5571E9FCC8800C187CD /* Webservice.swift */,
+				E8FFE5591EA039B100C187CD /* Environment.swift */,
 				E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */,
 				E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */,
 				E895A1341E54A4A90035AF48 /* LegislationJSON+CoreDataClass.swift */,
@@ -428,6 +431,7 @@
 				E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */,
 				E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */,
 				E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */,
+				E8FFE55A1EA039B100C187CD /* Environment.swift in Sources */,
 				E8DEEF0E1E5774C6004AF755 /* LegislationStatusView.swift in Sources */,
 				E8BF592B1E4CD98B008365F4 /* Legislation.swift in Sources */,
 				E8686CB41E71F9F100A13449 /* JSONHelper.swift in Sources */,

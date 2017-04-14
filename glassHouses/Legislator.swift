@@ -18,6 +18,7 @@ class Legislator {
     var district: Int
     var party: Party
     var chamber: Chamber
+    var state: State
     var title: String {
         return chamber.description
     }
@@ -83,6 +84,8 @@ class Legislator {
             let photoURLString = (json.getStringForKey("photo_url") )?.replacingOccurrences(of: " ", with: "%20", options: [], range: nil),
             let photoURL = URL(string: photoURLString),
             let chamberRawValue = json.getStringForKey("chamber"),
+            let stateString = json.getStringForKey("state")?.uppercased(),
+            let state = State(rawValue: stateString),
             let chamber = Chamber(rawValue: chamberRawValue) else {
                 return nil
         }
@@ -94,6 +97,7 @@ class Legislator {
         self.party = party
         self.chamber = chamber
         self.photoURL = photoURL
+        self.state = state
     }
 }
 
