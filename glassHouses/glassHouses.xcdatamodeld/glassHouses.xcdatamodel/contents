@@ -24,6 +24,7 @@
     <entity name="Legislator" representedClassName="Legislator" syncable="YES">
         <attribute name="chamberCD" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="district" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="following" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,6 +35,6 @@
     <elements>
         <element name="Article" positionX="-27" positionY="36" width="128" height="148"/>
         <element name="Legislation" positionX="-243" positionY="18" width="128" height="193"/>
-        <element name="Legislator" positionX="-108" positionY="117" width="128" height="165"/>
+        <element name="Legislator" positionX="-108" positionY="117" width="128" height="180"/>
     </elements>
 </model>

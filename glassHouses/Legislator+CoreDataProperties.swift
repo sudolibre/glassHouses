@@ -2,7 +2,7 @@
 //  Legislator+CoreDataProperties.swift
 //  GlassHouses
 //
-//  Created by Jonathon Day on 4/14/17.
+//  Created by Jonathon Day on 4/17/17.
 //  Copyright © 2017 dayj. All rights reserved.
 //
 
@@ -24,5 +24,6 @@ extension Legislator {
     @NSManaged public var stateCD: String
     @NSManaged public var photoURLCD: NSURL
     @NSManaged public var id: String
+    @NSManaged public var following: Bool
 
 }

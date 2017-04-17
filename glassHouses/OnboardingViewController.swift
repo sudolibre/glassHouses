@@ -130,6 +130,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navVC = segue.destination as! UINavigationController
         let activityVC = navVC.topViewController as! ActivityFeedController
+        activityVC.webservice = webservice
         activityVC.activityItemStore = activityItemStore
         activityVC.legislators = self.legislators
         let dataSource: ActivityFeedDataSource = {

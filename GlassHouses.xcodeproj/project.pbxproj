@@ -30,6 +30,7 @@
 		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */; };
 		E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */; };
+		E89F14431EA5035D00D43F25 /* Legislator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F14421EA5035D00D43F25 /* Legislator+CoreDataClass.swift */; };
 		E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */; };
 		E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */; };
 		E8DEEF091E57732D004AF755 /* LegislationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */; };
@@ -41,8 +42,7 @@
 		E8FFE55A1EA039B100C187CD /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5591EA039B100C187CD /* Environment.swift */; };
 		E8FFE55D1EA1269900C187CD /* Legislation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */; };
 		E8FFE56A1EA13CF400C187CD /* Legislation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5691EA13CF300C187CD /* Legislation+CoreDataProperties.swift */; };
-		E8FFE56D1EA142BF00C187CD /* Legislator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE56B1EA142BF00C187CD /* Legislator+CoreDataClass.swift */; };
-		E8FFE5741EA147DD00C187CD /* Legislator+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5731EA147DD00C187CD /* Legislator+CoreDataProperties.swift */; };
+		E8FFE58F1EA502CB00C187CD /* Legislator+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE58E1EA502CB00C187CD /* Legislator+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,7 @@
 		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "../Article+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "../Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E89F14421EA5035D00D43F25 /* Legislator+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislator+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityFeedController.swift; sourceTree = "<group>"; };
 		E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		E8C2ED8B1E7C814200F6553D /* glassHouses.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = glassHouses.entitlements; sourceTree = "<group>"; };
@@ -104,8 +105,7 @@
 		E8FFE5591EA039B100C187CD /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = "../../../../Downloads/S01E43-view-controller-refactoring-master/SwiftTalk/Environment.swift"; sourceTree = "<group>"; };
 		E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E8FFE5691EA13CF300C187CD /* Legislation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E8FFE56B1EA142BF00C187CD /* Legislator+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Legislator+CoreDataClass.swift"; path = "../Legislator+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E8FFE5731EA147DD00C187CD /* Legislator+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Legislator+CoreDataProperties.swift"; path = "../Legislator+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E8FFE58E1EA502CB00C187CD /* Legislator+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislator+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,8 +220,8 @@
 			children = (
 				E8FFE5571E9FCC8800C187CD /* Webservice.swift */,
 				E8FFE5591EA039B100C187CD /* Environment.swift */,
-				E8FFE56B1EA142BF00C187CD /* Legislator+CoreDataClass.swift */,
-				E8FFE5731EA147DD00C187CD /* Legislator+CoreDataProperties.swift */,
+				E89F14421EA5035D00D43F25 /* Legislator+CoreDataClass.swift */,
+				E8FFE58E1EA502CB00C187CD /* Legislator+CoreDataProperties.swift */,
 				E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */,
 				E8FFE5691EA13CF300C187CD /* Legislation+CoreDataProperties.swift */,
 				E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */,
@@ -423,9 +423,7 @@
 				E813C37A1E524D6A00F93F95 /* UserDefaultsManager.swift in Sources */,
 				E84BE3AB1E4B6385004359DE /* Legislator.swift in Sources */,
 				E84BE3AF1E4BCF67004359DE /* ImageStore.swift in Sources */,
-				E8FFE56D1EA142BF00C187CD /* Legislator+CoreDataClass.swift in Sources */,
 				E8FFE55D1EA1269900C187CD /* Legislation+CoreDataClass.swift in Sources */,
-				E8FFE5741EA147DD00C187CD /* Legislator+CoreDataProperties.swift in Sources */,
 				E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */,
 				E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */,
 				E813C3821E53A75100F93F95 /* glassHouses.xcdatamodeld in Sources */,
@@ -433,9 +431,11 @@
 				E813C37C1E538E6E00F93F95 /* ActivityItemStore.swift in Sources */,
 				E8F8178D1E4E503F00155A5D /* NewsArticle.swift in Sources */,
 				E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */,
+				E8FFE58F1EA502CB00C187CD /* Legislator+CoreDataProperties.swift in Sources */,
 				E8FFE55A1EA039B100C187CD /* Environment.swift in Sources */,
 				E8DEEF0E1E5774C6004AF755 /* LegislationStatusView.swift in Sources */,
 				E8686CB41E71F9F100A13449 /* JSONHelper.swift in Sources */,
+				E89F14431EA5035D00D43F25 /* Legislator+CoreDataClass.swift in Sources */,
 				E8F8178B1E4E4EC100155A5D /* NewsSearchAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

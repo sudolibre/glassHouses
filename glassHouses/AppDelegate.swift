@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         activityItemStore = ActivityItemStore(webservice: webservice)
         
         let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
+        let predicate = NSPredicate(format: "following == true")
+        fetchRequest.predicate = predicate
         var fetchedLegislators: [Legislator]?
         ActivityItemStore.context.performAndWait {
             fetchedLegislators = try? fetchRequest.execute()
@@ -40,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let activityFeedVC = navController.topViewController as! ActivityFeedController
             activityFeedVC.webservice = webservice
             activityFeedVC.activityItemStore = activityItemStore
+            Environment.current.state = fetchedLegislators.first!.state
             activityFeedVC.legislators.append(contentsOf: fetchedLegislators)
         } else {
         let onboardingVC = window!.rootViewController as! OnboardingViewController

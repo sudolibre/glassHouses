@@ -42,7 +42,7 @@ final class Webservice {
 extension Legislator {
     typealias Coordinates = (lat: Double,long: Double)
     
-    static func fromJSON(_ json: [String: Any], into context: NSManagedObjectContext) -> Legislator? {
+    static func fromJSON(_ json: [String: Any], follow: Bool = false, into context: NSManagedObjectContext) -> Legislator? {
             guard let active = json.getBoolForKey("active"),
                 active == true,
                 let id = json.getStringForKey("leg_id"),
@@ -81,6 +81,7 @@ extension Legislator {
             legislator.chamberCD = chamberRawValue
             legislator.photoURLCD = photoURL
             legislator.stateCD = stateString
+            legislator.following = follow
         }
         return legislator
     }
@@ -90,7 +91,7 @@ extension Legislator {
         let url = URL(string: baseUrl.appending("legislators/geo/?lat=\(coordinates.lat)&long=\(coordinates.long)"))!
         let resource = Resource<[Legislator]>(url: url) { (json) -> [Legislator]? in
             guard let dictionaries = json as? [[String: Any]] else { return nil }
-            return dictionaries.flatMap({Legislator.fromJSON($0, into: context)})
+            return dictionaries.flatMap({Legislator.fromJSON($0, follow: true, into: context)})
         }
         return resource
     }
@@ -111,13 +112,12 @@ extension Legislator {
 
 extension Legislation {
     static func fromJSON(_ json: [String: Any], into context: NSManagedObjectContext) -> Legislation? {
-        guard let id = json.getStringForKey("bill_id"),
+        guard let id = json.getStringForKey("id"),
             let documentVersions = json.getArrayOfDictForKey("versions"),
             let recentVersion = documentVersions.last,
             let documentURLString = recentVersion.getStringForKey("url"),
             let documentURL = URL(string: documentURLString),
             let title = json.getStringForKey("title"),
-            let description = json.getStringForKey("+description"), //TODO: this is likely specific to GA
             let actionDates = json.getDictForKey("action_dates"),
             let dateString = actionDates.getStringForKey("last"),
             let date = Legislation.dateFormatter.date(from: dateString),
@@ -128,6 +128,8 @@ extension Legislation {
             let otherVotesArray = votesArray.first?.getArrayOfDictForKey("other_votes") else {
                 return nil
         }
+        
+        let description = json.getStringForKey("+description") ?? json.getStringForKey("summary") ?? "No summary available"
         
         let fetchRequest: NSFetchRequest<Legislation> = Legislation.fetchRequest()
         let predicate = NSPredicate(format: "\(#keyPath(Legislation.id)) == '\(id)'")
@@ -177,7 +179,6 @@ extension Legislation {
             legislation.noVotes = NSSet(array: noNames)
             legislation.otherVotes = NSSet(array: otherNames)
             legislation.statusCD = Int32(status.rawValue)
-
         }
         return legislation
     }
@@ -190,9 +191,12 @@ extension Legislation {
             return Legislation.fromJSON(dictionary, into: context)
         }
         return resource
-
     }
+    
     static func recentLegislationIDsResource() -> Resource<[String]> {
+        guard let state = Environment.current.state else { fatalError("state not found")
+        }
+
         let getIDsForVotedBills = { (array: [[String: Any]]) -> [String] in
             let filteredArray = array.filter({ (dictionary) -> Bool in
                 let votesArray = dictionary["votes"] as! [[String: Any]]
@@ -217,9 +221,7 @@ extension Legislation {
         }()
         let dateString = serviceDateFormatter.string(from: date)
         
-        let state = Environment.current.state
-        //TODO: add variable state to url
-        let url = URL(string: baseUrl.appending("bills/?state=ga&search_window=term&updated_since=\(dateString)&fields=votes&type=bill"))!
+        let url = URL(string: baseUrl.appending("bills/?state=\(state)&search_window=term&updated_since=\(dateString)&fields=votes&type=bill"))!
         let resource = Resource<[String]>(url: url) { (json) -> [String]? in
             guard let dictionaries = json as? [[String: Any]] else { return nil }
             let votedBills = getIDsForVotedBills(dictionaries)
