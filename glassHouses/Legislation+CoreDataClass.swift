@@ -27,6 +27,23 @@ enum Status: Int {
     static var descriptions: [String] {
         return ["Introduced", "House", "Senate", "Law"]
     }
+    
+    init(action: String?) {
+        guard let action = action else {
+            self = .introduced
+            return
+        }
+        switch action  {
+        case "signed":
+            self = .law
+        case "passed_upper":
+            self = .senate
+        case "passed_lower":
+            self = .house
+        default:
+            self = .introduced
+        }
+    }
 }
 
 

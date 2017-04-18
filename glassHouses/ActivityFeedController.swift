@@ -22,15 +22,12 @@ class ActivityFeedController: UITableViewController {
         spinner.color = UIColor.gray
         return spinner
     }()
-    var legislators: [Legislator] = [] {
-        didSet {
-            generateFeed()
-        }
-    }
+    var legislators: [Legislator]!
     var dataSource = ActivityFeedDataSource()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        generateFeed()
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         if dataSource.activityItems.isEmpty {
@@ -86,8 +83,10 @@ class ActivityFeedController: UITableViewController {
             legislationVC.webservice = webservice
             legislationVC.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: sender as! Legislation)
         case "showNews":
-            let article = sender as! Article
-            let url = article.link as! URL
+            let article = sender as? Article
+            guard let url = article?.link as URL? ?? sender as? URL else {
+                return
+            }
             let request = URLRequest(url: url)
             let webView = segue.destination.view as! UIWebView
             webView.loadRequest(request)

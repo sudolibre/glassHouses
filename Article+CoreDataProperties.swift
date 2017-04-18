@@ -16,12 +16,12 @@ extension Article {
         return NSFetchRequest<Article>(entityName: "Article");
     }
 
-    @NSManaged public var publisher: String?
-    @NSManaged public var date: NSDate?
-    @NSManaged public var title: String?
-    @NSManaged public var articleDescription: String?
-    @NSManaged public var imageURL: NSURL?
-    @NSManaged public var link: NSURL?
-    @NSManaged public var legislatorID: String?
+    @NSManaged public var publisher: String
+    @NSManaged public var date: NSDate
+    @NSManaged public var title: String
+    @NSManaged public var articleDescription: String
+    @NSManaged public var imageURL: NSURL
+    @NSManaged public var link: NSURL
+    @NSManaged public var legislatorID: String
 
 }

@@ -3,7 +3,6 @@
     <entity name="Article" representedClassName="Article" syncable="YES">
         <attribute name="articleDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Transformable" customClassName="NSDate" syncable="YES"/>
-        <attribute name="imageURL" optional="YES" attributeType="Transformable" customClassName="NSURL" syncable="YES"/>
         <attribute name="legislatorID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="Transformable" customClassName="NSURL" syncable="YES"/>
         <attribute name="publisher" optional="YES" attributeType="String" syncable="YES"/>
@@ -33,7 +32,7 @@
         <attribute name="stateCD" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Article" positionX="-27" positionY="36" width="128" height="148"/>
+        <element name="Article" positionX="-27" positionY="36" width="128" height="135"/>
         <element name="Legislation" positionX="-243" positionY="18" width="128" height="193"/>
         <element name="Legislator" positionX="-108" positionY="117" width="128" height="180"/>
     </elements>

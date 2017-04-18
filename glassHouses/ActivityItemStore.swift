@@ -81,16 +81,23 @@ class ActivityItemStore {
             completion(activity)
         }
         //Update local from network
-        updateLegislation { (legislation) in
-            if let legislation = legislation {
-                //TODO: change generate activity to take a single piece of legislation
-                DispatchQueue.main.async {
-                    let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
-                    activity.forEach(completion)
-                }
+        //TOOD: uncomment update local legislation
+//        updateLegislation { (legislation) in
+//            if let legislation = legislation {
+//                //TODO: change generate activity to take a single piece of legislation
+//                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
+//                activity.forEach(completion)
+//            }
+//        }
+        updateArticles(legislators: legislators) { (articles) in
+            if let articles = articles {
+                let activity = articles.map({ (article) -> ActivityItem in
+                    let legislator = legislators.first(where: {article.legislatorID == $0.id})!
+                    return ActivityItem(legislator: legislator, activityType: .news(article))
+                })
+                activity.forEach(completion)
             }
         }
-        //updateArticles(legislators: legislators, completion: completion)
     }
     
     static func fetchLocalNewsArticles() -> [Article] {
@@ -109,79 +116,13 @@ class ActivityItemStore {
         }
     }
     
-    private func updateArticles(legislators: [Legislator], completion: ((ActivityItem) -> ())?) {
-        //TODO: Move this to GlassHouses server
-        NewsSearchAPI.fetchNewsForLegislators(legislators) { (legislator, dictionaries) in
-            for json in dictionaries {
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-                
-                guard let title = json["name"] as? String,
-                    let description = json["description"] as? String,
-                    let linkString = json["url"] as? String,
-                    let link = URL(string: linkString),
-                    let providerDictionary = json["provider"] as? [[String: Any]],
-                    let firtProvider = providerDictionary.first,
-                    let publisher = firtProvider["name"] as? String,
-                    let dateString = json["datePublished"] as? String else {
-                        continue
-                }
-                
-                var date: NSDate?
-                
-                if let _date = dateFormatter.date(from: dateString) {
-                    date = _date as NSDate
-                } else {
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    if let _date = dateFormatter.date(from: dateString) {
-                        date = _date as NSDate
-                    } else {
-                        continue
-                    }
-                }
-                
-                let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
-                let predicate = NSPredicate(format: "title == %@", title)
-                fetchRequest.predicate = predicate
-                var existingArticle: [Article]!
-                ActivityItemStore.context.performAndWait {
-                    do {
-                        existingArticle = try fetchRequest.execute()
-                    } catch {
-                        print("failed to query core data: \(error)")
-                        existingArticle = []
-                    }
-                }
-                
-                
-                if existingArticle.count > 0 {
-                    print("article already in core data")
-                } else {
-                    var article: Article!
-                    ActivityItemStore.context.performAndWait {
-                        article = Article(context: ActivityItemStore.context)
-                        article.title = title
-                        article.publisher = publisher
-                        article.articleDescription = description
-                        article.link = link as NSURL
-                        article.date = date!
-                        article.legislatorID = legislator.id
-                        if let imageDictionary = json["image"] as? [String: Any],
-                            let thumbnailDictionary = imageDictionary["thumbnail"] as? [String: Any],
-                            let imageURLString = thumbnailDictionary["contentURL"] as? String,
-                            let _imageURL = URL(string: imageURLString) {
-                            article.imageURL = _imageURL as NSURL
-                        }
-                    }
-                    
-                    if let completion = completion {
-                        let activity = ActivityItem(legislator: legislator, activityType: .news(article))
-                        completion(activity)
-                    }
-                }
-            }
-        }
+    func registerForNews(legislators: [Legislator]) {
+        updateArticles(legislators: legislators, completion: {_ = $0})
+    }
+    
+    private func updateArticles(legislators: [Legislator], completion: @escaping ([Article]?) -> ()) {
+        let resource = Article.allArticlesResource(for: legislators, into: ActivityItemStore.context)
+        webservice.load(resource: resource, completion: completion)
     }
     
     

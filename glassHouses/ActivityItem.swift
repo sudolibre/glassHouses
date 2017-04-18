@@ -16,7 +16,7 @@ class ActivityItem {
         case .vote(let legislation, _):
             return legislation.date
         case .news(let article):
-            return article.date! as Date
+            return article.date as Date
         default:
             fatalError("unexpected activity type when calculating date")
         }
@@ -34,7 +34,7 @@ class ActivityItem {
             case .sponsor(let legislation):
                 return "\(legislator.fullName) sponsored \(legislation.id): \(legislation.title)"
             case .news(let article):
-                return "\(article.publisher!) \n\(article.articleDescription!)"
+                return "\(article.publisher) \n\(article.articleDescription)"
             case .legislationLifecycle:
                 return ""
             }

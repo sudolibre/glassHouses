@@ -40,18 +40,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     func registerForNews() {
         guard !legislators.isEmpty else { return }
-        if let token = UserDefaultsManager.getAPNSToken() {
-            GlassHousesAPI.hitEndpoint(.register(token: token, legislators: legislators), completion: { (APIResponse) in
-                switch APIResponse {
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error)
-                case .networkError(let response):
-                    print(response)
-                }
-            })
-        }
+        activityItemStore.registerForNews(legislators: legislators)
     }
     
     func fetchPhotos() {

@@ -51,13 +51,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
         // this only gets hit when the app is open or the user opened the notification from the app
-        let aps = data["aps"] as? [String: Any]
-        let alert = aps?["alert"] as? [String: Any]
-        let title = alert?["title"] as? String
-        let body = alert?["body"] as? String
-        print("Push notification received: \(data)")
+        guard let linkString = data["url"] as? String,
+            let legislatorName = data["legislator"] as? String,
+            let url = URL(string: linkString) else {
+                return
+        }
+        let navVC = window!.rootViewController as! UINavigationController
+        let activityFeedVC = navVC.topViewController as! ActivityFeedController
+        activityFeedVC.performSegue(withIdentifier: "showNews", sender: url)
+        
+        var fetchedLegislator: [Legislator]?
+        let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
+        let predicate = NSPredicate(format: "\(#keyPath(Legislator.fullName)) == '\(legislatorName)'")
+        fetchRequest.predicate = predicate
+        ActivityItemStore.context.performAndWait {
+            fetchedLegislator = try? fetchRequest.execute()
+        }
+
+        guard let json = data["json"] as? [String: Any],
+            let legislator = fetchedLegislator?.first else {
+                return
+        }
+        
+        let _ = Article.fromJSON(json, legislator: legislator, into: ActivityItemStore.context)
     }
     // Called when APNs has assigned the device a unique token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

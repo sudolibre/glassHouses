@@ -405,7 +405,7 @@
         <!--View Controller-->
         <scene sceneID="B0N-LV-Koh">
             <objects>
-                <viewController id="XOv-oI-mcf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsViewController" id="XOv-oI-mcf" sceneMemberID="viewController">
                     <webView key="view" contentMode="scaleToFill" id="CBa-R5-sgP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

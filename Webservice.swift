@@ -9,14 +9,30 @@
 import Foundation
 import CoreData
 
+enum HttpMethod<Body> {
+    case get
+    case post(Body)
+    
+    var method: String {
+        switch self {
+        case .get:
+            return "GET"
+        case .post:
+            return "POST"
+        }
+    }
+}
+
 struct Resource<A> {
     let url: URL
+    let httpMethod: HttpMethod<Any>
     let parse: (Data) -> A?
 }
 
 extension Resource {
-    init(url: URL, parseJSON: @escaping (Any) -> A?) {
+    init(url: URL, method: HttpMethod<Any> = .get, parseJSON: @escaping (Any) -> A?) {
         self.url = url
+        self.httpMethod = method
         self.parse = { data in
             let json = try? JSONSerialization.jsonObject(with: data, options: [])
             return json.flatMap(parseJSON)
@@ -24,14 +40,29 @@ extension Resource {
     }
 }
 
+extension URLRequest {
+    init<A>(_ resource: Resource<A>) {
+        self.init(url: resource.url)
+        self.httpMethod = resource.httpMethod.method
+        if case .post(let body) = resource.httpMethod {
+            self.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+            self.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+    }
+}
+
 final class Webservice {
     func load<A>(resource: Resource<A>, completion: @escaping (A?) -> ()) {
-        URLSession.shared.dataTask(with: resource.url) { (data, response, error) in
+        let request = URLRequest(resource)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard let data = data else {
                 completion(nil)
                 return
             }
             let urlResponse = response as! HTTPURLResponse
+            if let error = error {
+                print(error)
+            }
             let code = urlResponse.statusCode
             completion(resource.parse(data))
             }.resume()
@@ -120,7 +151,7 @@ extension Legislation {
             let title = json.getStringForKey("title"),
             let actionDates = json.getDictForKey("action_dates"),
             let dateString = actionDates.getStringForKey("last"),
-            let date = Legislation.dateFormatter.date(from: dateString),
+            let date = dateFormatter.date(from: dateString),
             let sponsorArray = json.getArrayOfDictForKey("sponsors"),
             let votesArray = json.getArrayOfDictForKey("votes"),
             let yesVotesArray = votesArray.first?.getArrayOfDictForKey("yes_votes"),
@@ -153,16 +184,11 @@ extension Legislation {
         let yesNames = yesVotesArray.flatMap(voterDescriptionParser)
         let noNames = noVotesArray.flatMap(voterDescriptionParser)
         let otherNames = otherVotesArray.flatMap(voterDescriptionParser)
-        var status: Status!
-        if actionDates["signed"] as? String != nil {
-            status = .law
-        } else if actionDates["passed_upper"] as? String != nil {
-            status = .senate
-        } else if actionDates["passed_lower"] as? String != nil {
-            status = .house
-        } else {
-            status = .introduced
-        }
+        let status: Status = {
+            let actionString = json["signed"] as? String ?? json["passed_upper"] as? String ?? json["passed_lower"] as? String
+            return Status(action: actionString)
+        }()
+       
         let sponsorIDArray = sponsorArray.flatMap({$0["leg_id"] as? String})
         let sponsorIDSet = NSSet(array: sponsorIDArray)
         
@@ -210,7 +236,8 @@ extension Legislation {
             dateFormatter.dateFormat = "yyyy-MM-dd"
             return dateFormatter
         }()
-        var date: Date = {
+        let date: Date = {
+            //TODO: re-enable last update check
 //            if let lastUpdate = UserDefaultsManager.lastUpdate {
 //                return lastUpdate
 //            }
@@ -231,9 +258,73 @@ extension Legislation {
     }
 }
 
-//extension Article {
-//    static let allNewsArticlesResource = Resource<[NewsArticle]>(url: URL(string: "https://openstates.org/api/v1/")!) { (json) -> [NewsArticle]? in
-//        guard let dictionaries = json as? [[String: Any]] else { return nil }
-//        return dictionaries.flatMap(Article.init)
-//    }
-//}
+extension Article {
+    static func fromJSON(_ json: [String: Any], legislator: Legislator, into context: NSManagedObjectContext) -> Article? {
+        guard let title = json["name"] as? String,
+            let description = json["description"] as? String,
+            let linkString = json["url"] as? String,
+            let link = NSURL(string: linkString),
+            let publisher = json["publisher"] as? String,
+            let dateInterval = json["date"] as? Double else {
+                return nil
+        }
+        let date = NSDate.init(timeIntervalSince1970: dateInterval)
+        
+        let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
+        let predicate = NSPredicate(format: "title == %@", title)
+        fetchRequest.predicate = predicate
+        var fetchedArticle: [Article]?
+        context.performAndWait {
+            fetchedArticle = try? fetchRequest.execute()
+        }
+        if let existingArticle = fetchedArticle?.first {
+            return existingArticle
+        }
+        
+        var article: Article!
+        ActivityItemStore.context.performAndWait {
+            article = Article(context: ActivityItemStore.context)
+            article.title = title
+            article.publisher = publisher
+            article.articleDescription = description
+            article.link = link as NSURL
+            article.date = date as NSDate
+            article.legislatorID = legislator.id
+            if let imageDictionary = json["image"] as? [String: Any],
+                let thumbnailDictionary = imageDictionary["thumbnail"] as? [String: Any],
+                let imageURLString = thumbnailDictionary["contentURL"] as? String,
+                let _imageURL = URL(string: imageURLString) {
+                article.imageURL = _imageURL as NSURL
+            }
+        }
+        
+        return article
+    }
+
+    static func allArticlesResource(for legislators: [Legislator], into context: NSManagedObjectContext) -> Resource<[Article]> {
+        //TODO: switch back to productin server
+        //let url = URL(string: "http://104.131.31.61:80/register")!
+        let url = URL(string: "http://192.168.1.239:8080/register")!
+        let token = UserDefaultsManager.getAPNSToken() ?? ""
+        let arrayOfLegislatorInfo: [[String: String]] = legislators.map({ (legislator) -> [String: String] in
+            [
+                "fullname": legislator.fullName,
+                "chamber": legislator.chamber.rawValue
+            ]
+        })
+        let jsonDictionary: [String: Any] = [
+            "token": token,
+            "legislators": arrayOfLegislatorInfo
+        ]
+        let method = HttpMethod<Any>.post(jsonDictionary)
+        let parseJSON = { (json: Any) -> [Article]? in
+            guard let dictionary = json as? [String: Any] else { return nil }
+            let articleGroups = legislators.flatMap({ (legislator) -> [Article]? in
+                let articlesJSON = dictionary[legislator.fullName] as? [[String : Any]]
+                return articlesJSON?.flatMap({Article.fromJSON($0, legislator: legislator, into: context)})
+            })
+            return articleGroups.flatMap({$0})
+        }
+        return Resource<[Article]>(url: url, method: method, parseJSON: parseJSON)
+    }
+}
