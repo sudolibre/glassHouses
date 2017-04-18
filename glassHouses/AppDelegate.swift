@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             activityFeedVC.webservice = webservice
             activityFeedVC.activityItemStore = activityItemStore
             Environment.current.state = fetchedLegislators.first!.state
-            activityFeedVC.legislators.append(contentsOf: fetchedLegislators)
+            activityFeedVC.legislators = fetchedLegislators
         } else {
         let onboardingVC = window!.rootViewController as! OnboardingViewController
         onboardingVC.webservice = webservice

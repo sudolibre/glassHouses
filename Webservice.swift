@@ -90,7 +90,7 @@ extension Legislator {
             }
         
         let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
-        let predicate = NSPredicate(format: "\(#keyPath(Legislator.id)) == '\(id)'")
+        let predicate = NSPredicate(format: "id == '\(id)'")
         fetchRequest.predicate = predicate
         
         var fetchedLegislator: [Legislator]?
@@ -98,7 +98,7 @@ extension Legislator {
             fetchedLegislator = try? fetchRequest.execute()
         }
         if let existingLegislator = fetchedLegislator?.first {
-            return existingLegislator
+            return nil
         }
         
         var legislator: Legislator!
@@ -163,7 +163,7 @@ extension Legislation {
         let description = json.getStringForKey("+description") ?? json.getStringForKey("summary") ?? "No summary available"
         
         let fetchRequest: NSFetchRequest<Legislation> = Legislation.fetchRequest()
-        let predicate = NSPredicate(format: "\(#keyPath(Legislation.id)) == '\(id)'")
+        let predicate = NSPredicate(format: "id == '\(id)'")
         fetchRequest.predicate = predicate
         
         var fetchedLegislation: [Legislation]?
@@ -171,7 +171,7 @@ extension Legislation {
             fetchedLegislation = try? fetchRequest.execute()
         }
         if let existingLegislation = fetchedLegislation?.first {
-            return existingLegislation
+            return nil
         }
         
         let voterDescriptionParser = { (dictionary: [String: Any]) -> String? in
@@ -185,8 +185,8 @@ extension Legislation {
         let noNames = noVotesArray.flatMap(voterDescriptionParser)
         let otherNames = otherVotesArray.flatMap(voterDescriptionParser)
         let status: Status = {
-            let actionString = json["signed"] as? String ?? json["passed_upper"] as? String ?? json["passed_lower"] as? String
-            return Status(action: actionString)
+            let actionDates = json["action_dates"] as? [String: Any]
+            return Status(actions: actionDates)
         }()
        
         let sponsorIDArray = sponsorArray.flatMap({$0["leg_id"] as? String})
@@ -237,10 +237,9 @@ extension Legislation {
             return dateFormatter
         }()
         let date: Date = {
-            //TODO: re-enable last update check
-//            if let lastUpdate = UserDefaultsManager.lastUpdate {
-//                return lastUpdate
-//            }
+            if let lastUpdate = UserDefaultsManager.lastUpdate {
+                return lastUpdate
+            }
             let calendar = Calendar.current
             let current = Date()
             let weekPrior = calendar.date(byAdding: .day, value: -7 , to: current)
@@ -278,7 +277,7 @@ extension Article {
             fetchedArticle = try? fetchRequest.execute()
         }
         if let existingArticle = fetchedArticle?.first {
-            return existingArticle
+            return nil
         }
         
         var article: Article!
@@ -302,9 +301,7 @@ extension Article {
     }
 
     static func allArticlesResource(for legislators: [Legislator], into context: NSManagedObjectContext) -> Resource<[Article]> {
-        //TODO: switch back to productin server
-        //let url = URL(string: "http://104.131.31.61:80/register")!
-        let url = URL(string: "http://192.168.1.239:8080/register")!
+        let url = URL(string: "http://104.131.31.61:80/register")!
         let token = UserDefaultsManager.getAPNSToken() ?? ""
         let arrayOfLegislatorInfo: [[String: String]] = legislators.map({ (legislator) -> [String: String] in
             [

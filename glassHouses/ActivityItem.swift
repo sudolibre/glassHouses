@@ -35,8 +35,6 @@ class ActivityItem {
                 return "\(legislator.fullName) sponsored \(legislation.id): \(legislation.title)"
             case .news(let article):
                 return "\(article.publisher) \n\(article.articleDescription)"
-            case .legislationLifecycle:
-                return ""
             }
         }
         
@@ -50,10 +48,43 @@ class ActivityItem {
 
 }
 
-enum ActivityType {
+extension ActivityItem: Hashable {
+    var hashValue: Int {
+        var activityHash: Int {
+            switch activityType {
+            case .news( let article):
+                return article.link.hashValue
+            case .sponsor(let legislation):
+                return legislation.id.hashValue
+            case .vote(let legislation, let voteResult):
+                return legislation.hashValue ^ voteResult.hashValue
+            }
+        }
+        return date.hashValue ^ activityHash ^ legislator.hashValue
+    }
+
+    static func ==(lhs: ActivityItem, rhs: ActivityItem) -> Bool {
+        return lhs.date == rhs.date && lhs.activityType == rhs.activityType && lhs.legislator == rhs.legislator
+    }
+    
+}
+
+enum ActivityType: Equatable {
     case news(Article)
     case vote(Legislation, VoteResult)
     case sponsor(Legislation)
-    case legislationLifecycle
+    
+    static func ==(lhs: ActivityType, rhs: ActivityType) -> Bool {
+        switch (lhs, rhs) {
+        case (.news(let article1), .news(let article2)):
+            return article1 == article2
+        case (.vote(let legislation1, let result1), .vote(let legislation2, let result2)):
+            return legislation1 == legislation2 && result1 == result2
+        case (.sponsor(let legislation1), .sponsor(let legislation2)):
+            return legislation1 == legislation2
+        default:
+            return false
+        }
+    }
 }
 

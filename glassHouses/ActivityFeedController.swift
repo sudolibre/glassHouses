@@ -27,8 +27,6 @@ class ActivityFeedController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        generateFeed()
-        navigationController?.setNavigationBarHidden(true, animated: true)
         
         if dataSource.activityItems.isEmpty {
             spinner.startAnimating()
@@ -38,6 +36,7 @@ class ActivityFeedController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateFeed()
         tableView.dataSource = dataSource
         
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -70,8 +69,6 @@ class ActivityFeedController: UITableViewController {
             performSegue(withIdentifier: "showLegislation", sender: legislation)
         case .news(let article):
             performSegue(withIdentifier: "showNews", sender: article)
-        case .legislationLifecycle:
-            fatalError("not implemented yet")
         }
     }
     
@@ -93,7 +90,6 @@ class ActivityFeedController: UITableViewController {
         default:
             fatalError("unexpected segue identifier")
         }
-        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 }
 

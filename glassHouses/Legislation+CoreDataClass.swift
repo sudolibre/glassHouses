@@ -28,24 +28,22 @@ enum Status: Int {
         return ["Introduced", "House", "Senate", "Law"]
     }
     
-    init(action: String?) {
-        guard let action = action else {
+    init(actions: [String: Any]?) {
+        guard let actions = actions else {
             self = .introduced
             return
         }
-        switch action  {
-        case "signed":
+        if actions["signed"] as? String != nil {
             self = .law
-        case "passed_upper":
+        } else if actions["passed_upper"] as? String != nil {
             self = .senate
-        case "passed_lower":
+        } else if actions["passed_lower"] as? String != nil {
             self = .house
-        default:
+        } else {
             self = .introduced
         }
     }
 }
-
 
 @objc(Legislation)
 public class Legislation: NSManagedObject {

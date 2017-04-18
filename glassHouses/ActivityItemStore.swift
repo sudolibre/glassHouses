@@ -81,14 +81,13 @@ class ActivityItemStore {
             completion(activity)
         }
         //Update local from network
-        //TOOD: uncomment update local legislation
-//        updateLegislation { (legislation) in
-//            if let legislation = legislation {
-//                //TODO: change generate activity to take a single piece of legislation
-//                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
-//                activity.forEach(completion)
-//            }
-//        }
+        updateLegislation { (legislation) in
+            if let legislation = legislation {
+                //TODO: change generate activity to take a single piece of legislation
+                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
+                activity.forEach(completion)
+            }
+        }
         updateArticles(legislators: legislators) { (articles) in
             if let articles = articles {
                 let activity = articles.map({ (article) -> ActivityItem in
