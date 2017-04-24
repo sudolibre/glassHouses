@@ -27,7 +27,7 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     @IBOutlet var sponsorCollectionView: UICollectionView!
     @IBOutlet var sponsorCountLabel: UILabel!
     
-    @IBAction func shareTapped(_ sender: UIBarButtonItem) {
+    func shareTapped() {
         var initialText = "\(legislation.id) "
         switch legislation.status {
         case .introduced:
@@ -85,12 +85,16 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
     override func viewWillAppear(_ animated: Bool) {
         billNameLabel.text = legislation.id
         billDescriptionLabel.text = legislation.billDescription
-        sponsorCountLabel.text = "Sponors (\(legislation.sponsorIDs.count))"
+        sponsorCountLabel.text = "Sponsors (\(legislation.sponsorIDs.count))"
     }
     
     override func viewDidLoad() {
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        self.navigationItem.setRightBarButton(shareButton, animated: false)
         scrollView.contentSize = outterView.bounds.size
         billStatusView.status = legislation!.status
+        let sponsorCollectionCell = UINib(nibName: "SponsorCollectionCell", bundle: nil)
+        sponsorCollectionView.register(sponsorCollectionCell, forCellWithReuseIdentifier: "sponsorCell")
         sponsorCollectionView.dataSource = dataSource
         let sponsorResources = legislation.sponsorIDs.map({Legislator.legislatorResource(withID: $0, into: ActivityItemStore.context)})
         sponsorResources.forEach { (sponsorResource) in

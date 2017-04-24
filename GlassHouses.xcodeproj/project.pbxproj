@@ -27,6 +27,7 @@
 		E8686CB61E770F8400A13449 /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8686CB51E770F8400A13449 /* API.plist */; };
 		E868F9E21E7C84D1007F1FFE /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E868F9E11E7C84D1007F1FFE /* UserNotifications.framework */; };
 		E885FDFF1EAE886100106213 /* LegislationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */; };
+		E885FE011EAE92A700106213 /* SponsorCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E885FE001EAE92A700106213 /* SponsorCollectionCell.xib */; };
 		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */; };
 		E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */; };
@@ -35,7 +36,7 @@
 		E8BF59291E4CD7E9008365F4 /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF59281E4CD7E9008365F4 /* ActivityItem.swift */; };
 		E8DEEF091E57732D004AF755 /* LegislationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */; };
 		E8DEEF0E1E5774C6004AF755 /* LegislationStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF0D1E5774C6004AF755 /* LegislationStatusView.swift */; };
-		E8DEEF111E58D9FE004AF755 /* SponserCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */; };
+		E8DEEF111E58D9FE004AF755 /* SponsorCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DEEF101E58D9FE004AF755 /* SponsorCollectionCell.swift */; };
 		E8FFE5581E9FCC8800C187CD /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5571E9FCC8800C187CD /* Webservice.swift */; };
 		E8FFE55A1EA039B100C187CD /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE5591EA039B100C187CD /* Environment.swift */; };
 		E8FFE55D1EA1269900C187CD /* Legislation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */; };
@@ -87,6 +88,7 @@
 		E8686CB51E770F8400A13449 /* API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
 		E868F9E11E7C84D1007F1FFE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegislationDetailViewController.xib; sourceTree = "<group>"; };
+		E885FE001EAE92A700106213 /* SponsorCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SponsorCollectionCell.xib; sourceTree = "<group>"; };
 		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "../Article+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "../Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		E8C2ED8B1E7C814200F6553D /* glassHouses.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = glassHouses.entitlements; sourceTree = "<group>"; };
 		E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislationDetailViewController.swift; sourceTree = "<group>"; };
 		E8DEEF0D1E5774C6004AF755 /* LegislationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislationStatusView.swift; sourceTree = "<group>"; };
-		E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponserCollectionCell.swift; sourceTree = "<group>"; };
+		E8DEEF101E58D9FE004AF755 /* SponsorCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorCollectionCell.swift; sourceTree = "<group>"; };
 		E8FFE5571E9FCC8800C187CD /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservice.swift; path = ../Webservice.swift; sourceTree = "<group>"; };
 		E8FFE5591EA039B100C187CD /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislation+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -205,7 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */,
-				E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */,
+				E8DEEF101E58D9FE004AF755 /* SponsorCollectionCell.swift */,
+				E885FE001EAE92A700106213 /* SponsorCollectionCell.xib */,
 				E8DEEF0D1E5774C6004AF755 /* LegislationStatusView.swift */,
 			);
 			name = View;
@@ -364,6 +367,7 @@
 				E8686CB61E770F8400A13449 /* API.plist in Resources */,
 				E84BE3821E4A4BC6004359DE /* Assets.xcassets in Resources */,
 				E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */,
+				E885FE011EAE92A700106213 /* SponsorCollectionCell.xib in Resources */,
 				E885FDFF1EAE886100106213 /* LegislationDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BF59271E4CD697008365F4 /* ActivityFeedController.swift in Sources */,
-				E8DEEF111E58D9FE004AF755 /* SponserCollectionCell.swift in Sources */,
+				E8DEEF111E58D9FE004AF755 /* SponsorCollectionCell.swift in Sources */,
 				E8DEEF091E57732D004AF755 /* LegislationDetailViewController.swift in Sources */,
 				E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */,
 				E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */,

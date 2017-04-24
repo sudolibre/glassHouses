@@ -66,9 +66,17 @@ class ActivityFeedController: UITableViewController {
         let item = dataSource[tableView.indexPathForSelectedRow!.row]
         switch item.activityType {
         case .vote(let legislation, _), .sponsor(let legislation):
-            performSegue(withIdentifier: "anything", sender: nil)
+            let legislationVC: LegislationDetailViewController = {
+                let vc = LegislationDetailViewController()
+                vc.legislation = legislation
+                vc.webservice = webservice
+                vc.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: legislation)
+                return vc
+
+            }()
+            navigationController?.pushViewController(legislationVC, animated: true)
         case .news(let article):
-            let viewController: UIViewController = {
+            let webVC: UIViewController = {
                 let vc = UIViewController()
                 let url = article.link
                 let request = URLRequest(url: url as URL)
@@ -80,7 +88,7 @@ class ActivityFeedController: UITableViewController {
                 vc.view = webView
                 return vc
             }()
-            navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(webVC, animated: true)
         }
     }
     
