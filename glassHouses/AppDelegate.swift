@@ -36,18 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         if let fetchedLegislators = fetchedLegislators,
             !fetchedLegislators.isEmpty {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let navController = storyboard.instantiateViewController(withIdentifier: "navController") as! UINavigationController
-            window!.rootViewController = navController
-            let activityFeedVC = navController.topViewController as! ActivityFeedController
-            activityFeedVC.webservice = webservice
-            activityFeedVC.activityItemStore = activityItemStore
             Environment.current.state = fetchedLegislators.first!.state
-            activityFeedVC.legislators = fetchedLegislators
+            let activityFeedVC: ActivityFeedController = {
+                let vc = ActivityFeedController()
+                vc.webservice = webservice
+                vc.activityItemStore = activityItemStore
+                vc.legislators = fetchedLegislators
+                vc.title = "Legislator Activity"
+                return vc
+            }()
+            let navController = UINavigationController(rootViewController: activityFeedVC)
+            window!.rootViewController = navController
         } else {
-        let onboardingVC = window!.rootViewController as! OnboardingViewController
-        onboardingVC.webservice = webservice
-        onboardingVC.activityItemStore = activityItemStore
+            let onboardingVC = window!.rootViewController as! OnboardingViewController
+            onboardingVC.webservice = webservice
+            onboardingVC.activityItemStore = activityItemStore
         }
         return true
     }

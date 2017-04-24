@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivityCell" customModule="glassHouses" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="102" id="ebh-RR-UtB" customClass="ActivityCell" customModule="glassHouses" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebh-RR-UtB" id="F86-Xp-s7s">
+                <rect key="frame" x="0.0" y="0.0" width="342" height="101.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elena Parent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M09-hO-gJg">
+                        <rect key="frame" x="71" y="8" width="91" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Yea " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B34-v6-puT">
+                        <rect key="frame" x="172" y="8" width="35" height="20"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silhouette" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-Zo-64A">
+                        <rect key="frame" x="8" y="8" width="45" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="O90-ZJ-teH"/>
+                            <constraint firstAttribute="width" constant="45" id="nJS-2N-rhZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doz-H8-aCk">
+                        <rect key="frame" x="71" y="34" width="251" height="60"/>
+                        <string key="text">Voted for SB69: Packaging, Labeling and Registration of Organic Products and Certifying Entities; registration requirement; eliminate
+
+</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEy-DF-Mk8">
+                        <rect key="frame" x="268" y="10" width="66" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="doz-H8-aCk" firstAttribute="top" secondItem="M09-hO-gJg" secondAttribute="bottom" constant="5.5" id="2pC-2N-1d3"/>
+                    <constraint firstItem="M09-hO-gJg" firstAttribute="top" secondItem="J1c-Zo-64A" secondAttribute="top" id="8Cf-n0-iY3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gEy-DF-Mk8" secondAttribute="trailing" id="CL0-gX-eO5"/>
+                    <constraint firstItem="M09-hO-gJg" firstAttribute="leading" secondItem="J1c-Zo-64A" secondAttribute="trailing" constant="18" id="Db0-aP-GJR"/>
+                    <constraint firstItem="M09-hO-gJg" firstAttribute="top" secondItem="F86-Xp-s7s" secondAttribute="topMargin" id="Eyy-Wt-bNH"/>
+                    <constraint firstItem="B34-v6-puT" firstAttribute="baseline" secondItem="M09-hO-gJg" secondAttribute="baseline" id="FRe-Uo-qwN"/>
+                    <constraint firstItem="B34-v6-puT" firstAttribute="leading" secondItem="M09-hO-gJg" secondAttribute="trailing" constant="10" id="Ogw-3D-bTB"/>
+                    <constraint firstItem="doz-H8-aCk" firstAttribute="leading" secondItem="M09-hO-gJg" secondAttribute="leading" id="PtC-jm-8WQ"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="J1c-Zo-64A" secondAttribute="leading" id="UNW-n8-qI8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="doz-H8-aCk" secondAttribute="trailing" constant="12" id="gdA-MW-4g2"/>
+                    <constraint firstItem="gEy-DF-Mk8" firstAttribute="baseline" secondItem="M09-hO-gJg" secondAttribute="baseline" id="jUE-eG-NMl"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="doz-H8-aCk" secondAttribute="bottom" id="oLy-uc-EKu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="activityDescription" destination="doz-H8-aCk" id="bXw-3o-UMs"/>
+                <outlet property="avatarImage" destination="J1c-Zo-64A" id="7za-xN-6Kw"/>
+                <outlet property="date" destination="gEy-DF-Mk8" id="IUf-xa-2zx"/>
+                <outlet property="title" destination="M09-hO-gJg" id="PHn-nz-PNG"/>
+                <outlet property="token" destination="B34-v6-puT" id="LWS-B2-9y4"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="silhouette" width="100" height="150"/>
+    </resources>
+</document>

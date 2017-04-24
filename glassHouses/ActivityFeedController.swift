@@ -36,7 +36,12 @@ class ActivityFeedController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let activityCell = UINib(nibName: "ActivityCell", bundle: nil)
+        tableView.register(activityCell, forCellReuseIdentifier: "activityCell")
+        
         generateFeed()
+        tableView.delegate = self
         tableView.dataSource = dataSource
         
         tableView.rowHeight = UITableViewAutomaticDimension

@@ -116,18 +116,23 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navVC = segue.destination as! UINavigationController
-        let activityVC = navVC.topViewController as! ActivityFeedController
-        activityVC.webservice = webservice
-        activityVC.activityItemStore = activityItemStore
-        activityVC.legislators = self.legislators
-        let dataSource: ActivityFeedDataSource = {
-            let ds = ActivityFeedDataSource()
-            ds.imageStore = imageStore
-            return ds
+    @IBAction func doneTapped() {
+        let activityFeedVC: ActivityFeedController = {
+            let vc = ActivityFeedController()
+            vc.webservice = webservice
+            vc.activityItemStore = activityItemStore
+            vc.legislators = legislators
+            vc.title = "Legislator Activity"
+            let dataSource: ActivityFeedDataSource = {
+                let ds = ActivityFeedDataSource()
+                ds.imageStore = imageStore
+                return ds
+            }()
+            vc.dataSource = dataSource
+            return vc
         }()
-        activityVC.dataSource = dataSource
+        let navController = UINavigationController(rootViewController: activityFeedVC)
+        present(navController, animated: true)
     }
 
     //MARK: Welcome Card
