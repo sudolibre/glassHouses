@@ -103,6 +103,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         super.viewDidLoad()
         centerXConstraints = [welcomeX, identifyX, overviewX]
         
+        
+        
         for i in horizontalSpacingConstraints {
             let windowWidth = UIScreen.main.bounds.width
             i.constant = windowWidth
