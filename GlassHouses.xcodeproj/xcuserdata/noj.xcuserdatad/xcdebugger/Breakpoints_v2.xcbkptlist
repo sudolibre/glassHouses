@@ -107,11 +107,11 @@
             condition = "id == &quot;GAB00016132&quot;"
             continueAfterRunningActions = "No"
             filePath = "glassHouses/ActivityItemStore.swift"
-            timestampString = "514246522.768937"
+            timestampString = "514250478.303265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "updateLegislation(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -123,11 +123,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "glassHouses/ActivityItemStore.swift"
-            timestampString = "514246574.998552"
+            timestampString = "514250478.303265"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "updateLegislation(completion:)"
             landmarkType = "7">
             <Locations>
@@ -160,54 +160,6 @@
                   startingLineNumber = "148"
                   endingLineNumber = "148"
                   offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "glassHouses/ActivityItemStore.swift"
-            timestampString = "514246678.312001"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "fetchActivityItems(legislators:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "glassHouses.ActivityItemStore.fetchActivityItems (legislators : Swift.Array&lt;glassHouses.Legislator&gt;, completion : (glassHouses.ActivityItem) -&gt; ()) -&gt; ()"
-                  moduleName = "glassHouses"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/ActivityItemStore.swift"
-                  timestampString = "514246984.812844"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "1066">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "glassHouses.ActivityItemStore.(fetchActivityItems (legislators : Swift.Array&lt;glassHouses.Legislator&gt;, completion : (glassHouses.ActivityItem) -&gt; ()) -&gt; ()).(closure #3)"
-                  moduleName = "glassHouses"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/ActivityItemStore.swift"
-                  timestampString = "514246984.816131"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "35">
                </Location>
             </Locations>
          </BreakpointContent>

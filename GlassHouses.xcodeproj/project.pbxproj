@@ -96,7 +96,7 @@
 		E8DEEF0D1E5774C6004AF755 /* LegislationStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LegislationStatusView.swift; sourceTree = "<group>"; };
 		E8DEEF101E58D9FE004AF755 /* SponserCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponserCollectionCell.swift; sourceTree = "<group>"; };
 		E8FFE5571E9FCC8800C187CD /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Webservice.swift; path = ../Webservice.swift; sourceTree = "<group>"; };
-		E8FFE5591EA039B100C187CD /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = "../../../../Downloads/S01E43-view-controller-refactoring-master/SwiftTalk/Environment.swift"; sourceTree = "<group>"; };
+		E8FFE5591EA039B100C187CD /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		E8FFE55B1EA1269900C187CD /* Legislation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E8FFE5691EA13CF300C187CD /* Legislation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E8FFE58E1EA502CB00C187CD /* Legislator+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Legislator+CoreDataProperties.swift"; sourceTree = "<group>"; };

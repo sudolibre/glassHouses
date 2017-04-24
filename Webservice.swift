@@ -301,7 +301,9 @@ extension Article {
     }
 
     static func allArticlesResource(for legislators: [Legislator], into context: NSManagedObjectContext) -> Resource<[Article]> {
-        let url = URL(string: "http://104.131.31.61:80/register")!
+        //let url = URL(string: "http://104.131.31.61:80/register")!
+        let url = URL(string: "http://0.0.0.0:8080/register")!
+
         let token = UserDefaultsManager.getAPNSToken() ?? ""
         let arrayOfLegislatorInfo: [[String: String]] = legislators.map({ (legislator) -> [String: String] in
             [

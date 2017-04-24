@@ -86,6 +86,7 @@ class ActivityItemStore {
                 //TODO: change generate activity to take a single piece of legislation
                 let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
                 activity.forEach(completion)
+                ActivityItemStore.save()
             }
         }
         updateArticles(legislators: legislators) { (articles) in
@@ -95,6 +96,7 @@ class ActivityItemStore {
                     return ActivityItem(legislator: legislator, activityType: .news(article))
                 })
                 activity.forEach(completion)
+                ActivityItemStore.save()
             }
         }
     }

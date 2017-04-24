@@ -23,7 +23,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
     
     var webservice: Webservice!
-    let titles = ["Welcome to Informed Public!", "Let's find your district.", "Meet your legislators!"]
+    let titles = ["Welcome to Glass Houses!", "Let's find your district.", "Meet your legislators!"]
     var currentLegislator: Legislator?
     var legislators: [Legislator] = [] {
         didSet {

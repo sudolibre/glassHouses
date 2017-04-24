@@ -173,11 +173,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrowLeft" translatesAutoresizingMaskIntoConstraints="NO" id="TwE-3R-5aH">
-                                        <rect key="frame" x="21.5" y="158.5" width="50" height="15"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="Goy-5s-F4X">
-                                        <rect key="frame" x="254.5" y="157.5" width="50" height="15"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left" translatesAutoresizingMaskIntoConstraints="NO" id="TwE-3R-5aH">
+                                        <rect key="frame" x="49" y="149" width="20" height="25"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="5Sw-7U-RQt"/>
+                                            <constraint firstAttribute="width" constant="20" id="7cc-Rh-ccD"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 of 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwl-64-4Vt">
                                         <rect key="frame" x="151" y="56" width="40" height="21"/>
@@ -185,6 +187,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right" translatesAutoresizingMaskIntoConstraints="NO" id="Goy-5s-F4X">
+                                        <rect key="frame" x="269" y="154.5" width="20" height="25"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="Vah-nA-jCz"/>
+                                            <constraint firstAttribute="width" constant="20" id="k2v-ra-jZM"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94117647410000005" green="0.49803921579999999" blue="0.35294118520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
@@ -192,17 +202,17 @@
                                     <constraint firstItem="eFx-Dc-4My" firstAttribute="centerX" secondItem="dlN-4t-tCW" secondAttribute="centerX" id="8TD-bF-aPf"/>
                                     <constraint firstItem="bxW-C1-kW0" firstAttribute="top" secondItem="bbj-P0-C81" secondAttribute="bottom" constant="10" id="9fn-1k-f9t"/>
                                     <constraint firstItem="dlN-4t-tCW" firstAttribute="centerY" secondItem="Dg5-O3-RNm" secondAttribute="centerY" id="COm-X5-Pf8"/>
-                                    <constraint firstItem="Goy-5s-F4X" firstAttribute="leading" secondItem="dlN-4t-tCW" secondAttribute="trailing" constant="30" id="FRe-Of-OYD"/>
                                     <constraint firstItem="bbj-P0-C81" firstAttribute="centerX" secondItem="dlN-4t-tCW" secondAttribute="centerX" id="IfW-0R-km0"/>
                                     <constraint firstItem="bxW-C1-kW0" firstAttribute="centerX" secondItem="bbj-P0-C81" secondAttribute="centerX" id="RUD-Yx-Pak"/>
-                                    <constraint firstItem="TwE-3R-5aH" firstAttribute="centerY" secondItem="dlN-4t-tCW" secondAttribute="centerY" id="WCZ-FH-dwp"/>
                                     <constraint firstItem="Jwl-64-4Vt" firstAttribute="top" secondItem="eFx-Dc-4My" secondAttribute="bottom" constant="5" id="Xb6-Eh-LY4"/>
-                                    <constraint firstItem="Goy-5s-F4X" firstAttribute="centerY" secondItem="dlN-4t-tCW" secondAttribute="centerY" id="afu-2q-a4t"/>
                                     <constraint firstItem="dlN-4t-tCW" firstAttribute="centerX" secondItem="Dg5-O3-RNm" secondAttribute="centerX" id="eUX-Wb-yM4"/>
                                     <constraint firstItem="bbj-P0-C81" firstAttribute="top" secondItem="dlN-4t-tCW" secondAttribute="bottom" constant="10" id="fgo-vP-5WT"/>
                                     <constraint firstItem="Jwl-64-4Vt" firstAttribute="centerX" secondItem="dlN-4t-tCW" secondAttribute="centerX" id="hGk-lW-3Vl"/>
-                                    <constraint firstItem="TwE-3R-5aH" firstAttribute="trailing" secondItem="dlN-4t-tCW" secondAttribute="leading" constant="-30" id="j5A-qS-iZJ"/>
+                                    <constraint firstItem="TwE-3R-5aH" firstAttribute="trailing" secondItem="dlN-4t-tCW" secondAttribute="leading" constant="-50" id="j5A-qS-iZJ"/>
+                                    <constraint firstItem="Goy-5s-F4X" firstAttribute="centerY" secondItem="dlN-4t-tCW" secondAttribute="centerY" id="n2L-LH-vqC"/>
                                     <constraint firstItem="dlN-4t-tCW" firstAttribute="top" secondItem="eFx-Dc-4My" secondAttribute="bottom" constant="34.5" id="q6f-vZ-TbL"/>
+                                    <constraint firstItem="Goy-5s-F4X" firstAttribute="leading" secondItem="dlN-4t-tCW" secondAttribute="trailing" constant="50" id="rqB-Hl-IQt"/>
+                                    <constraint firstItem="TwE-3R-5aH" firstAttribute="centerY" secondItem="dlN-4t-tCW" secondAttribute="centerY" constant="-5.5" id="yze-Rz-Rz0"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="bX1-De-mUF" appends="YES" id="dAe-Jh-k08"/>
@@ -591,9 +601,9 @@ District 51</string>
         </scene>
     </scenes>
     <resources>
-        <image name="arrowLeft" width="62" height="18"/>
-        <image name="arrowRight" width="62" height="18"/>
         <image name="bg" width="900" height="1504"/>
+        <image name="left" width="74" height="88"/>
+        <image name="right" width="74" height="88"/>
         <image name="silhouette" width="100" height="150"/>
     </resources>
 </document>
