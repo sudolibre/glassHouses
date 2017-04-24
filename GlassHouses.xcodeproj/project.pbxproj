@@ -26,6 +26,7 @@
 		E8686CB41E71F9F100A13449 /* AnalyticsUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8686CB31E71F9F100A13449 /* AnalyticsUtility.swift */; };
 		E8686CB61E770F8400A13449 /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8686CB51E770F8400A13449 /* API.plist */; };
 		E868F9E21E7C84D1007F1FFE /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E868F9E11E7C84D1007F1FFE /* UserNotifications.framework */; };
+		E885FDFF1EAE886100106213 /* LegislationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */; };
 		E88E4CEF1E4E212600EF2E76 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */; };
 		E895A13A1E5626BB0035AF48 /* Article+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */; };
 		E895A13B1E5626BB0035AF48 /* Article+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */; };
@@ -85,6 +86,7 @@
 		E8686CB31E71F9F100A13449 /* AnalyticsUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsUtility.swift; sourceTree = "<group>"; };
 		E8686CB51E770F8400A13449 /* API.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
 		E868F9E11E7C84D1007F1FFE /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegislationDetailViewController.xib; sourceTree = "<group>"; };
 		E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
 		E895A1381E5626BB0035AF48 /* Article+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataClass.swift"; path = "../Article+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E895A1391E5626BB0035AF48 /* Article+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Article+CoreDataProperties.swift"; path = "../Article+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */,
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */,
+				E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */,
 				E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */,
 				E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */,
 				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,
@@ -361,6 +364,7 @@
 				E8686CB61E770F8400A13449 /* API.plist in Resources */,
 				E84BE3821E4A4BC6004359DE /* Assets.xcassets in Resources */,
 				E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */,
+				E885FDFF1EAE886100106213 /* LegislationDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,7 +44,7 @@ class ActivityFeedController: UITableViewController {
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         tableView.contentInset.top = statusBarHeight
         tableView.scrollIndicatorInsets.top = statusBarHeight
-
+        
         view.addSubview(spinner)
         let centerXConstraint = view.centerXAnchor.constraint(equalTo: spinner.centerXAnchor)
         let centerYConstraint = view.centerYAnchor.constraint(equalTo: spinner.centerYAnchor)
@@ -66,9 +66,21 @@ class ActivityFeedController: UITableViewController {
         let item = dataSource[tableView.indexPathForSelectedRow!.row]
         switch item.activityType {
         case .vote(let legislation, _), .sponsor(let legislation):
-            performSegue(withIdentifier: "showLegislation", sender: legislation)
+            performSegue(withIdentifier: "anything", sender: nil)
         case .news(let article):
-            performSegue(withIdentifier: "showNews", sender: article)
+            let viewController: UIViewController = {
+                let vc = UIViewController()
+                let url = article.link
+                let request = URLRequest(url: url as URL)
+                let webView: UIWebView = {
+                    let wv = UIWebView()
+                    wv.loadRequest(request)
+                    return wv
+                }()
+                vc.view = webView
+                return vc
+            }()
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
@@ -80,13 +92,7 @@ class ActivityFeedController: UITableViewController {
             legislationVC.webservice = webservice
             legislationVC.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: sender as! Legislation)
         case "showNews":
-            let article = sender as? Article
-            guard let url = article?.link as URL? ?? sender as? URL else {
-                return
-            }
-            let request = URLRequest(url: url)
-            let webView = segue.destination.view as! UIWebView
-            webView.loadRequest(request)
+            print("no thanks")
         default:
             fatalError("unexpected segue identifier")
         }
