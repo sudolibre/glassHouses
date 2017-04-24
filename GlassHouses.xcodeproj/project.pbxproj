@@ -14,7 +14,6 @@
 		E8185C851E5F6AEF00462C8F /* allUpper in Resources */ = {isa = PBXBuildFile; fileRef = E8185C841E5F6AEE00462C8F /* allUpper */; };
 		E84BE37B1E4A4BC6004359DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */; };
 		E84BE37D1E4A4BC6004359DE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */; };
-		E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE37E1E4A4BC6004359DE /* Main.storyboard */; };
 		E84BE3821E4A4BC6004359DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84BE3811E4A4BC6004359DE /* Assets.xcassets */; };
 		E84BE3851E4A4BC6004359DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84BE3831E4A4BC6004359DE /* LaunchScreen.storyboard */; };
 		E84BE3901E4A4BC6004359DE /* glassHousesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BE38F1E4A4BC6004359DE /* glassHousesTests.swift */; };
@@ -72,7 +71,6 @@
 		E84BE3771E4A4BC6004359DE /* glassHouses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = glassHouses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		E84BE37F1E4A4BC6004359DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E84BE3811E4A4BC6004359DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../glassHouses/Assets.xcassets; sourceTree = "<group>"; };
 		E84BE3841E4A4BC6004359DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E84BE3861E4A4BC6004359DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../glassHouses/Info.plist; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				E8DEEF0C1E577387004AF755 /* Controller */,
 				E8DEEF0B1E57736F004AF755 /* Model */,
 				E8DEEF0A1E577360004AF755 /* View */,
-				E84BE37E1E4A4BC6004359DE /* Main.storyboard */,
 				E8686CA71E70AA3300A13449 /* Fabric.framework */,
 				E8686CA81E70AA3300A13449 /* Crashlytics.framework */,
 				E84BE3811E4A4BC6004359DE /* Assets.xcassets */,
@@ -372,7 +369,6 @@
 				E84BE3851E4A4BC6004359DE /* LaunchScreen.storyboard in Resources */,
 				E8686CB61E770F8400A13449 /* API.plist in Resources */,
 				E84BE3821E4A4BC6004359DE /* Assets.xcassets in Resources */,
-				E84BE3801E4A4BC6004359DE /* Main.storyboard in Resources */,
 				E885FE011EAE92A700106213 /* SponsorCollectionCell.xib in Resources */,
 				E885FDFF1EAE886100106213 /* LegislationDetailViewController.xib in Resources */,
 				E885FE031EAE97FF00106213 /* ActivityCell.xib in Resources */,
@@ -476,14 +472,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E84BE37E1E4A4BC6004359DE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E84BE37F1E4A4BC6004359DE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E84BE3831E4A4BC6004359DE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

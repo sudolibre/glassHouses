@@ -27,12 +27,12 @@
                 <outlet property="view" destination="PjG-Bp-YlJ" id="fWa-EZ-CcO"/>
                 <outlet property="welcomeX" destination="mpF-fH-1Ha" id="Etx-An-ee5"/>
                 <outletCollection property="viewsToRoundCorners" destination="YoQ-jF-TmQ" collectionClass="NSMutableArray" id="t3g-3u-lE6"/>
-                <outletCollection property="viewsToRoundCorners" destination="jku-Rm-Pgg" collectionClass="NSMutableArray" id="EXN-qv-64c"/>
                 <outletCollection property="viewsToRoundCorners" destination="j5F-9X-73w" collectionClass="NSMutableArray" id="Vul-lF-cl5"/>
                 <outletCollection property="viewsToRoundCorners" destination="iEY-FT-rbc" collectionClass="NSMutableArray" id="Fe8-3L-afl"/>
                 <outletCollection property="viewsToRoundCorners" destination="qqP-CX-Mtf" collectionClass="NSMutableArray" id="PvV-Hp-esL"/>
                 <outletCollection property="horizontalSpacingConstraints" destination="Pkj-4y-Nu9" collectionClass="NSMutableArray" id="fho-kb-Uj8"/>
                 <outletCollection property="horizontalSpacingConstraints" destination="eGg-GD-2j0" collectionClass="NSMutableArray" id="IO4-1F-koG"/>
+                <outletCollection property="viewsToRoundCorners" destination="jku-Rm-Pgg" collectionClass="NSMutableArray" id="oSU-8T-qjh"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

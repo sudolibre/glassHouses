@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var activityItemStore: ActivityItemStore!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
@@ -47,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }()
             let navController = UINavigationController(rootViewController: activityFeedVC)
             window!.rootViewController = navController
+            window!.makeKeyAndVisible()
         } else {
             let onboardingVC: OnboardingViewController = {
                 let vc = OnboardingViewController()
@@ -55,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return vc
             }()
             window!.rootViewController = onboardingVC
+            window!.makeKeyAndVisible()
         }
         return true
     }
