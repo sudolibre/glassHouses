@@ -13,10 +13,23 @@ import WebKit
 import Social
 
 class LegislationDetailViewController: UIViewController, UICollectionViewDelegate, UIGestureRecognizerDelegate {
-    var legislation: Legislation!
-    var dataSource: LegislationDetailDataSource!
     var legislationWebView: WKWebView!
-    var webservice: Webservice!
+    var legislation: Legislation
+    var dataSource: LegislationDetailDataSource
+    let webservice: Webservice
+    let activityItemStore: ActivityItemStore
+    
+    public init(webservice: Webservice, activityItemStore: ActivityItemStore, datasource: LegislationDetailDataSource, legislation: Legislation) {
+        self.legislation = legislation
+        self.webservice = webservice
+        self.activityItemStore = activityItemStore
+        self.dataSource = datasource
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var outterView: UIView!
@@ -92,11 +105,11 @@ class LegislationDetailViewController: UIViewController, UICollectionViewDelegat
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
         self.navigationItem.setRightBarButton(shareButton, animated: false)
         scrollView.contentSize = outterView.bounds.size
-        billStatusView.status = legislation!.status
+        billStatusView.status = legislation.status
         let sponsorCollectionCell = UINib(nibName: "SponsorCollectionCell", bundle: nil)
         sponsorCollectionView.register(sponsorCollectionCell, forCellWithReuseIdentifier: "sponsorCell")
         sponsorCollectionView.dataSource = dataSource
-        let sponsorResources = legislation.sponsorIDs.map({Legislator.legislatorResource(withID: $0, into: ActivityItemStore.context)})
+        let sponsorResources = legislation.sponsorIDs.map({Legislator.legislatorResource(withID: $0, into: activityItemStore.context)})
         sponsorResources.forEach { (sponsorResource) in
             webservice.load(resource: sponsorResource, completion: { (sponsor) in
                 if let sponsor = sponsor {

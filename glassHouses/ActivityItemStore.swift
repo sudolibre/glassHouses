@@ -33,27 +33,20 @@ enum VoteResult: CustomStringConvertible {
 }
 
 class ActivityItemStore {
-    let webservice: Webservice!
+    let webservice: Webservice
+    private let persistentContainer: NSPersistentContainer
     
-    init(webservice: Webservice) {
+    init(webservice: Webservice, persistentContainer: NSPersistentContainer) {
         self.webservice = webservice
+        self.persistentContainer = persistentContainer
     }
     
-    private static let persistentContainer: NSPersistentContainer = {
-        let pc = NSPersistentContainer(name: "glassHouses")
-        pc.loadPersistentStores(completionHandler: { (description, error) in
-            if let error = error {
-                print("error creating core data container \(error.localizedDescription)")
-            }
-        })
-        return pc
-    }()
     
-    static var context: NSManagedObjectContext {
+    var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
     
-    static func save() {
+    func save() {
         do {
             try context.save()
         } catch {
@@ -63,9 +56,9 @@ class ActivityItemStore {
     
     func fetchActivityItems(legislators: [Legislator], completion: @escaping (ActivityItem) -> ()) {
         //Get Local Items
-        let localLegislation = ActivityItemStore.fetchLocalLegislation()
-        let localNews = ActivityItemStore.fetchLocalNewsArticles()
-        let activityFromLegislation = ActivityItemStore.generateActivity(for: legislators, from: localLegislation)
+        let localLegislation = fetchLocalLegislation()
+        let localNews = fetchLocalNewsArticles()
+        let activityFromLegislation = generateActivity(for: legislators, from: localLegislation)
         let newsActivity = localNews.flatMap({ (article) -> ActivityItem? in
             var activity: ActivityItem? = nil
             let legislator = legislators.first(where: {$0.id == article.legislatorID})
@@ -84,9 +77,9 @@ class ActivityItemStore {
         updateLegislation { (legislation) in
             if let legislation = legislation {
                 //TODO: change generate activity to take a single piece of legislation
-                let activity = ActivityItemStore.generateActivity(for: legislators, from: [legislation])
+                let activity = self.generateActivity(for: legislators, from: [legislation])
                 activity.forEach(completion)
-                ActivityItemStore.save()
+                self.save()
             }
         }
         updateArticles(legislators: legislators) { (articles) in
@@ -96,12 +89,12 @@ class ActivityItemStore {
                     return ActivityItem(legislator: legislator, activityType: .news(article))
                 })
                 activity.forEach(completion)
-                ActivityItemStore.save()
+                self.save()
             }
         }
     }
     
-    static func fetchLocalNewsArticles() -> [Article] {
+    func fetchLocalNewsArticles() -> [Article] {
         var fetchedArticles: [Article]?
         
         let fetchRequest: NSFetchRequest<Article> = Article.fetchRequest()
@@ -122,12 +115,12 @@ class ActivityItemStore {
     }
     
     private func updateArticles(legislators: [Legislator], completion: @escaping ([Article]?) -> ()) {
-        let resource = Article.allArticlesResource(for: legislators, into: ActivityItemStore.context)
+        let resource = Article.allArticlesResource(for: legislators, into: context)
         webservice.load(resource: resource, completion: completion)
     }
     
     
-    private static func fetchLocalLegislation() -> [Legislation] {
+    func fetchLocalLegislation() -> [Legislation] {
         var fetchedLegislation: [Legislation]?
         
         let fetchRequest: NSFetchRequest<Legislation> = Legislation.fetchRequest()
@@ -144,7 +137,7 @@ class ActivityItemStore {
         webservice.load(resource: resource) { (legislationIDs) in
             if let legislationIDs = legislationIDs {
                 let legislationResourceCollection = legislationIDs.map({ (id) -> Resource<Legislation> in
-                    return Legislation.legislationResource(withID: id, into: ActivityItemStore.context)
+                    return Legislation.legislationResource(withID: id, into: self.context)
                 })
                 legislationResourceCollection.forEach({ (resource) in
                     self.webservice.load(resource: resource, completion: completion)
@@ -153,7 +146,7 @@ class ActivityItemStore {
         }
     }
     
-    private static func generateActivity(for legislators: [Legislator], from legislationCollection: [Legislation]) -> [ActivityItem] {
+    private func generateActivity(for legislators: [Legislator], from legislationCollection: [Legislation]) -> [ActivityItem] {
         var activity = [ActivityItem]()
         
         for legislation in legislationCollection {

@@ -17,12 +17,12 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     @IBOutlet var identifyX: NSLayoutConstraint!
     @IBOutlet var overviewX: NSLayoutConstraint!
     var centerXConstraints: [NSLayoutConstraint]!
-    var activityItemStore: ActivityItemStore!
-    
+    var activityItemStore: ActivityItemStore
+    var webservice: Webservice
+
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
     
-    var webservice: Webservice!
     let titles = ["Welcome to Glass Houses!", "Let's find your district.", "Meet your legislators!"]
     var currentLegislator: Legislator?
     var legislators: [Legislator] = [] {
@@ -37,6 +37,18 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             updateRepView()
         }
     }
+    
+    public init(webservice: Webservice, activityItemStore: ActivityItemStore) {
+        self.webservice = webservice
+        self.activityItemStore = activityItemStore
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
     func registerForNews() {
         guard !legislators.isEmpty else { return }
@@ -119,20 +131,8 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     }
     
     @IBAction func doneTapped() {
-        let activityFeedVC: ActivityFeedController = {
-            let vc = ActivityFeedController()
-            vc.webservice = webservice
-            vc.activityItemStore = activityItemStore
-            vc.legislators = legislators
-            vc.title = "Legislator Activity"
-            let dataSource: ActivityFeedDataSource = {
-                let ds = ActivityFeedDataSource()
-                ds.imageStore = imageStore
-                return ds
-            }()
-            vc.dataSource = dataSource
-            return vc
-        }()
+        let dataSource = ActivityFeedDataSource(imageStore: imageStore)
+        let activityFeedVC = ActivityFeedController(webservice: webservice, activityItemStore: activityItemStore, dataSource: dataSource, legislators: legislators)
         let navController = UINavigationController(rootViewController: activityFeedVC)
         present(navController, animated: true)
     }
@@ -224,7 +224,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     func setLegislatorsWithCoordinates(_ coordinates: CLLocationCoordinate2D) {
         //Extracting coordinates from the Core Location struct to avoid importing CL in Legislator file
         //TODO: Move this call into ActivityItemStore and no longer access the context via a static property
-        let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude), into: ActivityItemStore.context)
+        let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude), into: activityItemStore.context)
         webservice.load(resource: legislatorsResource) { (legislators) in
             if let legislators = legislators,
                 !legislators.isEmpty {

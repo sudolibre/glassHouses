@@ -17,46 +17,43 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var activityItemStore: ActivityItemStore!
+    var persistentContainer: NSPersistentContainer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         
         let webservice = Webservice()
-        activityItemStore = ActivityItemStore(webservice: webservice)
+        persistentContainer = {
+            let pc = NSPersistentContainer(name: "glassHouses")
+            pc.loadPersistentStores(completionHandler: { (description, error) in
+                if let error = error {
+                    print("error creating core data container \(error.localizedDescription)")
+                }
+            })
+            return pc
+        }()
+        let activityItemStore = ActivityItemStore(webservice: webservice, persistentContainer: persistentContainer!)
         
         let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
         let predicate = NSPredicate(format: "following == true")
         fetchRequest.predicate = predicate
         var fetchedLegislators: [Legislator]?
-        ActivityItemStore.context.performAndWait {
+        persistentContainer!.viewContext.performAndWait {
             fetchedLegislators = try? fetchRequest.execute()
         }
         if let fetchedLegislators = fetchedLegislators,
             !fetchedLegislators.isEmpty {
             Environment.current.state = fetchedLegislators.first!.state
-            let activityFeedVC: ActivityFeedController = {
-                let vc = ActivityFeedController()
-                vc.webservice = webservice
-                vc.activityItemStore = activityItemStore
-                vc.legislators = fetchedLegislators
-                vc.title = "Legislator Activity"
-                return vc
-            }()
+            let datasource = ActivityFeedDataSource()
+            let activityFeedVC = ActivityFeedController(webservice: webservice, activityItemStore: activityItemStore, dataSource: datasource, legislators: fetchedLegislators)
             let navController = UINavigationController(rootViewController: activityFeedVC)
             window!.rootViewController = navController
             window!.makeKeyAndVisible()
         } else {
-            let onboardingVC: OnboardingViewController = {
-                let vc = OnboardingViewController()
-                vc.webservice = webservice
-                vc.activityItemStore = activityItemStore
-                return vc
-            }()
+            let onboardingVC = OnboardingViewController(webservice: webservice, activityItemStore: activityItemStore)
             window!.rootViewController = onboardingVC
             window!.makeKeyAndVisible()
         }
@@ -78,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
         let predicate = NSPredicate(format: "\(#keyPath(Legislator.fullName)) == '\(legislatorName)'")
         fetchRequest.predicate = predicate
-        ActivityItemStore.context.performAndWait {
+        persistentContainer!.viewContext.performAndWait {
             fetchedLegislator = try? fetchRequest.execute()
         }
         
@@ -87,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
         }
         
-        let _ = Article.fromJSON(json, legislator: legislator, into: ActivityItemStore.context)
+        let _ = Article.fromJSON(json, legislator: legislator, into: persistentContainer!.viewContext)
     }
     // Called when APNs has assigned the device a unique token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -111,7 +108,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        ActivityItemStore.save()
+        do {
+            try persistentContainer?.viewContext.save()
+        } catch {
+            print("Failed to save MOC: \(error)")
+        }
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }

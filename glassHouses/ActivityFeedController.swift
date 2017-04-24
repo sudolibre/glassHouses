@@ -13,8 +13,11 @@ import QuickLook
 
 class ActivityFeedController: UITableViewController {
     var lastUpdate: Date?
-    var webservice: Webservice!
-    var activityItemStore: ActivityItemStore!
+    var webservice: Webservice
+    var activityItemStore: ActivityItemStore
+    var dataSource: ActivityFeedDataSource
+    var legislators: [Legislator]
+
     
     let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
@@ -22,8 +25,19 @@ class ActivityFeedController: UITableViewController {
         spinner.color = UIColor.gray
         return spinner
     }()
-    var legislators: [Legislator]!
-    var dataSource = ActivityFeedDataSource()
+    
+    public init(webservice: Webservice, activityItemStore: ActivityItemStore, dataSource: ActivityFeedDataSource, legislators: [Legislator]) {
+        self.webservice = webservice
+        self.activityItemStore = activityItemStore
+        self.legislators = legislators
+        self.dataSource = dataSource
+        super.init(nibName: nil, bundle: nil)
+        title = "Legislator Activity"
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,7 +50,6 @@ class ActivityFeedController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let activityCell = UINib(nibName: "ActivityCell", bundle: nil)
         tableView.register(activityCell, forCellReuseIdentifier: "activityCell")
         
@@ -71,14 +84,8 @@ class ActivityFeedController: UITableViewController {
         let item = dataSource[tableView.indexPathForSelectedRow!.row]
         switch item.activityType {
         case .vote(let legislation, _), .sponsor(let legislation):
-            let legislationVC: LegislationDetailViewController = {
-                let vc = LegislationDetailViewController()
-                vc.legislation = legislation
-                vc.webservice = webservice
-                vc.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: legislation)
-                return vc
-
-            }()
+            let datasource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: legislation)
+            let legislationVC = LegislationDetailViewController(webservice: webservice, activityItemStore: activityItemStore, datasource: datasource, legislation: legislation)
             navigationController?.pushViewController(legislationVC, animated: true)
         case .news(let article):
             let webVC: UIViewController = {
@@ -96,25 +103,15 @@ class ActivityFeedController: UITableViewController {
             navigationController?.pushViewController(webVC, animated: true)
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier! {
-        case "showLegislation":
-            let legislationVC = segue.destination as! LegislationDetailViewController
-            legislationVC.legislation = sender as! Legislation!
-            legislationVC.webservice = webservice
-            legislationVC.dataSource = LegislationDetailDataSource(imageStore: dataSource.imageStore, legislation: sender as! Legislation)
-        case "showNews":
-            print("no thanks")
-        default:
-            fatalError("unexpected segue identifier")
-        }
-    }
 }
 
 class ActivityFeedDataSource: NSObject, UITableViewDataSource {
-    var imageStore = ImageStore()
+    var imageStore: ImageStore
     var activityItems: [ActivityItem] = []
+    
+    public init(imageStore: ImageStore = ImageStore()) {
+        self.imageStore = imageStore
+    }
     
     subscript(index: Int) -> ActivityItem {
         return activityItems[index]

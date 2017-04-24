@@ -281,8 +281,8 @@ extension Article {
         }
         
         var article: Article!
-        ActivityItemStore.context.performAndWait {
-            article = Article(context: ActivityItemStore.context)
+        context.performAndWait {
+            article = Article(context: context)
             article.title = title
             article.publisher = publisher
             article.articleDescription = description
