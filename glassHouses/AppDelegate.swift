@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var persistentContainer: NSPersistentContainer?
+    var webservice = Webservice()
+    var navController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
         application.registerForRemoteNotifications()
         
-        let webservice = Webservice()
         persistentContainer = {
             let pc = NSPersistentContainer(name: "glassHouses")
             pc.loadPersistentStores(completionHandler: { (description, error) in
@@ -49,9 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Environment.current.state = fetchedLegislators.first!.state
             let datasource = ActivityFeedDataSource()
             let activityFeedVC = ActivityFeedController(webservice: webservice, activityItemStore: activityItemStore, dataSource: datasource, legislators: fetchedLegislators)
-            let navController = UINavigationController(rootViewController: activityFeedVC)
+            navController = UINavigationController(rootViewController: activityFeedVC)
             window!.rootViewController = navController
             window!.makeKeyAndVisible()
+            if let data = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
+                self.application(application, didReceiveRemoteNotification: data)
+            }
         } else {
             let onboardingVC = OnboardingViewController(webservice: webservice, activityItemStore: activityItemStore)
             window!.rootViewController = onboardingVC
@@ -61,31 +65,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
-        // this only gets hit when the app is open or the user opened the notification from the app
         guard let linkString = data["url"] as? String,
-            let legislatorName = data["legislator"] as? String,
-            let url = URL(string: linkString) else {
-                return
-        }
-        let navVC = window!.rootViewController as! UINavigationController
-        let activityFeedVC = navVC.topViewController as! ActivityFeedController
-        activityFeedVC.performSegue(withIdentifier: "showNews", sender: url)
-        
-        var fetchedLegislator: [Legislator]?
-        let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
-        let predicate = NSPredicate(format: "\(#keyPath(Legislator.fullName)) == '\(legislatorName)'")
-        fetchRequest.predicate = predicate
-        persistentContainer!.viewContext.performAndWait {
-            fetchedLegislator = try? fetchRequest.execute()
+        let legislatorName = data["legislator"] as? String,
+        let url = URL(string: linkString) else {
+            return
         }
         
-        guard let json = data["json"] as? [String: Any],
-            let legislator = fetchedLegislator?.first else {
-                return
-        }
+        let webViewController: UIViewController = {
+            let vc = UIViewController()
+            let request = URLRequest(url: url)
+            let webView: UIWebView = {
+                let wv = UIWebView()
+                wv.loadRequest(request)
+                return wv
+            }()
+            vc.view = webView
+            return vc
+        }()
         
-        let _ = Article.fromJSON(json, legislator: legislator, into: persistentContainer!.viewContext)
+        navController?.pushViewController(webViewController, animated: true)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            var fetchedLegislator: [Legislator]?
+            let fetchRequest: NSFetchRequest<Legislator> = Legislator.fetchRequest()
+            let predicate = NSPredicate(format: "\(#keyPath(Legislator.fullName)) == '\(legislatorName)'")
+            fetchRequest.predicate = predicate
+            self.persistentContainer!.viewContext.performAndWait {
+                fetchedLegislator = try? fetchRequest.execute()
+            }
+            
+            guard let json = data["json"] as? [String: Any],
+                let legislator = fetchedLegislator?.first else {
+                    return
+            }
+            
+            let _ = Article.fromJSON(json, legislator: legislator, into: self.persistentContainer!.viewContext)
+        }
+ 
     }
+    
     // Called when APNs has assigned the device a unique token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
