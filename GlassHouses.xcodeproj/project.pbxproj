@@ -207,6 +207,8 @@
 		E8DEEF0A1E577360004AF755 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E885FE041EAE9C7200106213 /* OnboardingViewController.xib */,
+				E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */,
 				E88E4CEE1E4E212600EF2E76 /* ActivityCell.swift */,
 				E885FE021EAE97FF00106213 /* ActivityCell.xib */,
 				E8DEEF101E58D9FE004AF755 /* SponsorCollectionCell.swift */,
@@ -238,10 +240,8 @@
 				E8FFE5571E9FCC8800C187CD /* Webservice.swift */,
 				E84BE37A1E4A4BC6004359DE /* AppDelegate.swift */,
 				E84BE37C1E4A4BC6004359DE /* OnboardingViewController.swift */,
-				E885FE041EAE9C7200106213 /* OnboardingViewController.xib */,
 				E8BF59261E4CD697008365F4 /* ActivityFeedController.swift */,
 				E8DEEF081E57732D004AF755 /* LegislationDetailViewController.swift */,
-				E885FDFE1EAE886100106213 /* LegislationDetailViewController.xib */,
 				E813C37B1E538E6E00F93F95 /* ActivityItemStore.swift */,
 				E813C3791E524D6A00F93F95 /* UserDefaultsManager.swift */,
 				E84BE3AE1E4BCF67004359DE /* ImageStore.swift */,

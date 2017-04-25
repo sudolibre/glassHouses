@@ -19,6 +19,13 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     var centerXConstraints: [NSLayoutConstraint]!
     var activityItemStore: ActivityItemStore
     var webservice: Webservice
+    let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        spinner.color = UIColor.gray
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = true
+        return spinner
+    }()
 
     @IBOutlet var pageControl: UIPageControl!
     @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
@@ -42,6 +49,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         self.webservice = webservice
         self.activityItemStore = activityItemStore
         super.init(nibName: nil, bundle: nil)
+        view.addSubview(spinner)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -113,6 +121,13 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
+  
+        
+        view.addSubview(spinner)
+        spinner.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: mapView.centerYAnchor).isActive = true
+        
+        locationManager.delegate = self
         centerXConstraints = [welcomeX, identifyX, overviewX]
         
         
@@ -150,7 +165,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         rotateOnboardingCards(.forward)
     }
     @IBAction func locationTapped(_ sender: UIButton) {
-        locationManager.delegate = self
+        spinner.startAnimating()
         
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse, .authorizedAlways:
@@ -223,13 +238,13 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     
     func setLegislatorsWithCoordinates(_ coordinates: CLLocationCoordinate2D) {
         //Extracting coordinates from the Core Location struct to avoid importing CL in Legislator file
-        //TODO: Move this call into ActivityItemStore and no longer access the context via a static property
         let legislatorsResource = Legislator.allLegislatorsResource(at: (coordinates.latitude, coordinates.longitude), into: activityItemStore.context)
-        webservice.load(resource: legislatorsResource) { (legislators) in
-            if let legislators = legislators,
+        webservice.load(resource: legislatorsResource) { (asdf) in
+            if let legislators = asdf,
                 !legislators.isEmpty {
                 DispatchQueue.main.async {
                     Environment.current.state = legislators.first!.state
+                    self.spinner.stopAnimating()
                     self.legislators.append(contentsOf: legislators)
                 }
             }
