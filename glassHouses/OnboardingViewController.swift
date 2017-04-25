@@ -66,7 +66,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
     func fetchPhotos() {
         for legislator in legislators {
             if imageStore.getImage(forKey: legislator.photoKey) == nil {
-                imageStore.fetchRemoteImage(forURL: legislator.photoURL, completion: { (image) in
+                imageStore.fetchRemoteImage(forURL: legislator.photoURL!, completion: { (image) in
                     self.imageStore.setImage(image, forKey: legislator.photoKey)
                     self.updateRepView()
                 })
@@ -277,7 +277,7 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             self.nextButton.isEnabled = true
             let currentPosition = self.legislators.index(where: {$0 === self.currentLegislator!})! + 1
             self.legislatorNumber.text = "\(currentPosition) of \(self.legislators.count)"
-            self.subtitleLabel.text = "\(self.currentLegislator!.party.description) - \(self.currentLegislator!.title) - District \(self.currentLegislator!.district)"
+            self.subtitleLabel.text = "\(self.currentLegislator!.party!.description) - \(self.currentLegislator!.title) - District \(self.currentLegislator!.district)"
             self.nameLabel.text = self.currentLegislator!.fullName
             if let image = self.imageStore.getImage(forKey: self.currentLegislator!.photoKey) {
                 self.avatarImageView.image = image

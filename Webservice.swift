@@ -73,7 +73,7 @@ final class Webservice {
 extension Legislator {
     typealias Coordinates = (lat: Double,long: Double)
     
-    static func fromJSON(_ json: [String: Any], follow: Bool = false, into context: NSManagedObjectContext) -> Legislator? {
+    static func fromJSON(_ json: [String: Any], follow: Bool = false, into context: NSManagedObjectContext, usingTemporary temporaryLegislator: Legislator? = nil) -> Legislator? {
             guard let active = json.getBoolForKey("active"),
                 active == true,
                 let id = json.getStringForKey("leg_id"),
@@ -97,13 +97,13 @@ extension Legislator {
         context.performAndWait {
             fetchedLegislator = try? fetchRequest.execute()
         }
-        if let existingLegislator = fetchedLegislator?.first {
+        guard fetchedLegislator?.first != nil else {
             return nil
         }
         
         var legislator: Legislator!
         context.performAndWait {
-            legislator = Legislator(context: context)
+            legislator = temporaryLegislator ?? Legislator(context: context)
             legislator.fullName = fullName
             legislator.district = Int32(district)
             legislator.lastName = lastName
@@ -127,19 +127,24 @@ extension Legislator {
         return resource
     }
     
-    static func legislatorResource(withID id: String, into context: NSManagedObjectContext) -> Resource<Legislator> {
+    static func legislatorResource(withID id: String, fullName: String, into context: NSManagedObjectContext) -> (temporaryLegislator: Legislator, resource: Resource<Legislator>) {
+        
+        var temporaryLegislator: Legislator!
+        context.performAndWait {
+            temporaryLegislator = Legislator(context: context)
+            temporaryLegislator.fullName = fullName
+            temporaryLegislator.id = id
+        }
+        
         let baseUrl = URL(string: "https://openstates.org/api/v1/")!
         let url = baseUrl.appendingPathComponent("legislators/\(id)")
         let resource = Resource<Legislator>(url: url) { (json) -> Legislator? in
             guard let dictionary = json as? [String: Any] else { return nil }
-            return Legislator.fromJSON(dictionary, into: context)
+            return Legislator.fromJSON(dictionary, into: context, usingTemporary: temporaryLegislator)
         }
-        return resource
+        return (temporaryLegislator, resource)
     }
 }
-
-
-
 
 extension Legislation {
     static func fromJSON(_ json: [String: Any], into context: NSManagedObjectContext) -> Legislation? {
@@ -189,13 +194,22 @@ extension Legislation {
             return Status(actions: actionDates)
         }()
        
-        let sponsorIDArray = sponsorArray.flatMap({$0["leg_id"] as? String})
-        let sponsorIDSet = NSSet(array: sponsorIDArray)
+        let sponsorDictionaryArray = sponsorArray.flatMap { (dictionary) -> [String: String]? in
+            guard let id = dictionary["leg_id"] as? String,
+                let name = dictionary["name"] as? String else {
+                    return nil
+            }
+            let sponsorDictionary = [
+                "id": id,
+                "name": name,
+            ]
+            return sponsorDictionary
+        }
         
         var legislation: Legislation!
         context.performAndWait {
             legislation = Legislation(context: context)
-            legislation.sponsorIDsCD = sponsorIDSet
+            legislation.sponsorIDsCD = sponsorDictionaryArray as NSArray
             legislation.dateCD = date as NSDate
             legislation.billDescription = description
             legislation.documentURLCD = documentURL as NSURL
@@ -216,6 +230,7 @@ extension Legislation {
             guard let dictionary = json as? [String: Any] else { return nil }
             return Legislation.fromJSON(dictionary, into: context)
         }
+
         return resource
     }
     

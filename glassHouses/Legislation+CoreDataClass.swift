@@ -60,8 +60,8 @@ public class Legislation: NSManagedObject {
         let other = otherVotes as! Set<String>
         return Votes(yesVotes: yes, noVotes: no, otherVotes: other)
     }
-    var sponsorIDs: Set<String> {
-        return sponsorIDsCD as! Set<String>
+    var sponsorIDs: Array<[String: String]> {
+        return sponsorIDsCD as! Array<[String: String]>
     }
     
     var status: Status {

@@ -65,15 +65,18 @@ public class Legislator: NSManagedObject {
     }
 
 
-    var party: Party {
-        return Party(rawValue: partyCD.lowercased())!
+    var party: Party? {
+        return Party(rawValue: partyCD.lowercased())
     }
     
     var chamber: Chamber {
         return Chamber(rawValue: chamberCD)!
     }
     
-    var photoURL: URL {
-        return photoURLCD as! URL
+    var photoURL: URL? {
+        guard let url = photoURLCD else {
+            return nil
+        }
+        return url as! URL
     }
 }

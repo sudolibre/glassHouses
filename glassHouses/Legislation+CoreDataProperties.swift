@@ -23,7 +23,7 @@ extension Legislation {
     @NSManaged public var yesVotes: NSSet
     @NSManaged public var noVotes: NSSet
     @NSManaged public var otherVotes: NSSet
-    @NSManaged public var sponsorIDsCD: NSSet
+    @NSManaged public var sponsorIDsCD: NSArray
     @NSManaged public var statusCD: Int32
     @NSManaged public var id: String
 

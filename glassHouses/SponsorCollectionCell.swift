@@ -12,10 +12,21 @@ import UIKit
 class SponserCollectionCell: UICollectionViewCell {
     @IBOutlet var avatarImageView: UIImageView!
     @IBOutlet var descriptionLabel: UILabel!
-
+    
     var legislator: Legislator! {
         didSet {
-            descriptionLabel.text! = "\(legislator.fullName)\n\(legislator.party)\nDistrict \(legislator.district)"
+            let partyText = legislator.party?.description ?? "Loading..."
+            let districtText: String = {
+                guard legislator.district > 0 else {
+                    return " "
+                }
+                return "District \(legislator.district.description)"
+            }()
+            descriptionLabel.text! = "\(legislator.fullName)\n\(partyText)\n \(districtText)"
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
 }

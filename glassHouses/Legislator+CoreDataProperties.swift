@@ -22,7 +22,7 @@ extension Legislator {
     @NSManaged public var partyCD: String
     @NSManaged public var chamberCD: String
     @NSManaged public var stateCD: String
-    @NSManaged public var photoURLCD: NSURL
+    @NSManaged public var photoURLCD: NSURL?
     @NSManaged public var id: String
     @NSManaged public var following: Bool
 
