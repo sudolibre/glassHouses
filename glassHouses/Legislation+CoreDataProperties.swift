@@ -15,7 +15,8 @@ extension Legislation {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Legislation> {
         return NSFetchRequest<Legislation>(entityName: "Legislation")
     }
-
+    
+    @NSManaged public var name: String
     @NSManaged public var title: String
     @NSManaged public var documentURLCD: NSURL
     @NSManaged public var billDescription: String

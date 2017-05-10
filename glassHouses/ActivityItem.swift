@@ -30,9 +30,9 @@ class ActivityItem {
         var description: String {
             switch activityType {
             case .vote(let legislation, let result):
-                return "\(legislator.fullName) voted \(result) \(legislation.id): \(legislation.title)"
+                return "\(legislator.fullName) voted \(result) \(legislation.name): \(legislation.title)"
             case .sponsor(let legislation):
-                return "\(legislator.fullName) sponsored \(legislation.id): \(legislation.title)"
+                return "\(legislator.fullName) sponsored \(legislation.name): \(legislation.title)"
             case .news(let article):
                 return "\(article.publisher) \n\(article.articleDescription)"
             }

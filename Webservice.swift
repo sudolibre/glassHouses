@@ -97,8 +97,8 @@ extension Legislator {
         context.performAndWait {
             fetchedLegislator = try? fetchRequest.execute()
         }
-        guard fetchedLegislator?.first != nil else {
-            return nil
+        if let existingLegislator = fetchedLegislator?.first {
+            return existingLegislator
         }
         
         var legislator: Legislator!
@@ -149,6 +149,7 @@ extension Legislator {
 extension Legislation {
     static func fromJSON(_ json: [String: Any], into context: NSManagedObjectContext) -> Legislation? {
         guard let id = json.getStringForKey("id"),
+            let name = json.getStringForKey("bill_id"),
             let documentVersions = json.getArrayOfDictForKey("versions"),
             let recentVersion = documentVersions.last,
             let documentURLString = recentVersion.getStringForKey("url"),
@@ -219,6 +220,7 @@ extension Legislation {
             legislation.noVotes = NSSet(array: noNames)
             legislation.otherVotes = NSSet(array: otherNames)
             legislation.statusCD = Int32(status.rawValue)
+            legislation.name = name
         }
         return legislation
     }

@@ -2,4 +2,214 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "glassHouses/OnboardingViewController.swift"
+            timestampString = "514849136.017668"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "setLegislatorsWithCoordinates(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "glassHouses.OnboardingViewController.(setLegislatorsWithCoordinates (__C.CLLocationCoordinate2D) -&gt; ()).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/OnboardingViewController.swift"
+                  timestampString = "514850251.52902"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "glassHouses.OnboardingViewController.(setLegislatorsWithCoordinates (__C.CLLocationCoordinate2D) -&gt; ()).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/OnboardingViewController.swift"
+                  timestampString = "514850251.531236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "glassHouses/OnboardingViewController.swift"
+            timestampString = "514849183.92966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
+            landmarkName = "setLegislatorsWithCoordinates(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "glassHouses.OnboardingViewController.(setLegislatorsWithCoordinates (__C.CLLocationCoordinate2D) -&gt; ()).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/OnboardingViewController.swift"
+                  timestampString = "514850251.537565"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "245"
+                  endingLineNumber = "245"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "glassHouses.OnboardingViewController.(setLegislatorsWithCoordinates (__C.CLLocationCoordinate2D) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/glassHouses/OnboardingViewController.swift"
+                  timestampString = "514850251.539349"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "246"
+                  endingLineNumber = "246"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Webservice.swift"
+            timestampString = "514849272.349578"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "allLegislatorsResource(at:into:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static glassHouses.Legislator.(allLegislatorsResource (at : (lat : Swift.Double, long : Swift.Double), into : __ObjC.NSManagedObjectContext) -&gt; glassHouses.Resource&lt;Swift.Array&lt;glassHouses.Legislator&gt;&gt;).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/Webservice.swift"
+                  timestampString = "514850251.545575"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static glassHouses.Legislator.(allLegislatorsResource (at : (lat : Swift.Double, long : Swift.Double), into : __ObjC.NSManagedObjectContext) -&gt; glassHouses.Resource&lt;Swift.Array&lt;glassHouses.Legislator&gt;&gt;).(closure #1).(closure #1)"
+                  moduleName = "glassHouses"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/noj/Code/GlassHouses/glassHouses/Webservice.swift"
+                  timestampString = "514850251.549055"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Webservice.swift"
+            timestampString = "514849390.422199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "fromJSON(_:follow:into:usingTemporary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Webservice.swift"
+            timestampString = "514849395.686644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "fromJSON(_:follow:into:usingTemporary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "glassHouses/ActivityCell.swift"
+            timestampString = "514849863.84279"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "applyViewData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "glassHouses/ActivityItem.swift"
+            timestampString = "514850039.521757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "activityCellViewData"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
