@@ -11,11 +11,22 @@ import MapKit
 import Crashlytics
 
 class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+    //MARK: Outlet Properties
     @IBOutlet var viewsToRoundCorners: [UIView]!
     @IBOutlet var primaryTitle: UILabel!
     @IBOutlet var welcomeX: NSLayoutConstraint!
     @IBOutlet var identifyX: NSLayoutConstraint!
     @IBOutlet var overviewX: NSLayoutConstraint!
+    @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var addressTextField: UITextField!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var avatarImageView: UIImageView!
+    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var legislatorNumber: UILabel!
+    //MARK: Properties
     var centerXConstraints: [NSLayoutConstraint]!
     var activityItemStore: ActivityItemStore
     var webservice: Webservice
@@ -26,12 +37,10 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         spinner.hidesWhenStopped = true
         return spinner
     }()
-
-    @IBOutlet var pageControl: UIPageControl!
-    @IBOutlet var horizontalSpacingConstraints: [NSLayoutConstraint]!
-    
     let titles = ["Welcome to Glass Houses!", "Let's find your district.", "Meet your legislators!"]
     var currentLegislator: Legislator?
+    let locationManager = CLLocationManager()
+    let imageStore = ImageStore()
     var legislators: [Legislator] = [] {
         didSet {
             guard !legislators.isEmpty else {
@@ -44,84 +53,20 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             updateRepView()
         }
     }
-    
+
+    //MARK: Initialization
     public init(webservice: Webservice, activityItemStore: ActivityItemStore) {
         self.webservice = webservice
         self.activityItemStore = activityItemStore
         super.init(nibName: nil, bundle: nil)
-        view.addSubview(spinner)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-    func registerForNews() {
-        guard !legislators.isEmpty else { return }
-        activityItemStore.registerForNews(legislators: legislators)
-    }
-    
-    func fetchPhotos() {
-        for legislator in legislators {
-            if imageStore.getImage(forKey: legislator.photoKey) == nil {
-                imageStore.fetchRemoteImage(forURL: legislator.photoURL!, completion: { (image) in
-                    self.imageStore.setImage(image, forKey: legislator.photoKey)
-                    self.updateRepView()
-                })
-            }
-        }
-    }
-    
-    @IBAction func doneTapped(_ sender: UIButton) {
-        rotateOnboardingCards(.forward)
-    }
-    
-    enum Direction {
-        case backward, forward
-    }
-    
-    @IBAction func swipeToRotate(_ sender: UISwipeGestureRecognizer) {
-        switch sender.direction {
-        case UISwipeGestureRecognizerDirection.left:
-            rotateOnboardingCards(.forward)
-        case UISwipeGestureRecognizerDirection.right:
-            rotateOnboardingCards(.backward)
-        default:
-            fatalError("Unexpected swipe gesture recognizer direction")
-        }
-    }
-    
-    
-    func rotateOnboardingCards(_ direction: Direction) {
-        let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
-            let offsetConstraints = Array(centerXConstraints.dropFirst())
-            
-            switch direction {
-            case .forward:
-                return zip(centerXConstraints, offsetConstraints).reversed()
-            case .backward:
-                return Array(zip(centerXConstraints, offsetConstraints))
-            }
-        }()
-        
-        for (firstConstraint, secondConstraint ) in constraintPairs {
-            swap(&firstConstraint.priority, &secondConstraint.priority)
-        }
-        
-        let currentCardIndex = centerXConstraints.index(where: {$0.priority == 999})!
-        pageControl.currentPage = currentCardIndex
-        primaryTitle.text! = titles[currentCardIndex]
-        
-        UIView.animate(withDuration: 0.5) {
-            self.view.setNeedsLayout()
-        }
-    }
-    
+    //MARK: Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
-  
         
         view.addSubview(spinner)
         spinner.centerXAnchor.constraint(equalTo: mapView.centerXAnchor).isActive = true
@@ -129,8 +74,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         
         locationManager.delegate = self
         centerXConstraints = [welcomeX, identifyX, overviewX]
-        
-        
         
         for i in horizontalSpacingConstraints {
             let windowWidth = UIScreen.main.bounds.width
@@ -142,28 +85,12 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         }
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
-        
     }
-    
-    @IBAction func doneTapped() {
-        let dataSource = ActivityFeedDataSource(imageStore: imageStore)
-        let activityFeedVC = ActivityFeedController(webservice: webservice, activityItemStore: activityItemStore, dataSource: dataSource, legislators: legislators)
-        let navController = UINavigationController(rootViewController: activityFeedVC)
-        present(navController, animated: true)
-    }
-
-    //MARK: Welcome Card
-    // there are no custom properties or methods for the welcome card
-    
-    //MARK: Identify Card
-    
-    let locationManager = CLLocationManager()
-    @IBOutlet var mapView: MKMapView!
-    @IBOutlet var addressTextField: UITextField!
-    @IBOutlet var nextButton: UIButton!
+    //MARK: Outlet Methods
     @IBAction func nextTapped(_ sender: UIButton) {
         rotateOnboardingCards(.forward)
     }
+    
     @IBAction func locationTapped(_ sender: UIButton) {
         spinner.startAnimating()
         
@@ -185,6 +112,81 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             present(ac, animated: true)
         case .restricted:
             break
+        }
+    }
+    
+    @IBAction func doneTapped(_ sender: UIButton) {
+        rotateOnboardingCards(.forward)
+    }
+    
+    @IBAction func swipeToRotate(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case UISwipeGestureRecognizerDirection.left:
+            rotateOnboardingCards(.forward)
+        case UISwipeGestureRecognizerDirection.right:
+            rotateOnboardingCards(.backward)
+        default:
+            fatalError("Unexpected swipe gesture recognizer direction")
+        }
+    }
+    
+    @IBAction func doneTapped() {
+        let dataSource = ActivityFeedDataSource(imageStore: imageStore)
+        let activityFeedVC = ActivityFeedController(webservice: webservice, activityItemStore: activityItemStore, dataSource: dataSource, legislators: legislators)
+        let navController = UINavigationController(rootViewController: activityFeedVC)
+        present(navController, animated: true)
+    }
+    
+    @IBAction func swipeDetected(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case UISwipeGestureRecognizerDirection.left:
+            rotateRep(.forward)
+        case UISwipeGestureRecognizerDirection.right:
+            rotateRep(.backward)
+        default:
+            fatalError("Unexpected swipe gesture recognizer direction")
+        }
+        
+    }
+    //Mark: Methods
+    func registerForNews() {
+        guard !legislators.isEmpty else { return }
+        activityItemStore.registerForNews(legislators: legislators)
+    }
+    
+    func fetchPhotos() {
+        for legislator in legislators {
+            if imageStore.getImage(forKey: legislator.photoKey) == nil {
+                imageStore.fetchRemoteImage(forURL: legislator.photoURL!, completion: { (image) in
+                    self.imageStore.setImage(image, forKey: legislator.photoKey)
+                    self.updateRepView()
+                })
+            }
+        }
+    }
+
+    func rotateOnboardingCards(_ direction: Direction) {
+        let constraintPairs: [(NSLayoutConstraint, NSLayoutConstraint)] = {
+            let offsetConstraints = Array(centerXConstraints.dropFirst())
+            
+            switch direction {
+            case .forward:
+                return zip(centerXConstraints, offsetConstraints).reversed()
+            case .backward:
+                return Array(zip(centerXConstraints, offsetConstraints))
+            }
+        }()
+        
+        for (firstConstraint, secondConstraint ) in constraintPairs {
+            swap(&firstConstraint.priority, &secondConstraint.priority)
+        }
+        
+        let currentCardIndex = centerXConstraints.index(where: {$0.priority == 999})!
+        pageControl.currentPage = currentCardIndex
+        primaryTitle.text! = titles[currentCardIndex]
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutSubviews()
         }
     }
     
@@ -251,27 +253,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         }
     }
     
-    
-    //MARK: Overview Card
-    let imageStore = ImageStore()
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var avatarImageView: UIImageView!
-    @IBOutlet var subtitleLabel: UILabel!
-    @IBOutlet var legislatorNumber: UILabel!
-    
-    
-    @IBAction func swipeDetected(_ sender: UISwipeGestureRecognizer) {
-        switch sender.direction {
-        case UISwipeGestureRecognizerDirection.left:
-            rotateRep(.forward)
-        case UISwipeGestureRecognizerDirection.right:
-            rotateRep(.backward)
-        default:
-            fatalError("Unexpected swipe gesture recognizer direction")
-        }
-        
-    }
-    
     func updateRepView() {
         DispatchQueue.main.async {
             self.nextButton.isEnabled = true
@@ -284,8 +265,6 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
             }
         }
     }
-    
-    
     
     func rotateRep(_ direction: Direction) {
         let currentIndex = legislators.index(where: {$0 === currentLegislator!})
@@ -309,6 +288,9 @@ class OnboardingViewController: UIViewController, CLLocationManagerDelegate, UIT
         currentLegislator = legislators[newIndex]
         updateRepView()
     }
-    
+    //MARK: Types
+    enum Direction {
+        case backward, forward
+    }
 }
 

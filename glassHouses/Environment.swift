@@ -19,5 +19,4 @@ struct Environment {
     var baseURL = "https://openstates.org/api/v1/"
     var state: State!
     static var current = Environment()
-    
 }
